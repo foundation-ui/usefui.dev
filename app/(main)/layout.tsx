@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+
+import { Navigation } from "@/components";
 import { Page } from "@foundation-ui/components";
 
 function layout({
@@ -11,14 +13,9 @@ function layout({
   return (
     <Page>
       <Page.Content>
-        <Page.Navigation>Nav</Page.Navigation>
-        <Page.Menu>Subnav</Page.Menu>
+        <Navigation />
 
-        <Page.Wrapper
-          $menus={1}
-          $navigations={1.06}
-          className="p-t-large-10 p-x-medium-60 p-b-medium-60"
-        >
+        <Page.Wrapper $menus={0} $navigations={1.1} className="p-medium-60">
           {children}
         </Page.Wrapper>
       </Page.Content>
