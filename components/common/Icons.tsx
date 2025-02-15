@@ -1016,6 +1016,61 @@ const Image = () => {
 };
 Image.displayName = "Icon.Image";
 
+const Function = () => {
+  return (
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M8.75 4C8.75 2.61929 9.86929 1.5 11.25 1.5H12V0H11.25C9.04086 0 7.25 1.79086 7.25 4V6H4.75H4V7.5H4.75H7.25V12C7.25 13.3807 6.13071 14.5 4.75 14.5H4V16H4.75C6.95914 16 8.75 14.2091 8.75 12V7.5H11.25H12V6H11.25H8.75V4Z"
+      fill="currentColor"
+    />
+  );
+};
+Function.displayName = "Icon.Function";
+
+/** viewBox="0 0 64 64" */
+const Incognito = () => {
+  return (
+    <React.Fragment>
+      <circle
+        cx="45.09"
+        cy="43.43"
+        r="7.48"
+        strokeLinecap="round"
+        strokeWidth={3}
+      />
+      <circle
+        cx="19.3"
+        cy="43.7"
+        r="7.48"
+        strokeLinecap="round"
+        strokeWidth={3}
+      />
+      <line
+        x1="7.19"
+        y1="28.67"
+        x2="56.81"
+        y2="28.67"
+        strokeLinecap="round"
+        strokeWidth={3}
+      />
+      <polygon
+        points="47.55 28.67 15.07 28.67 25.42 12.82 38.68 12.82 47.55 28.67"
+        strokeLinecap="round"
+        strokeWidth={3}
+      />
+      <path
+        d="M26.66,43.7l.94-.42a11,11,0,0,1,9.07,0l.94.42"
+        strokeLinecap="round"
+        strokeWidth={3}
+      />
+    </React.Fragment>
+  );
+};
+Incognito.displayName = "Icon.Incognito";
+
+Icon.Function = Function;
+Icon.Incognito = Incognito;
 Icon.Image = Image;
 Icon.Aws = Aws;
 Icon.Discord = Discord;
