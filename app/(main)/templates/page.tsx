@@ -1,7 +1,7 @@
 import React from "react";
 import TemplatesViewer from "./_components/TemplatesViewer";
-async function EditorPage() {
+async function TemplatesPage() {
   return <TemplatesViewer />;
 }
 
-export default EditorPage;
+export default TemplatesPage;

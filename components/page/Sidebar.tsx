@@ -37,6 +37,7 @@ function Sidebar() {
         height="display"
         hotkey={hotkey}
         bindkey={bindey}
+        defaultOpen
       >
         <Page.Wrapper $navigations={0.4} $menus={0}>
           <Toolbar.Section showoncollapse className="h-100">

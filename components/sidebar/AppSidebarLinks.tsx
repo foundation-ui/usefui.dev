@@ -3,13 +3,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import {
-  Button,
-  Divider,
-  Toolbar,
-  DropdownMenu,
-} from "@foundation-ui/components";
-import { ColorModeActions, Icon } from "..";
+import AppSidebarHeader from "./AppSidebarHeader";
+import SettingsActions from "../common/SettingsActions";
+
+import { Button, Toolbar } from "@foundation-ui/components";
+import { Icon } from "..";
 
 const SidebarMenuSection = styled.div`
   margin: 0 auto;
@@ -30,59 +28,29 @@ function AppSidebarLinks() {
         showoncollapse
         className="h-auto grid align-start justify-start"
       >
-        <h6 style={{ color: "var(--color-green)" }} className="fs-medium-60">
-          ✦
-        </h6>
+        <SidebarActionsContainer className="grid align-center justify-center g-medium-60">
+          <AppSidebarHeader />
+        </SidebarActionsContainer>
       </Toolbar.Section>
+
       <Toolbar.Section
         showoncollapse
         className="h-auto grid align-end justify-end"
       >
         <SidebarActionsContainer className="grid align-center justify-center g-medium-60">
-          <Button variant="ghost">
-            <Icon>
-              <Icon.Help />
-            </Icon>
-          </Button>
-
-          <DropdownMenu.Root>
-            <DropdownMenu>
-              <DropdownMenu.Trigger
-                variant="ghost"
-                sizing="small"
-                className="fs-medium-10"
-              >
-                <Icon>
-                  <Icon.Settings />
-                </Icon>
-              </DropdownMenu.Trigger>
-              <DropdownMenu.Content sizing="medium">
-                <DropdownMenu.Item>Survey</DropdownMenu.Item>
-                <DropdownMenu.Item>Feedback</DropdownMenu.Item>
-                <Divider />
-                <DropdownMenu.Item>Preferences</DropdownMenu.Item>
-                <DropdownMenu.Item
-                  radio
-                  className="flex align-center g-medium-30 justify-between fs-medium-20"
-                >
-                  Theme
-                  <ColorModeActions />
-                </DropdownMenu.Item>
-              </DropdownMenu.Content>
-            </DropdownMenu>
-          </DropdownMenu.Root>
-
-          <Button variant="ghost">
-            <Icon viewBox="0 0 64 64">
-              <Icon.Incognito />
-            </Icon>
-          </Button>
+          <SettingsActions />
 
           <Toolbar.Trigger variant="ghost">
             <Icon>
               <Icon.CloseChevron />
             </Icon>
           </Toolbar.Trigger>
+
+          <Button variant="ghost">
+            <Icon viewBox="0 0 64 64">
+              <Icon.Incognito />
+            </Icon>
+          </Button>
         </SidebarActionsContainer>
       </Toolbar.Section>
     </SidebarMenuSection>
