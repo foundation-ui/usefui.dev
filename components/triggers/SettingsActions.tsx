@@ -4,32 +4,27 @@ import React from "react";
 
 import ColorModeActions from "./ColorModeActions";
 
-import { DropdownMenu, Divider } from "@foundation-ui/components";
-import { Icon } from "./Icons";
+import { DropdownMenu } from "@foundation-ui/components";
+import { Icon } from "../common/Icons";
 
 function SettingsActions() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu>
         <DropdownMenu.Trigger
-          variant="ghost"
+          variant="border"
           sizing="small"
           className="fs-medium-10"
         >
           <Icon>
-            <Icon.Settings />
+            <Icon.DoubleChevron />
           </Icon>
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content sizing="medium">
-          <DropdownMenu.Item>Survey</DropdownMenu.Item>
-          <DropdownMenu.Item>Feedback</DropdownMenu.Item>
-          <Divider />
-          <DropdownMenu.Item>Preferences</DropdownMenu.Item>
+        <DropdownMenu.Content sizing="small">
           <DropdownMenu.Item
             radio
             className="flex align-center g-medium-30 justify-between fs-medium-20"
           >
-            Theme
             <ColorModeActions />
           </DropdownMenu.Item>
         </DropdownMenu.Content>

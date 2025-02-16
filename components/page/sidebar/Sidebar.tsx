@@ -34,7 +34,7 @@ function Sidebar() {
         shortcut
         side="left"
         sizing="large"
-        height="display"
+        height="auto"
         hotkey={hotkey}
         bindkey={bindey}
         defaultOpen

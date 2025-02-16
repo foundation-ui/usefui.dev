@@ -6,7 +6,7 @@ import styled from "styled-components";
 import AppSidebarHeader from "./AppSidebarHeader";
 
 import { Button, Toolbar } from "@foundation-ui/components";
-import { Icon } from "..";
+import { Icon } from "../..";
 
 const SidebarMenuSection = styled.div`
   margin: 0 auto;

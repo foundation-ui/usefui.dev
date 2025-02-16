@@ -5,7 +5,7 @@ import React from "react";
 import AppAccordionItem from "./AppAccordionItem";
 
 import { Button, ScrollArea, Toolbar } from "@foundation-ui/components";
-import { Icon } from "..";
+import { Icon } from "../..";
 
 function AppSidebarSections() {
   return (

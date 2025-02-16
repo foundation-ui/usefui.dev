@@ -45,6 +45,13 @@ const cssVariables = generateCSSVariables({
         tint: [],
         shade: [],
       },
+      {
+        name: "mono-white",
+        base: { hex: "#EDEDE8" },
+        alpha: generateAlpha("#EDEDE8"),
+        tint: [],
+        shade: [],
+      },
     ],
     measurement: [...design_tokens.measurement],
     fontsize: [...design_tokens.fontsize],
