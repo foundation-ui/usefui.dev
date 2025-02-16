@@ -15,4 +15,9 @@ export const APP_ROUTES: AppRouteProperties[] = [
     label: "Templates",
     path: "templates",
   },
+  {
+    key: "environments",
+    label: "Environments",
+    path: "environments",
+  },
 ];

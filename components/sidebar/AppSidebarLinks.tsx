@@ -4,7 +4,6 @@ import React from "react";
 import styled from "styled-components";
 
 import AppSidebarHeader from "./AppSidebarHeader";
-import SettingsActions from "../common/SettingsActions";
 
 import { Button, Toolbar } from "@foundation-ui/components";
 import { Icon } from "..";
@@ -38,8 +37,6 @@ function AppSidebarLinks() {
         className="h-auto grid align-end justify-end"
       >
         <SidebarActionsContainer className="grid align-center justify-center g-medium-60">
-          <SettingsActions />
-
           <Toolbar.Trigger variant="ghost">
             <Icon>
               <Icon.CloseChevron />

@@ -4,6 +4,8 @@ import React from "react";
 import styled from "styled-components";
 // import { useRouter } from "next/navigation";
 
+import SettingsActions from "../common/SettingsActions";
+
 import {
   Page,
   Button,
@@ -67,6 +69,8 @@ function Navigation() {
           </Icon>
           <span className="fs-medium-10">Execute</span>
         </Button>
+
+        <SettingsActions />
       </div>
     </NavWrapper>
   );

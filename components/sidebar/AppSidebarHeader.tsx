@@ -21,6 +21,7 @@ function AppSidebarHeader() {
           <Icon>
             {key === "engine" && <Icon.Grid />}
             {key === "templates" && <Icon.Depth />}
+            {key === "environments" && <Icon.Globe />}
           </Icon>
         </Button>
       ))}
