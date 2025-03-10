@@ -17,7 +17,7 @@ function SettingsActions() {
           className="fs-medium-10"
         >
           <Icon>
-            <Icon.DoubleChevron />
+            <Icon.More />
           </Icon>
         </DropdownMenu.Trigger>
         <DropdownMenu.Content sizing="small">

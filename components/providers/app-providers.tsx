@@ -52,6 +52,13 @@ const cssVariables = generateCSSVariables({
         tint: [],
         shade: [],
       },
+      {
+        name: "mono-light",
+        base: { hex: "#FFFFFF" },
+        alpha: generateAlpha("#FFFFFF"),
+        tint: [],
+        shade: [],
+      },
     ],
     measurement: [...design_tokens.measurement],
     fontsize: [...design_tokens.fontsize],
@@ -98,8 +105,12 @@ export function AppProviders({
     <QueryClientProvider client={queryClient}>
       <ColorModeProvider
         config={{
-          contrast: {
+          body: {
             light: "var(--color-mono-light)",
+            dark: "var(--color-mono-darker)",
+          },
+          contrast: {
+            light: "var(--color-mono-white)",
             dark: "var(--color-mono-dark)",
           },
         }}

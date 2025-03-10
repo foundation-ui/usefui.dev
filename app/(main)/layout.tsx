@@ -1,9 +1,14 @@
 "use client";
 
 import React from "react";
+import styled from "styled-components";
 
 import { ContrastContainer, Navigation, Sidebar } from "@/components";
 import { Page, ScrollArea } from "@foundation-ui/components";
+
+const DisplayContainer = styled(ContrastContainer)`
+  width: 66.6vw;
+`;
 
 function layout({
   children,
@@ -23,7 +28,7 @@ function layout({
               className="h-100 w-100 p-r-medium-60 p-b-medium-60"
             >
               <ScrollArea
-                as={ContrastContainer}
+                as={DisplayContainer}
                 className="h-100 w-100 p-medium-60"
               >
                 {children}
