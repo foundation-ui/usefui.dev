@@ -17,7 +17,7 @@ function SettingsActions() {
           className="fs-medium-10"
         >
           <Icon>
-            <Icon.Settings />
+            <Icon.More />
           </Icon>
         </DropdownMenu.Trigger>
         <DropdownMenu.Content sizing="medium">
@@ -34,13 +34,6 @@ function SettingsActions() {
           >
             Theme
             <ColorModeActions />
-          </DropdownMenu.Item>
-
-          <DropdownMenu.Item className="flex align-center g-medium-30 justify-between fs-medium-20">
-            Logout
-            <Icon>
-              <Icon.Logout />
-            </Icon>
           </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu>

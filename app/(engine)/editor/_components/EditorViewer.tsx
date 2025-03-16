@@ -3,10 +3,10 @@
 import React from "react";
 import { Divider } from "@foundation-ui/components";
 
-function EngineViewer() {
+function EditorViewer() {
   return (
     <React.Fragment>
-      <h1>Engine</h1>
+      <h1>Editor</h1>
       <Divider />
       <p className="fs-medium-10 opacity-default-30">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ab
@@ -18,4 +18,4 @@ function EngineViewer() {
   );
 }
 
-export default EngineViewer;
+export default EditorViewer;

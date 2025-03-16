@@ -40,7 +40,8 @@ function SidebarLinks() {
             <AppLinkIcon as={Icon} fillOpacity={isActiveRoute ? 1 : 0.3}>
               {key === "engine" && <Icon.Grid />}
               {key === "templates" && <Icon.Depth />}
-              {key === "environments" && <Icon.Globe />}
+              {key === "integrations" && <Icon.Globe />}
+              {key === "environments" && <Icon.Key />}
             </AppLinkIcon>
           </Button>
         );

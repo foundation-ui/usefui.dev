@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 
-import {
-  // AuthProviders,
-  ThemeProvider,
-} from "@/components";
+import { AuthProviders, ThemeProvider } from "@/components";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
@@ -18,26 +15,26 @@ export default function RootLayout({
 }>) {
   return (
     <ThemeProvider>
-      {/* <AuthProviders> */}
-      <html lang="en">
-        <body>
-          <div id="portal-container" />
-          <Toaster
-            toastOptions={{
-              style: {
-                borderRadius: "var(--measurement-medium-30)",
-                borderColor: "var(--font-color-alpha-10)",
-                background: "var(--body-color)",
-                color: "var(--font-color)",
-                fontSize: "var(--fontsize-medium-10)",
-              },
-            }}
-          />
+      <AuthProviders>
+        <html lang="en">
+          <body>
+            <div id="portal-container" />
+            <Toaster
+              toastOptions={{
+                style: {
+                  borderRadius: "var(--measurement-medium-30)",
+                  borderColor: "var(--font-color-alpha-10)",
+                  background: "var(--body-color)",
+                  color: "var(--font-color)",
+                  fontSize: "var(--fontsize-medium-10)",
+                },
+              }}
+            />
 
-          {children}
-        </body>
-      </html>
-      {/* </AuthProviders> */}
+            {children}
+          </body>
+        </html>
+      </AuthProviders>
     </ThemeProvider>
   );
 }

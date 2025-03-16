@@ -4,9 +4,10 @@ import React from "react";
 import styled from "styled-components";
 
 import SidebarLinks from "./SidebarLinks";
+import { Icon } from "@/components";
 
-import { Page, Toolbar, Avatar } from "@foundation-ui/components";
-import { SettingsActions } from "../..";
+import { Page, Toolbar } from "@foundation-ui/components";
+import { UserButton, SignedIn } from "@clerk/nextjs";
 
 const SidebarWrapper = styled(Toolbar)`
   border: none !important;
@@ -38,13 +39,18 @@ function Sidebar() {
           <SidebarMenuSection>
             <Toolbar.Section showoncollapse className="h-100">
               <div className="grid g-large-10 align-center justify-center">
-                <Avatar src="/avatar.png" sizing="small" />
+                <Icon viewBox="0 0 87.3 78" height={28} width={28}>
+                  <Icon.GoogleDrive />
+                </Icon>
+
                 <SidebarLinks />
               </div>
             </Toolbar.Section>
 
-            <SidebarActionsContainer className="p-medium-30">
-              <SettingsActions />
+            <SidebarActionsContainer>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
             </SidebarActionsContainer>
           </SidebarMenuSection>
         </Page.Wrapper>
