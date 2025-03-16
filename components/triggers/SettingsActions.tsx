@@ -12,20 +12,35 @@ function SettingsActions() {
     <DropdownMenu.Root>
       <DropdownMenu>
         <DropdownMenu.Trigger
-          variant="border"
+          variant="ghost"
           sizing="small"
           className="fs-medium-10"
         >
           <Icon>
-            <Icon.More />
+            <Icon.Settings />
           </Icon>
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content sizing="small">
+        <DropdownMenu.Content sizing="medium">
+          <DropdownMenu.Item className="flex align-center g-medium-30 justify-between fs-medium-20">
+            Back to Homepage
+            <Icon>
+              <Icon.QuickAction />
+            </Icon>
+          </DropdownMenu.Item>
+
           <DropdownMenu.Item
             radio
             className="flex align-center g-medium-30 justify-between fs-medium-20"
           >
+            Theme
             <ColorModeActions />
+          </DropdownMenu.Item>
+
+          <DropdownMenu.Item className="flex align-center g-medium-30 justify-between fs-medium-20">
+            Logout
+            <Icon>
+              <Icon.Logout />
+            </Icon>
           </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu>

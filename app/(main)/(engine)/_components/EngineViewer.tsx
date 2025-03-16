@@ -1,17 +1,20 @@
 "use client";
 
 import React from "react";
-
-import { ContrastContainer } from "@/components";
+import { Divider } from "@foundation-ui/components";
 
 function EngineViewer() {
   return (
-    <ContrastContainer
-      className="grid g-medium-10"
-      style={{ background: "var(--body-color)" }}
-    >
-      <code className="fs-medium-10">{JSON.stringify({ test: "test" })}</code>
-    </ContrastContainer>
+    <React.Fragment>
+      <h1>Engine</h1>
+      <Divider />
+      <p className="fs-medium-10 opacity-default-30">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ab
+        labore molestiae eius tempora excepturi amet iure illo saepe doloribus
+        architecto, ex eaque quisquam voluptatem fugiat consequatur magni esse
+        hic. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+    </React.Fragment>
   );
 }
 

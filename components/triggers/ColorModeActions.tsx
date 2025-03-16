@@ -9,10 +9,11 @@ function ColorModeActions() {
   const { colorMode, setColorMode } = React.useContext(ColorModeContext);
 
   return (
-    <span className="flex align-center g-medium-10">
+    <span className="flex align-center g-medium-30">
       <Button
         sizing="small"
-        variant={colorMode === "light" ? "mono" : "border"}
+        variant="ghost"
+        rawicon={colorMode === "light"}
         onClick={() => setColorMode("light")}
       >
         <Icon>
@@ -21,7 +22,8 @@ function ColorModeActions() {
       </Button>
       <Button
         sizing="small"
-        variant={colorMode === "dark" ? "mono" : "border"}
+        variant="ghost"
+        rawicon={colorMode === "dark"}
         onClick={() => setColorMode("dark")}
       >
         <Icon>
@@ -30,7 +32,8 @@ function ColorModeActions() {
       </Button>
       <Button
         sizing="small"
-        variant={colorMode === "system" ? "mono" : "border"}
+        variant="ghost"
+        rawicon={colorMode === "system"}
         onClick={() => setColorMode("system")}
       >
         <Icon>

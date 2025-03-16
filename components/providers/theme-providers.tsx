@@ -47,8 +47,8 @@ const cssVariables = generateCSSVariables({
       },
       {
         name: "mono-white",
-        base: { hex: "#EDEDE8" },
-        alpha: generateAlpha("#EDEDE8"),
+        base: { hex: "#f6f6f2" },
+        alpha: generateAlpha("#f6f6f2"),
         tint: [],
         shade: [],
       },
@@ -95,7 +95,7 @@ const CSSRoot = createGlobalStyle`
 	}
 `;
 
-export function AppProviders({
+export function ThemeProvider({
   children,
 }: Readonly<{
   children: React.ReactNode;

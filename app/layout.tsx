@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import {
   // AuthProviders,
-  AppProviders,
+  ThemeProvider,
 } from "@/components";
 import { Toaster } from "sonner";
 
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <AppProviders>
+    <ThemeProvider>
       {/* <AuthProviders> */}
       <html lang="en">
         <body>
@@ -38,6 +38,6 @@ export default function RootLayout({
         </body>
       </html>
       {/* </AuthProviders> */}
-    </AppProviders>
+    </ThemeProvider>
   );
 }

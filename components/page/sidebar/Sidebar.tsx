@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 import SidebarLinks from "./SidebarLinks";
 
-import { Page, Toolbar, Button } from "@foundation-ui/components";
-import { Icon } from "../..";
+import { Page, Toolbar, Avatar } from "@foundation-ui/components";
+import { SettingsActions } from "../..";
 
 const SidebarWrapper = styled(Toolbar)`
   border: none !important;
@@ -20,8 +20,9 @@ const SidebarMenuSection = styled.div`
   justify-items: center;
 `;
 const SidebarActionsContainer = styled.div`
-  align-items: end;
   display: flex;
+  justify-content: center;
+  align-items: end;
 `;
 
 function Sidebar() {
@@ -35,14 +36,15 @@ function Sidebar() {
       >
         <Page.Wrapper $navigations={0.4} $menus={0}>
           <SidebarMenuSection>
-            <SidebarLinks />
+            <Toolbar.Section showoncollapse className="h-100">
+              <div className="grid g-large-10 align-center justify-center">
+                <Avatar src="/avatar.png" sizing="small" />
+                <SidebarLinks />
+              </div>
+            </Toolbar.Section>
 
-            <SidebarActionsContainer>
-              <Button variant="ghost">
-                <Icon viewBox="0 0 64 64">
-                  <Icon.Incognito />
-                </Icon>
-              </Button>
+            <SidebarActionsContainer className="p-medium-30">
+              <SettingsActions />
             </SidebarActionsContainer>
           </SidebarMenuSection>
         </Page.Wrapper>
