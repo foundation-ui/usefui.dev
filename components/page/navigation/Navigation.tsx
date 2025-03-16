@@ -3,9 +3,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import { useRouter } from "next/navigation";
-
-import { Button, Page } from "@foundation-ui/components";
+import { SignedIn, UserButton } from "@clerk/nextjs";
+import { Page } from "@foundation-ui/components";
 import { SettingsActions } from "@/components";
 
 const NavWrapper = styled(Page.Menu)`
@@ -13,29 +12,14 @@ const NavWrapper = styled(Page.Menu)`
 `;
 
 function Navigation() {
-  const router = useRouter();
-
   return (
-    <NavWrapper className="flex justify-between align-center p-r-medium-60">
-      <div className="flex align-center g-medium-30">
+    <NavWrapper className="flex justify-end align-center p-r-medium-60">
+      <div className="flex align-center g-medium-60">
         <SettingsActions />
-      </div>
 
-      <div className="flex align-center g-medium-30">
-        <Button
-          className="fs-medium-20"
-          variant="ghost"
-          onClick={() => router.push("")}
-        >
-          Docs
-        </Button>
-        <Button
-          className="fs-medium-20"
-          variant="ghost"
-          onClick={() => router.push("")}
-        >
-          Feedback
-        </Button>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </NavWrapper>
   );

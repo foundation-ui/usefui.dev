@@ -7,15 +7,13 @@ import { Navigation, Sidebar } from "@/components";
 import { Page, ScrollArea } from "@foundation-ui/components";
 
 const DisplayContainer = styled.div`
-  background: var(--contrast-color);
-  border-radius: var(--measurement-medium-40);
-
   --dot-bg: var(--contrast-color);
   --dot-color: var(--font-color-alpha-10);
   --dot-size: var(--measurement-small-20);
   --dot-space: var(--measurement-medium-60);
 
-  border-radius: var(--measurement-medium-60);
+  background: var(--contrast-color);
+  border-radius: var(--measurement-medium-30);
   background: linear-gradient(
         90deg,
         var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),

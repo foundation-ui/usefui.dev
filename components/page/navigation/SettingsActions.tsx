@@ -3,9 +3,8 @@
 import React from "react";
 
 import ColorModeActions from "./ColorModeActions";
-
 import { DropdownMenu } from "@foundation-ui/components";
-import { Icon } from "../common/Icons";
+import { Icon } from "@/components";
 
 function SettingsActions() {
   return (

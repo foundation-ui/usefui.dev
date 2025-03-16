@@ -3,11 +3,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import SidebarLinks from "./SidebarLinks";
-import { Icon } from "@/components";
+import { useRouter } from "next/navigation";
 
-import { Page, Toolbar } from "@foundation-ui/components";
-import { UserButton, SignedIn } from "@clerk/nextjs";
+import SidebarLinks from "./SidebarLinks";
+import { Button, Page, Toolbar } from "@foundation-ui/components";
+import { Icon } from "@/components";
 
 const SidebarWrapper = styled(Toolbar)`
   border: none !important;
@@ -27,6 +27,8 @@ const SidebarActionsContainer = styled.div`
 `;
 
 function Sidebar() {
+  const router = useRouter();
+
   return (
     <Toolbar.Root>
       <SidebarWrapper
@@ -39,8 +41,8 @@ function Sidebar() {
           <SidebarMenuSection>
             <Toolbar.Section showoncollapse className="h-100">
               <div className="grid g-large-10 align-center justify-center">
-                <Icon viewBox="0 0 87.3 78" height={28} width={28}>
-                  <Icon.GoogleDrive />
+                <Icon viewBox="0 0 267 570" height={28} width={28}>
+                  <Icon.Foundation />
                 </Icon>
 
                 <SidebarLinks />
@@ -48,9 +50,15 @@ function Sidebar() {
             </Toolbar.Section>
 
             <SidebarActionsContainer>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
+              <Button
+                className="fs-medium-20"
+                variant="ghost"
+                onClick={() => router.push("")}
+              >
+                <Icon>
+                  <Icon.Help />
+                </Icon>
+              </Button>
             </SidebarActionsContainer>
           </SidebarMenuSection>
         </Page.Wrapper>
