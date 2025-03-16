@@ -6,14 +6,18 @@ import { Divider } from "@foundation-ui/components";
 function IntegrationsViewer() {
   return (
     <React.Fragment>
-      <h1>Integrations</h1>
+      <hgroup className="p-medium-60">
+        <h1 className="fs-medium-40">Integrations</h1>
+      </hgroup>
       <Divider />
-      <p className="fs-medium-10 opacity-default-30">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ab
-        labore molestiae eius tempora excepturi amet iure illo saepe doloribus
-        architecto, ex eaque quisquam voluptatem fugiat consequatur magni esse
-        hic. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-      </p>
+      <section className="p-medium-60">
+        <p className="fs-medium-10 opacity-default-30">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ab
+          labore molestiae eius tempora excepturi amet iure illo saepe doloribus
+          architecto, ex eaque quisquam voluptatem fugiat consequatur magni esse
+          hic. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+      </section>
     </React.Fragment>
   );
 }

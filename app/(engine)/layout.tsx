@@ -9,7 +9,7 @@ import { Page, ScrollArea } from "@foundation-ui/components";
 const DisplayContainer = styled.div`
   background: var(--contrast-color);
   border-radius: var(--measurement-medium-40);
-  padding: var(--measurement-medium-60);
+
   --dot-bg: var(--contrast-color);
   --dot-color: var(--font-color-alpha-10);
   --dot-size: var(--measurement-small-20);
@@ -47,10 +47,7 @@ function layout({
               $navigations={0.068} // Margins/Paddings
               className="h-100 w-100 p-r-medium-60 p-b-medium-60"
             >
-              <ScrollArea
-                as={DisplayContainer}
-                className="h-100 w-100 p-medium-60"
-              >
+              <ScrollArea as={DisplayContainer} className="h-100 w-100">
                 {children}
               </ScrollArea>
             </Page.Wrapper>
