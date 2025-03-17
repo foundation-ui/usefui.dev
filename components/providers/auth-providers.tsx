@@ -4,10 +4,10 @@ import React from "react";
 import { ClerkProvider } from "@clerk/nextjs";
 import {
   ColorModeContext,
-  GetColorTokenBase,
   GetTokenFromSource,
   json_design_tokens,
 } from "@foundation-ui/tokens";
+import { generateAlpha } from "@foundation-ui/core";
 
 export function AuthProviders({
   children,
@@ -19,30 +19,54 @@ export function AuthProviders({
   const colors = () => {
     if (colorMode === "dark") {
       return {
-        body: GetColorTokenBase({
-          source: json_design_tokens,
-          token_category: "color",
-          query: "mono-darker",
-        }),
-        font: GetColorTokenBase({
-          source: json_design_tokens,
-          token_category: "color",
-          query: "mono-white",
-        }),
+        body: {
+          name: "mono-dark",
+          base: {
+            hex: "#111315",
+            rgb: "rgb(17, 19, 21)",
+            hsl: "hsl(210, 10.526315789473683%, 7.450980392156863%)",
+          },
+          alpha: generateAlpha("#111315"),
+          tint: [],
+          shade: [],
+        },
+        font: {
+          name: "mono-white",
+          base: {
+            hex: "#f6f6f2",
+            rgb: "rgb(246, 246, 242)",
+            hsl: "hsl(60, 18.18181818181826%, 95.68627450980391%)",
+          },
+          alpha: generateAlpha("#f6f6f2"),
+          tint: [],
+          shade: [],
+        },
       };
     }
 
     return {
-      body: GetColorTokenBase({
-        source: json_design_tokens,
-        token_category: "color",
-        query: "mono-white",
-      }),
-      font: GetColorTokenBase({
-        source: json_design_tokens,
-        token_category: "color",
-        query: "mono-darkest",
-      }),
+      body: {
+        name: "mono-white",
+        base: {
+          hex: "#f6f6f2",
+          rgb: "rgb(246, 246, 242)",
+          hsl: "hsl(60, 18.18181818181826%, 95.68627450980391%)",
+        },
+        alpha: generateAlpha("#f6f6f2"),
+        tint: [],
+        shade: [],
+      },
+      font: {
+        name: "mono-dark",
+        base: {
+          hex: "#111315",
+          rgb: "rgb(17, 19, 21)",
+          hsl: "hsl(210, 10.526315789473683%, 7.450980392156863%)",
+        },
+        alpha: generateAlpha("#111315"),
+        tint: [],
+        shade: [],
+      },
     };
   };
 
@@ -64,14 +88,14 @@ export function AuthProviders({
         },
         variables: {
           borderRadius,
-          colorBackground: colors().body,
-          colorInputBackground: colors().body,
-          colorPrimary: `${colors().font}60`,
-          colorTextSecondary: colors().font,
-          colorTextOnPrimaryBackground: colors().body,
-          colorInputText: colors().font,
-          colorNeutral: colors().font,
-          colorText: colors().font,
+          colorBackground: colors().body.base.hex,
+          colorInputBackground: colors().body.base.hex,
+          colorPrimary: `${colors().font.base.hex}60`,
+          colorTextSecondary: colors().font.base.hex,
+          colorTextOnPrimaryBackground: colors().body.base.hex,
+          colorInputText: colors().font.base.hex,
+          colorNeutral: colors().font.base.hex,
+          colorText: colors().font.base.hex,
         },
       }}
     >
