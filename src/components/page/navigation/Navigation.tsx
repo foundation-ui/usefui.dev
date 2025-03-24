@@ -3,9 +3,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import { SignedIn, UserButton } from "@clerk/nextjs";
-import { Page } from "@foundation-ui/components";
-import { SettingsActions } from "@/components";
+// import { SignedIn, UserButton } from "@clerk/nextjs";
+import { Avatar, Page } from "@foundation-ui/components";
+import { SettingsActions } from "~/components";
 
 const NavWrapper = styled(Page.Menu)`
   border: none !important;
@@ -17,9 +17,19 @@ function Navigation() {
       <div className="flex align-center g-medium-60">
         <SettingsActions />
 
-        <SignedIn>
+        <Avatar
+          sizing="small"
+          className="fs-medium-10"
+          style={{
+            background: "var(--font-color)",
+            color: "var(--body-color)",
+          }}
+        >
+          JD
+        </Avatar>
+        {/* <SignedIn>
           <UserButton />
-        </SignedIn>
+        </SignedIn> */}
       </div>
     </NavWrapper>
   );

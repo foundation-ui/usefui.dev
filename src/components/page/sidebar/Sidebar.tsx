@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 import SidebarLinks from "./SidebarLinks";
 import { Button, Page, Toolbar } from "@foundation-ui/components";
-import { Icon } from "@/components";
+import { Icon } from "~/components";
 
 const SidebarWrapper = styled(Toolbar)`
   border: none !important;
