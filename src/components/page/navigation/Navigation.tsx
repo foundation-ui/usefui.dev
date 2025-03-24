@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 // import { SignedIn, UserButton } from "@clerk/nextjs";
 import { Avatar, Page } from "@foundation-ui/components";
-import { SettingsActions } from "~/components";
+import { SettingsActions } from "@/components";
 
 const NavWrapper = styled(Page.Menu)`
   border: none !important;

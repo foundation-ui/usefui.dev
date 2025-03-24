@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { usePathname, useRouter } from "next/navigation";
-import { APP_ROUTES } from "~/routes/routes";
+import { APP_ROUTES } from "@/routes/routes";
 
 import { Button } from "@foundation-ui/components";
 import { Icon } from "../..";

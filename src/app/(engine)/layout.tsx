@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Navigation, Sidebar, PatternBackground } from "~/components";
+import { Navigation, Sidebar, PatternBackground } from "@/components";
 import { Page, ScrollArea } from "@foundation-ui/components";
 
 function layout({

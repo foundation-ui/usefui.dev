@@ -4,7 +4,7 @@ import React from "react";
 
 import { ColorModeContext } from "@foundation-ui/tokens";
 import { Button } from "@foundation-ui/components";
-import { Icon } from "~/components";
+import { Icon } from "@/components";
 
 function ColorModeActions() {
   const { colorMode, setColorMode } = React.useContext(ColorModeContext);
