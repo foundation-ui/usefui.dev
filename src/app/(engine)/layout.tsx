@@ -1,7 +1,7 @@
 "use client";
 
-import { Navigation, Sidebar, PatternBackground } from "@/components";
 import { Page, ScrollArea } from "@foundation-ui/components";
+import { Navigation, Sidebar, Console, PatternBackground } from "@/components";
 
 function layout({
   children,
@@ -18,10 +18,16 @@ function layout({
             <Page.Wrapper
               $menus={1}
               $navigations={0.068} // Margins/Paddings
-              className="h-100 w-100 p-r-medium-60 p-b-medium-60"
+              className="h-100 w-100 p-r-medium-60"
             >
-              <ScrollArea as={PatternBackground} className="h-100 w-100">
-                {children}
+              <ScrollArea
+                as={PatternBackground}
+                className="h-100 w-100 grid justify-between"
+              >
+                <div className="h-100 w-100">{children}</div>
+                <div className="h-auto w-100 grid align-end">
+                  <Console />
+                </div>
               </ScrollArea>
             </Page.Wrapper>
           </section>

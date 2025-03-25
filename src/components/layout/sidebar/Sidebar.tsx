@@ -14,7 +14,7 @@ const SidebarWrapper = styled(Toolbar)`
 `;
 const SidebarMenuSection = styled.div`
   margin: 0 auto;
-  padding: var(--measurement-medium-30) var(--measurement-medium-50);
+  padding: var(--measurement-medium-40) 0;
   height: 100%;
   display: grid;
   justify-content: center;
@@ -56,7 +56,7 @@ function Sidebar() {
                 onClick={() => router.push("")}
               >
                 <Icon>
-                  <Icon.Help />
+                  <Icon.Settings />
                 </Icon>
               </Button>
             </SidebarActionsContainer>
