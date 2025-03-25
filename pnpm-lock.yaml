@@ -9,20 +9,20 @@ importers:
   .:
     dependencies:
       '@foundation-ui/components':
-        specifier: ^1.3.2
-        version: 1.3.2(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))
+        specifier: ^1.3.5
+        version: 1.3.5(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))
       '@foundation-ui/core':
-        specifier: ^1.2.0
-        version: 1.2.0(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))
+        specifier: ^1.2.2
+        version: 1.2.2(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))
       '@foundation-ui/hooks':
-        specifier: ^1.2.0
-        version: 1.2.0(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: ^1.2.2
+        version: 1.2.2(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@foundation-ui/styles':
-        specifier: ^1.3.0
-        version: 1.3.0(@types/styled-components@5.1.34)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))
+        specifier: ^1.3.2
+        version: 1.3.2(@types/styled-components@5.1.34)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))
       '@foundation-ui/tokens':
-        specifier: ^1.3.3
-        version: 1.3.3(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))
+        specifier: ^1.4.6
+        version: 1.4.6(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))
       '@hookform/resolvers':
         specifier: ^3.10.0
         version: 3.10.0(react-hook-form@7.54.2(react@19.0.0))
@@ -523,49 +523,49 @@ packages:
     resolution: {integrity: sha512-JubJ5B2pJ4k4yGxaNLdbjrnk9d/iDz6/q8wOilpIowd6PJPgaxCuHBnBszq7Ce2TyMrywm5r4PnKm6V3iiZF+g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@foundation-ui/components@1.3.2':
-    resolution: {integrity: sha512-g6ncmd09VL0mIqZLxVktw/ZeKbNw8lcc5vnzvns6uB3qFzJ0mv9bCb9Lr1j0rczO6FOgctcI+fdKPjPlwAb3DA==, tarball: https://npm.pkg.github.com/download/@foundation-ui/components/1.3.2/ff5615c7e53d40fb4fa51a18bbb14e83ab7fe1ee}
+  '@foundation-ui/components@1.3.5':
+    resolution: {integrity: sha512-2tDcOiab8gZMm1RmNwnRYEkfz7H8bwJ67Zfuwz5Jqkds2a2tl1B1cOuKa8oM1d6klyg/RQw1P+94O5JIL8SW9g==, tarball: https://npm.pkg.github.com/download/@foundation-ui/components/1.3.5/0940457ca731b396c0cfe4ddc76ee4b0eadebad0}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
       '@types/styled-components': '*'
-      react: ^16.8 || ^17.0 || ^18.0
-      react-dom: ^16.8 || ^17.0 || ^18.0
-      styled-components: ^5.0.0
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
+      styled-components: ^5.1.34
 
-  '@foundation-ui/core@1.2.0':
-    resolution: {integrity: sha512-LaqGanwLzyNlIOMMduFbM2PhaFjGVyr9XhCJvY9hYqSqBDWDeR+zK+op3WHMXaxIUeau5Iy/Tgytw7wzydTwfw==, tarball: https://npm.pkg.github.com/download/@foundation-ui/core/1.2.0/a04c268f3eff37c95fb7e0e69555e87c0616b8c1}
+  '@foundation-ui/core@1.2.2':
+    resolution: {integrity: sha512-HRGwcQqcHzJGYuSGaK1/bm1/mKIG3RkQQou9NrfDhYWg4hUVovMgQ8djgmMaAo9HHNZe5pc0xyrnnDpmuU6HRA==, tarball: https://npm.pkg.github.com/download/@foundation-ui/core/1.2.2/1246d7eb56e8775365b33140f40d738f66ea2041}
     peerDependencies:
-      '@types/react': '*'
-      '@types/react-dom': '*'
+      '@types/react': ^16.8 || ^17.0 || ^18.0 || ^19.0
+      '@types/react-dom': ^16.8 || ^17.0 || ^18.0 || ^19.0
       '@types/styled-components': '*'
-      react: ^16.8 || ^17.0 || ^18.0
-      react-dom: ^16.8 || ^17.0 || ^18.0
-      styled-components: ^5.0.0
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
+      styled-components: ^5.1.34
 
-  '@foundation-ui/hooks@1.2.0':
-    resolution: {integrity: sha512-1HhHirzz0FUh4YRdgQYi2iSHhd6iQcd8h7IKJhmM2/yFCfvI0syS+ztMNAkntNTKRFwWGYEQHh9pTlOYK/B6ZQ==, tarball: https://npm.pkg.github.com/download/@foundation-ui/hooks/1.2.0/8b6e66d501c365c860735ea01fd276c8875aadae}
+  '@foundation-ui/hooks@1.2.2':
+    resolution: {integrity: sha512-kFyWWZVzRJM226tJtWh6wKIN02OgJ4hO+QQorRdNmw3IUkEld/WvuLrJN/VjzU5vIX0SwGDdjz8Q/3R5kxlY8Q==, tarball: https://npm.pkg.github.com/download/@foundation-ui/hooks/1.2.2/504791607e97446dca898474f4ecd3fe9a55a8ef}
     peerDependencies:
-      '@types/react': '*'
-      '@types/react-dom': '*'
-      react: ^16.8 || ^17.0 || ^18.0
-      react-dom: ^16.8 || ^17.0 || ^18.0
+      '@types/react': ^16.8 || ^17.0 || ^18.0 || ^19.0
+      '@types/react-dom': ^16.8 || ^17.0 || ^18.0 || ^19.0
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
 
-  '@foundation-ui/styles@1.3.0':
-    resolution: {integrity: sha512-jLK5xLQ0WDrbyjXR7Ji/tfaTMAAhhCpmOqurvzEUPUTmKUqPSj9LOAmUDks67Rk499O7QjGj23bYa/yRRaw3fQ==, tarball: https://npm.pkg.github.com/download/@foundation-ui/styles/1.3.0/5b146a4f67cfb2e2a5e23057e33394f2431be949}
+  '@foundation-ui/styles@1.3.2':
+    resolution: {integrity: sha512-Q6M8f188yXiT8dhuXb38lrpS20XnBX20H7MOGquILDPNXjK3Qr850E4Ut3MYazEIlATr5ZW9odYB8LyYqY6wcw==, tarball: https://npm.pkg.github.com/download/@foundation-ui/styles/1.3.2/ffe3718045c0d084c553658bf90e5dcdd3aab91c}
     peerDependencies:
       '@types/styled-components': '*'
-      styled-components: ^5.0.0
+      styled-components: ^5.1.34
 
-  '@foundation-ui/tokens@1.3.3':
-    resolution: {integrity: sha512-ejvAhBsmal4nMEtLOVtR4A1ah0WH5bS5QNo4B+9k1mvF2w61GBGfn2CUvWI8KNeZ3bMESvWhUdForILZJgvedQ==, tarball: https://npm.pkg.github.com/download/@foundation-ui/tokens/1.3.3/9fad70312718bd78f69c7c0413ed4634cc48c3f1}
+  '@foundation-ui/tokens@1.4.6':
+    resolution: {integrity: sha512-3uYoZzrv9tz1OhbrPV4fDtXdaOnZxnCazo79rSMz4yiTGQZtIn07dioLJzCCSDIeb01nLcFbFGTpYTW5j1zX7Q==, tarball: https://npm.pkg.github.com/download/@foundation-ui/tokens/1.4.6/b8c85cc31e32095512b925b392ddc42d413b25c4}
     peerDependencies:
-      '@types/react': '*'
-      '@types/react-dom': '*'
+      '@types/react': ^16.8 || ^17.0 || ^18.0 || ^19.0
+      '@types/react-dom': ^16.8 || ^17.0 || ^18.0 || ^19.0
       '@types/styled-components': '*'
-      react: ^16.8 || ^17.0 || ^18.0
-      react-dom: ^16.8 || ^17.0 || ^18.0
-      styled-components: ^5.0.0
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
+      styled-components: ^5.1.34
 
   '@hookform/resolvers@3.10.0':
     resolution: {integrity: sha512-79Dv+3mDF7i+2ajj7SkypSKHhl1cbln1OGavqrsF7p6mbUv11xpqpacPsGDCTRvCSjEEIez2ef1NveSVL3b0Ag==}
@@ -2742,7 +2742,7 @@ snapshots:
       '@eslint/core': 0.12.0
       levn: 0.4.1
 
-  '@foundation-ui/components@1.3.2(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))':
+  '@foundation-ui/components@1.3.5(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))':
     dependencies:
       '@types/react': 19.0.12
       '@types/react-dom': 19.0.4(@types/react@19.0.12)
@@ -2751,9 +2751,9 @@ snapshots:
       react-dom: 19.0.0(react@19.0.0)
       styled-components: 5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0)
 
-  '@foundation-ui/core@1.2.0(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))':
+  '@foundation-ui/core@1.2.2(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))':
     dependencies:
-      '@foundation-ui/hooks': 1.2.0(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@foundation-ui/hooks': 1.2.2(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@types/react': 19.0.12
       '@types/react-dom': 19.0.4(@types/react@19.0.12)
       '@types/styled-components': 5.1.34
@@ -2761,19 +2761,19 @@ snapshots:
       react-dom: 19.0.0(react@19.0.0)
       styled-components: 5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0)
 
-  '@foundation-ui/hooks@1.2.0(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@foundation-ui/hooks@1.2.2(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@types/react': 19.0.12
       '@types/react-dom': 19.0.4(@types/react@19.0.12)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@foundation-ui/styles@1.3.0(@types/styled-components@5.1.34)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))':
+  '@foundation-ui/styles@1.3.2(@types/styled-components@5.1.34)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))':
     dependencies:
       '@types/styled-components': 5.1.34
       styled-components: 5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0)
 
-  '@foundation-ui/tokens@1.3.3(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))':
+  '@foundation-ui/tokens@1.4.6(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react-is@16.13.1)(react@19.0.0))':
     dependencies:
       '@types/react': 19.0.12
       '@types/react-dom': 19.0.4(@types/react@19.0.12)
