@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Button, Field, Toolbar } from "@foundation-ui/components";
+import { Button, Field, Toolbar, Tooltip } from "@foundation-ui/components";
 import { Icon } from "@/components/common/Icons";
 
 const ConsoleWrapper = styled(Toolbar)`
@@ -41,6 +41,7 @@ function Console() {
             <Icon viewBox="0 0 16 16">
               <Icon.Terminal />
             </Icon>
+            <small className="opacity-default-30">Console</small>
           </Toolbar.Trigger>
 
           <div className="flex align-center g-medium-30">
@@ -54,19 +55,25 @@ function Console() {
                 />
               </Field.Root>
             </form>
-            <Button variant="ghost" sizing="small">
-              <Icon>
-                <Icon.Deleted />
-              </Icon>
-            </Button>
+            <Tooltip content="Clear">
+              <Button variant="ghost" sizing="small">
+                <Icon>
+                  <Icon.Deleted />
+                </Icon>
+              </Button>
+            </Tooltip>
+
             <NoInteractText className="fs-medium-20 opacity-default-10">
               |
             </NoInteractText>
-            <Toolbar.Trigger variant="ghost">
-              <Icon>
-                <Icon.DoubleChevron />
-              </Icon>
-            </Toolbar.Trigger>
+
+            <Tooltip content="Collapse">
+              <Toolbar.Trigger variant="ghost">
+                <Icon>
+                  <Icon.DoubleChevron />
+                </Icon>
+              </Toolbar.Trigger>
+            </Tooltip>
           </div>
         </Toolbar.Item>
 
