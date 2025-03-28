@@ -3,10 +3,14 @@
 import React from "react";
 import styled from "styled-components";
 
-import { useRouter } from "next/navigation";
-
 import SidebarLinks from "./SidebarLinks";
-import { Button, Page, Toolbar } from "@foundation-ui/components";
+import {
+  Avatar,
+  Button,
+  Page,
+  Toolbar,
+  Tooltip,
+} from "@foundation-ui/components";
 import { Icon } from "@/components";
 
 const SidebarWrapper = styled(Toolbar)`
@@ -27,8 +31,6 @@ const SidebarActionsContainer = styled.div`
 `;
 
 function Sidebar() {
-  const router = useRouter();
-
   return (
     <Toolbar.Root>
       <SidebarWrapper
@@ -40,25 +42,33 @@ function Sidebar() {
         <Page.Wrapper $navigations={0.4} $menus={0}>
           <SidebarMenuSection>
             <Toolbar.Section showoncollapse className="h-100">
-              <div className="grid g-large-10 align-center justify-center">
-                <Icon viewBox="0 0 267 570" height={28} width={28}>
-                  <Icon.Foundation />
-                </Icon>
+              <div className="grid g-medium-60 align-center justify-center">
+                <Avatar
+                  sizing="small"
+                  style={{ background: "var(--alpha-purple-30)" }}
+                >
+                  <Icon
+                    viewBox="0 0 24 24"
+                    fill="var(--color-purple)"
+                    height={24}
+                    width={24}
+                  >
+                    <Icon.Incognito />
+                  </Icon>
+                </Avatar>
 
                 <SidebarLinks />
               </div>
             </Toolbar.Section>
 
             <SidebarActionsContainer>
-              <Button
-                className="fs-medium-20"
-                variant="ghost"
-                onClick={() => router.push("")}
-              >
-                <Icon>
-                  <Icon.Settings />
-                </Icon>
-              </Button>
+              <Tooltip content="Support">
+                <Button sizing="small" variant="ghost" disabled>
+                  <Icon>
+                    <Icon.Help />
+                  </Icon>
+                </Button>
+              </Tooltip>
             </SidebarActionsContainer>
           </SidebarMenuSection>
         </Page.Wrapper>
