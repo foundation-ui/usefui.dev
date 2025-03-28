@@ -1,5 +1,6 @@
 "use client";
 
+import { Console } from "@/features";
 import { Navigation, Sidebar, PatternBackground } from "@/components";
 import { Page, ScrollArea } from "@foundation-ui/components";
 
@@ -18,10 +19,16 @@ function layout({
             <Page.Wrapper
               $menus={1}
               $navigations={0.068} // Margins/Paddings
-              className="h-100 w-100 p-r-medium-60 p-b-medium-60"
+              className="h-100 w-100 p-r-medium-60"
             >
-              <ScrollArea as={PatternBackground} className="h-100 w-100">
-                {children}
+              <ScrollArea
+                className="h-100 w-100 flex justify-between"
+                style={{ flexDirection: "column" }}
+              >
+                <PatternBackground className="h-100 w-100">
+                  {children}
+                </PatternBackground>
+                <Console />
               </ScrollArea>
             </Page.Wrapper>
           </section>
