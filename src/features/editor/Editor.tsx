@@ -35,6 +35,8 @@ function Editor({
   const [value, setValue] = React.useState<string>(defaultValue);
   const [error, setError] = React.useState<string | null>(null);
 
+  const deferredEditorValue = React.useDeferredValue(value);
+
   return (
     <Portal container="portal-container">
       <DialogBody sizing="large">
@@ -43,7 +45,7 @@ function Editor({
           style={{ flexDirection: "column" }}
         >
           <EditorMenu
-            value={value}
+            value={deferredEditorValue}
             defaultValue={defaultValue}
             setValue={setValue}
             setError={setError}
@@ -51,7 +53,7 @@ function Editor({
           />
 
           <EditorBody
-            value={value}
+            value={deferredEditorValue}
             readOnly={readOnly}
             setValue={setValue}
             setError={setError}

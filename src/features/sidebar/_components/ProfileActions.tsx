@@ -1,28 +1,45 @@
 "use client";
 
 import React from "react";
+import styled from "styled-components";
+
+import { useColorMode } from "@foundation-ui/tokens";
 
 import {
   Avatar,
   Divider,
   DropdownMenu,
   Tooltip,
+  Button,
 } from "@foundation-ui/components";
 import { Icon } from "@foundation-ui/icons";
 
+const SilentItem = styled(DropdownMenu.Item)`
+  &:hover,
+  &:active {
+    background: transparent !important;
+    cursor: default;
+  }
+`;
+const AvatarXSmall = styled(Avatar)`
+  background: var(--font-color-alpha-10) !important;
+
+  max-width: var(--measurement-medium-60) !important;
+  max-height: var(--measurement-medium-60) !important;
+`;
+
 function ProfileActions() {
+  const { colorMode, setColorMode } = useColorMode();
+
   return (
     <DropdownMenu.Root>
       <DropdownMenu>
         <DropdownMenu.Trigger variant="ghost" rawicon>
-          <Avatar
-            sizing="small"
-            style={{ background: "var(--font-color-alpha-10)" }}
-          >
-            <Icon viewBox="0 0 24 24" height={48} width={48} fillOpacity={0.3}>
+          <AvatarXSmall sizing="small">
+            <Icon viewBox="0 0 24 24" height={32} width={32} fillOpacity={0.3}>
               <Icon.Incognito />
             </Icon>
-          </Avatar>
+          </AvatarXSmall>
         </DropdownMenu.Trigger>
 
         <DropdownMenu.Content>
@@ -35,6 +52,61 @@ function ProfileActions() {
             </p>
           </hgroup>
 
+          <Divider />
+
+          <SilentItem
+            radio
+            className="flex align-center g-medium-30 justify-between "
+          >
+            Mode
+            <span className="flex align-center g-medium-30">
+              <Tooltip content="Light">
+                <Button
+                  sizing="small"
+                  variant="ghost"
+                  rawicon={colorMode === "light"}
+                  onClick={() => setColorMode("light")}
+                >
+                  <Icon>
+                    <Icon.Light />
+                  </Icon>
+                </Button>
+              </Tooltip>
+              <Tooltip content="Dark">
+                <Button
+                  sizing="small"
+                  variant="ghost"
+                  rawicon={colorMode === "dark"}
+                  onClick={() => setColorMode("dark")}
+                >
+                  <Icon>
+                    <Icon.Dark />
+                  </Icon>
+                </Button>
+              </Tooltip>
+              <Tooltip content="System">
+                <Button
+                  sizing="small"
+                  variant="ghost"
+                  rawicon={colorMode === "system"}
+                  onClick={() => setColorMode("system")}
+                >
+                  <Icon>
+                    <Icon.Contrast />
+                  </Icon>
+                </Button>
+              </Tooltip>
+            </span>
+          </SilentItem>
+          <DropdownMenu.Item
+            className="flex align-center g-medium-30 justify-between "
+            disabled
+          >
+            Settings
+            <Icon>
+              <Icon.Settings />
+            </Icon>
+          </DropdownMenu.Item>
           <Divider />
           <DropdownMenu.Item className="flex align-center g-medium-30 justify-between fs-medium-10">
             Login

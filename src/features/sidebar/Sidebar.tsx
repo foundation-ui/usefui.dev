@@ -6,7 +6,7 @@ import styled from "styled-components";
 import ProfileActions from "./_components/ProfileActions";
 import SidebarLinks from "./_components/SidebarLinks";
 
-import { Button, Page, Toolbar, Tooltip } from "@foundation-ui/components";
+import { Page, Toolbar } from "@foundation-ui/components";
 import { Icon } from "@foundation-ui/icons";
 
 const SidebarWrapper = styled(Toolbar)`
@@ -39,19 +39,16 @@ function Sidebar() {
           <SidebarMenuSection>
             <Toolbar.Section showoncollapse className="h-100">
               <div className="grid g-medium-60 align-center justify-center">
-                <ProfileActions />
+                {/* <ProfileActions /> */}
+                <Icon viewBox="0 0 32 32" width={32} height={32}>
+                  <Icon.Foundation />
+                </Icon>
                 <SidebarLinks />
               </div>
             </Toolbar.Section>
 
             <SidebarActionsContainer>
-              <Tooltip content="Support">
-                <Button sizing="small" variant="ghost" disabled>
-                  <Icon>
-                    <Icon.Help />
-                  </Icon>
-                </Button>
-              </Tooltip>
+              <ProfileActions />
             </SidebarActionsContainer>
           </SidebarMenuSection>
         </Page.Wrapper>

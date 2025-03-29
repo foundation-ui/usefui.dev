@@ -6,8 +6,8 @@ type AppRouteProperties = {
 
 export const APP_ROUTES: AppRouteProperties[] = [
   {
-    key: "libraries",
-    label: "Libraries",
+    key: "library",
+    label: "Library",
     path: "/",
   },
   {
@@ -19,5 +19,10 @@ export const APP_ROUTES: AppRouteProperties[] = [
     key: "history",
     label: "History",
     path: "history",
+  },
+  {
+    key: "support",
+    label: "Support",
+    path: "support",
   },
 ];

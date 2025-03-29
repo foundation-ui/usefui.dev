@@ -27,17 +27,19 @@ function SidebarLinks() {
     <div className="grid align-center justify-center g-medium-30">
       <Dialog.Root>
         <Tooltip content="Editor">
-          <Dialog.Trigger sizing="small" variant="ghost">
-            <Icon>
-              <Icon.DataObject />
-            </Icon>
+          <Dialog.Trigger sizing="small" variant="border">
+            <span className="flex align-center justify-center p-y-small-30">
+              <Icon>
+                <Icon.Add />
+              </Icon>
+            </span>
           </Dialog.Trigger>
         </Tooltip>
 
         <Editor />
       </Dialog.Root>
 
-      <Divider />
+      <Divider className="m-y-medium-40" />
       <div className="grid align-start justify-center g-medium-60">
         {APP_ROUTES.map(({ key, path, label }) => {
           const isActiveRoute =
@@ -54,9 +56,10 @@ function SidebarLinks() {
                 disabled
               >
                 <AppLinkIcon as={Icon} fillOpacity={isActiveRoute ? 1 : 0.3}>
-                  {key === "libraries" && <Icon.Folders />}
+                  {key === "library" && <Icon.Models />}
                   {key === "integrations" && <Icon.Webhook />}
                   {key === "history" && <Icon.Activity />}
+                  {key === "support" && <Icon.Help />}
                 </AppLinkIcon>
               </Button>
             </Tooltip>

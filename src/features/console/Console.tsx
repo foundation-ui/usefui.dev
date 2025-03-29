@@ -39,7 +39,7 @@ function Console() {
       >
         <Toolbar.Item
           showfirstchild
-          className="flex align-center justify-between"
+          className="flex align-center justify-between p-y-medium-30"
         >
           <Tooltip content={`⇧ + ${hotkey}`}>
             <Toolbar.Trigger variant="ghost">

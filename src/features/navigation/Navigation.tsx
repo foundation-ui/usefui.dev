@@ -4,8 +4,6 @@ import React from "react";
 import styled from "styled-components";
 
 import NavigationLinks from "./_components/NavigationLinks";
-import PreferencesActions from "./_components/PreferencesActions";
-
 import { PageMenu } from "@foundation-ui/components";
 
 const NavWrapper = styled(PageMenu)`
@@ -16,7 +14,7 @@ const NavWrapper = styled(PageMenu)`
 function Navigation() {
   return (
     <NavWrapper className="flex justify-between align-center p-r-medium-60">
-      <PreferencesActions />
+      <h1 className="fs-medium-20">Library</h1>
       <NavigationLinks />
     </NavWrapper>
   );
