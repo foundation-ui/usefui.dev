@@ -3,8 +3,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import PreferencesActions from "./PreferencesActions";
-import NavigationLinks from "./NavigationLinks";
+import NavigationLinks from "./_components/NavigationLinks";
+import PreferencesActions from "./_components/PreferencesActions";
 
 import { PageMenu } from "@foundation-ui/components";
 
