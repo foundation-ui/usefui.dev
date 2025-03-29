@@ -1102,7 +1102,6 @@ const Incognito = () => {
 Incognito.displayName = "Icon.Incognito";
 
 /** viewBox="0 0 16 16" */
-
 const Terminal = () => {
   return (
     <path
@@ -1114,6 +1113,22 @@ const Terminal = () => {
 };
 Terminal.displayName = "Icon.Terminal";
 
+/** viewBox="0 0 18 18" */
+const Clerk = () => {
+  return (
+    <g>
+      <ellipse cx="9" cy="9" rx="2.812" ry="2.813" />
+      <path d="M14.067 15.659c.24.24.216.635-.066.824A8.957 8.957 0 0 1 9 18a8.957 8.957 0 0 1-5.002-1.517.533.533 0 0 1-.066-.824l2.055-2.055a.608.608 0 0 1 .708-.096A5.04 5.04 0 0 0 9 14.062c.83 0 1.614-.2 2.305-.554a.608.608 0 0 1 .708.096l2.055 2.055Z" />
+      <path
+        d="M14.002 1.517a.533.533 0 0 1 .066.824l-2.055 2.055a.608.608 0 0 1-.708.096 5.062 5.062 0 0 0-6.814 6.814c.12.233.09.521-.095.707l-2.055 2.055a.534.534 0 0 1-.824-.066A9 9 0 0 1 14.002 1.517Z"
+        opacity=".5"
+      />
+    </g>
+  );
+};
+Clerk.displayName = "Icon.Clerk";
+
+Icon.Clerk = Clerk;
 Icon.Terminal = Terminal;
 Icon.Foundation = Foundation;
 Icon.Function = Function;

@@ -3,14 +3,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import SidebarLinks from "./SidebarLinks";
-import {
-  Avatar,
-  Button,
-  Page,
-  Toolbar,
-  Tooltip,
-} from "@foundation-ui/components";
+import ProfileActions from "./_components/ProfileActions";
+import SidebarLinks from "./_components/SidebarLinks";
+
+import { Button, Page, Toolbar, Tooltip } from "@foundation-ui/components";
 import { Icon } from "@/components";
 
 const SidebarWrapper = styled(Toolbar)`
@@ -43,20 +39,7 @@ function Sidebar() {
           <SidebarMenuSection>
             <Toolbar.Section showoncollapse className="h-100">
               <div className="grid g-medium-60 align-center justify-center">
-                <Avatar
-                  sizing="small"
-                  style={{ background: "var(--alpha-purple-30)" }}
-                >
-                  <Icon
-                    viewBox="0 0 24 24"
-                    fill="var(--color-purple)"
-                    height={24}
-                    width={24}
-                  >
-                    <Icon.Incognito />
-                  </Icon>
-                </Avatar>
-
+                <ProfileActions />
                 <SidebarLinks />
               </div>
             </Toolbar.Section>
