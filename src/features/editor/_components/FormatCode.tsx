@@ -1,0 +1,42 @@
+"use client";
+
+import React from "react";
+
+import { Icon } from "@/components";
+import { Tooltip, Button } from "@foundation-ui/components";
+
+type FormatCodeProps = {
+  value: string;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
+  setError: React.Dispatch<React.SetStateAction<string | null>>;
+  onChange?: (value: string) => void;
+};
+
+function FormatCode({ value, setValue, setError, onChange }: FormatCodeProps) {
+  const formatJsonValue = () => {
+    try {
+      const formatted = JSON.stringify(JSON.parse(value), null, 2);
+      setValue(formatted);
+      setError(null);
+      onChange?.(formatted);
+    } catch (e) {
+      if (e instanceof Error) {
+        setError(e.message);
+      } else {
+        setError("Invalid JSON");
+      }
+    }
+  };
+
+  return (
+    <Tooltip content="Beautify">
+      <Button variant="ghost" onClick={formatJsonValue} rawicon>
+        <Icon fill="var(--color-yellow)">
+          <Icon.Sparkles />
+        </Icon>
+      </Button>
+    </Tooltip>
+  );
+}
+
+export default FormatCode;
