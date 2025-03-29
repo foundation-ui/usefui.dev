@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import SolutionsLinks from "./SolutionsLinks";
 
 import { Button } from "@foundation-ui/components";
 import { Icon } from "@foundation-ui/icons";
@@ -9,17 +10,7 @@ import { TextMuted } from "@/components/shared/TextMuted";
 function NavigationLinks() {
   return (
     <div className="flex align-center g-medium-30">
-      <Button variant="ghost" disabled>
-        <span className="fs-medium-10">Components</span>
-      </Button>
-      <TextMuted className="fs-medium-20 opacity-default-10">|</TextMuted>
-      <Button variant="ghost" disabled>
-        <span className="fs-medium-10">Analytics</span>
-      </Button>
-      <TextMuted className="fs-medium-20 opacity-default-10">|</TextMuted>
-      <Button variant="ghost" disabled>
-        <span className="fs-medium-10">CLI</span>
-      </Button>
+      <SolutionsLinks />
       <TextMuted className="fs-medium-20 opacity-default-10">|</TextMuted>
       <Button variant="ghost" disabled>
         <span className="fs-medium-10">Docs</span>
