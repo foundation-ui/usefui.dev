@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { useColorMode } from "@foundation-ui/tokens";
 
 import { Button, DropdownMenu, Tooltip } from "@foundation-ui/components";
-import { Icon } from "@/components";
+import { Icon } from "@foundation-ui/icons";
 
 const SilentItem = styled(DropdownMenu.Item)`
   &:hover,
@@ -37,8 +37,7 @@ function PreferencesActions() {
             radio
             className="flex align-center g-medium-30 justify-between "
           >
-            <span className="fs-medium-10">Mode</span>
-
+            Mode
             <span className="flex align-center g-medium-30">
               <Tooltip content="Light">
                 <Button
@@ -83,7 +82,7 @@ function PreferencesActions() {
             className="flex align-center g-medium-30 justify-between "
             disabled
           >
-            <span className="fs-medium-10">Shortcuts</span>
+            Shortcuts
             <Icon>
               <Icon.Keyboard />
             </Icon>

@@ -5,7 +5,8 @@ import styled from "styled-components";
 import Link from "next/link";
 
 import { Page } from "@foundation-ui/components";
-import { Icon, AppLink } from "@/components";
+import { Icon } from "@foundation-ui/icons";
+import { AppLink } from "@/components";
 
 const Hgroup = styled.hgroup`
   text-align: center;

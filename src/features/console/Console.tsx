@@ -6,7 +6,7 @@ import styled from "styled-components";
 import ConsoleActions from "./_components/ConsoleActions";
 
 import { Toolbar, Tooltip } from "@foundation-ui/components";
-import { Icon } from "@/components/shared/Icons";
+import { Icon } from "@foundation-ui/icons";
 
 const ConsoleWrapper = styled(Toolbar)`
   border: none !important;

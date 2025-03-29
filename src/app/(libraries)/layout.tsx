@@ -1,8 +1,8 @@
 "use client";
 
-import { Console } from "@/features";
-import { Navigation, Sidebar, PatternBackground } from "@/components";
+import { Navigation, Sidebar, Console } from "@/features";
 import { Page, ScrollArea } from "@foundation-ui/components";
+import { PatternBackground } from "@/components";
 
 function layout({
   children,

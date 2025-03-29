@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Icon } from "@/components";
+import { Icon } from "@foundation-ui/icons";
 import { Tooltip, Button } from "@foundation-ui/components";
 
 type FormatCodeProps = {
@@ -30,8 +30,8 @@ function FormatCode({ value, setValue, setError, onChange }: FormatCodeProps) {
 
   return (
     <Tooltip content="Beautify">
-      <Button variant="ghost" onClick={formatJsonValue} rawicon>
-        <Icon fill="var(--color-yellow)">
+      <Button variant="ghost" onClick={formatJsonValue}>
+        <Icon>
           <Icon.Sparkles />
         </Icon>
       </Button>

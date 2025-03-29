@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Icon } from "@/components";
+import { Icon } from "@foundation-ui/icons";
 import { Badge } from "@foundation-ui/components";
 
 function EditorLogger({ error }: { error: string | null }) {

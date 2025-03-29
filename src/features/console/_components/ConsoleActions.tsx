@@ -2,9 +2,9 @@
 
 import React from "react";
 
-import { Icon } from "@/components";
 import { TextMuted } from "@/components/shared/TextMuted";
 import { Field, Tooltip, Button, Toolbar } from "@foundation-ui/components";
+import { Icon } from "@foundation-ui/icons";
 
 function ConsoleActions() {
   return (
