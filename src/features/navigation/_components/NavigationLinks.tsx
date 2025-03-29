@@ -3,7 +3,7 @@
 import React from "react";
 
 import { Button } from "@foundation-ui/components";
-import { Icon } from "@/components";
+import { Icon } from "@foundation-ui/icons";
 import { TextMuted } from "@/components/shared/TextMuted";
 
 function NavigationLinks() {

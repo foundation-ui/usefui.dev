@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { useColorMode } from "@foundation-ui/tokens";
 
 import { Button, DropdownMenu, Tooltip } from "@foundation-ui/components";
-import { Icon } from "@/components";
+import { Icon } from "@foundation-ui/icons";
 
 const SilentItem = styled(DropdownMenu.Item)`
   &:hover,

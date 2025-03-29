@@ -4,7 +4,7 @@ import React from "react";
 import EmptySection from "@/components/shared/EmptySection";
 
 import { Editor } from "@/features";
-import { Icon } from "@/components";
+import { Icon } from "@foundation-ui/icons";
 import { Dialog } from "@foundation-ui/components";
 
 function LibrairiesViewer() {

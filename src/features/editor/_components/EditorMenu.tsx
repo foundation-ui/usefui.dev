@@ -8,9 +8,9 @@ import ResetCode from "./ResetCode";
 import CopyCode from "./CopyCode";
 import RunCode from "./RunCode";
 
-import { Icon } from "@/components";
 import { TextMuted } from "@/components/shared/TextMuted";
 import { Dialog } from "@foundation-ui/components";
+import { Icon } from "@foundation-ui/icons";
 
 import { engine_template } from "@foundation-ui/tokens";
 

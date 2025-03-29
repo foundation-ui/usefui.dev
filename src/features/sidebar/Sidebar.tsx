@@ -7,7 +7,7 @@ import ProfileActions from "./_components/ProfileActions";
 import SidebarLinks from "./_components/SidebarLinks";
 
 import { Button, Page, Toolbar, Tooltip } from "@foundation-ui/components";
-import { Icon } from "@/components";
+import { Icon } from "@foundation-ui/icons";
 
 const SidebarWrapper = styled(Toolbar)`
   border: none !important;

@@ -3,7 +3,7 @@
 import React from "react";
 
 import { DropdownMenu, Tooltip } from "@foundation-ui/components";
-import { Icon } from "@/components";
+import { Icon } from "@foundation-ui/icons";
 
 function FunctionIcons({ active }: { active: string[] }) {
   console.log(active.includes("Test"));

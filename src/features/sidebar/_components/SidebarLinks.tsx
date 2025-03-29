@@ -7,7 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { APP_ROUTES } from "@/routes/routes";
 
 import { Editor } from "@/features";
-import { Icon } from "@/components";
+import { Icon } from "@foundation-ui/icons";
 import { Button, Dialog, Divider, Tooltip } from "@foundation-ui/components";
 
 const AppLinkIcon = styled.svg`

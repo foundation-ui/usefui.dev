@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Icon } from "@/components";
+import { Icon } from "@foundation-ui/icons";
 import { Tooltip, Button } from "@foundation-ui/components";
 
 import { engine_template } from "@foundation-ui/tokens";
