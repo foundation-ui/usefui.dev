@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import FunctionSelector from "./FunctionSelector";
 import FormatCode from "./FormatCode";
 import ResetCode from "./ResetCode";
 import CopyCode from "./CopyCode";
@@ -36,6 +37,9 @@ function EditorMenu({
   return (
     <nav className="flex align-start justify-between m-b-medium-60">
       <div className="flex g-medium-10 align-center">
+        <FunctionSelector />
+
+        <TextMuted className="opacity-default-10 p-x-medium-30">|</TextMuted>
         <ResetCode
           defaultValue={defaultValue}
           setValue={setValue}
