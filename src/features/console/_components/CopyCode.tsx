@@ -5,10 +5,18 @@ import React from "react";
 import { Icon } from "@foundation-ui/icons";
 import { Tooltip, Button } from "@foundation-ui/components";
 
-function CopyCode({ value, delay = 1000 }: { value: string; delay?: number }) {
+function CopyCode({
+  value,
+  delay = 1000,
+}: {
+  value: string | null;
+  delay?: number;
+}) {
   const [copied, setCopied] = React.useState(false);
 
   const copyToClipboard = async () => {
+    if (!value) return;
+
     await navigator.clipboard.writeText(value).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), delay);
@@ -19,7 +27,11 @@ function CopyCode({ value, delay = 1000 }: { value: string; delay?: number }) {
 
   return (
     <Tooltip content={copied ? "Copied!" : "Copy"}>
-      <Button variant="ghost" onClick={copyToClipboard}>
+      <Button
+        variant="ghost"
+        onClick={copyToClipboard}
+        disabled={typeof value === typeof null}
+      >
         <Icon>
           <Icon.Copy />
         </Icon>

@@ -12,7 +12,12 @@ function NavigationLinks() {
     <div className="flex align-center g-medium-30">
       <SolutionsLinks />
       <TextMuted className="fs-medium-20 opacity-default-10">|</TextMuted>
-      <Button variant="ghost" disabled>
+      <Button
+        variant="ghost"
+        onClick={() =>
+          window.open("https://github.com/foundation-ui/token-engine")
+        }
+      >
         <span className="fs-medium-10">Docs</span>
       </Button>
       <TextMuted className="fs-medium-20 opacity-default-10">|</TextMuted>

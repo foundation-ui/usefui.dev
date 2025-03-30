@@ -21,6 +21,11 @@ export const APP_ROUTES: AppRouteProperties[] = [
     path: "history",
   },
   {
+    key: "feedback",
+    label: "Feedback",
+    path: "feedback",
+  },
+  {
     key: "support",
     label: "Support",
     path: "support",

@@ -24,20 +24,27 @@ function SolutionsLinks() {
           </Icon>
         </DropdownMenu.Trigger>
 
-        <DropdownMenu.Content sizing="medium">
-          <SilentItem className="grid">
+        <DropdownMenu.Content sizing="large">
+          <SilentItem className="grid" disabled>
+            Tokens Engine
+            <span className="fs-medium-10 opacity-default-30">
+              JSON Based Design Tokens Engine
+            </span>
+          </SilentItem>
+          <SilentItem className="grid" disabled>
             Components
             <span className="fs-medium-10 opacity-default-30">
               Production Ready React Components
             </span>
           </SilentItem>
-          <SilentItem className="grid">
+          <SilentItem className="grid" disabled>
             Behavior Analytics
             <span className="fs-medium-10 opacity-default-30">
-              Pogrammatic usage of Behavior Analytics
+              Programmatic usage of Behavior Analytics
             </span>
           </SilentItem>
-          <SilentItem className="grid">
+
+          <SilentItem className="grid" disabled>
             CLI
             <span className="fs-medium-10 opacity-default-30">
               Start React, NextJS and Electron Apps

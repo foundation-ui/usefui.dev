@@ -22,7 +22,7 @@ const EmptySectionWrapper = styled.div`
 
 function EmptySection({ title, description, action, icon }: EmptySectionProps) {
   return (
-    <EmptySectionWrapper>
+    <EmptySectionWrapper className="h-auto">
       <Badge variant="secondary" className="h-auto m-b-medium-60 ">
         {icon}
       </Badge>

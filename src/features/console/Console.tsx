@@ -4,60 +4,57 @@ import React from "react";
 import styled from "styled-components";
 
 import ConsoleActions from "./_components/ConsoleActions";
+import ConsoleBody from "./_components/ConsoleBody";
 
 import { Toolbar, Tooltip } from "@foundation-ui/components";
 import { Icon } from "@foundation-ui/icons";
 
 const ConsoleWrapper = styled(Toolbar)`
   border: none !important;
-  padding: var(--measurement-medium-60) 0 !important;
   menu {
     align-self: center !important;
   }
 `;
-const ConsoleBody = styled.div`
-  border-top: var(--measurement-small-30) solid var(--font-color-alpha-10);
-  margin-top: var(--measurement-medium-30);
-  padding: var(--measurement-medium-30) 0;
-  height: 100%;
-  width: 100%;
-`;
 
-function Console() {
-  const hotkey = "C";
-  const bindkey = "shiftKey";
+export type ConsoleProps = {
+  mode: "meta" | "error";
+  value: string | null;
+};
+
+function Console({ mode, value }: ConsoleProps) {
+  const hotkey = "<";
+  const bindkey = "ctrlKey";
+  const bindKeyLabel = bindkey.toLowerCase().replace("key", "").toUpperCase();
 
   return (
     <Toolbar.Root>
       <ConsoleWrapper
         side="bottom"
-        sizing="large"
-        height="display"
+        sizing="medium"
+        height="auto"
         shortcut
         hotkey={hotkey}
         bindkey={bindkey}
+        defaultOpen
       >
         <Toolbar.Item
           showfirstchild
           className="flex align-center justify-between p-y-medium-30"
         >
-          <Tooltip content={`⇧ + ${hotkey}`}>
+          <Tooltip content={`${bindKeyLabel} + ${hotkey}`}>
             <Toolbar.Trigger variant="ghost">
               <Icon viewBox="0 0 16 16">
                 <Icon.Terminal />
               </Icon>
+              <span className="fs-medium-10">Console</span>
             </Toolbar.Trigger>
           </Tooltip>
 
-          <ConsoleActions />
+          <ConsoleActions value={value} />
         </Toolbar.Item>
 
         <Toolbar.Section>
-          <ConsoleBody>
-            <p className="fs-medium-10 opacity-default-30">
-              No logs available to display...
-            </p>
-          </ConsoleBody>
+          <ConsoleBody mode={mode} value={value} />
         </Toolbar.Section>
       </ConsoleWrapper>
     </Toolbar.Root>

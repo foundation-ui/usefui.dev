@@ -87,7 +87,7 @@ function EditorBody({
   );
 
   return (
-    <EditorWrapper className="m-b-medium-60 h-100">
+    <EditorWrapper className="h-100 w-100">
       <CodeMirror
         value={value}
         height="100%"

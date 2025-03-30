@@ -24,9 +24,9 @@ function SidebarLinks() {
   const pathname = usePathname();
 
   return (
-    <div className="grid align-center justify-center g-medium-30">
+    <div className="grid align-center justify-center g-medium-60">
       <Dialog.Root>
-        <Tooltip content="Editor">
+        <Tooltip content="New Library">
           <Dialog.Trigger sizing="small" variant="border">
             <span className="flex align-center justify-center p-y-small-30">
               <Icon>
@@ -39,7 +39,6 @@ function SidebarLinks() {
         <Editor />
       </Dialog.Root>
 
-      <Divider className="m-y-medium-40" />
       <div className="grid align-start justify-center g-medium-60">
         {APP_ROUTES.map(({ key, path, label }) => {
           const isActiveRoute =
@@ -53,13 +52,14 @@ function SidebarLinks() {
                 variant="ghost"
                 onClick={() => router.push(path)}
                 rawicon
-                disabled
+                disabled={key !== "library"}
               >
                 <AppLinkIcon as={Icon} fillOpacity={isActiveRoute ? 1 : 0.3}>
                   {key === "library" && <Icon.Models />}
                   {key === "integrations" && <Icon.Webhook />}
                   {key === "history" && <Icon.Activity />}
                   {key === "support" && <Icon.Help />}
+                  {key === "feedback" && <Icon.Chat />}
                 </AppLinkIcon>
               </Button>
             </Tooltip>

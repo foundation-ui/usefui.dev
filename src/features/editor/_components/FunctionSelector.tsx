@@ -65,8 +65,10 @@ function FunctionSelector() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu>
-        <DropdownMenu.Trigger variant="ghost">
-          <span className="fs-medium-10">Generate Library</span>
+        <DropdownMenu.Trigger variant="ghost" disabled>
+          <span className="fs-medium-10">
+            <span className="opacity-default-30">Create</span>:Library
+          </span>
           <Icon>
             <Icon.DoubleChevron />
           </Icon>
