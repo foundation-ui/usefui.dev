@@ -24,7 +24,7 @@ function SolutionsLinks() {
           </Icon>
         </DropdownMenu.Trigger>
 
-        <DropdownMenu.Content sizing="medium">
+        <DropdownMenu.Content sizing="large">
           <SilentItem className="grid">
             Tokens Engine
             <span className="fs-medium-10 opacity-default-30">

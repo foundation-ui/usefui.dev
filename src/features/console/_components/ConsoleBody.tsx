@@ -3,7 +3,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import { TextBlink } from "@/components";
 import type { ConsoleProps } from "../Console";
 
 const ConsoleBodyWrapper = styled.div`
@@ -27,16 +26,7 @@ const ConsoleBodyWrapper = styled.div`
 function ConsoleBody({ mode, value }: ConsoleProps) {
   return (
     <ConsoleBodyWrapper data-mode={mode}>
-      <code>
-        {value ? (
-          <b className="opacity-default-30">{">"}</b>
-        ) : (
-          <TextBlink as="b" className="opacity-default-30 fs-small-60">
-            {">"}
-          </TextBlink>
-        )}
-        &nbsp;{value}
-      </code>
+      <code>{value}</code>
     </ConsoleBodyWrapper>
   );
 }
