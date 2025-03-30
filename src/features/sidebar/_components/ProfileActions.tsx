@@ -108,7 +108,10 @@ function ProfileActions() {
             </Icon>
           </DropdownMenu.Item>
           <Divider />
-          <DropdownMenu.Item className="flex align-center g-medium-30 justify-between fs-medium-10">
+          <DropdownMenu.Item
+            className="flex align-center g-medium-30 justify-between fs-medium-10"
+            disabled
+          >
             Login
             <Tooltip content="Powered by Clerk">
               <Icon viewBox="0 0 18 18">
