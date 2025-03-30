@@ -51,7 +51,7 @@ const mockItems = [
 function LibraryPage() {
   return (
     <section className="w-100 h-100">
-      <MaxWidthContainer className="grid g-medium-30 p-large-10">
+      <MaxWidthContainer className="grid g-medium-30 p-medium-60">
         {mockItems.map((item, key) => (
           <LibraryCard
             key={key}
