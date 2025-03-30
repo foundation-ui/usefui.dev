@@ -59,6 +59,7 @@ function SidebarLinks() {
                   {key === "integrations" && <Icon.Webhook />}
                   {key === "history" && <Icon.Activity />}
                   {key === "support" && <Icon.Help />}
+                  {key === "feedback" && <Icon.Chat />}
                 </AppLinkIcon>
               </Button>
             </Tooltip>
