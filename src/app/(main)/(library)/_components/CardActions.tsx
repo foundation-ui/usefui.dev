@@ -1,11 +1,14 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 
 import { Divider, DropdownMenu } from "@foundation-ui/components";
 import { Icon } from "@foundation-ui/icons";
 
-function CardActions() {
+function CardActions({ libraryId }: { libraryId: string }) {
+  const router = useRouter();
+
   return (
     <DropdownMenu.Root>
       <DropdownMenu>
@@ -17,9 +20,9 @@ function CardActions() {
         <DropdownMenu.Content sizing="medium">
           <DropdownMenu.Item
             className="flex align-center justify-between g-medium-10"
-            disabled
+            onClick={() => router.push(libraryId)}
           >
-            <span className="fs-medium-10">Preview</span>
+            Preview
             <Icon>
               <Icon.Visible />
             </Icon>
@@ -29,7 +32,7 @@ function CardActions() {
             className="flex align-center justify-between g-medium-10"
             disabled
           >
-            <span className="fs-medium-10">Edit</span>
+            Edit
             <Icon>
               <Icon.UpdateData />
             </Icon>
@@ -38,7 +41,7 @@ function CardActions() {
             className="flex align-center justify-between g-medium-10"
             disabled
           >
-            <span className="fs-medium-10">Delete</span>
+            Delete
             <Icon>
               <Icon.Deleted />
             </Icon>
@@ -48,18 +51,9 @@ function CardActions() {
             className="flex align-center justify-between g-medium-10"
             disabled
           >
-            <span className="fs-medium-10">Open Pull Request</span>
+            Open Pull Request
             <Icon viewBox="0 0 14 14">
               <Icon.Github />
-            </Icon>
-          </DropdownMenu.Item>
-          <DropdownMenu.Item
-            className="flex align-center justify-between g-medium-10"
-            disabled
-          >
-            <span className="fs-medium-10">Sync with S3 Bucket</span>
-            <Icon viewBox="0 0 304 182">
-              <Icon.Aws />
             </Icon>
           </DropdownMenu.Item>
         </DropdownMenu.Content>

@@ -26,7 +26,7 @@ function SidebarLinks() {
   return (
     <div className="grid align-center justify-center g-medium-60">
       <Dialog.Root>
-        <Tooltip content="Editor">
+        <Tooltip content="New Library">
           <Dialog.Trigger sizing="small" variant="border">
             <span className="flex align-center justify-center p-y-small-30">
               <Icon>
@@ -52,7 +52,7 @@ function SidebarLinks() {
                 variant="ghost"
                 onClick={() => router.push(path)}
                 rawicon
-                disabled
+                disabled={key !== "library"}
               >
                 <AppLinkIcon as={Icon} fillOpacity={isActiveRoute ? 1 : 0.3}>
                   {key === "library" && <Icon.Models />}

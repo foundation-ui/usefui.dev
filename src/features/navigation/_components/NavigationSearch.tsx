@@ -23,6 +23,7 @@ function NavigationSearch() {
           variant="ghost"
           sizing="small"
           placeholder="Search in your library..."
+          disabled
         />
       </Field.Label>
     </Field.Root>

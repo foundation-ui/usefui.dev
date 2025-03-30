@@ -16,7 +16,7 @@ Visit [@fui/engine](https://foundation-ui.netlify.app/).
 ## TODO
 
 - [✅] Add Editor
+- [✅] Add Lib Details folder and boilerplate components
 - [ ] Add CI
 - [ ] Set up database with SingleStore and data model
-- [ ] Move folder open state to URL
 - [ ] Add Auth using Clerk

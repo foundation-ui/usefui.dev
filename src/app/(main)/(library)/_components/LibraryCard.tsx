@@ -12,7 +12,22 @@ const CardBody = styled.article`
   border: var(--measurement-small-30) solid var(--font-color-alpha-10);
   border-radius: var(--measurement-medium-30);
 
-  background-color: var(--body-color);
+  box-shadow: var(--measurement-small-30) var(--measurement-small-30)
+    var(--measurement-small-10) var(--alpha-mono-darkest-10);
+
+  background: var(--body-color);
+  background-image: linear-gradient(
+    45deg,
+    var(--body-color) 0%,
+    var(--contrast-color) 100%
+  );
+
+  will-change: box-shadow;
+  transition: ease-in-out 0.2s;
+
+  &:hover {
+    box-shadow: none;
+  }
 `;
 
 type LibraryCardProps = {
@@ -22,7 +37,9 @@ type LibraryCardProps = {
   description: string;
 
   lastUpdateAt: string;
+
   lastUpdateId: string;
+  libraryId: string;
 };
 
 function LibraryCard({
@@ -31,6 +48,7 @@ function LibraryCard({
   description,
   lastUpdateAt,
   lastUpdateId,
+  libraryId,
 }: LibraryCardProps) {
   return (
     <CardBody className="">
@@ -52,7 +70,7 @@ function LibraryCard({
           <span className="opacity-default-60">{lastUpdateAt}</span>&nbsp;
         </div>
 
-        <CardActions />
+        <CardActions libraryId={libraryId} />
       </footer>
     </CardBody>
   );
