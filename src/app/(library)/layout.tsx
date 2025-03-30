@@ -1,6 +1,6 @@
 "use client";
 
-import { Navigation, Sidebar, Console } from "@/features";
+import { Navigation, Sidebar } from "@/features";
 import { Page, ScrollArea } from "@foundation-ui/components";
 import { PatternBackground } from "@/components";
 
@@ -28,7 +28,6 @@ function layout({
                 <PatternBackground className="h-100 w-100">
                   {children}
                 </PatternBackground>
-                <Console />
               </ScrollArea>
             </Page.Wrapper>
           </section>

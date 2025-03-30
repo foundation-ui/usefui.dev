@@ -26,6 +26,12 @@ function SolutionsLinks() {
 
         <DropdownMenu.Content sizing="medium">
           <SilentItem className="grid">
+            Tokens Engine
+            <span className="fs-medium-10 opacity-default-30">
+              JSON Based Design Tokens Engine
+            </span>
+          </SilentItem>
+          <SilentItem className="grid">
             Components
             <span className="fs-medium-10 opacity-default-30">
               Production Ready React Components
@@ -34,7 +40,7 @@ function SolutionsLinks() {
           <SilentItem className="grid">
             Behavior Analytics
             <span className="fs-medium-10 opacity-default-30">
-              Pogrammatic usage of Behavior Analytics
+              Programmatic usage of Behavior Analytics
             </span>
           </SilentItem>
           <SilentItem className="grid">

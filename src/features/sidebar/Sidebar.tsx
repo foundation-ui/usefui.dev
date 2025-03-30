@@ -14,7 +14,7 @@ const SidebarWrapper = styled(Toolbar)`
 `;
 const SidebarMenuSection = styled.div`
   margin: 0 auto;
-  padding: var(--measurement-medium-40) 0;
+  padding: var(--measurement-medium-30) 0 0 0;
   height: 100%;
   display: grid;
   justify-content: center;
@@ -39,7 +39,6 @@ function Sidebar() {
           <SidebarMenuSection>
             <Toolbar.Section showoncollapse className="h-100">
               <div className="grid g-medium-60 align-center justify-center">
-                {/* <ProfileActions /> */}
                 <Icon viewBox="0 0 32 32" width={32} height={32}>
                   <Icon.Foundation />
                 </Icon>
