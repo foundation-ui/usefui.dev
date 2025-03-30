@@ -35,17 +35,15 @@ function Console({ mode, value }: ConsoleProps) {
         shortcut
         hotkey={hotkey}
         bindkey={bindkey}
+        defaultOpen
       >
         <Toolbar.Item
           showfirstchild
           className="flex align-center justify-between p-y-medium-30"
         >
           <Tooltip content={`${bindKeyLabel} + ${hotkey}`}>
-            <Toolbar.Trigger variant="ghost" rawicon>
-              <Icon
-                viewBox="0 0 16 16"
-                fill={Boolean(value) ? "var(--color-red)" : "currentColor"}
-              >
+            <Toolbar.Trigger variant="ghost">
+              <Icon viewBox="0 0 16 16">
                 <Icon.Terminal />
               </Icon>
               <span className="fs-medium-10">Console</span>

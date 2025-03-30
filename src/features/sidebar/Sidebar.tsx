@@ -14,7 +14,7 @@ const SidebarWrapper = styled(Toolbar)`
 `;
 const SidebarMenuSection = styled.div`
   margin: 0 auto;
-  padding: var(--measurement-medium-30) 0 0 0;
+  padding: var(--measurement-medium-30) 0;
   height: 100%;
   display: grid;
   justify-content: center;
