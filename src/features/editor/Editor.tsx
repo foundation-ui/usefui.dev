@@ -7,7 +7,7 @@ import { Portal, Dialog, ScrollArea } from "@foundation-ui/components";
 
 import EditorMenu from "./_components/EditorMenu";
 import EditorBody from "./_components/EditorBody";
-import EditorLogger from "./_components/EditorLogger";
+import Console from "../console/Console";
 
 import { engine_template } from "@foundation-ui/tokens";
 
@@ -20,7 +20,7 @@ interface EditorProps {
 const DialogBody = styled(Dialog)`
   height: 100%;
   padding: var(--measurement-medium-60) !important;
-  /* border: none !important; */
+  padding-bottom: 0 !important;
 `;
 const Overlay = styled(Dialog.Overlay)`
   background-color: transparent !important;
@@ -51,7 +51,6 @@ function Editor({
             setError={setError}
             onChange={onChange}
           />
-
           <EditorBody
             value={deferredEditorValue}
             readOnly={readOnly}
@@ -59,8 +58,7 @@ function Editor({
             setError={setError}
             onChange={onChange}
           />
-
-          <EditorLogger error={error} />
+          <Console mode={error ? "error" : "meta"} value={error} />
         </ScrollArea>
       </DialogBody>
 

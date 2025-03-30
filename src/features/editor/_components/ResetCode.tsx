@@ -5,23 +5,14 @@ import React from "react";
 import { Icon } from "@foundation-ui/icons";
 import { Tooltip, Button } from "@foundation-ui/components";
 
-import { engine_template } from "@foundation-ui/tokens";
-
 type ResetCodeProps = {
-  defaultValue?: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
-  setError: React.Dispatch<React.SetStateAction<string | null>>;
+  resetCallback: () => void;
 };
 
-function ResetCode({ defaultValue, setValue, setError }: ResetCodeProps) {
-  const resetEditor = () => {
-    setValue(defaultValue ?? JSON.stringify(engine_template, null, 4));
-    setError(null);
-  };
-
+function ResetCode({ resetCallback }: ResetCodeProps) {
   return (
     <Tooltip content="Reset">
-      <Button variant="ghost" onClick={resetEditor}>
+      <Button variant="ghost" onClick={resetCallback}>
         <Icon>
           <Icon.Reload />
         </Icon>
