@@ -24,7 +24,7 @@ function SidebarLinks() {
   const pathname = usePathname();
 
   return (
-    <div className="grid align-center justify-center g-medium-60">
+    <React.Fragment>
       <Dialog.Root>
         <Tooltip content="New Library">
           <Dialog.Trigger sizing="small" variant="border">
@@ -38,35 +38,32 @@ function SidebarLinks() {
 
         <Editor />
       </Dialog.Root>
+      {APP_ROUTES.map(({ key, path, label }) => {
+        const isActiveRoute =
+          pathname === path ||
+          pathname === `/${path}` ||
+          (path !== "/" && pathname.includes(path));
 
-      <div className="grid align-start justify-center g-medium-60">
-        {APP_ROUTES.map(({ key, path, label }) => {
-          const isActiveRoute =
-            pathname === path ||
-            pathname === `/${path}` ||
-            (path !== "/" && pathname.includes(path));
-
-          return (
-            <Tooltip key={key} content={label}>
-              <Button
-                variant="ghost"
-                onClick={() => router.push(path)}
-                rawicon
-                disabled={key !== "library"}
-              >
-                <AppLinkIcon as={Icon} fillOpacity={isActiveRoute ? 1 : 0.3}>
-                  {key === "library" && <Icon.Models />}
-                  {key === "integrations" && <Icon.Webhook />}
-                  {key === "history" && <Icon.Activity />}
-                  {key === "support" && <Icon.Help />}
-                  {key === "feedback" && <Icon.Chat />}
-                </AppLinkIcon>
-              </Button>
-            </Tooltip>
-          );
-        })}
-      </div>
-    </div>
+        return (
+          <Tooltip key={key} content={label}>
+            <Button
+              variant="ghost"
+              onClick={() => router.push(path)}
+              rawicon
+              disabled={key !== "library"}
+            >
+              <AppLinkIcon as={Icon} fillOpacity={isActiveRoute ? 1 : 0.3}>
+                {key === "library" && <Icon.Models />}
+                {key === "integrations" && <Icon.Webhook />}
+                {key === "history" && <Icon.Activity />}
+                {key === "support" && <Icon.Help />}
+                {key === "feedback" && <Icon.Chat />}
+              </AppLinkIcon>
+            </Button>
+          </Tooltip>
+        );
+      })}
+    </React.Fragment>
   );
 }
 

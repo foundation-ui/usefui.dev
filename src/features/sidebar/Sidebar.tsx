@@ -6,7 +6,7 @@ import styled from "styled-components";
 import ProfileActions from "./_components/ProfileActions";
 import SidebarLinks from "./_components/SidebarLinks";
 
-import { Page, Toolbar } from "@foundation-ui/components";
+import { Avatar, Page, Toolbar } from "@foundation-ui/components";
 import { Icon } from "@foundation-ui/icons";
 
 const SidebarWrapper = styled(Toolbar)`
@@ -25,6 +25,9 @@ const SidebarActionsContainer = styled.div`
   justify-content: center;
   align-items: end;
 `;
+const ItemsWrapper = styled.div`
+  justify-items: anchor-center;
+`;
 
 function Sidebar() {
   return (
@@ -38,12 +41,12 @@ function Sidebar() {
         <Page.Wrapper $navigations={0.4} $menus={0}>
           <SidebarMenuSection>
             <Toolbar.Section showoncollapse className="h-100">
-              <div className="grid g-medium-60 align-center justify-center">
+              <ItemsWrapper className="grid g-medium-60 align-center justify-center">
                 <Icon viewBox="0 0 32 32" width={32} height={32}>
                   <Icon.Foundation />
                 </Icon>
                 <SidebarLinks />
-              </div>
+              </ItemsWrapper>
             </Toolbar.Section>
 
             <SidebarActionsContainer>
