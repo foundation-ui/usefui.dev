@@ -1,29 +1,17 @@
 "use client";
 
 import React from "react";
-import { useMutation } from "@tanstack/react-query";
 
 import LibraryCard from "./LibraryCard";
 
-// import { Editor } from "@/features";
-import { EmptySection, MaxWidthContainer, Spinner } from "@/components";
-import { Button } from "@foundation-ui/components";
+import { Editor } from "@/features";
+import { EmptySection, MaxWidthContainer } from "@/components";
+import { Dialog } from "@foundation-ui/components";
 import { Icon } from "@foundation-ui/icons";
 
-import { InsertMock } from "@/actions/InsertMock";
 import type { LibraryProps } from "@/actions/types";
 
 function LibrariesList({ libraries }: { libraries: LibraryProps[] }) {
-  const { mutate, isPending } = useMutation({
-    mutationFn: InsertMock,
-    onSuccess: (data) => {
-      console.log(data);
-    },
-    onError: (data) => {
-      console.log(data);
-    },
-  });
-
   if (libraries.length === 0) {
     return (
       <MaxWidthContainer className="grid g-medium-30 h-100 align-center justify-center">
@@ -36,33 +24,15 @@ function LibrariesList({ libraries }: { libraries: LibraryProps[] }) {
             </Icon>
           }
           action={
-            <Button
-              onClick={() => mutate()}
-              sizing="medium"
-              variant="border"
-              disabled={isPending}
-            >
-              <span className="flex align-center justify-center p-y-small-30">
-                Insert Mock
-              </span>
-              {isPending ? (
-                <Spinner />
-              ) : (
-                <Icon>
-                  <Icon.NewWindow />
-                </Icon>
-              )}
-            </Button>
+            <Dialog.Root>
+              <Dialog.Trigger sizing="medium" variant="border">
+                <span className="flex align-center justify-center p-y-small-30">
+                  Open Editor
+                </span>
+              </Dialog.Trigger>
 
-            // <Dialog.Root>
-            //   <Dialog.Trigger sizing="medium" variant="border">
-            //     <span className="flex align-center justify-center p-y-small-30">
-            //       Open Editor
-            //     </span>
-            //   </Dialog.Trigger>
-
-            //   <Editor />
-            // </Dialog.Root>
+              <Editor />
+            </Dialog.Root>
           }
         />
       </MaxWidthContainer>
