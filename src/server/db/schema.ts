@@ -1,12 +1,24 @@
 import {
-  int,
   bigint,
   text,
-  singlestoreTable,
+  boolean,
+  singlestoreTableCreator,
 } from "drizzle-orm/singlestore-core";
 
-export const users = singlestoreTable("users_table", {
+export const createTable = singlestoreTableCreator(
+  (name) => `fui_engine_${name}`,
+);
+
+export const libraries = createTable("libraries_table", {
   id: bigint("id", { mode: "bigint" }).primaryKey().autoincrement(),
-  name: text("name"),
-  age: int("age"),
+  creatorId: bigint("creatorId", { mode: "bigint" }),
+
+  title: text("title"),
+  description: text("description"),
+
+  published: boolean("published"),
+  library: text("library"),
+
+  createdAt: text("createdAt"),
+  updatedAt: text("updatedAt"),
 });
