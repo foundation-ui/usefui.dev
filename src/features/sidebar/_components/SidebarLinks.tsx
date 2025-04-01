@@ -8,7 +8,7 @@ import { APP_ROUTES } from "@/routes/routes";
 
 import { Editor } from "@/features";
 import { Icon } from "@foundation-ui/icons";
-import { Button, Dialog, Divider, Tooltip } from "@foundation-ui/components";
+import { Button, Dialog, Tooltip } from "@foundation-ui/components";
 
 const AppLinkIcon = styled.svg`
   transition: all ease-in-out 0.2s;

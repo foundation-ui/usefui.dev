@@ -1,1 +1,1 @@
-export { ThemeProvider } from "../providers/theme-providers";
+export { ClientProvider } from "./client-providers";

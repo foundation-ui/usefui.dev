@@ -95,7 +95,7 @@ const CSSRoot = createGlobalStyle`
 	}
 `;
 
-export function ThemeProvider({
+export function ClientProvider({
   children,
 }: Readonly<{
   children: React.ReactNode;

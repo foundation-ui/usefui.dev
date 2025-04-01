@@ -6,7 +6,7 @@ import styled from "styled-components";
 import ProfileActions from "./_components/ProfileActions";
 import SidebarLinks from "./_components/SidebarLinks";
 
-import { Avatar, Page, Toolbar } from "@foundation-ui/components";
+import { Page, Toolbar } from "@foundation-ui/components";
 import { Icon } from "@foundation-ui/icons";
 
 const SidebarWrapper = styled(Toolbar)`
