@@ -1,6 +1,6 @@
 import StyledComponentsRegistry from "@/lib/styles-registry";
 
-import { ThemeProvider } from "@/providers";
+import { ClientProvider } from "@/providers";
 import { Toaster } from "sonner";
 
 import type { Metadata } from "next";
@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <StyledComponentsRegistry>
-          <ThemeProvider>
+          <ClientProvider>
             <div id="portal-container" />
             <Toaster
               toastOptions={{
@@ -33,7 +33,7 @@ export default function RootLayout({
               }}
             />
             {children}
-          </ThemeProvider>
+          </ClientProvider>
         </StyledComponentsRegistry>
       </body>
     </html>

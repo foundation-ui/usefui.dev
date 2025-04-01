@@ -15,13 +15,13 @@ const globalForDb = globalThis as unknown as {
 const conn =
   globalForDb.conn ??
   createPool({
-    host: String(env.SINGLESTORE_HOST),
-    port: Number(env.SINGLESTORE_PORT),
-    user: String(env.SINGLESTORE_USER),
-    password: String(env.SINGLESTORE_PASS),
-    database: String(env.SINGLESTORE_DB_NAME),
-    ssl: {},
-    maxIdle: 0,
+    host: env.SINGLESTORE_HOST,
+    port: parseInt(env.SINGLESTORE_PORT),
+    user: env.SINGLESTORE_USER,
+    password: env.SINGLESTORE_PASS,
+    database: env.SINGLESTORE_DB_NAME,
+    ssl: {}, // HAs to be an empty obj due to mysql2 packages
+    maxIdle: 0, // Handle timeout and runtime issues while the env isn't running
   });
 if (env.NODE_ENV !== "production") globalForDb.conn = conn;
 
