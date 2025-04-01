@@ -5,7 +5,8 @@ import { env } from "@/env";
 export default {
   schema: "./src/server/db/schema.ts",
   dialect: "singlestore",
-  tablesFilter: ["fui_engine_*"],
+  tablesFilter: [`${env.SINGLESTORE_TABLES_PREFIX}_*`],
+
   dbCredentials: {
     host: env.SINGLESTORE_HOST,
     user: env.SINGLESTORE_USER,

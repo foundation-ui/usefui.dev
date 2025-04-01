@@ -5,8 +5,10 @@ import {
   singlestoreTableCreator,
 } from "drizzle-orm/singlestore-core";
 
+import { env } from "@/env";
+
 export const createTable = singlestoreTableCreator(
-  (name) => `fui_engine_${name}`,
+  (name) => `${env.SINGLESTORE_TABLES_PREFIX}_${name}`,
 );
 
 export const libraries = createTable("libraries_table", {
