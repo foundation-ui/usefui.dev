@@ -32,6 +32,7 @@ function RunCode() {
         variant="ghost"
         rawicon
         onClick={() => mutate()}
+        disabled={isPending}
       >
         {isPending ? (
           <Spinner data-variant="inner" />
