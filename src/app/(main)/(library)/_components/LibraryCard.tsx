@@ -9,7 +9,7 @@ import { TextMuted } from "@/components/shared/TextMuted";
 import { Divider } from "@foundation-ui/components";
 import { Icon } from "@foundation-ui/icons";
 
-import type { LibraryProps } from "../page";
+import type { LibraryProps } from "@/actions/types";
 
 const CardBody = styled.article`
   border: var(--measurement-small-30) solid var(--font-color-alpha-10);
@@ -35,7 +35,7 @@ const CardBody = styled.article`
 
 function LibraryCard({
   id,
-  name,
+  title,
   published,
   description,
   updatedAt,
@@ -44,7 +44,7 @@ function LibraryCard({
     <CardBody className="">
       <hgroup className="p-b-medium-30 p-t-medium-60 p-x-medium-60 grid g-medium-10 ">
         <div className="flex align-center g-medium-10">
-          <h6 className="fs-medium-10">{name}</h6>
+          <h6 className="fs-medium-10">{title}</h6>
           <Icon width={12} height={12} fillOpacity={0.3}>
             {published ? <Icon.Globe /> : <Icon.Key />}
           </Icon>
@@ -60,7 +60,7 @@ function LibraryCard({
           <span className="opacity-default-60">{updatedAt}</span>&nbsp;
         </div>
 
-        <CardActions libraryId={id} />
+        <CardActions libraryId={String(id)} />
       </footer>
     </CardBody>
   );
