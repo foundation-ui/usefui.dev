@@ -9,7 +9,7 @@ import { TextMuted } from "@/components/shared/TextMuted";
 import { Divider } from "@foundation-ui/components";
 import { Icon } from "@foundation-ui/icons";
 
-import type { LibraryProps } from "@/actions/types";
+import type { libraries as librariesSchema } from "@/server/db/schema";
 
 const CardBody = styled.article`
   border: var(--measurement-small-30) solid var(--font-color-alpha-10);
@@ -39,7 +39,7 @@ function LibraryCard({
   published,
   description,
   updatedAt,
-}: LibraryProps) {
+}: typeof librariesSchema.$inferSelect) {
   return (
     <CardBody className="">
       <hgroup className="p-b-medium-30 p-t-medium-60 p-x-medium-60 grid g-medium-10 ">

@@ -4,11 +4,9 @@ import { db } from "@/server/db";
 import { libraries } from "@/server/db/schema";
 import { revalidatePath } from "next/cache";
 
-import type { LibraryProps } from "./types";
-
 /** Mocks */
 import { generateTokensLibrary } from "@foundation-ui/core";
-const mock: LibraryProps[] = [
+const mock: (typeof libraries.$inferSelect)[] = [
   {
     id: BigInt(917356209873),
     creatorId: BigInt(108563478615),
@@ -67,51 +65,6 @@ const mock: LibraryProps[] = [
                 shade: true,
                 tint: true,
               },
-            },
-          ],
-        },
-        {
-          type: "measurement",
-          values: [
-            {
-              name: "small",
-              base: 3,
-              ratio: 1.62,
-              units: 10,
-            },
-          ],
-        },
-        {
-          type: "fontsize",
-          values: [
-            {
-              name: "small",
-              base: 16,
-              ratio: 1.13,
-              units: 10,
-            },
-          ],
-        },
-        {
-          type: "depth",
-          values: [
-            {
-              name: "layout",
-              base: 1,
-              units: 10,
-              steps: 10,
-            },
-          ],
-        },
-        {
-          type: "opacity",
-          values: [
-            {
-              name: "base",
-              base: 1,
-              units: 10,
-              steps: 10,
-              decimal: true,
             },
           ],
         },
