@@ -49,7 +49,7 @@ function LibraryCard({
             {published ? <Icon.Globe /> : <Icon.Key />}
           </Icon>
         </div>
-        <p className="opacity-default-30 fs-medium-10"> {description}</p>
+        <p className="opacity-default-30 fs-medium-10">{description}</p>
       </hgroup>
 
       <Divider />
