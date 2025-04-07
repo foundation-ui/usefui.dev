@@ -9,9 +9,13 @@ import { EmptySection, MaxWidthContainer } from "@/components";
 import { Dialog } from "@foundation-ui/components";
 import { Icon } from "@foundation-ui/icons";
 
-import type { LibraryProps } from "@/actions/types";
+import type { libraries as librariesSchema } from "@/server/db/schema";
 
-function LibrariesList({ libraries }: { libraries: LibraryProps[] }) {
+function LibrariesList({
+  libraries,
+}: {
+  libraries: (typeof librariesSchema.$inferSelect)[];
+}) {
   if (libraries.length === 0) {
     return (
       <MaxWidthContainer className="grid g-medium-30 h-100 align-center justify-center">
@@ -41,19 +45,21 @@ function LibrariesList({ libraries }: { libraries: LibraryProps[] }) {
 
   return (
     <MaxWidthContainer className="grid g-medium-30 p-medium-60">
-      {libraries.map((item: LibraryProps, key: number) => (
-        <LibraryCard
-          key={key}
-          id={item.id}
-          creatorId={item.creatorId}
-          title={item.title}
-          description={item.description}
-          published={item.published}
-          library={item.library}
-          createdAt={item.createdAt}
-          updatedAt={item.updatedAt}
-        />
-      ))}
+      {libraries.map(
+        (item: typeof librariesSchema.$inferSelect, key: number) => (
+          <LibraryCard
+            key={key}
+            id={item.id}
+            creatorId={item.creatorId}
+            title={item.title}
+            description={item.description}
+            published={item.published}
+            library={item.library}
+            createdAt={item.createdAt}
+            updatedAt={item.updatedAt}
+          />
+        ),
+      )}
     </MaxWidthContainer>
   );
 }

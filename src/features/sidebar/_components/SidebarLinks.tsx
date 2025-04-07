@@ -50,7 +50,7 @@ function SidebarLinks() {
               variant="ghost"
               onClick={() => router.push(path)}
               rawicon
-              disabled={key !== "library"}
+              disabled={["feedback", "support"].includes(key)}
             >
               <AppLinkIcon as={Icon} fillOpacity={isActiveRoute ? 1 : 0.3}>
                 {key === "library" && <Icon.Models />}

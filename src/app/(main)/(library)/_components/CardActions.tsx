@@ -20,7 +20,7 @@ function CardActions({ libraryId }: { libraryId: string }) {
         <DropdownMenu.Content sizing="medium">
           <DropdownMenu.Item
             className="flex align-center justify-between g-medium-10"
-            onClick={() => router.push(libraryId)}
+            onClick={() => router.push(`library/${libraryId}`)}
           >
             Preview
             <Icon>
