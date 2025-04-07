@@ -8,66 +8,29 @@ import { revalidatePath } from "next/cache";
 import { generateTokensLibrary } from "@foundation-ui/core";
 const mock: (typeof libraries.$inferSelect)[] = [
   {
-    id: BigInt(917356209873),
-    creatorId: BigInt(108563478615),
+    id: BigInt(18717817178),
+    creatorId: BigInt(198198190818190),
 
-    title: "Acme Test/Insert",
+    title: "Acme Test/Secondary",
     description: "Design Tokens Library used for Acme Web and Desktop Apps",
 
     published: true,
     library: JSON.stringify(
       generateTokensLibrary("fui-apps", [
-        {
-          type: "color",
-          values: [
-            {
-              name: "dark",
-              base: "353531",
-              variations: {
-                alpha: true,
-                shade: false,
-                tint: false,
-              },
-            },
-
-            {
-              name: "light",
-              base: "EBEBEB",
-              variations: {
-                alpha: true,
-                shade: false,
-                tint: false,
-              },
-            },
-            {
-              name: "red",
-              base: "EC4E20",
-              variations: {
-                alpha: true,
-                shade: true,
-                tint: true,
-              },
-            },
-            {
-              name: "orange",
-              base: "FF7F11",
-              variations: {
-                alpha: true,
-                shade: true,
-                tint: true,
-              },
-            },
-            {
-              name: "green",
-              base: "69DC9E",
-              variations: {
-                alpha: true,
-                shade: true,
-                tint: true,
-              },
-            },
-          ],
-        },
+        // {
+        //   type: "color",
+        //   values: [
+        //     {
+        //       name: "dark",
+        //       base: "353531",
+        //       variations: {
+        //         alpha: true,
+        //         shade: false,
+        //         tint: false,
+        //       },
+        //     },
+        //   ],
+        // },
       ]),
     ),
 

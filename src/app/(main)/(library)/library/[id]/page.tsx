@@ -1,7 +1,11 @@
 import React from "react";
-import LibraryData from "./_components/LibraryData";
+// import LibraryData from "./_components/LibraryData";
 
-async function LibraryDetails(props: { params: Promise<{ id: number }> }) {
+import { db } from "@/server/db";
+import { libraries } from "@/server/db/schema";
+import { eq } from "drizzle-orm";
+
+async function LibraryDetails(props: { params: Promise<{ id: string }> }) {
   /**
    * In order to make this page experience dynamic for each library,
    * props.params needs to be awaited, NextJS will use this information
@@ -9,11 +13,49 @@ async function LibraryDetails(props: { params: Promise<{ id: number }> }) {
    * Source: https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
    */
   const params = await props.params;
-  console.log(params?.id);
+
+  /**
+   * Make sure the param is valid to provide a more detailed
+   * status to users. This could be enhanced in the future, for now i'll leave it as is.
+   */
+  const parsedLibraryId = parseInt(params?.id);
+  if (isNaN(parsedLibraryId)) {
+    return (
+      <section className="w-100 h-100 p-large-10">
+        <p className="fs-medium-10 opacity-default-30 m-b-medium-60">
+          Invalid Library ID
+        </p>
+      </section>
+    );
+  }
+
+  const result = await db
+    .select()
+    .from(libraries)
+    .where(eq(libraries.id, BigInt(parsedLibraryId)));
+
+  if (!result) {
+    return (
+      <section className="w-100 h-100 p-large-10">
+        <p className="fs-medium-10 opacity-default-30 m-b-medium-60">
+          Unable to fetch details
+        </p>
+      </section>
+    );
+  }
 
   return (
     <section className="w-100 h-100 p-large-10">
-      <LibraryData />
+      {/* <LibraryData /> */}
+      {result.map((item, key) => (
+        <hgroup key={key}>
+          <p className="fs-medium-10 opacity-default-30 m-b-medium-60">
+            {item.title}
+          </p>
+
+          {JSON.stringify(item.library, null, 4)}
+        </hgroup>
+      ))}
     </section>
   );
 }
