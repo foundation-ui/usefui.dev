@@ -24,6 +24,7 @@ Handled by Netlify for now
 - [x] Update Schema to show library and JSON files
 - [x] Manually insert samples
 - [x] Render samples in the UI
+- [x] Deploy to confirm the setup is up and running
 - [ ] Add Auth using Clerk
 - [ ] Generate Library
 - [ ] Library Page Details
@@ -45,7 +46,3 @@ Handled by Netlify for now
 
 - Lot of features indeed, lots and rabbit holes also. Don't like that a lot but i'm going to roll with it for now.
   Let's follow that rule: If there are further more obstacles due to S2 itself, i'll switch provider.
-
-Next steps:
-
-- [ ] Deploy to confirm the setup is up and running
