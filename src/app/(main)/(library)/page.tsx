@@ -1,7 +1,7 @@
 import React from "react";
 import LibrariesList from "./_components/LibrariesList";
 
-import { GetMock } from "@/actions/GetMock";
+import { GetMock } from "@/server/db/queries";
 
 async function LibraryPage() {
   const libraries = await GetMock();

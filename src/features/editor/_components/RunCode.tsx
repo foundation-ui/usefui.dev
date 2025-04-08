@@ -7,9 +7,9 @@ import { useRouter } from "next/navigation";
 
 import { Icon } from "@foundation-ui/icons";
 import { Button, Tooltip } from "@foundation-ui/components";
-
-import { InsertMock } from "@/actions/InsertMock";
 import { Spinner } from "@/components";
+
+import { InsertMock } from "@/server/actions";
 
 function RunCode() {
   const router = useRouter();

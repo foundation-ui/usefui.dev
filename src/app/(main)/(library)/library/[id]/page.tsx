@@ -1,6 +1,6 @@
 import React from "react";
 // import LibraryData from "./_components/LibraryData";
-import { GetMockDetails } from "@/actions/GetMockDetails";
+import { GetMockDetails } from "@/server/db/queries";
 
 async function LibraryDetails(props: { params: Promise<{ id: string }> }) {
   /**
