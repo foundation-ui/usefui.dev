@@ -1,6 +1,6 @@
 import React from "react";
 // import LibraryData from "./_components/LibraryData";
-import { GetMockDetails } from "@/server/db/queries";
+import { QUERIES } from "@/server/db/queries";
 
 async function LibraryDetails(props: { params: Promise<{ id: string }> }) {
   /**
@@ -26,7 +26,7 @@ async function LibraryDetails(props: { params: Promise<{ id: string }> }) {
     );
   }
 
-  const details = await GetMockDetails(parsedLibraryId);
+  const details = await QUERIES.GetMockDetails(parsedLibraryId);
 
   if (!details) {
     return (

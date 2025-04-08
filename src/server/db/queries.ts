@@ -6,21 +6,24 @@ import { eq } from "drizzle-orm";
 import { libraries_table as librariesSchema } from "@/server/db/schema";
 
 const mockUserID = BigInt(198198190818190);
-export async function GetMock() {
-  const result = await db
-    .select()
-    .from(librariesSchema)
-    .where(eq(librariesSchema.creatorId, mockUserID));
 
-  if (!result) throw new Error("Failed to fetch libraries");
-  return result as (typeof librariesSchema.$inferSelect)[];
-}
-export async function GetMockDetails(libraryId: number) {
-  const result = await db
-    .selectDistinct()
-    .from(librariesSchema)
-    .where(eq(librariesSchema.id, BigInt(libraryId)));
+export const QUERIES = {
+  GetMock: async function () {
+    const result = await db
+      .select()
+      .from(librariesSchema)
+      .where(eq(librariesSchema.creatorId, mockUserID));
 
-  if (!result) throw new Error("Failed to fetch libraries");
-  return result.at(0) as typeof librariesSchema.$inferSelect;
-}
+    if (!result) throw new Error("Failed to fetch libraries");
+    return result as (typeof librariesSchema.$inferSelect)[];
+  },
+  GetMockDetails: async function (libraryId: number) {
+    const result = await db
+      .selectDistinct()
+      .from(librariesSchema)
+      .where(eq(librariesSchema.id, BigInt(libraryId)));
+
+    if (!result) throw new Error("Failed to fetch libraries");
+    return result.at(0) as typeof librariesSchema.$inferSelect;
+  },
+};

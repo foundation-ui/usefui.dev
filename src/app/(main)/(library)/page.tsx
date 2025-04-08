@@ -1,10 +1,10 @@
 import React from "react";
 import LibrariesList from "./_components/LibrariesList";
 
-import { GetMock } from "@/server/db/queries";
+import { QUERIES } from "@/server/db/queries";
 
 async function LibraryPage() {
-  const libraries = await GetMock();
+  const libraries = await QUERIES.GetMock();
 
   if (!libraries)
     return (
