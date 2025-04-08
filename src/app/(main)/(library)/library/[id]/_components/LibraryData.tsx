@@ -1,15 +1,12 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 import { EmptySection, MaxWidthContainer } from "@/components";
 import { Icon } from "@foundation-ui/icons";
-import { Button } from "@foundation-ui/components";
 
 function LibraryData() {
-  const router = useRouter();
-
   return (
     <MaxWidthContainer className="grid g-medium-30 h-100 align-center justify-center">
       <EmptySection
@@ -21,12 +18,12 @@ function LibraryData() {
           </Icon>
         }
         action={
-          <Button variant="ghost" onClick={() => router.push("/")}>
+          <Link href="/">
             Back to your library
             <Icon>
               <Icon.NewWindow />
             </Icon>
-          </Button>
+          </Link>
         }
       />
     </MaxWidthContainer>
