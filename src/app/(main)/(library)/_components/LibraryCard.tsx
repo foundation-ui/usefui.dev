@@ -9,7 +9,7 @@ import { TextMuted } from "@/components/shared/TextMuted";
 import { Divider } from "@foundation-ui/components";
 import { Icon } from "@foundation-ui/icons";
 
-import type { libraries as librariesSchema } from "@/server/db/schema";
+import type { libraries_table as librariesSchema } from "@/server/db/schema";
 
 const CardBody = styled.article`
   border: var(--measurement-small-30) solid var(--font-color-alpha-10);

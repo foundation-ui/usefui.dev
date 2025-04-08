@@ -9,7 +9,7 @@ import { EmptySection, MaxWidthContainer } from "@/components";
 import { Dialog } from "@foundation-ui/components";
 import { Icon } from "@foundation-ui/icons";
 
-import type { libraries as librariesSchema } from "@/server/db/schema";
+import type { libraries_table as librariesSchema } from "@/server/db/schema";
 
 function LibrariesList({
   libraries,
