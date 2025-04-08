@@ -1,9 +1,6 @@
 import React from "react";
 // import LibraryData from "./_components/LibraryData";
-
-import { db } from "@/server/db";
-import { libraries } from "@/server/db/schema";
-import { eq } from "drizzle-orm";
+import { QUERIES } from "@/server/db/queries";
 
 async function LibraryDetails(props: { params: Promise<{ id: string }> }) {
   /**
@@ -29,12 +26,9 @@ async function LibraryDetails(props: { params: Promise<{ id: string }> }) {
     );
   }
 
-  const result = await db
-    .select()
-    .from(libraries)
-    .where(eq(libraries.id, BigInt(parsedLibraryId)));
+  const details = await QUERIES.GetMockDetails(parsedLibraryId);
 
-  if (!result) {
+  if (!details) {
     return (
       <section className="w-100 h-100 p-large-10">
         <p className="fs-medium-10 opacity-default-30 m-b-medium-60">
@@ -47,15 +41,13 @@ async function LibraryDetails(props: { params: Promise<{ id: string }> }) {
   return (
     <section className="w-100 h-100 p-large-10">
       {/* <LibraryData /> */}
-      {result.map((item, key) => (
-        <hgroup key={key}>
-          <p className="fs-medium-10 opacity-default-30 m-b-medium-60">
-            {item.title}
-          </p>
+      <hgroup>
+        <p className="fs-medium-10 opacity-default-30 m-b-medium-60">
+          {details.title}
+        </p>
 
-          {JSON.stringify(item.library, null, 4)}
-        </hgroup>
-      ))}
+        {JSON.stringify(details.library, null, 4)}
+      </hgroup>
     </section>
   );
 }

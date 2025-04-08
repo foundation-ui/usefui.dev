@@ -3,12 +3,14 @@
 import React from "react";
 import styled from "styled-components";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { APP_ROUTES } from "@/routes/routes";
+
+import Link from "next/link";
 
 import { Editor } from "@/features";
 import { Icon } from "@foundation-ui/icons";
-import { Button, Dialog, Tooltip } from "@foundation-ui/components";
+import { Dialog, Tooltip } from "@foundation-ui/components";
 
 const AppLinkIcon = styled.svg`
   transition: all ease-in-out 0.2s;
@@ -20,7 +22,6 @@ const AppLinkIcon = styled.svg`
 `;
 
 function SidebarLinks() {
-  const router = useRouter();
   const pathname = usePathname();
 
   return (
@@ -46,11 +47,12 @@ function SidebarLinks() {
 
         return (
           <Tooltip key={key} content={label}>
-            <Button
-              variant="ghost"
-              onClick={() => router.push(path)}
-              rawicon
-              disabled={["feedback", "support"].includes(key)}
+            <Link
+              // as={Button}
+              // variant="ghost"
+              href={`/${path}`}
+              // rawicon
+              // disabled={["feedback", "support"].includes(key)}
             >
               <AppLinkIcon as={Icon} fillOpacity={isActiveRoute ? 1 : 0.3}>
                 {key === "library" && <Icon.Models />}
@@ -59,7 +61,7 @@ function SidebarLinks() {
                 {key === "support" && <Icon.Help />}
                 {key === "feedback" && <Icon.Chat />}
               </AppLinkIcon>
-            </Button>
+            </Link>
           </Tooltip>
         );
       })}

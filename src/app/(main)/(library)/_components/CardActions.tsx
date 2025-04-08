@@ -1,13 +1,26 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+
+import { useMutation } from "@tanstack/react-query";
 
 import { Divider, DropdownMenu } from "@foundation-ui/components";
 import { Icon } from "@foundation-ui/icons";
+import { Spinner } from "@/components";
+
+import { DeleteMock } from "@/server/actions";
 
 function CardActions({ libraryId }: { libraryId: string }) {
-  const router = useRouter();
+  const { mutate, isPending } = useMutation({
+    mutationFn: DeleteMock,
+    onSuccess: (data) => {
+      console.log(data);
+    },
+    onError: (data) => {
+      console.log(data);
+    },
+  });
 
   return (
     <DropdownMenu.Root>
@@ -20,12 +33,18 @@ function CardActions({ libraryId }: { libraryId: string }) {
         <DropdownMenu.Content sizing="medium">
           <DropdownMenu.Item
             className="flex align-center justify-between g-medium-10"
-            onClick={() => router.push(`library/${libraryId}`)}
+            radio
           >
-            Preview
-            <Icon>
-              <Icon.Visible />
-            </Icon>
+            <Link
+              href={`library/${libraryId}`}
+              className="flex align-center w-100 justify-between"
+              style={{ textDecoration: "none" }}
+            >
+              Preview
+              <Icon>
+                <Icon.Visible />
+              </Icon>
+            </Link>
           </DropdownMenu.Item>
           <Divider />
           <DropdownMenu.Item
@@ -39,12 +58,18 @@ function CardActions({ libraryId }: { libraryId: string }) {
           </DropdownMenu.Item>
           <DropdownMenu.Item
             className="flex align-center justify-between g-medium-10"
-            disabled
+            disabled={isPending}
+            onClick={() => mutate()}
+            radio
           >
             Delete
-            <Icon>
-              <Icon.Deleted />
-            </Icon>
+            {isPending ? (
+              <Spinner data-variant="inner" />
+            ) : (
+              <Icon width={18} height={18}>
+                <Icon.Deleted />
+              </Icon>
+            )}
           </DropdownMenu.Item>
           <Divider />
           <DropdownMenu.Item
