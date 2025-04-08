@@ -4,12 +4,14 @@ import { db } from "@/server/db";
 import { libraries } from "@/server/db/schema";
 import { revalidatePath } from "next/cache";
 
+const mockUserID = BigInt(198198190818190);
+
 /** Mocks */
 import { generateTokensLibrary } from "@foundation-ui/core";
 const mock: (typeof libraries.$inferSelect)[] = [
   {
     id: BigInt(18717817178),
-    creatorId: BigInt(198198190818190),
+    creatorId: mockUserID,
 
     title: "Acme Test/Secondary",
     description: "Design Tokens Library used for Acme Web and Desktop Apps",

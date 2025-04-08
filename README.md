@@ -25,7 +25,10 @@ Handled by Netlify for now
 - [x] Manually insert samples
 - [x] Render samples in the UI
 - [x] Deploy to confirm the setup is up and running
+- [ ] Update Navigation Links
+- [ ] Cleanup Database and data fetching patterns
 - [ ] Add Auth using Clerk
+- [ ] Add Analytics
 - [ ] Generate Library
 - [ ] Library Page Details
 - [ ] Library CRUD Actions
