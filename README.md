@@ -26,17 +26,19 @@ Handled by Netlify for now
 - [x] Render samples in the UI
 - [x] Deploy to confirm the setup is up and running
 - [x] Update Navigation Links
-- [ ] Cleanup Database and data fetching patterns
-- [ ] Add Auth using Clerk
-- [ ] Add Analytics
+- [x] Cleanup Database and data fetching patterns
 - [ ] Generate Library
 - [ ] Library Page Details
 - [ ] Library CRUD Actions
+- [ ] Add Auth using Clerk
+
 - [ ] Update History
 - [ ] Github/Slack/Discord Integration
+- [ ] Add Analytics
 - [ ] Setup Feedback w/Discord Integration
 - [ ] Setup Support Redirection
-- [ ] Add Github Actions to trigger tests
+- [ ] Add Testing suites Github Actions to trigger it
+- [ ] General tidying-up
 
 ## Notes
 
@@ -49,3 +51,8 @@ Handled by Netlify for now
 
 - Lot of features indeed, lots and rabbit holes also. Don't like that a lot but i'm going to roll with it for now.
   Let's follow that rule: If there are further more obstacles due to S2 itself, i'll switch provider.
+
+### (08/03/2025)
+
+- This choice of db provider still bugs me, not that the service isn't good or anything.
+- Here are the providers i'm thinking about, ranked by preference: Vercel PG, Scaleway Dedibox, NextCloud, AWS RDS, Keep S2

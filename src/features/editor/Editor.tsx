@@ -9,7 +9,7 @@ import EditorMenu from "./_components/EditorMenu";
 import EditorBody from "./_components/EditorBody";
 import Console from "../console/Console";
 
-import { engine_template } from "@foundation-ui/tokens";
+import { LibraryTemplate } from "./_utils/generator-templates";
 
 interface EditorProps {
   defaultValue?: string;
@@ -28,7 +28,7 @@ const Overlay = styled(Dialog.Overlay)`
 `;
 
 function Editor({
-  defaultValue = JSON.stringify(engine_template, null, 2),
+  defaultValue = JSON.stringify(LibraryTemplate.template, null, 4),
   onChange,
   readOnly = false,
 }: EditorProps) {

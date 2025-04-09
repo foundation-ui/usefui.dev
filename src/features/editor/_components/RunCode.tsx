@@ -6,12 +6,16 @@ import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 
 import { Icon } from "@foundation-ui/icons";
-import { Button, Tooltip } from "@foundation-ui/components";
+import { Button } from "@foundation-ui/components";
 import { Spinner } from "@/components";
 
 import { InsertMock } from "@/server/actions";
 
-function RunCode() {
+function RunCode({
+  setError,
+}: {
+  setError: React.Dispatch<React.SetStateAction<string | null>>;
+}) {
   const router = useRouter();
 
   const { mutate, isPending } = useMutation({
@@ -21,28 +25,27 @@ function RunCode() {
       router.push("/");
     },
     onError: (data) => {
-      console.log(data);
+      setError(`[Runtime Error] - ${data.message} }`);
     },
   });
 
   return (
-    <Tooltip content="Run">
-      <Button
-        className="fs-medium-10"
-        variant="ghost"
-        rawicon
-        onClick={() => mutate()}
-        disabled={isPending}
-      >
-        {isPending ? (
-          <Spinner data-variant="inner" />
-        ) : (
-          <Icon width={18} height={18}>
-            <Icon.Run />
-          </Icon>
-        )}
-      </Button>
-    </Tooltip>
+    <Button
+      className="fs-medium-10"
+      variant="mono"
+      sizing="small"
+      onClick={() => mutate()}
+      disabled={isPending}
+    >
+      <span className="fs-medium-10">Run</span>
+      {isPending ? (
+        <Spinner data-variant="inner" />
+      ) : (
+        <Icon width={18} height={18}>
+          <Icon.Run />
+        </Icon>
+      )}
+    </Button>
   );
 }
 
