@@ -2,7 +2,6 @@
 
 import React from "react";
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
 
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 import { Button } from "@foundation-ui/components";
@@ -12,17 +11,16 @@ import { LibraryTemplate } from "../_utils/generator-templates";
 import { InsertLibraryAction } from "@/server/actions";
 
 function RunCode({
+  value,
   setError,
 }: {
+  value: string;
   setError: React.Dispatch<React.SetStateAction<string | null>>;
 }) {
-  const router = useRouter();
-
   const { mutate, isPending } = useMutation({
     mutationFn: InsertLibraryAction,
     onSuccess: (data) => {
       console.log(data);
-      router.push("/");
     },
     onError: (data) => {
       setError(`[Runtime Error] - ${data.message} }`);
@@ -36,12 +34,14 @@ function RunCode({
       sizing="small"
       onClick={() =>
         mutate({
-          id: BigInt(198198190818190),
           creatorId: BigInt(198198190818190),
-          title: "{USERNAME} Untitled Library {ID}",
+          title: "Untitled",
           description: "",
           published: false,
-          library: JSON.stringify(LibraryTemplate.fn("fui-apps", [])),
+          library: JSON.stringify(
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+            LibraryTemplate.fn("untitled", JSON.parse(value)),
+          ),
           createdAt: Date.now().toString(),
           updatedAt: Date.now().toString(),
         })

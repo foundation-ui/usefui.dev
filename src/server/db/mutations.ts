@@ -1,39 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import "server-only";
 
 import { db } from "@/server/db";
 import { eq } from "drizzle-orm";
 
 import { libraries_table as librariesSchema } from "@/server/db/schema";
-import { generateTokensLibrary } from "@foundation-ui/core";
-
-const mockUserID = BigInt(198198190818190);
-const mockLibraryId = BigInt(18717817178);
-const mock: (typeof librariesSchema.$inferSelect)[] = [
-  {
-    id: mockLibraryId,
-    creatorId: mockUserID,
-    title: "Acme Test/Secondary",
-    description: "Design Tokens Library used for Acme Web and Desktop Apps",
-    published: true,
-    library: JSON.stringify(generateTokensLibrary("fui-apps", [])),
-    createdAt: Date.now().toString(),
-    updatedAt: Date.now().toString(),
-  },
-];
 
 export const MUTATIONS = {
-  InsertLibraryData: async function (
-    payload: typeof librariesSchema.$inferSelect,
-  ) {
+  InsertLibraryData: async function (payload: any) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const result = await db.insert(librariesSchema).values(payload);
     if (!result) throw new Error("Failed to create library");
 
-    return true;
-  },
-  InsertMockData: async function () {
-    const result = await db.insert(librariesSchema).values(mock);
-
-    if (!result) throw new Error("Failed to create library");
     return true;
   },
 

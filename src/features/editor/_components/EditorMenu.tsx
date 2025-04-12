@@ -29,14 +29,14 @@ function EditorMenu({
   onChange,
 }: EditorMenuProps) {
   const resetEditor = () => {
-    setValue(defaultValue ?? JSON.stringify(LibraryTemplate.template, null, 4));
+    setValue(defaultValue ?? JSON.stringify(LibraryTemplate.template, null, 2));
     setError(null);
   };
 
   return (
     <nav className="flex align-start justify-between m-b-medium-60">
       <div className="flex g-medium-60 align-center">
-        <RunCode setError={setError} />
+        <RunCode value={value} setError={setError} />
         <TextMuted className="opacity-default-10">|</TextMuted>
         <FormatCode
           value={value}

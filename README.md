@@ -27,16 +27,18 @@ Handled by Netlify for now
 - [x] Deploy to confirm the setup is up and running
 - [x] Update Navigation Links
 - [x] Cleanup Database and data fetching patterns
+
 - [ ] Generate Library
 - [ ] Library Page Details
 - [ ] Library CRUD Actions
-- [ ] Add Auth using Clerk
 
-- [ ] Update History
-- [ ] Github/Slack/Discord Integration
+- [ ] Add Auth using Clerk
 - [ ] Add Analytics
+
+- [ ] Github/Slack/Discord Integration
 - [ ] Setup Feedback w/Discord Integration
 - [ ] Setup Support Redirection
+
 - [ ] Add Testing suites Github Actions to trigger it
 - [ ] General tidying-up
 
