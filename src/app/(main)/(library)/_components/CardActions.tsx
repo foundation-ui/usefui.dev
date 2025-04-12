@@ -25,11 +25,14 @@ function CardActions({ libraryId }: { libraryId: string }) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu>
-        <DropdownMenu.Trigger>
-          <Icon>
-            <WebIcon.More />
-          </Icon>
+        <DropdownMenu.Trigger variant="ghost">
+          <span>
+            <Icon>
+              <WebIcon.More />
+            </Icon>
+          </span>
         </DropdownMenu.Trigger>
+
         <DropdownMenu.Content sizing="small">
           <DropdownMenu.Item
             className="flex align-center justify-between g-medium-10"
@@ -59,7 +62,7 @@ function CardActions({ libraryId }: { libraryId: string }) {
           <DropdownMenu.Item
             className="flex align-center w-100 justify-between"
             disabled={isPending}
-            onClick={() => mutate()}
+            onClick={() => mutate(parseInt(libraryId))}
             radio
           >
             <span className=" fs-medium-10">Delete</span>

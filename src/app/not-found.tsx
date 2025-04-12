@@ -30,7 +30,7 @@ function NotFoundPage() {
                 className="fs-medium-20 p-medium-60 flex align-center justify-center g-medium-30"
               >
                 <Icon>
-                  <PixelIcon.ExternalLink />
+                  <PixelIcon.Open />
                 </Icon>
                 Back to overview
               </AppLink>

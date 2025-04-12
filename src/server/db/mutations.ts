@@ -22,6 +22,14 @@ const mock: (typeof librariesSchema.$inferSelect)[] = [
 ];
 
 export const MUTATIONS = {
+  InsertLibraryData: async function (
+    payload: typeof librariesSchema.$inferSelect,
+  ) {
+    const result = await db.insert(librariesSchema).values(payload);
+    if (!result) throw new Error("Failed to create library");
+
+    return true;
+  },
   InsertMockData: async function () {
     const result = await db.insert(librariesSchema).values(mock);
 
@@ -29,10 +37,10 @@ export const MUTATIONS = {
     return true;
   },
 
-  DeleteMockData: async function () {
+  DeleteMockData: async function (libraryId: number) {
     const result = await db
       .delete(librariesSchema)
-      .where(eq(librariesSchema.id, mockLibraryId));
+      .where(eq(librariesSchema.id, BigInt(libraryId)));
 
     if (!result) throw new Error("Failed to delete library");
     return true;

@@ -21,7 +21,7 @@ function LibraryData() {
           <Link href="/">
             Back to your library
             <Icon>
-              <PixelIcon.ExternalLink />
+              <PixelIcon.Open />
             </Icon>
           </Link>
         }
