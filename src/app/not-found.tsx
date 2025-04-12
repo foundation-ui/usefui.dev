@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Link from "next/link";
 
 import { Page } from "@foundation-ui/components";
-import { Icon } from "@foundation-ui/icons";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
 import { AppLink } from "@/components";
 
 const Hgroup = styled.hgroup`
@@ -30,7 +30,7 @@ function NotFoundPage() {
                 className="fs-medium-20 p-medium-60 flex align-center justify-center g-medium-30"
               >
                 <Icon>
-                  <Icon.NewWindow />
+                  <PixelIcon.ExternalLink />
                 </Icon>
                 Back to overview
               </AppLink>

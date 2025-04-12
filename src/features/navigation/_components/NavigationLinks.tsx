@@ -4,7 +4,7 @@ import React from "react";
 import SolutionsLinks from "./SolutionsLinks";
 
 import { Button } from "@foundation-ui/components";
-import { Icon } from "@foundation-ui/icons";
+import { Icon, SocialIcon } from "@foundation-ui/icons";
 import { TextMuted } from "@/components/shared/TextMuted";
 
 function NavigationLinks() {
@@ -28,7 +28,7 @@ function NavigationLinks() {
         }
       >
         <Icon viewBox="0 0 14 14">
-          <Icon.Github />
+          <SocialIcon.Github />
         </Icon>
       </Button>
     </div>

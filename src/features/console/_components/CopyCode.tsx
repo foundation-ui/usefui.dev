@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Icon } from "@foundation-ui/icons";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
 import { Tooltip, Button } from "@foundation-ui/components";
 
 function CopyCode({
@@ -33,7 +33,7 @@ function CopyCode({
         disabled={typeof value === typeof null}
       >
         <Icon>
-          <Icon.Copy />
+          <PixelIcon.Clipboard />
         </Icon>
       </Button>
     </Tooltip>

@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { Avatar, DropdownMenu } from "@foundation-ui/components";
-import { Icon } from "@foundation-ui/icons";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 const SilentItem = styled(DropdownMenu.Item)`
   &:hover,
@@ -20,7 +20,7 @@ function SolutionsLinks() {
         <DropdownMenu.Trigger variant="ghost">
           <span className="fs-medium-10">Solutions</span>
           <Icon>
-            <Icon.DoubleChevron />
+            <PixelIcon.ChevronsVertical />
           </Icon>
         </DropdownMenu.Trigger>
 

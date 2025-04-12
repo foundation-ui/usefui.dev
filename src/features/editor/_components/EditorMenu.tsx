@@ -9,7 +9,7 @@ import RunCode from "./RunCode";
 import { TextMuted } from "@/components/shared/TextMuted";
 
 import { Tooltip, DialogControl, Button } from "@foundation-ui/components";
-import { Icon } from "@foundation-ui/icons";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 import { LibraryTemplate } from "../_utils/generator-templates";
 
@@ -48,18 +48,18 @@ function EditorMenu({
       </div>
 
       <div className="flex g-medium-60 align-center">
-        <Tooltip content="Docs">
+        <Tooltip content="Download Input">
           <Button sizing="small" variant="ghost" disabled>
             <Icon>
-              <Icon.Info />
+              <PixelIcon.Download />
             </Icon>
           </Button>
         </Tooltip>
         <TextMuted className="opacity-default-10">|</TextMuted>
-        <Tooltip content="Quit">
+        <Tooltip content="Close Editor">
           <DialogControl sizing="small" variant="ghost" onClick={resetEditor}>
             <Icon>
-              <Icon.Close />
+              <PixelIcon.Close />
             </Icon>
           </DialogControl>
         </Tooltip>

@@ -7,7 +7,7 @@ import ProfileActions from "./_components/ProfileActions";
 import SidebarLinks from "./_components/SidebarLinks";
 
 import { Page, Toolbar } from "@foundation-ui/components";
-import { Icon } from "@foundation-ui/icons";
+import { Icon, SocialIcon } from "@foundation-ui/icons";
 
 const SidebarWrapper = styled(Toolbar)`
   border: none !important;
@@ -43,7 +43,7 @@ function Sidebar() {
             <Toolbar.Section showoncollapse className="h-100">
               <ItemsWrapper className="grid g-medium-60 align-center justify-center">
                 <Icon viewBox="0 0 32 32" width={32} height={32}>
-                  <Icon.Foundation />
+                  <SocialIcon.Foundation />
                 </Icon>
                 <SidebarLinks />
               </ItemsWrapper>

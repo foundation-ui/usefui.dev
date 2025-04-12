@@ -7,7 +7,7 @@ import CardActions from "./CardActions";
 
 import { TextMuted } from "@/components/shared/TextMuted";
 import { Divider } from "@foundation-ui/components";
-import { Icon } from "@foundation-ui/icons";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 import type { libraries_table as librariesSchema } from "@/server/db/schema";
 
@@ -45,8 +45,12 @@ function LibraryCard({
       <hgroup className="p-b-medium-30 p-t-medium-60 p-x-medium-60 grid g-medium-10 ">
         <div className="flex align-center g-medium-10">
           <h6 className="fs-medium-10">{title}</h6>
-          <Icon width={12} height={12} fillOpacity={0.3}>
-            {published ? <Icon.Globe /> : <Icon.Key />}
+          <Icon
+            width={12}
+            height={12}
+            fill={published ? "var(--color-green)" : "var(--color-orange)"}
+          >
+            {published ? <PixelIcon.Cloud /> : <PixelIcon.Lock />}
           </Icon>
         </div>
         <p className="opacity-default-30 fs-medium-10">{description}</p>

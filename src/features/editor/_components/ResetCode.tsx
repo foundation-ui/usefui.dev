@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Icon } from "@foundation-ui/icons";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
 import { Tooltip, Button } from "@foundation-ui/components";
 
 type ResetCodeProps = {
@@ -14,7 +14,7 @@ function ResetCode({ resetCallback }: ResetCodeProps) {
     <Tooltip content="Reset">
       <Button variant="ghost" onClick={resetCallback}>
         <Icon>
-          <Icon.Reload />
+          <PixelIcon.Reload />
         </Icon>
       </Button>
     </Tooltip>

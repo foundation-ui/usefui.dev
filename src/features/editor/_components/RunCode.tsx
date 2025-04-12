@@ -1,15 +1,15 @@
 "use client";
 
 import React from "react";
-
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 
-import { Icon } from "@foundation-ui/icons";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
 import { Button } from "@foundation-ui/components";
 import { Spinner } from "@/components";
 
-import { InsertMock } from "@/server/actions";
+import { LibraryTemplate } from "../_utils/generator-templates";
+import { InsertLibraryAction } from "@/server/actions";
 
 function RunCode({
   setError,
@@ -19,7 +19,7 @@ function RunCode({
   const router = useRouter();
 
   const { mutate, isPending } = useMutation({
-    mutationFn: InsertMock,
+    mutationFn: InsertLibraryAction,
     onSuccess: (data) => {
       console.log(data);
       router.push("/");
@@ -34,7 +34,18 @@ function RunCode({
       className="fs-medium-10"
       variant="mono"
       sizing="small"
-      onClick={() => mutate()}
+      onClick={() =>
+        mutate({
+          id: BigInt(198198190818190),
+          creatorId: BigInt(198198190818190),
+          title: "{USERNAME} Untitled Library {ID}",
+          description: "",
+          published: false,
+          library: JSON.stringify(LibraryTemplate.fn("fui-apps", [])),
+          createdAt: Date.now().toString(),
+          updatedAt: Date.now().toString(),
+        })
+      }
       disabled={isPending}
     >
       <span className="fs-medium-10">Run</span>
@@ -42,7 +53,7 @@ function RunCode({
         <Spinner data-variant="inner" />
       ) : (
         <Icon width={18} height={18}>
-          <Icon.Run />
+          <PixelIcon.CornerDownRight />
         </Icon>
       )}
     </Button>

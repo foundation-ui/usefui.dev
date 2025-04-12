@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 
 import { EmptySection, MaxWidthContainer } from "@/components";
-import { Icon } from "@foundation-ui/icons";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 function LibraryData() {
   return (
@@ -13,15 +13,15 @@ function LibraryData() {
         title="No Details Available"
         description="Generate Design Tokens to get details."
         icon={
-          <Icon className="m-y-small-60" fillOpacity={0.3}>
-            <Icon.Warning />
+          <Icon width={24} height={24}>
+            <PixelIcon.Downasaur />
           </Icon>
         }
         action={
           <Link href="/">
             Back to your library
             <Icon>
-              <Icon.NewWindow />
+              <PixelIcon.ExternalLink />
             </Icon>
           </Link>
         }

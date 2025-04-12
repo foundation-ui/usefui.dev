@@ -12,7 +12,7 @@ import {
   Tooltip,
   Button,
 } from "@foundation-ui/components";
-import { Icon } from "@foundation-ui/icons";
+import { Icon, PixelIcon, SocialIcon, WebIcon } from "@foundation-ui/icons";
 
 const SilentItem = styled(DropdownMenu.Item)`
   &:hover,
@@ -37,7 +37,7 @@ function ProfileActions() {
         <DropdownMenu.Trigger variant="ghost" rawicon>
           <AvatarXSmall sizing="small">
             <Icon viewBox="0 0 24 24" height={32} width={32} fillOpacity={0.3}>
-              <Icon.Incognito />
+              <WebIcon.Incognito />
             </Icon>
           </AvatarXSmall>
         </DropdownMenu.Trigger>
@@ -68,7 +68,7 @@ function ProfileActions() {
                   onClick={() => setColorMode("light")}
                 >
                   <Icon>
-                    <Icon.Light />
+                    <WebIcon.Light />
                   </Icon>
                 </Button>
               </Tooltip>
@@ -80,7 +80,7 @@ function ProfileActions() {
                   onClick={() => setColorMode("dark")}
                 >
                   <Icon>
-                    <Icon.Dark />
+                    <PixelIcon.Moon />
                   </Icon>
                 </Button>
               </Tooltip>
@@ -92,7 +92,7 @@ function ProfileActions() {
                   onClick={() => setColorMode("system")}
                 >
                   <Icon>
-                    <Icon.Contrast />
+                    <PixelIcon.Contrast />
                   </Icon>
                 </Button>
               </Tooltip>
@@ -104,7 +104,7 @@ function ProfileActions() {
           >
             Settings
             <Icon>
-              <Icon.Settings />
+              <PixelIcon.SlidersVertical />
             </Icon>
           </DropdownMenu.Item>
           <Divider />
@@ -115,7 +115,7 @@ function ProfileActions() {
             Login
             <Tooltip content="Powered by Clerk">
               <Icon viewBox="0 0 18 18">
-                <Icon.Clerk />
+                <SocialIcon.Clerk />
               </Icon>
             </Tooltip>
           </DropdownMenu.Item>

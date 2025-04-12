@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Icon } from "@foundation-ui/icons";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
 import { Field } from "@foundation-ui/components";
 
 const FullWillSearch = styled(Field)`
@@ -17,7 +17,7 @@ function NavigationSearch() {
     <Field.Root>
       <Field.Label optional className="flex align-center w-100 ">
         <Icon fillOpacity={0.6}>
-          <Icon.Search />
+          <PixelIcon.Search />
         </Icon>
         <FullWillSearch
           variant="ghost"

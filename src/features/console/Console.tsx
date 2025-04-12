@@ -6,8 +6,8 @@ import styled from "styled-components";
 import ConsoleActions from "./_components/ConsoleActions";
 import ConsoleBody from "./_components/ConsoleBody";
 
-import { Toolbar, Tooltip } from "@foundation-ui/components";
-import { Icon } from "@foundation-ui/icons";
+import { Toolbar } from "@foundation-ui/components";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 const ConsoleWrapper = styled(Toolbar)`
   border: none !important;
@@ -24,7 +24,7 @@ export type ConsoleProps = {
 function Console({ mode, value }: ConsoleProps) {
   const hotkey = "<";
   const bindkey = "ctrlKey";
-  const bindKeyLabel = bindkey.toLowerCase().replace("key", "").toUpperCase();
+  const hasErrors = mode === "error";
 
   return (
     <Toolbar.Root>
@@ -41,14 +41,11 @@ function Console({ mode, value }: ConsoleProps) {
           showfirstchild
           className="flex align-center justify-between p-y-medium-30"
         >
-          <Tooltip content={`${bindKeyLabel} + ${hotkey}`}>
-            <Toolbar.Trigger variant="ghost">
-              <Icon viewBox="0 0 16 16">
-                <Icon.Terminal />
-              </Icon>
-              <span className="fs-medium-10">Console</span>
-            </Toolbar.Trigger>
-          </Tooltip>
+          <div className="flex align-center g-medium-10">
+            <Icon fill={hasErrors ? "var(--color-red)" : "currentColor"}>
+              {hasErrors ? <PixelIcon.Debug /> : <PixelIcon.DebugCheck />}
+            </Icon>
+          </div>
 
           <ConsoleActions value={value} />
         </Toolbar.Item>

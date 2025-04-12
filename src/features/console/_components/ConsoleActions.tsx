@@ -6,18 +6,16 @@ import CopyCode from "./CopyCode";
 
 import { TextMuted } from "@/components/shared/TextMuted";
 import { Toolbar } from "@foundation-ui/components";
-import { Icon } from "@foundation-ui/icons";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 function ConsoleActions({ value }: { value: string | null }) {
   return (
-    <div className="flex align-center g-medium-30">
+    <div className="flex g-medium-60 align-center">
       <CopyCode value={value} />
-
-      <TextMuted className="fs-medium-20 opacity-default-10">|</TextMuted>
-
+      <TextMuted className="opacity-default-10">|</TextMuted>
       <Toolbar.Trigger variant="ghost">
         <Icon>
-          <Icon.DoubleChevron />
+          <PixelIcon.ChevronsVertical />
         </Icon>
       </Toolbar.Trigger>
     </div>

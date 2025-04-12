@@ -3,8 +3,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Badge } from "@foundation-ui/components";
-
 type EmptySectionProps = {
   title: string;
   description: string;
@@ -23,9 +21,7 @@ const EmptySectionWrapper = styled.div`
 function EmptySection({ title, description, action, icon }: EmptySectionProps) {
   return (
     <EmptySectionWrapper className="h-auto">
-      <Badge variant="secondary" className="h-auto m-b-medium-60 ">
-        {icon}
-      </Badge>
+      <span className="h-auto m-b-medium-60 ">{icon}</span>
 
       <h1 className="fs-medium-20">{title}</h1>
       <p className="fs-medium-10 opacity-default-30 m-b-medium-60">

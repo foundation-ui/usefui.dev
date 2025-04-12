@@ -9,7 +9,7 @@ import { APP_ROUTES } from "@/routes/routes";
 import Link from "next/link";
 
 import { Editor } from "@/features";
-import { Icon } from "@foundation-ui/icons";
+import { PixelIcon } from "@foundation-ui/icons";
 import { Dialog, Tooltip } from "@foundation-ui/components";
 
 const AppLinkIcon = styled.svg`
@@ -27,13 +27,11 @@ function SidebarLinks() {
   return (
     <React.Fragment>
       <Dialog.Root>
-        <Tooltip content="New Library">
-          <Dialog.Trigger sizing="small" variant="border">
-            <span className="flex align-center justify-center p-y-small-30">
-              <Icon>
-                <Icon.Add />
-              </Icon>
-            </span>
+        <Tooltip content="Editor">
+          <Dialog.Trigger variant="ghost">
+            <PixelIcon>
+              <PixelIcon.Zap />
+            </PixelIcon>
           </Dialog.Trigger>
         </Tooltip>
 
@@ -54,12 +52,11 @@ function SidebarLinks() {
               // rawicon
               // disabled={["feedback", "support"].includes(key)}
             >
-              <AppLinkIcon as={Icon} fillOpacity={isActiveRoute ? 1 : 0.3}>
-                {key === "library" && <Icon.Models />}
-                {key === "integrations" && <Icon.Webhook />}
-                {key === "history" && <Icon.Activity />}
-                {key === "support" && <Icon.Help />}
-                {key === "feedback" && <Icon.Chat />}
+              <AppLinkIcon as={PixelIcon} fillOpacity={isActiveRoute ? 1 : 0.3}>
+                {key === "library" && <PixelIcon.Script />}
+                {key === "integrations" && <PixelIcon.Cloud />}
+                {key === "history" && <PixelIcon.Clock />}
+                {key === "feedback" && <PixelIcon.Message />}
               </AppLinkIcon>
             </Link>
           </Tooltip>
