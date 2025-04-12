@@ -19,9 +19,9 @@ function RunCode({
 }) {
   const { mutate, isPending } = useMutation({
     mutationFn: InsertLibraryAction,
-    onSuccess: (data) => {
-      console.log(data);
-    },
+    // onSuccess: (data) => {
+    //   console.log(data);
+    // },
     onError: (data) => {
       setError(`[Runtime Error] - ${data.message} }`);
     },
