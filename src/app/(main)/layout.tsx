@@ -26,7 +26,7 @@ function layout({
             <Page.Wrapper
               $menus={1}
               $navigations={0.068} // Margins/Paddings
-              className="h-100 w-100 p-r-medium-60 p-b-medium-60"
+              className="h-100 w-100 p-r-medium-60 p-b-medium-30"
             >
               <BodyWrapper className="h-100 w-100 flex justify-between">
                 {children}

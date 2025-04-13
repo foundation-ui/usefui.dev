@@ -1,8 +1,9 @@
 import React from "react";
-// import LibraryData from "./_components/LibraryData";
+
+import LibraryDetails from "./_components/LibraryDetails";
 import { QUERIES } from "@/server/db/queries";
 
-async function LibraryDetails(props: { params: Promise<{ id: string }> }) {
+async function LibraryDetailsPage(props: { params: Promise<{ id: string }> }) {
   /**
    * In order to make this page experience dynamic for each library,
    * props.params needs to be awaited, NextJS will use this information
@@ -27,7 +28,6 @@ async function LibraryDetails(props: { params: Promise<{ id: string }> }) {
   }
 
   const details = await QUERIES.GetMockDetails(parsedLibraryId);
-
   if (!details) {
     return (
       <section className="w-100 h-100 p-large-10">
@@ -38,18 +38,7 @@ async function LibraryDetails(props: { params: Promise<{ id: string }> }) {
     );
   }
 
-  return (
-    <section className="w-100 h-100 p-large-10">
-      {/* <LibraryData /> */}
-      <hgroup>
-        <p className="fs-medium-10 opacity-default-30 m-b-medium-60">
-          {details.title}
-        </p>
-
-        {JSON.stringify(details.library, null, 4)}
-      </hgroup>
-    </section>
-  );
+  return <LibraryDetails data={details} />;
 }
 
-export default LibraryDetails;
+export default LibraryDetailsPage;
