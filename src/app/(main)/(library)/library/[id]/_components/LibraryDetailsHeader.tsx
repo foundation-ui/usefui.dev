@@ -17,16 +17,18 @@ function LibraryDetailsHeader({
       <p className="fs-medium-10">
         <TextMuted className="opacity-default-30">Created</TextMuted>
         &nbsp;
-        <b>{format(Number(createdAt), "dd/MM/yyyy")}</b>
+        <span className="opacity-default-60">
+          {format(Number(createdAt), "dd/MM/yyyy")}
+        </span>
       </p>
       <p className="fs-medium-10">
         <TextMuted className="opacity-default-30">Updated</TextMuted>
         &nbsp;
-        <b>
+        <span className="opacity-default-60">
           {formatDistanceToNow(new Date(Number(updatedAt)), {
             addSuffix: true,
           })}
-        </b>
+        </span>
       </p>
     </hgroup>
   );

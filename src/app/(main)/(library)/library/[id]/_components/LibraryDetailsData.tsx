@@ -11,12 +11,16 @@ import { Divider } from "@foundation-ui/components";
 
 import type { libraries_table as librariesSchema } from "@/server/db/schema";
 
-function LibraryData({ data }: { data: typeof librariesSchema.$inferSelect }) {
+function LibraryDetailsData({
+  data,
+}: {
+  data: typeof librariesSchema.$inferSelect;
+}) {
   return (
     <MaxWidthContainer className="g-medium-30 w-100 p-large-10">
       <header className="flex justify-between align-end g-medium-30">
         <hgroup>
-          <h1 className="fs-large-10 m-b-medium-10">{data.title}</h1>
+          <h1 className="fs-large-10">{data.title}</h1>
           <p className="fs-medium-20 opacity-default-30">
             {data.description === "" ? "No description" : data.description}
           </p>
@@ -27,13 +31,14 @@ function LibraryData({ data }: { data: typeof librariesSchema.$inferSelect }) {
           <DeleteAction libraryId={Number(data.id)} />
         </div>
       </header>
-      <Divider className="m-b-medium-60" />
+      <Divider className="m-y-medium-60" />
       <LibraryDetailsHeader
         createdAt={data.createdAt}
         updatedAt={data.updatedAt}
       />
+      <Divider className="m-y-medium-60" />
     </MaxWidthContainer>
   );
 }
 
-export default LibraryData;
+export default LibraryDetailsData;
