@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 import LibraryData from "./LibraryData";
-import LibraryConsole from "@/features/console/LibraryConsole";
+import { LibraryConsole } from "@/features";
 
 import type { libraries_table as librariesSchema } from "@/server/db/schema";
 

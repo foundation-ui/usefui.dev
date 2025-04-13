@@ -14,8 +14,8 @@ type EditorBodyProps = {
   readOnly?: boolean;
   value: string;
 
-  setValue: React.Dispatch<React.SetStateAction<string>>;
-  setError: React.Dispatch<React.SetStateAction<string | null>>;
+  setValue?: React.Dispatch<React.SetStateAction<string>>;
+  setError?: React.Dispatch<React.SetStateAction<string | null>>;
   onChange?: (value: string) => void;
 };
 
@@ -63,17 +63,17 @@ function EditorBody({
 }: EditorBodyProps) {
   const handleChange = React.useCallback(
     (newValue: string) => {
-      setValue(newValue);
+      setValue?.(newValue);
 
       try {
         JSON.parse(newValue);
-        setError(null);
+        setError?.(null);
         onChange?.(newValue);
       } catch (e) {
         if (e instanceof Error) {
-          setError(e.message);
+          setError?.(e.message);
         } else {
-          setError("Invalid JSON");
+          setError?.("Invalid JSON");
         }
       }
     },

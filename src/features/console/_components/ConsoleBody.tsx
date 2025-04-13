@@ -3,31 +3,34 @@
 import React from "react";
 import styled from "styled-components";
 
-import type { ConsoleProps } from "../Console";
+import { Toolbar } from "@foundation-ui/components";
 
-const ConsoleBodyWrapper = styled.div`
-  border-top: var(--measurement-small-30) solid var(--font-color-alpha-10);
-  margin-top: var(--measurement-medium-30);
-  padding: var(--measurement-medium-30) 0;
-  height: 100%;
-  width: 100%;
-
-  code {
-    font-size: var(--fontsize-small-50);
-  }
-
-  &[data-mode="error"] {
-    code {
-      color: var(--color-red) !important;
-    }
+export const ConsoleWrapper = styled(Toolbar)`
+  border: none !important;
+  padding: var(--measurement-medium-30) 0 !important;
+  menu {
+    align-self: center !important;
   }
 `;
 
-function ConsoleBody({ mode, value }: ConsoleProps) {
+function ConsoleBody({ children }: { children: React.ReactNode }) {
+  const hotkey = "<";
+  const bindkey = "ctrlKey";
+
   return (
-    <ConsoleBodyWrapper data-mode={mode}>
-      <code>{value}</code>
-    </ConsoleBodyWrapper>
+    <Toolbar.Root>
+      <ConsoleWrapper
+        side="bottom"
+        sizing="medium"
+        height="auto"
+        shortcut
+        hotkey={hotkey}
+        bindkey={bindkey}
+        defaultOpen
+      >
+        {children}
+      </ConsoleWrapper>
+    </Toolbar.Root>
   );
 }
 

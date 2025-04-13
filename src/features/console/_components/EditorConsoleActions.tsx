@@ -8,7 +8,7 @@ import { TextMuted } from "@/components/shared/TextMuted";
 import { Toolbar } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 
-function ConsoleActions({ value }: { value: string | null }) {
+function EditorConsoleActions({ value }: { value: string | null }) {
   return (
     <div className="flex g-medium-60 align-center">
       <CopyCode value={value} />
@@ -22,4 +22,4 @@ function ConsoleActions({ value }: { value: string | null }) {
   );
 }
 
-export default ConsoleActions;
+export default EditorConsoleActions;

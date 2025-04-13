@@ -28,9 +28,9 @@ function SidebarLinks() {
     <React.Fragment>
       <Dialog.Root>
         <Tooltip content="Editor">
-          <Dialog.Trigger variant="ghost">
+          <Dialog.Trigger variant="border" sizing="small">
             <PixelIcon>
-              <PixelIcon.Zap />
+              <PixelIcon.Plus />
             </PixelIcon>
           </Dialog.Trigger>
         </Tooltip>

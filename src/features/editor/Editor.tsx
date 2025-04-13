@@ -7,7 +7,7 @@ import { Portal, Dialog, ScrollArea } from "@foundation-ui/components";
 
 import EditorMenu from "./_components/EditorMenu";
 import EditorBody from "./_components/EditorBody";
-import Console from "../console/Console";
+import EditorConsoleProps from "../console/EditorConsole";
 
 import { LibraryTemplate } from "./_utils/generator-templates";
 
@@ -58,7 +58,7 @@ function Editor({
             setError={setError}
             onChange={onChange}
           />
-          <Console mode={error ? "error" : "meta"} value={error} />
+          <EditorConsoleProps mode={error ? "error" : "meta"} value={error} />
         </ScrollArea>
       </DialogBody>
 
