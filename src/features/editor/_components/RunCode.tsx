@@ -8,7 +8,7 @@ import { Button } from "@foundation-ui/components";
 import { Spinner } from "@/components";
 
 import { LibraryTemplate } from "../_utils/generator-templates";
-import { InsertLibraryAction } from "@/server/actions";
+import { InsertLibraryAction, RevalidateLibraryPath } from "@/server/actions";
 
 function RunCode({
   value,
@@ -19,33 +19,33 @@ function RunCode({
 }) {
   const { mutate, isPending } = useMutation({
     mutationFn: InsertLibraryAction,
-    // onSuccess: (data) => {
-    //   console.log(data);
-    // },
+    onSuccess: () => RevalidateLibraryPath(),
     onError: (data) => {
       setError(`[Runtime Error] - ${data.message} }`);
     },
   });
+
+  const handleRunCode = React.useCallback(() => {
+    mutate({
+      creatorId: BigInt(198198190818190), // [TODO]: Replace this mocked ID to use userId. Type might change.
+      name: "untitled",
+      title: "untitled",
+      description: "",
+      library: JSON.stringify(
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        LibraryTemplate.fn("untitled", JSON.parse(value)),
+      ),
+      createdAt: Date.now().toString(),
+      updatedAt: Date.now().toString(),
+    });
+  }, [mutate, value]);
 
   return (
     <Button
       className="fs-medium-10"
       variant="mono"
       sizing="small"
-      onClick={() =>
-        mutate({
-          creatorId: BigInt(198198190818190),
-          title: "Untitled",
-          description: "",
-          published: false,
-          library: JSON.stringify(
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-            LibraryTemplate.fn("untitled", JSON.parse(value)),
-          ),
-          createdAt: Date.now().toString(),
-          updatedAt: Date.now().toString(),
-        })
-      }
+      onClick={handleRunCode}
       disabled={isPending}
     >
       <span className="fs-medium-10">Run</span>

@@ -51,9 +51,9 @@ function LibrariesList({
             key={key}
             id={item.id}
             creatorId={item.creatorId}
+            name={item.name}
             title={item.title}
             description={item.description}
-            published={item.published}
             library={item.library}
             createdAt={item.createdAt}
             updatedAt={item.updatedAt}

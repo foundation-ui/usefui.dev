@@ -3,7 +3,6 @@ import "server-only";
 import {
   bigint,
   text,
-  boolean,
   singlestoreTableCreator,
 } from "drizzle-orm/singlestore-core";
 
@@ -17,10 +16,10 @@ export const libraries_table = createTable("libraries_table", {
   id: bigint("id", { mode: "bigint" }).primaryKey().autoincrement(),
   creatorId: bigint("creatorId", { mode: "bigint" }),
 
+  name: text("name"),
   title: text("title"),
   description: text("description"),
 
-  published: boolean("published"),
   library: text("library"),
 
   createdAt: text("createdAt"),
