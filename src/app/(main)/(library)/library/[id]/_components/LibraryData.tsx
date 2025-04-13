@@ -3,11 +3,11 @@
 import React from "react";
 
 import DeleteAction from "./DeleteAction";
+import LibraryDetailsSheet from "./LibraryDetailsSheet";
+import LibraryDetailsHeader from "./LibraryDetailsHeader";
 
-import { MaxWidthContainer } from "@/components";
-import { TextMuted } from "@/components/shared/TextMuted";
-import { Divider, Sheet } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { MaxWidthContainer, TextMuted } from "@/components";
+import { Divider } from "@foundation-ui/components";
 
 import type { libraries_table as librariesSchema } from "@/server/db/schema";
 
@@ -21,31 +21,17 @@ function LibraryData({ data }: { data: typeof librariesSchema.$inferSelect }) {
             {data.description === "" ? "No description" : data.description}
           </p>
         </hgroup>
-        <Sheet.Root>
-          <div className="flex align-center g-medium-60">
-            <Sheet.Trigger variant="ghost">
-              <span className="fs-medium-10">Details</span>
-              <Icon>
-                <PixelIcon.LayoutSidebarRight />
-              </Icon>
-            </Sheet.Trigger>
-            <TextMuted className="opacity-default-10">|</TextMuted>
-            <DeleteAction libraryId={Number(data.id)} />
-          </div>
-
-          <Sheet side="right" sizing="medium">
-            <p>id:&nbsp;{data.id}</p>
-            <p>creatorId:&nbsp;{data.creatorId}</p>
-            <p>name:&nbsp;{data.name}</p>
-            <p>title:&nbsp;{data.title}</p>
-            <p>description:&nbsp;{data.description}</p>
-            <p>createdAt:&nbsp;{data.createdAt}</p>
-            <p>updatedAt:&nbsp;{data.updatedAt}</p>
-          </Sheet>
-        </Sheet.Root>
+        <div className="flex align-center g-medium-60">
+          <LibraryDetailsSheet data={data} />
+          <TextMuted className="opacity-default-10">|</TextMuted>
+          <DeleteAction libraryId={Number(data.id)} />
+        </div>
       </header>
-
       <Divider className="m-b-medium-60" />
+      <LibraryDetailsHeader
+        createdAt={data.createdAt}
+        updatedAt={data.updatedAt}
+      />
     </MaxWidthContainer>
   );
 }
