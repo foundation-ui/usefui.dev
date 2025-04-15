@@ -7,7 +7,7 @@ import ConsoleBody from "./_components/ConsoleBody";
 import LibraryConsoleActions from "./_components/LibraryConsoleActions";
 
 import { Icon, PixelIcon } from "@foundation-ui/icons";
-import { ScrollArea, Toolbar } from "@foundation-ui/components";
+import { Toolbar } from "@foundation-ui/components";
 
 import type { libraries_table as librariesSchema } from "@/server/db/schema";
 
@@ -44,9 +44,7 @@ function LibraryConsole({
       </Toolbar.Section>
 
       <Toolbar.Section>
-        <ScrollArea style={{ maxHeight: "var(--breakpoint-mobile)" }}>
           <EditorBody value={designTokens} readOnly={true} />
-        </ScrollArea>
       </Toolbar.Section>
     </ConsoleBody>
   );

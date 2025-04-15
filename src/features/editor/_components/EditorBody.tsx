@@ -13,13 +13,17 @@ import { tags as t } from "@lezer/highlight";
 type EditorBodyProps = {
   readOnly?: boolean;
   value: string;
-
+  sizing?: "small" | string;
   setValue?: React.Dispatch<React.SetStateAction<string>>;
   setError?: React.Dispatch<React.SetStateAction<string | null>>;
   onChange?: (value: string) => void;
 };
 
 const EditorWrapper = styled(ScrollArea)`
+  [data-sizing="small"] {
+    max-height: var(--breakpoint-mobile);
+  }
+
   border-radius: var(--measurement-medium-30);
 
   .cm-foldGutter span {
@@ -60,6 +64,7 @@ function EditorBody({
   setValue,
   setError,
   onChange,
+  sizing,
 }: EditorBodyProps) {
   const handleChange = React.useCallback(
     (newValue: string) => {
@@ -83,7 +88,7 @@ function EditorBody({
   );
 
   return (
-    <EditorWrapper className="h-100 w-100">
+    <EditorWrapper className="h-100 w-100" data-sizing={String(sizing)}>
       <CodeMirror
         value={value}
         height="100%"
