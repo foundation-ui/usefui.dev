@@ -13,7 +13,7 @@ import { tags as t } from "@lezer/highlight";
 type EditorBodyProps = {
   readOnly?: boolean;
   value: string;
-  sizing?: "small" | string;
+  sizing?: "small" | "medium" | "large";
   setValue?: React.Dispatch<React.SetStateAction<string>>;
   setError?: React.Dispatch<React.SetStateAction<string | null>>;
   onChange?: (value: string) => void;

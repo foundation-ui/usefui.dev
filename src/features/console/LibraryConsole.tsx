@@ -44,7 +44,7 @@ function LibraryConsole({
       </Toolbar.Section>
 
       <Toolbar.Section>
-          <EditorBody value={designTokens} readOnly={true} />
+          <EditorBody value={designTokens} readOnly={true} sizing="small" />
       </Toolbar.Section>
     </ConsoleBody>
   );
