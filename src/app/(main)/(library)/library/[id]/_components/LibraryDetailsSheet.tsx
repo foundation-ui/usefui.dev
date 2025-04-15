@@ -34,9 +34,9 @@ function LibraryDetailsSheet({
   const form = useForm<UpdateLibraryType>({
     resolver: zodResolver(updateLibrarySchema),
     defaultValues: {
-      name: "",
-      title: "",
-      description: "",
+      name: data.name ?? "",
+      title: data.title ?? "",
+      description: data.description ?? "",
     },
   });
   const { mutate, isPending } = useMutation({
