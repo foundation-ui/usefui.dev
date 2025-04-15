@@ -109,6 +109,7 @@ function LibraryDetailsSheet({
                 variant="ghost"
                 sizing="small"
                 disabled={isPending}
+                defaultValue={form.getValues("name")}
                 {...form.register("name")}
                 style={{ width: "auto", fontSize: "var(--fontsize-medium-10)" }}
                 onChange={(event) => form.setValue("name", event.target.value)}
@@ -125,6 +126,7 @@ function LibraryDetailsSheet({
                 variant="ghost"
                 sizing="small"
                 disabled={isPending}
+                defaultValue={form.getValues("title")}
                 {...form.register("title")}
                 style={{ width: "auto", fontSize: "var(--fontsize-medium-10)" }}
                 onChange={(event) => form.setValue("title", event.target.value)}
@@ -141,6 +143,7 @@ function LibraryDetailsSheet({
                 variant="ghost"
                 sizing="small"
                 disabled={isPending}
+                defaultValue={form.getValues("description")}
                 {...form.register("description")}
                 style={{ width: "auto", fontSize: "var(--fontsize-medium-10)" }}
                 onChange={(event) =>
