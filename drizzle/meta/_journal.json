@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "singlestore",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "1",
+      "when": 1744741013632,
+      "tag": "0000_massive_nick_fury",
+      "breakpoints": true
+    }
+  ]
+}

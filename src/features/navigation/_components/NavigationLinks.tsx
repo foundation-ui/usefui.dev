@@ -3,13 +3,21 @@
 import React from "react";
 import SolutionsLinks from "./SolutionsLinks";
 
-import { Button } from "@foundation-ui/components";
-import { Icon, SocialIcon } from "@foundation-ui/icons";
+import { Badge, Button } from "@foundation-ui/components";
+import { Icon, PixelIcon, SocialIcon } from "@foundation-ui/icons";
 import { TextMuted } from "@/components/shared/TextMuted";
 
 function NavigationLinks() {
   return (
     <div className="flex align-center g-medium-30">
+      <Badge variant="warning">
+        <Icon fill="var(--color-orange)">
+          <PixelIcon.Alert />
+        </Icon>
+        Work in Progress
+      </Badge>
+      <TextMuted className="fs-medium-20 opacity-default-10">|</TextMuted>
+
       <SolutionsLinks />
       <TextMuted className="fs-medium-20 opacity-default-10">|</TextMuted>
       <Button
