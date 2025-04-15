@@ -2,7 +2,9 @@
 
 import React from "react";
 
-import { TextMuted } from "@/components/shared/TextMuted";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Tooltip } from "@foundation-ui/components";
+
 import { format, formatDistanceToNow } from "date-fns";
 
 function LibraryDetailsHeader({
@@ -14,22 +16,29 @@ function LibraryDetailsHeader({
 }) {
   return (
     <hgroup className="flex justify-start align-center g-medium-60">
-      <p className="fs-medium-10">
-        <TextMuted className="opacity-default-30">Created</TextMuted>
-        &nbsp;
-        <span className="opacity-default-60">
-          {format(Number(createdAt), "dd/MM/yyyy")}
-        </span>
-      </p>
-      <p className="fs-medium-10">
-        <TextMuted className="opacity-default-30">Updated</TextMuted>
-        &nbsp;
-        <span className="opacity-default-60">
-          {formatDistanceToNow(new Date(Number(updatedAt)), {
-            addSuffix: true,
-          })}
-        </span>
-      </p>
+      <Tooltip content="Created At">
+        <div className="flex align-center g-medium-10">
+          <Icon>
+            <PixelIcon.Calendar />
+          </Icon>
+          <span className="opacity-default-60 fs-medium-10">
+            {format(Number(createdAt), "dd/MM/yyyy")}
+          </span>
+        </div>
+      </Tooltip>
+      <Tooltip content="Updated At">
+        <div className="flex align-center g-medium-10">
+          <Icon>
+            <PixelIcon.Clock />
+          </Icon>
+          <span className="opacity-default-60 fs-medium-10">
+            {formatDistanceToNow(new Date(Number(updatedAt)), {
+              addSuffix: true,
+              includeSeconds: true,
+            })}
+          </span>
+        </div>
+      </Tooltip>
     </hgroup>
   );
 }

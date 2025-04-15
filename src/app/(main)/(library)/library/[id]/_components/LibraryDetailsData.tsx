@@ -6,7 +6,7 @@ import DeleteAction from "./DeleteAction";
 import LibraryDetailsSheet from "./LibraryDetailsSheet";
 import LibraryDetailsHeader from "./LibraryDetailsHeader";
 
-import { MaxWidthContainer, TextMuted } from "@/components";
+import { MaxWidthContainer } from "@/components";
 import { Divider } from "@foundation-ui/components";
 
 import type { libraries_table as librariesSchema } from "@/server/db/schema";
@@ -27,7 +27,6 @@ function LibraryDetailsData({
         </hgroup>
         <div className="flex align-center g-medium-60">
           <LibraryDetailsSheet data={data} />
-          <TextMuted className="opacity-default-10">|</TextMuted>
           <DeleteAction libraryId={Number(data.id)} />
         </div>
       </header>

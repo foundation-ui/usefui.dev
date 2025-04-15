@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Divider, Sheet } from "@foundation-ui/components";
+import { Divider, Sheet, Tooltip } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 import type { libraries_table as librariesSchema } from "@/server/db/schema";
@@ -14,12 +14,13 @@ function LibraryDetailsSheet({
 }) {
   return (
     <Sheet.Root>
-      <Sheet.Trigger variant="ghost">
-        <span className="fs-medium-10">Details</span>
-        <Icon>
-          <PixelIcon.LayoutSidebarRight />
-        </Icon>
-      </Sheet.Trigger>
+      <Tooltip content="Details">
+        <Sheet.Trigger variant="ghost">
+          <Icon>
+            <PixelIcon.LayoutSidebarRight />
+          </Icon>
+        </Sheet.Trigger>
+      </Tooltip>
 
       <Sheet side="right" sizing="medium">
         <hgroup className="flex justify-between align-center g-medium-10 m-b-medium-60">

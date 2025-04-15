@@ -5,7 +5,7 @@ import React from "react";
 import { useMutation } from "@tanstack/react-query";
 
 import { Spinner } from "@/components";
-import { Button } from "@foundation-ui/components";
+import { Button, Tooltip } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 import { DeleteMock } from "@/server/actions";
@@ -22,16 +22,17 @@ function DeleteAction({ libraryId }: { libraryId: number }) {
   });
 
   return (
-    <Button variant="ghost" onClick={() => mutate(libraryId)}>
-      <span className="fs-medium-10">Delete</span>
-      {isPending ? (
-        <Spinner data-variant="inner" />
-      ) : (
-        <Icon width={18} height={18}>
-          <PixelIcon.Delete />
-        </Icon>
-      )}
-    </Button>
+    <Tooltip content="Delete">
+      <Button variant="ghost" onClick={() => mutate(libraryId)}>
+        {isPending ? (
+          <Spinner data-variant="inner" />
+        ) : (
+          <Icon width={18} height={18}>
+            <PixelIcon.Delete />
+          </Icon>
+        )}
+      </Button>
+    </Tooltip>
   );
 }
 

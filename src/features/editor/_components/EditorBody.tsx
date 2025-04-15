@@ -38,7 +38,7 @@ const EditorTheme = createTheme({
     caret: "var(--font-color-alpha-60)",
     selection: "var(--font-color-alpha-10)",
     selectionMatch: "var(--font-color-alpha-10)",
-
+    fontSize: "var(--fontsize-small-60)",
     gutterActiveForeground: "var(--font-color-alpha-30)",
 
     gutterBackground: "var(--contrast-color)",
