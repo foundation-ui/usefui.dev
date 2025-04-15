@@ -14,6 +14,19 @@ export const MUTATIONS = {
     return true;
   },
 
+  UpdateLibraryData: async function (
+    data: { name: string; title: string; description?: string | undefined },
+    libraryId: number,
+  ) {
+    const result = await db
+      .update(librariesSchema)
+      .set({ ...data })
+      .where(eq(librariesSchema.id, BigInt(libraryId)));
+
+    if (!result) throw new Error("Failed to update library");
+    return true;
+  },
+
   DeleteMockData: async function (libraryId: number) {
     const result = await db
       .delete(librariesSchema)
