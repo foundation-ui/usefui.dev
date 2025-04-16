@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 import { Portal, Dialog, ScrollArea } from "@foundation-ui/components";
 
-import EditorMenu from "./_components/EditorMenu";
-import EditorBody from "./_components/EditorBody";
+import EditorMenu from "./_components/containers/EditorMenu";
+import EditorBody from "./_components/containers/EditorBody";
 import EditorConsoleProps from "../console/EditorConsole";
 
 import { LibraryTemplate } from "./_utils/generator-templates";

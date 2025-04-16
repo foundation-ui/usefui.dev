@@ -7,7 +7,7 @@ import { Icon, PixelIcon } from "@foundation-ui/icons";
 import { Button } from "@foundation-ui/components";
 import { Spinner } from "@/components";
 
-import { LibraryTemplate } from "../_utils/generator-templates";
+import { LibraryTemplate } from "../../_utils/generator-templates";
 import { InsertLibraryAction, RevalidateLibraryPath } from "@/server/actions";
 
 function RunCode({

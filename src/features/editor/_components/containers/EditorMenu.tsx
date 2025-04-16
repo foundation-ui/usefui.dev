@@ -2,16 +2,16 @@
 
 import React from "react";
 
-import FormatCode from "./FormatCode";
-import ResetCode from "./ResetCode";
-import RunCode from "./RunCode";
+import FormatCode from "../triggers/FormatCode";
+import ResetCode from "../triggers/ResetCode";
+import RunCode from "../triggers/RunCode";
 
 import { TextMuted } from "@/components/shared/TextMuted";
 
 import { Tooltip, DialogControl, Button } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 
-import { LibraryTemplate } from "../_utils/generator-templates";
+import { LibraryTemplate } from "../../_utils/generator-templates";
 
 type EditorMenuProps = {
   value: string;

@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import type { EditorConsoleProps } from "../EditorConsole";
+import type { EditorConsoleProps } from "../../EditorConsole";
 
 const ConsoleBodyWrapper = styled.div`
   border-top: var(--measurement-small-30) solid var(--font-color-alpha-10);
