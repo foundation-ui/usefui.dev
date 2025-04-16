@@ -4,7 +4,7 @@ import LibrariesList from "./_components/LibrariesList";
 import { QUERIES } from "@/server/db/queries";
 
 async function LibraryPage() {
-  const libraries = await QUERIES.GetMock();
+  const libraries = await QUERIES.GetLibraries();
 
   if (!libraries)
     return (

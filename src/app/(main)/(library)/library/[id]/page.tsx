@@ -27,7 +27,7 @@ async function LibraryDetailsPage(props: { params: Promise<{ id: string }> }) {
     );
   }
 
-  const details = await QUERIES.GetMockDetails(parsedLibraryId);
+  const details = await QUERIES.GetLibraryDetails(parsedLibraryId);
   if (!details) {
     return (
       <section className="w-100 h-100 p-large-10">
