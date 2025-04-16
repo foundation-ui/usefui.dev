@@ -126,7 +126,7 @@ function ProfileActions() {
             }
           >
             Home Page
-            <Icon viewBox="0 0 32 32">
+            <Icon>
               <SocialIcon.Foundation />
             </Icon>
           </DropdownMenu.Item>
