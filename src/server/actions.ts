@@ -16,7 +16,7 @@ export async function InsertLibraryAction(payload: GenerateLibraryProperties) {
   return result;
 }
 
-export async function DeleteMock(libraryId: number) {
+export async function DeleteLibrary(libraryId: number) {
   const result = await MUTATIONS.DeleteLibraryData(libraryId);
 
   if (result) revalidatePath("/");

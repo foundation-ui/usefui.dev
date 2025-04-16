@@ -2,41 +2,41 @@
 
 import React from "react";
 
-import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
-
-import { Spinner } from "@/components";
-import { Button } from "@foundation-ui/components";
+import { Dialog, Divider, Portal } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 
-import { DeleteMock } from "@/server/actions";
-import { toast } from "sonner";
+import DeleteLibraryForm from "../forms/DeleteLibraryForm";
 
 function DeleteAction({ libraryId }: { libraryId: number }) {
-  const router = useRouter();
-  const { mutate, isPending } = useMutation({
-    mutationFn: DeleteMock,
-    onSuccess: () => {
-      toast.success("Library deleted", { id: "delete-library" });
-      router.push("/");
-    },
-    onError: () => {
-      toast.error("Failed to delete library", { id: "delete-library" });
-    },
-  });
-
   return (
-    <Button variant="ghost" onClick={() => mutate(libraryId)} rawicon>
-      <span className="fs-medium-10">Delete</span>
+    <Dialog.Root>
+      <Dialog.Trigger variant="ghost" rawicon>
+        <span className="fs-medium-10">Delete</span>
 
-      {isPending ? (
-        <Spinner data-variant="inner" />
-      ) : (
         <Icon width={18} height={18} fill="var(--color-red)">
           <PixelIcon.Delete />
         </Icon>
-      )}
-    </Button>
+      </Dialog.Trigger>
+
+      <Portal container="portal-container">
+        <Dialog sizing="small">
+          <hgroup className="flex align-start g-large-10">
+            <div>
+              <h6 className="fs-medium-30">Attention</h6>
+              <p className="fs-medium-20 opacity-default-60">
+                This action is permanent and cannot be reversed.
+              </p>
+            </div>
+            <Icon width={24} height={24} fill="var(--color-red)">
+              <PixelIcon.Alert />
+            </Icon>
+          </hgroup>
+          <Divider className="m-y-medium-60" />
+          <DeleteLibraryForm libraryId={libraryId} />
+        </Dialog>
+        <Dialog.Overlay closeOnInteract />
+      </Portal>
+    </Dialog.Root>
   );
 }
 
