@@ -8,22 +8,18 @@ import { ScrollArea } from "@foundation-ui/components";
 
 import { createTheme } from "@uiw/codemirror-themes";
 import { json } from "@codemirror/lang-json";
+
 import { tags as t } from "@lezer/highlight";
 
 type EditorBodyProps = {
   readOnly?: boolean;
   value: string;
-  sizing?: "small" | "medium" | "large";
   setValue?: React.Dispatch<React.SetStateAction<string>>;
   setError?: React.Dispatch<React.SetStateAction<string | null>>;
   onChange?: (value: string) => void;
 };
 
 const EditorWrapper = styled(ScrollArea)`
-  [data-sizing="small"] {
-    max-height: var(--breakpoint-mobile);
-  }
-
   border-radius: var(--measurement-medium-30);
 
   .cm-foldGutter span {
@@ -33,6 +29,7 @@ const EditorWrapper = styled(ScrollArea)`
     color: var(--font-color-alpha-10) !important;
   }
 `;
+
 const EditorTheme = createTheme({
   theme: "light",
   settings: {
@@ -64,7 +61,6 @@ function EditorBody({
   setValue,
   setError,
   onChange,
-  sizing,
 }: EditorBodyProps) {
   const handleChange = React.useCallback(
     (newValue: string) => {
@@ -88,7 +84,7 @@ function EditorBody({
   );
 
   return (
-    <EditorWrapper className="h-100 w-100" data-sizing={String(sizing)}>
+    <EditorWrapper className="h-100 w-100">
       <CodeMirror
         value={value}
         height="100%"
