@@ -107,7 +107,29 @@ function ProfileActions() {
               <PixelIcon.SlidersVertical />
             </Icon>
           </DropdownMenu.Item>
+          <DropdownMenu.Item
+            className="flex align-center g-medium-30 justify-between fs-medium-10"
+            onClick={() =>
+              window.open("https://github.com/foundation-ui/token-engine")
+            }
+          >
+            Github
+            <Icon viewBox="0 0 14 14">
+              <SocialIcon.Github />
+            </Icon>
+          </DropdownMenu.Item>
           <Divider />
+          <DropdownMenu.Item
+            className="flex align-center g-medium-30 justify-between fs-medium-10"
+            onClick={() =>
+              window.open("https://github.com/foundation-ui/token-engine")
+            }
+          >
+            Home Page
+            <Icon viewBox="0 0 32 32">
+              <SocialIcon.Foundation />
+            </Icon>
+          </DropdownMenu.Item>
           <DropdownMenu.Item
             className="flex align-center g-medium-30 justify-between fs-medium-10"
             disabled

@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Avatar, DropdownMenu } from "@foundation-ui/components";
+import { DropdownMenu } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 const SilentItem = styled(DropdownMenu.Item)`
@@ -24,9 +24,8 @@ function SolutionsLinks() {
           </Icon>
         </DropdownMenu.Trigger>
 
-        <DropdownMenu.Content sizing="large" className="grid g-medium-10">
+        <DropdownMenu.Content sizing="medium" className="grid g-medium-10">
           <SilentItem disabled className="flex align-start g-medium-30">
-            <Avatar src="https://place-hold.it/100x100" sizing="small" />
             <div className="grid">
               <span className="fs-medium-20">Tokens Engine</span>
               <span className="fs-medium-10 opacity-default-30">
@@ -35,7 +34,6 @@ function SolutionsLinks() {
             </div>
           </SilentItem>
           <SilentItem disabled className="flex align-start g-medium-30">
-            <Avatar src="https://place-hold.it/100x100" sizing="small" />
             <div className="grid">
               <span className="fs-medium-20">Components</span>
               <span className="fs-medium-10 opacity-default-30">
@@ -44,7 +42,6 @@ function SolutionsLinks() {
             </div>
           </SilentItem>
           <SilentItem disabled className="flex align-start g-medium-30">
-            <Avatar src="https://place-hold.it/100x100" sizing="small" />
             <div className="grid">
               <span>Behavior Analytics</span>
               <span className="fs-medium-10 opacity-default-30">
@@ -53,7 +50,6 @@ function SolutionsLinks() {
             </div>
           </SilentItem>
           <SilentItem disabled className="flex align-start g-medium-30">
-            <Avatar src="https://place-hold.it/100x100" sizing="small" />
             <div className="grid">
               <span className="fs-medium-20">CLI</span>
               <span className="fs-medium-10 opacity-default-30">
