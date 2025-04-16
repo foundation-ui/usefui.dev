@@ -1,5 +1,5 @@
 import React from "react";
-import LibrariesList from "./_components/LibrariesList";
+import LibrariesList from "./_components/data/LibrariesList";
 
 import { QUERIES } from "@/server/db/queries";
 

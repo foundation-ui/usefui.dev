@@ -1,6 +1,6 @@
 import React from "react";
 
-import LibraryDetails from "./_components/LibraryDetails";
+import LibraryDetails from "./_components/containers/LibraryDetails";
 import { QUERIES } from "@/server/db/queries";
 
 async function LibraryDetailsPage(props: { params: Promise<{ id: string }> }) {
