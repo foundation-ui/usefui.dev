@@ -33,6 +33,7 @@ export async function UpdateLibrary(
   const result = await MUTATIONS.UpdateLibraryData(form, libraryId);
   if (!result) throw new Error("Failed to update library");
 
+  revalidatePath(`/`);
   revalidatePath(`/library/${libraryId}`);
   return result;
 }
