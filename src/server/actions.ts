@@ -11,28 +11,28 @@ import {
 
 export async function InsertLibraryAction(payload: GenerateLibraryProperties) {
   const result = await MUTATIONS.InsertLibraryData(payload);
+
   if (result) revalidatePath("/");
+  return result;
 }
 
 export async function DeleteMock(libraryId: number) {
   const result = await MUTATIONS.DeleteLibraryData(libraryId);
-  if (result) revalidatePath("/");
-}
 
-export async function RevalidateLibraryPath() {
-  revalidatePath("/");
+  if (result) revalidatePath("/");
+  return result;
 }
 
 export async function UpdateLibrary(
   form: UpdateLibraryType,
   libraryId: number,
 ) {
-  const { success, data } = updateLibrarySchema.safeParse(form);
+  const { success } = updateLibrarySchema.safeParse(form);
   if (!success) throw new Error("Invalid form data");
 
   const result = await MUTATIONS.UpdateLibraryData(form, libraryId);
   if (!result) throw new Error("Failed to update library");
 
   revalidatePath(`/library/${libraryId}`);
-  return data;
+  return result;
 }
