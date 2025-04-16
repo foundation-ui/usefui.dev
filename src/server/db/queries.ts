@@ -8,16 +8,17 @@ import { libraries_table as librariesSchema } from "@/server/db/schema";
 const mockUserID = BigInt(198198190818190);
 
 export const QUERIES = {
-  GetMock: async function () {
+  GetLibraries: async function () {
     const result = await db
       .select()
       .from(librariesSchema)
-      .where(eq(librariesSchema.creatorId, mockUserID));
+      .where(eq(librariesSchema.creatorId, mockUserID))
+      .orderBy(librariesSchema.createdAt);
 
     if (!result) throw new Error("Failed to fetch libraries");
     return result as (typeof librariesSchema.$inferSelect)[];
   },
-  GetMockDetails: async function (libraryId: number) {
+  GetLibraryDetails: async function (libraryId: number) {
     const result = await db
       .selectDistinct()
       .from(librariesSchema)

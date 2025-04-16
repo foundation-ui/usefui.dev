@@ -20,14 +20,14 @@ export const MUTATIONS = {
   ) {
     const result = await db
       .update(librariesSchema)
-      .set({ ...data })
+      .set({ ...data, updatedAt: Date.now().toString() })
       .where(eq(librariesSchema.id, BigInt(libraryId)));
 
     if (!result) throw new Error("Failed to update library");
     return true;
   },
 
-  DeleteMockData: async function (libraryId: number) {
+  DeleteLibraryData: async function (libraryId: number) {
     const result = await db
       .delete(librariesSchema)
       .where(eq(librariesSchema.id, BigInt(libraryId)));
