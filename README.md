@@ -27,10 +27,9 @@ Handled by Netlify for now
 - [x] Deploy to confirm the setup is up and running
 - [x] Update Navigation Links
 - [x] Cleanup Database and data fetching patterns
-
-- [ ] Generate Library
-- [ ] Library Page Details
-- [ ] Library CRUD Actions
+- [x] Generate Library
+- [x] Library Page Details
+- [x] Library CRUD Actions
 
 - [ ] Add Auth using Clerk
 - [ ] Add Analytics

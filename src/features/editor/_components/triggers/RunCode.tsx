@@ -54,12 +54,12 @@ function RunCode({
   return (
     <Button
       className="fs-medium-10"
-      variant="mono"
+      variant="primary"
       sizing="small"
       onClick={handleRunCode}
       disabled={isPending}
     >
-      <span className="fs-medium-10">Run</span>
+      Run
       {isPending ? (
         <Spinner data-variant="inner" />
       ) : (

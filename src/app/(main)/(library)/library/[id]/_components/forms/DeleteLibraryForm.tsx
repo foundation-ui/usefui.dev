@@ -55,16 +55,14 @@ function DeleteLibraryForm({ libraryId }: { libraryId: number }) {
         </Dialog.Trigger>
         <Button
           variant="primary"
-          sizing="small"
+          sizing="large"
           disabled={disableSubmit}
           onClick={() => {
             toast.loading("Deleting library..", { id: "delete-library" });
             mutate(libraryId);
           }}
         >
-          <span className="fs-medium-10" style={{ color: "var(--body-color)" }}>
-            Delete library
-          </span>
+          Delete library
         </Button>
       </section>
     </React.Fragment>

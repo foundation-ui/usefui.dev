@@ -15,8 +15,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@foundation-ui/components':
-        specifier: ^1.4.6
-        version: 1.4.6(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.16(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
+        specifier: ^1.4.7
+        version: 1.4.7(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.16(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       '@foundation-ui/core':
         specifier: ^1.3.0
         version: 1.3.0(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.16(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
@@ -24,8 +24,8 @@ importers:
         specifier: ^1.3.0
         version: 1.3.0(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@foundation-ui/icons':
-        specifier: ^1.1.1
-        version: 1.1.1(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.16(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
+        specifier: ^1.1.2
+        version: 1.1.2(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.16(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       '@foundation-ui/styles':
         specifier: ^1.4.0
         version: 1.4.0(@types/styled-components@5.1.34)(styled-components@6.1.16(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
@@ -499,8 +499,8 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0
       react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
 
-  '@foundation-ui/components@1.4.6':
-    resolution: {integrity: sha512-0i5sNq5EC+bNAp9hhGBVGfQp+QnVFaGIxd2jx0GF/bXSS0i/+lLE9cUU8rtZRf7QvSEfG1lHUKJ6YlE76/royg==, tarball: https://npm.pkg.github.com/download/@foundation-ui/components/1.4.6/becaedf8e8f41416091629e2e7cb65572b7180bb}
+  '@foundation-ui/components@1.4.7':
+    resolution: {integrity: sha512-2vB6ZuKLkdeCCOTwKaS0QVxfvjEhHdZdSnLLD19pcWKUmBB5G8pwA+VvzlQlufMQhIvjRgKPOxyatNGxc2A0vQ==, tarball: https://npm.pkg.github.com/download/@foundation-ui/components/1.4.7/9cc35fcde17f1594bafb77708a923e5dd7a91fb1}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -527,8 +527,8 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0
       react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
 
-  '@foundation-ui/icons@1.1.1':
-    resolution: {integrity: sha512-M7EHRkCFDUM9/K7nvvg0E6RSD66nE3CdQlmKfQQ8aEBtyl7AwHWIgXEQnk5hhNn9RsIT6KJR60xF4/Khyws/JQ==, tarball: https://npm.pkg.github.com/download/@foundation-ui/icons/1.1.1/afb73d92f157df47214ee23e341d2d587cf4e6af}
+  '@foundation-ui/icons@1.1.2':
+    resolution: {integrity: sha512-qaN4TH63/1TIyb+zAQKYWYIhpKhT0PKigjEEgx7TmwwUmn1gG5vk10tUj/VQZZd82IQMgnZZ3LzT/wgUnM0d2A==, tarball: https://npm.pkg.github.com/download/@foundation-ui/icons/1.1.2/715064f0e18b38fad507d6d216c562a060ce9a42}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -2716,7 +2716,7 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@foundation-ui/components@1.4.6(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.16(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
+  '@foundation-ui/components@1.4.7(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.16(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
     dependencies:
       '@types/react': 19.0.12
       '@types/react-dom': 19.0.4(@types/react@19.0.12)
@@ -2742,7 +2742,7 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@foundation-ui/icons@1.1.1(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.16(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
+  '@foundation-ui/icons@1.1.2(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(@types/styled-components@5.1.34)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.16(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
     dependencies:
       '@types/react': 19.0.12
       '@types/react-dom': 19.0.4(@types/react@19.0.12)

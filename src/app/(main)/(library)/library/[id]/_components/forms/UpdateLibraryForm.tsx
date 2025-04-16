@@ -108,16 +108,14 @@ function UpdateLibraryForm({
         </Sheet.Trigger>
         <Button
           variant="primary"
-          sizing="small"
+          sizing="medium"
           disabled={isPending}
           onClick={() => {
             toast.loading("Updating library..", { id: "update-library" });
             mutate();
           }}
         >
-          <span className="fs-medium-10" style={{ color: "var(--body-color)" }}>
-            Save changes
-          </span>
+          Save changes
         </Button>
       </section>
     </React.Fragment>
