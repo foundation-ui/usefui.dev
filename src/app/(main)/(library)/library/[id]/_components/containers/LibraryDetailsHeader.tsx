@@ -14,7 +14,7 @@ function LibraryDetailsHeader({
   data: typeof librariesSchema.$inferSelect;
 }) {
   return (
-    <header className="flex justify-between align-end g-medium-30 m-b-medium-60">
+    <header className="flex justify-between align-end g-medium-60 m-b-medium-60">
       <hgroup>
         <h1 className="fs-medium-40">{data.title}</h1>
         <p className="fs-medium-10 opacity-default-30">

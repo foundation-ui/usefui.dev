@@ -1,14 +1,18 @@
 "use client";
 
 import React from "react";
+
 import { useMutation } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 import { Button } from "@foundation-ui/components";
 import { Spinner } from "@/components";
 
-import { LibraryTemplate } from "../../_utils/generator-templates";
-import { InsertLibraryAction, RevalidateLibraryPath } from "@/server/actions";
+import { LibraryTemplate } from "@/templates";
+import { InsertLibraryAction } from "@/server/actions";
+
+import { toast } from "sonner";
 
 function RunCode({
   value,
@@ -17,9 +21,16 @@ function RunCode({
   value: string;
   setError: React.Dispatch<React.SetStateAction<string | null>>;
 }) {
+  const router = useRouter();
   const { mutate, isPending } = useMutation({
     mutationFn: InsertLibraryAction,
-    onSuccess: () => RevalidateLibraryPath(),
+    onSuccess: () => {
+      router.push("/");
+      toast("Library generated", {
+        id: "generate-library",
+        description: "Close the editor to access your library.",
+      });
+    },
     onError: (data) => {
       setError(`[Runtime Error] - ${data.message} }`);
     },

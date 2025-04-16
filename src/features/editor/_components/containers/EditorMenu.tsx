@@ -11,7 +11,7 @@ import { TextMuted } from "@/components/shared/TextMuted";
 import { Tooltip, DialogControl, Button } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 
-import { LibraryTemplate } from "../../_utils/generator-templates";
+import { LibraryTemplate } from "@/templates";
 
 type EditorMenuProps = {
   value: string;

@@ -9,7 +9,7 @@ import EditorMenu from "./_components/containers/EditorMenu";
 import EditorBody from "./_components/containers/EditorBody";
 import EditorConsoleProps from "../console/EditorConsole";
 
-import { LibraryTemplate } from "./_utils/generator-templates";
+import { LibraryTemplate } from "@/templates";
 
 interface EditorProps {
   defaultValue?: string;
