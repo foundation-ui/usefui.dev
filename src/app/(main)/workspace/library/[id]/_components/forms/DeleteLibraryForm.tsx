@@ -20,7 +20,7 @@ function DeleteLibraryForm({ libraryId }: { libraryId: number }) {
     mutationFn: DeleteLibrary,
     onSuccess: () => {
       toast.success("Library deleted", { id: "delete-library" });
-      router.push("/");
+      router.push("/workspace");
     },
     onError: () => {
       toast.error("Failed to delete library", { id: "delete-library" });

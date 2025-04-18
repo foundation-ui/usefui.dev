@@ -5,7 +5,7 @@ import React from "react";
 import CopyCode from "@/features/console/_components/triggers/CopyCode";
 
 import { AppLink, CardBody, GridLayoutSmall } from "@/components";
-import { Badge, Button, Divider } from "@foundation-ui/components";
+import { Badge, Divider } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 const WIKI_CATALOG = [

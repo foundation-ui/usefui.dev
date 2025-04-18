@@ -25,7 +25,7 @@ function RunCode({
   const { mutate, isPending } = useMutation({
     mutationFn: InsertLibraryAction,
     onSuccess: () => {
-      router.push("/");
+      router.push("/workspace");
       toast("Library generated", {
         id: "generate-library",
         description: "Close the editor to access your library.",
