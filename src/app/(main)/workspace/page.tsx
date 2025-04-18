@@ -3,7 +3,7 @@ import LibrariesList from "./_components/data/LibrariesList";
 
 import { QUERIES } from "@/server/db/queries";
 
-async function LibraryPage() {
+async function WorkspacePage() {
   const libraries = await QUERIES.GetLibraries();
 
   if (!libraries)
@@ -20,4 +20,4 @@ async function LibraryPage() {
   );
 }
 
-export default LibraryPage;
+export default WorkspacePage;

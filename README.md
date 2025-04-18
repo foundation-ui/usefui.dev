@@ -41,6 +41,8 @@ Handled by Netlify for now
 - [ ] Add Testing suites Github Actions to trigger it
 - [ ] General tidying-up
 
+- [ ] Library Preview Page
+
 ## Notes
 
 ### (31/02/2025)

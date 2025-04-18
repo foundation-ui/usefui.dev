@@ -27,7 +27,7 @@ function SidebarLinks() {
   return (
     <React.Fragment>
       <Dialog.Root>
-        <Tooltip content="Editor">
+        <Tooltip content="New library">
           <Dialog.Trigger variant="border" sizing="small">
             <PixelIcon>
               <PixelIcon.Plus />
@@ -41,7 +41,7 @@ function SidebarLinks() {
         const isActiveRoute =
           pathname === path ||
           pathname === `/${path}` ||
-          (path !== "/" && pathname.includes(path));
+          (path !== "" && pathname.includes(path));
 
         return (
           <Tooltip key={key} content={label}>
@@ -53,7 +53,8 @@ function SidebarLinks() {
               // disabled={["feedback", "support"].includes(key)}
             >
               <AppLinkIcon as={PixelIcon} fillOpacity={isActiveRoute ? 1 : 0.3}>
-                {key === "library" && <PixelIcon.Script />}
+                {key === "overview" && <PixelIcon.Map />}
+                {key === "workspace" && <PixelIcon.Dashbaord />}
                 {key === "integrations" && <PixelIcon.Cloud />}
                 {key === "history" && <PixelIcon.Clock />}
                 {key === "feedback" && <PixelIcon.Message />}

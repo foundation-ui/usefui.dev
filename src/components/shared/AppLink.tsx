@@ -12,4 +12,10 @@ export const AppLink = styled.a`
   &:active {
     opacity: var(--opacity-default-100);
   }
+
+  &:has(svg) {
+    display: flex;
+    align-items: center;
+    gap: var(--measurement-medium-10);
+  }
 `;

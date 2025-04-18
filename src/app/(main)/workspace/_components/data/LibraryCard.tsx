@@ -20,7 +20,7 @@ function LibraryCard({
   return (
     <CardBody
       as={Link}
-      href={`library/${String(id)}`}
+      href={`workspace/library/${String(id)}`}
       className="p-medium-60 grid g-medium-30"
     >
       <hgroup>

@@ -6,9 +6,14 @@ type AppRouteProperties = {
 
 export const APP_ROUTES: AppRouteProperties[] = [
   {
-    key: "library",
-    label: "Library",
-    path: "/",
+    key: "overview",
+    label: "Overview",
+    path: "",
+  },
+  {
+    key: "workspace",
+    label: "Workspace",
+    path: "workspace",
   },
   {
     key: "integrations",
