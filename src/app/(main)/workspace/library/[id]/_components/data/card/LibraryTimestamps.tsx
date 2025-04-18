@@ -15,7 +15,7 @@ function LibraryTimestamps({
   updatedAt: string | null;
 }) {
   return (
-    <CardBody className="grid g-medium-10 p-medium-60 m-b-medium-60">
+    <CardBody className="grid g-medium-10 p-medium-60 m-b-large-10">
       <div className="flex align-center g-medium-10 m-b-medium-30">
         <Icon>
           <PixelIcon.Clock />

@@ -50,7 +50,7 @@ function UpdateLibraryForm({
 
   return (
     <React.Fragment>
-      <form className="grid g-medium-30 m-b-medium-60">
+      <form className="grid g-medium-30 m-b-large-10">
         <Field.Root>
           <Field.Wrapper className="grid fs-medium-10">
             <Field.Label htmlFor="name" optional>
@@ -102,9 +102,9 @@ function UpdateLibraryForm({
           </Field.Wrapper>
         </Field.Root>
       </form>
-      <section className="flex justify-end align-center g-medium-60">
-        <Sheet.Trigger variant="ghost" sizing="small">
-          <span className="fs-medium-10">Cancel</span>
+      <section className="flex justify-end align-center g-medium-10">
+        <Sheet.Trigger variant="border" sizing="medium">
+          Cancel
         </Sheet.Trigger>
         <Button
           variant="primary"

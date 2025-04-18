@@ -5,7 +5,7 @@ import React from "react";
 import LibraryTimestamps from "../data/card/LibraryTimestamps";
 import UpdateLibraryForm from "../forms/UpdateLibraryForm";
 
-import { Divider, Sheet } from "@foundation-ui/components";
+import { Sheet } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 import type { libraries_table as librariesSchema } from "@/server/db/schema";
@@ -17,7 +17,7 @@ function LibraryDetailsSheet({
 }) {
   return (
     <Sheet.Root>
-      <Sheet.Trigger variant="ghost">
+      <Sheet.Trigger variant="secondary" sizing="large">
         <span className="fs-medium-10">Settings</span>
         <Icon>
           <PixelIcon.SlidersVertical />
@@ -25,7 +25,7 @@ function LibraryDetailsSheet({
       </Sheet.Trigger>
 
       <Sheet side="right" sizing="medium">
-        <hgroup className="flex justify-between align-start g-large-10 m-b-medium-60">
+        <hgroup className="flex justify-between align-start g-large-10 m-b-large-10">
           <div>
             <h3 className="fs-medium-20">Library details</h3>
             <p className="fs-medium-10 opacity-default-60">
@@ -40,7 +40,7 @@ function LibraryDetailsSheet({
             </Icon>
           </Sheet.Trigger>
         </hgroup>
-        <Divider className="m-y-medium-60 " />
+
         <LibraryTimestamps
           createdAt={data.createdAt}
           updatedAt={data.updatedAt}

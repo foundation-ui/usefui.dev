@@ -4,7 +4,6 @@ import React from "react";
 
 import DeleteAction from "../triggers/DeleteAction";
 import LibraryDetailsSheet from "./LibraryDetailsSheet";
-import { TextMuted } from "@/components";
 
 import type { libraries_table as librariesSchema } from "@/server/db/schema";
 
@@ -21,9 +20,8 @@ function LibraryDetailsHeader({
           {data.description === "" ? "No description" : data.description}
         </p>
       </hgroup>
-      <div className="flex align-center g-medium-60">
+      <div className="flex align-center g-medium-10">
         <LibraryDetailsSheet data={data} />
-        <TextMuted className=" opacity-default-10">|</TextMuted>
         <DeleteAction libraryId={Number(data.id)} />
       </div>
     </header>
