@@ -57,7 +57,7 @@ function OverviewHero() {
       >
         {QUICK_ACTIONS_CATALOG.map((action) => (
           <HeroLink key={action.name} href={`${action.link}`}>
-            <Button sizing="medium" variant="secondary">
+            <Button sizing="large" variant="secondary">
               <Icon>{action.icon}</Icon>
               {action.label}
             </Button>

@@ -55,7 +55,7 @@ function RunCode({
     <Button
       className="fs-medium-10"
       variant="primary"
-      sizing="small"
+      sizing="large"
       onClick={handleRunCode}
       disabled={isPending}
     >

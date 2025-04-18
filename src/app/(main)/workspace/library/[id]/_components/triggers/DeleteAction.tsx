@@ -10,7 +10,7 @@ import DeleteLibraryForm from "../forms/DeleteLibraryForm";
 function DeleteAction({ libraryId }: { libraryId: number }) {
   return (
     <Dialog.Root>
-      <Dialog.Trigger variant="ghost" rawicon>
+      <Dialog.Trigger variant="secondary" sizing="large" rawicon>
         <span className="fs-medium-10">Delete</span>
 
         <Icon width={18} height={18} fill="var(--color-red)">
