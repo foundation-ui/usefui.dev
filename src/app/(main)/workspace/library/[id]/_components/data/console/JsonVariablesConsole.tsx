@@ -31,7 +31,7 @@ function JsonVariablesConsole({
         <h6 className="fs-medium-20">JSON Variables</h6>
         <CopyCode value={designTokens} />
       </hgroup>
-      <LibraryConsole value={designTokens} />
+      <LibraryConsole value={designTokens} language="json" />
     </React.Fragment>
   );
 }

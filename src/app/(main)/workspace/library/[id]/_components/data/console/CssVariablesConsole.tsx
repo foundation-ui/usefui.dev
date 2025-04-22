@@ -29,19 +29,30 @@ function CssVariablesConsole({
   const depthVars = cssVars.depth.toString();
   const opacityVars = cssVars.opacity.toString();
 
-  const vars = `:root {
-    ${colorVars}
-    ${alphaVars}
-    ${tintVars}
-    ${shadesVars}
-    ${fontsizeVars}
-    ${measurementVars}
-    ${depthVars}
-    ${opacityVars}
-  }`
-    .replaceAll(",\n", "")
-    .replaceAll(",,,", "")
-    .replaceAll(" ", "");
+  const vars = `
+    :root {
+      ${colorVars}
+      ${alphaVars}
+      ${tintVars}
+      ${shadesVars}
+      ${fontsizeVars}
+      ${measurementVars}
+      ${depthVars}
+      ${opacityVars}
+    }
+    `
+    // Remove trailing commas at the end of lines
+    .replace(/,\s*\n/g, "\n")
+    // Remove consecutive commas
+    .replace(/,{2,}/g, "")
+    // Remove empty lines
+    .replace(/^\s*[\r\n]/gm, "")
+    // Clean up any remaining empty declarations
+    .replace(/--[^:]+:\s*;/g, "")
+    // Ensure proper spacing after semicolons
+    .replace(/;(?!\s*[\r\n])/g, ";\n  ")
+    // Remove trailing whitespace
+    .replace(/\s+$/gm, "");
 
   return (
     <React.Fragment>
@@ -49,7 +60,7 @@ function CssVariablesConsole({
         <h6 className="fs-medium-20">CSS Variables</h6>
         <CopyCode value={vars} />
       </hgroup>
-      <LibraryConsole value={vars} />
+      <LibraryConsole value={vars} language="css" />
     </React.Fragment>
   );
 }

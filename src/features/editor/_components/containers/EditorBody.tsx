@@ -3,12 +3,13 @@
 import React from "react";
 import styled from "styled-components";
 
-import CodeMirror from "@uiw/react-codemirror";
 import { ScrollArea } from "@foundation-ui/components";
 
-import { createTheme } from "@uiw/codemirror-themes";
+import CodeMirror, { type Extension } from "@uiw/react-codemirror";
 import { json } from "@codemirror/lang-json";
+import { css } from "@codemirror/lang-css";
 
+import { createTheme } from "@uiw/codemirror-themes";
 import { tags as t } from "@lezer/highlight";
 
 type EditorBodyProps = {
@@ -17,6 +18,7 @@ type EditorBodyProps = {
   setValue?: React.Dispatch<React.SetStateAction<string>>;
   setError?: React.Dispatch<React.SetStateAction<string | null>>;
   onChange?: (value: string) => void;
+  language?: "json" | "css";
 };
 
 const EditorWrapper = styled(ScrollArea)`
@@ -47,11 +49,24 @@ const EditorTheme = createTheme({
     lineHighlight: "var(--font-color-alpha-10)",
   },
   styles: [
-    { tag: t.name, color: "var(--tint-purple-60)" },
-    { tag: t.bool, color: "var(--tint-blue-30)" },
+    // Common styles
     { tag: t.number, color: "var(--tint-blue-30)" },
     { tag: t.string, color: "var(--shade-green-10)" },
     { tag: t.bracket, color: "var(--font-color)" },
+    { tag: t.punctuation, color: "var(--font-color)" },
+    { tag: t.comment, color: "var(--font-color-alpha-40)" },
+
+    // JSON specific
+    { tag: t.name, color: "var(--tint-purple-60)" },
+    { tag: t.bool, color: "var(--tint-blue-30)" },
+
+    // CSS specific
+    { tag: t.propertyName, color: "var(--tint-purple-60)" },
+    { tag: t.variableName, color: "var(--tint-purple-30)" },
+    { tag: t.className, color: "var(--tint-blue-60)" },
+    { tag: t.color, color: "var(--tint-blue-30)" },
+    { tag: t.keyword, color: "var(--tint-red-30)" },
+    { tag: t.unit, color: "var(--tint-orange-30)" },
   ],
 });
 
@@ -61,26 +76,50 @@ function EditorBody({
   setValue,
   setError,
   onChange,
+  language,
 }: EditorBodyProps) {
+  const languageExtension = React.useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
+    if (language === "css") return css();
+    if (language === "json") return json();
+  }, [language]) as Extension;
+
+  const languageValidation = React.useCallback(() => {
+    return {
+      json: (value: string) => {
+        JSON.parse(value);
+        setError?.(null);
+        onChange?.(value);
+      },
+      css: (value: string) => {
+        // Check for balanced braces
+        const openBraces = (value.match(/{/g) ?? []).length;
+        const closeBraces = (value.match(/}/g) ?? []).length;
+
+        if (openBraces !== closeBraces) {
+          setError?.("Unbalanced braces in CSS");
+        } else {
+          setError?.(null);
+          onChange?.(value);
+        }
+      },
+    };
+  }, [onChange, setError]);
+
   const handleChange = React.useCallback(
     (newValue: string) => {
       setValue?.(newValue);
 
       try {
-        JSON.parse(newValue);
-        setError?.(null);
-        onChange?.(newValue);
+        if (language === "json") languageValidation().json(newValue);
+        if (language === "css") languageValidation().css(newValue);
       } catch (e) {
-        if (e instanceof Error) {
-          setError?.(e.message);
-        } else {
-          setError?.("Invalid JSON");
-        }
+        if (e instanceof Error) setError?.(e.message);
+        else setError?.(`Invalid ${language.toUpperCase()}`);
       }
     },
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [onChange],
+    [setValue, language, languageValidation, setError],
   );
 
   return (
@@ -89,7 +128,7 @@ function EditorBody({
         value={value}
         height="100%"
         onChange={handleChange}
-        extensions={[json()]}
+        extensions={[languageExtension]}
         readOnly={readOnly}
         theme={EditorTheme}
         basicSetup={{

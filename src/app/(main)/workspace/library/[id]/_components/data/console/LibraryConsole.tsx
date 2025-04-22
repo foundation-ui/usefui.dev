@@ -23,10 +23,16 @@ const ConsoleWrapper = styled(ScrollArea)`
   );
 `;
 
-function LibraryConsole({ value }: { value: string }) {
+function LibraryConsole({
+  value,
+  language,
+}: {
+  value: string;
+  language?: "json" | "css";
+}) {
   return (
     <ConsoleWrapper>
-      <EditorBody value={value} readOnly={true} />
+      <EditorBody value={value} readOnly={true} language={language} />
     </ConsoleWrapper>
   );
 }

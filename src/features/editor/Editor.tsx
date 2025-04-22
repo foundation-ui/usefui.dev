@@ -57,6 +57,7 @@ function Editor({
             setValue={setValue}
             setError={setError}
             onChange={onChange}
+            language="json"
           />
           <EditorConsoleProps mode={error ? "error" : "meta"} value={error} />
         </ScrollArea>
