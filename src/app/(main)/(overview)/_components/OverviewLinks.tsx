@@ -10,23 +10,24 @@ import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 const WIKI_CATALOG = [
   {
-    name: "fui/engine",
+    name: "foundation-ui/core",
     label: "@foundation-ui/core",
     description:
       "Dynamically generate Design Tokens based your application properties",
     link: "https://github.com/foundation-ui/design-system/pkgs/npm/core",
   },
   {
-    name: "fui/tokens",
+    name: "foundation-ui/tokens",
     label: "@foundation-ui/tokens",
     description:
-      "Use @fui/tokens default Design Tokens library in your application",
+      "Use @foundation-ui/tokens default Design Tokens library in your application",
     link: "https://github.com/foundation-ui/design-system/pkgs/npm/tokens",
   },
   {
-    name: "fui/cli",
+    name: "foundation-ui/cli",
     label: "@foundation-ui/cli",
-    description: "Use @fui/cli to generate your Design Tokens Library",
+    description:
+      "Use @foundation-ui/cli to generate your Design Tokens Library",
     link: "https://github.com/foundation-ui/cli",
   },
 ];
@@ -42,7 +43,7 @@ function OverviewLinks() {
           <h6 className="fs-medium-20  ">Browse docs</h6>
         </span>
         <p className="fs-medium-10 opacity-default-60">
-          Explore full capabilities of Foundation UI.
+          Explore the full capabilities of Foundation UI.
         </p>
       </hgroup>
       <GridLayoutSmall>
