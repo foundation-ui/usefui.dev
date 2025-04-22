@@ -115,7 +115,7 @@ function EditorBody({
         if (language === "css") languageValidation().css(newValue);
       } catch (e) {
         if (e instanceof Error) setError?.(e.message);
-        else setError?.(`Invalid ${language.toUpperCase()}`);
+        else setError?.(`Invalid ${language?.toUpperCase()}`);
       }
     },
 
