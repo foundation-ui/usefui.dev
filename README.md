@@ -32,16 +32,15 @@ Handled by Netlify for now
 - [x] Library CRUD Actions
 
 - [ ] Add Auth using Clerk
-- [ ] Add Analytics
+- [ ] Restrict usage for non-auth users
 
 - [ ] Github/Slack/Discord Integration
 - [ ] Setup Feedback w/Discord Integration
-- [ ] Setup Support Redirection
+
+- [ ] Add Analytics
 
 - [ ] Add Testing suites Github Actions to trigger it
 - [ ] General tidying-up
-
-- [ ] Library Preview Page
 
 ## Notes
 
@@ -59,3 +58,8 @@ Handled by Netlify for now
 
 - This choice of db provider still bugs me, not that the service isn't good or anything.
 - Here are the providers i'm thinking about, ranked by preference: Vercel PG, Scaleway Dedibox, NextCloud, AWS RDS, Keep S2
+
+### (22/04/2025)
+
+- Going to move the infra to Supabase, it's open source and the free tier is quite generous, it also has a file storage feature and since i do not want to multiply third party services for this kind of stuff. I'll also take a look at NextCloud solutions in the future.
+- As said in previous notes, S2 will stay until the end of the dev process. If it happen to be a mistake, i'll learn some stuff along the way.
