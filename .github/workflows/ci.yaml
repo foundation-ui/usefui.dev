@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: "16"
           registry-url: "https://npm.pkg.github.com"
-          scope: "@your-organization"
+          scope: "@foundation-ui"
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
