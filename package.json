@@ -20,6 +20,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.17.0",
     "@codemirror/lang-css": "^6.3.1",
     "@codemirror/lang-json": "^6.0.1",
     "@codemirror/language": "^6.11.0",
