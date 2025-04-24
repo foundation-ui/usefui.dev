@@ -4,6 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { useColorMode } from "@foundation-ui/tokens";
+import { SignedIn, SignedOut, SignOutButton } from "@clerk/nextjs";
 
 import {
   Avatar,
@@ -43,17 +44,18 @@ function ProfileActions() {
         </DropdownMenu.Trigger>
 
         <DropdownMenu.Content>
-          <hgroup className="p-medium-30">
-            <p className="fs-medium-20 opacity-default-60">
-              You&apos;re Incognito
-            </p>
-            <p className="fs-medium-10 opacity-default-30">
-              Login to enable sync
-            </p>
-          </hgroup>
+          <SignedOut>
+            <hgroup className="p-medium-30">
+              <p className="fs-medium-20 opacity-default-60">
+                You&apos;re Incognito
+              </p>
+              <p className="fs-medium-10 opacity-default-30">
+                Login to get started&nbsp;<b>for free</b>
+              </p>
+            </hgroup>
+          </SignedOut>
 
           <Divider />
-
           <SilentItem
             radio
             className="flex align-center g-medium-30 justify-between "
@@ -100,11 +102,13 @@ function ProfileActions() {
           </SilentItem>
           <DropdownMenu.Item
             className="flex align-center g-medium-30 justify-between "
-            disabled
+            onClick={() =>
+              window.open("https://github.com/foundation-ui/token-engine")
+            }
           >
-            Settings
+            Docs
             <Icon>
-              <PixelIcon.SlidersVertical />
+              <PixelIcon.BookOpen />
             </Icon>
           </DropdownMenu.Item>
           <DropdownMenu.Item
@@ -127,20 +131,20 @@ function ProfileActions() {
           >
             Home Page
             <Icon>
-              <SocialIcon.Foundation />
+              <PixelIcon.Open />
             </Icon>
           </DropdownMenu.Item>
-          <DropdownMenu.Item
-            className="flex align-center g-medium-30 justify-between fs-medium-10"
-            disabled
-          >
-            Login
-            <Tooltip content="Powered by Clerk">
-              <Icon viewBox="0 0 18 18">
-                <SocialIcon.Clerk />
-              </Icon>
-            </Tooltip>
-          </DropdownMenu.Item>
+
+          <SignedIn>
+            <SignOutButton>
+              <DropdownMenu.Item className="flex align-center g-medium-30 justify-between fs-medium-10">
+                Sign Out
+                <Icon viewBox="0 0 18 18">
+                  <PixelIcon.Logout />
+                </Icon>
+              </DropdownMenu.Item>
+            </SignOutButton>
+          </SignedIn>
         </DropdownMenu.Content>
       </DropdownMenu>
     </DropdownMenu.Root>
