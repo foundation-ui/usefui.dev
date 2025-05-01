@@ -30,15 +30,10 @@ Handled by Netlify for now
 - [x] Generate Library
 - [x] Library Page Details
 - [x] Library CRUD Actions
-
-- [ ] Add Auth using Clerk
-- [ ] Restrict usage for non-auth users
-
-- [ ] Github/Slack/Discord Integration
-- [ ] Setup Feedback w/Discord Integration
+- [x] Add Auth using Clerk
+- [x] Restrict usage for non-auth users
 
 - [ ] Add Analytics
-
 - [ ] Add Testing suites Github Actions to trigger it
 - [ ] General tidying-up
 
