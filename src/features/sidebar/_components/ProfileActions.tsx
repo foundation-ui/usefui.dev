@@ -8,7 +8,12 @@ import { useColorMode } from "@foundation-ui/tokens";
 import ProfileAvatar from "./ProfileAvatar";
 import ProfileHeader from "./ProfileHeader";
 
-import { SignedIn, SignOutButton } from "@clerk/nextjs";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignOutButton,
+} from "@clerk/nextjs";
 import {
   Divider,
   DropdownMenu,
@@ -16,6 +21,7 @@ import {
   Button,
 } from "@foundation-ui/components";
 import { Icon, PixelIcon, SocialIcon, WebIcon } from "@foundation-ui/icons";
+import { useRouter } from "next/navigation";
 
 const SilentItem = styled(DropdownMenu.Item)`
   &:hover,
@@ -26,6 +32,7 @@ const SilentItem = styled(DropdownMenu.Item)`
 `;
 
 function ProfileActions() {
+  const router = useRouter();
   const { colorMode, setColorMode } = useColorMode();
 
   return (
@@ -116,8 +123,29 @@ function ProfileActions() {
               <PixelIcon.Open />
             </Icon>
           </DropdownMenu.Item>
+          <Divider />
 
+          <SignedOut>
+            <SignInButton>
+              <DropdownMenu.Item className="flex align-center g-medium-30 justify-between fs-medium-10">
+                Sign In
+                <Icon>
+                  <PixelIcon.Login />
+                </Icon>
+              </DropdownMenu.Item>
+            </SignInButton>
+          </SignedOut>
           <SignedIn>
+            <DropdownMenu.Item
+              className="flex align-center g-medium-30 justify-between fs-medium-10"
+              onClick={() => router.push("/user-profile")}
+            >
+              Profile
+              <Icon>
+                <PixelIcon.User />
+              </Icon>
+            </DropdownMenu.Item>
+
             <SignOutButton>
               <DropdownMenu.Item className="flex align-center g-medium-30 justify-between fs-medium-10">
                 Sign Out
