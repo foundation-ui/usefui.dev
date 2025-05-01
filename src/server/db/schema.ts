@@ -14,10 +14,9 @@ export const createTable = singlestoreTableCreator(
 
 export const libraries_table = createTable("libraries_table", {
   id: bigint("id", { mode: "bigint" }).primaryKey().autoincrement(),
-  creatorId: bigint("creatorId", { mode: "bigint" }),
+  creatorId: text("creatorId"),
 
   name: text("name"),
-  title: text("title"),
   description: text("description"),
 
   library: text("library"),

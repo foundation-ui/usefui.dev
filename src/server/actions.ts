@@ -11,19 +11,12 @@ import {
 
 export async function InsertLibraryAction(payload: GenerateLibraryProperties) {
   const result = await MUTATIONS.InsertLibraryData(payload);
-
   if (result) revalidatePath("/workspace");
+
   return result;
 }
 
-export async function DeleteLibrary(libraryId: number) {
-  const result = await MUTATIONS.DeleteLibraryData(libraryId);
-
-  if (result) revalidatePath("/workspace");
-  return result;
-}
-
-export async function UpdateLibrary(
+export async function UpdateLibraryAction(
   form: UpdateLibraryType,
   libraryId: number,
 ) {
@@ -33,7 +26,17 @@ export async function UpdateLibrary(
   const result = await MUTATIONS.UpdateLibraryData(form, libraryId);
   if (!result) throw new Error("Failed to update library");
 
-  revalidatePath(`/workspace`);
   revalidatePath(`/workspace/library/${libraryId}`);
+
+  return result;
+}
+
+export async function DeleteLibraryAction(libraryId: number, userId: string) {
+  if (!userId) throw new Error("Unauthorized");
+
+  const result = await MUTATIONS.DeleteLibraryData(libraryId);
+  if (!result) throw new Error("Failed to delete library");
+
+  revalidatePath("/workspace");
   return result;
 }
