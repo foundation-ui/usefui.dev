@@ -13,7 +13,7 @@ import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 function LibraryCard({
   id,
-  title,
+  name,
   description,
   updatedAt,
 }: typeof librariesSchema.$inferSelect) {
@@ -24,17 +24,20 @@ function LibraryCard({
       className="p-medium-60 grid g-medium-30"
     >
       <hgroup>
-        <h6 className="fs-medium-20">{title}</h6>
-        <p className="opacity-default-30 fs-medium-10">{description}</p>
+        <h6 className="fs-medium-20">{name}</h6>
+        <p className="opacity-default-30 fs-medium-10">
+          {description === "" ? "No description" : description}
+        </p>
       </hgroup>
       <Divider />
       <footer className="fs-medium-10 flex align-center justify-between g-medium-30">
         <span className="opacity-default-60">
           Updated&nbsp;
-          {formatDistanceToNow(new Date(Number(updatedAt)), {
-            addSuffix: true,
-            includeSeconds: true,
-          })}
+          {updatedAt &&
+            formatDistanceToNow(new Date(Number(updatedAt)), {
+              addSuffix: true,
+              includeSeconds: true,
+            })}
         </span>
 
         <Tooltip content="Go to Details">
