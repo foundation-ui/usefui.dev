@@ -4,6 +4,7 @@ import React from "react";
 
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@clerk/nextjs";
 
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 import { Button } from "@foundation-ui/components";
@@ -22,6 +23,8 @@ function RunCode({
   setError: React.Dispatch<React.SetStateAction<string | null>>;
 }) {
   const router = useRouter();
+
+  const { userId, isSignedIn } = useAuth();
   const { mutate, isPending } = useMutation({
     mutationFn: InsertLibraryAction,
     onSuccess: () => {
@@ -37,10 +40,14 @@ function RunCode({
   });
 
   const handleRunCode = React.useCallback(() => {
+    if (!isSignedIn || !userId) {
+      setError(`[Unauthorized] - Sign In to generate libraries`);
+      return;
+    }
+
     mutate({
-      creatorId: BigInt(198198190818190), // [TODO]: Replace this mocked ID to use userId. Type might change.
+      creatorId: String(userId),
       name: "untitled",
-      title: "untitled",
       description: "",
       library: JSON.stringify(
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
@@ -49,7 +56,7 @@ function RunCode({
       createdAt: Date.now().toString(),
       updatedAt: Date.now().toString(),
     });
-  }, [mutate, value]);
+  }, [isSignedIn, mutate, setError, userId, value]);
 
   return (
     <Button

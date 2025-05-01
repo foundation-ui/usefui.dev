@@ -1,6 +1,7 @@
 import React from "react";
-
 import LibraryDetails from "./_components/containers/LibraryDetails";
+
+import { auth } from "@clerk/nextjs/server";
 import { QUERIES } from "@/server/db/queries";
 
 async function LibraryDetailsPage(props: { params: Promise<{ id: string }> }) {
@@ -26,6 +27,9 @@ async function LibraryDetailsPage(props: { params: Promise<{ id: string }> }) {
       </section>
     );
   }
+
+  const { userId, redirectToSignIn } = await auth();
+  if (!userId) return redirectToSignIn();
 
   const details = await QUERIES.GetLibraryDetails(parsedLibraryId);
   if (!details) {

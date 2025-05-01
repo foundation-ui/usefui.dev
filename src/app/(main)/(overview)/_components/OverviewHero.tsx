@@ -22,12 +22,6 @@ const QUICK_ACTIONS_CATALOG = [
     icon: <PixelIcon.Cloud />,
   },
   {
-    name: "get-history",
-    label: "Watch your history",
-    link: "integrations",
-    icon: <PixelIcon.Script />,
-  },
-  {
     name: "request-feature",
     label: "Request a new feature",
     link: "feedback",

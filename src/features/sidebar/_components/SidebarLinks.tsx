@@ -45,19 +45,10 @@ function SidebarLinks() {
 
         return (
           <Tooltip key={key} content={label}>
-            <Link
-              // as={Button}
-              // variant="ghost"
-              href={`/${path}`}
-              // rawicon
-              // disabled={["feedback", "support"].includes(key)}
-            >
+            <Link href={`/${path}`}>
               <AppLinkIcon as={PixelIcon} fillOpacity={isActiveRoute ? 1 : 0.3}>
                 {key === "overview" && <PixelIcon.Map />}
                 {key === "workspace" && <PixelIcon.Dashbaord />}
-                {key === "integrations" && <PixelIcon.Cloud />}
-                {key === "history" && <PixelIcon.Clock />}
-                {key === "feedback" && <PixelIcon.Message />}
               </AppLinkIcon>
             </Link>
           </Tooltip>

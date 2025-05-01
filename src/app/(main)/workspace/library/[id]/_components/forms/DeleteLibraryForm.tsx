@@ -4,10 +4,11 @@ import React from "react";
 
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@clerk/nextjs";
 
 import { Button, Dialog, Field } from "@foundation-ui/components";
 
-import { DeleteLibrary } from "@/server/actions";
+import { DeleteLibraryAction } from "@/server/actions";
 import { toast } from "sonner";
 
 function DeleteLibraryForm({ libraryId }: { libraryId: number }) {
@@ -16,8 +17,9 @@ function DeleteLibraryForm({ libraryId }: { libraryId: number }) {
   const [value, setValue] = React.useState<string>("");
   const deferredEditorValue = React.useDeferredValue(value);
 
+  const { userId, isSignedIn } = useAuth();
   const { mutate, isPending } = useMutation({
-    mutationFn: DeleteLibrary,
+    mutationFn: () => handleDeleteLibrary(),
     onSuccess: () => {
       toast.success("Library deleted", { id: "delete-library" });
       router.push("/workspace");
@@ -26,6 +28,14 @@ function DeleteLibraryForm({ libraryId }: { libraryId: number }) {
       toast.error("Failed to delete library", { id: "delete-library" });
     },
   });
+
+  const handleDeleteLibrary = React.useCallback(async () => {
+    if (!isSignedIn || !userId) {
+      throw new Error(`[Unauthorized] - Sign In to delete libraries`);
+    }
+
+    return await DeleteLibraryAction(libraryId, userId);
+  }, [isSignedIn, libraryId, userId]);
 
   const disableSubmit = isPending || deferredEditorValue !== String(libraryId);
 
@@ -59,7 +69,7 @@ function DeleteLibraryForm({ libraryId }: { libraryId: number }) {
           disabled={disableSubmit}
           onClick={() => {
             toast.loading("Deleting library..", { id: "delete-library" });
-            mutate(libraryId);
+            mutate();
           }}
         >
           Delete library

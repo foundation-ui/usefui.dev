@@ -4,11 +4,12 @@ import React from "react";
 
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
+import { useAuth } from "@clerk/nextjs";
 
 import { Button, Field, Sheet } from "@foundation-ui/components";
 
 import { updateLibrarySchema } from "@/schemas/library-schema";
-import { UpdateLibrary } from "@/server/actions";
+import { UpdateLibraryAction } from "@/server/actions";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
@@ -25,21 +26,13 @@ function UpdateLibraryForm({
     resolver: zodResolver(updateLibrarySchema),
     defaultValues: {
       name: data.name ?? "",
-      title: data.title ?? "",
       description: data.description ?? "",
     },
   });
 
+  const { userId, isSignedIn } = useAuth();
   const { mutate, isPending } = useMutation({
-    mutationFn: () =>
-      UpdateLibrary(
-        {
-          name: form.getValues("name"),
-          title: form.getValues("title"),
-          description: form.getValues("description"),
-        },
-        Number(data.id),
-      ),
+    mutationFn: () => handleUpdateLibrary(),
     onSuccess: () => {
       toast.success("Library updated", { id: "update-library" });
     },
@@ -47,6 +40,20 @@ function UpdateLibraryForm({
       toast.error("Failed to update library", { id: "update-library" });
     },
   });
+
+  const handleUpdateLibrary = React.useCallback(async () => {
+    if (!isSignedIn || !userId) {
+      throw new Error(`[Unauthorized] - Sign In to Update libraries`);
+    }
+
+    return await UpdateLibraryAction(
+      {
+        name: form.getValues("name"),
+        description: form.getValues("description"),
+      },
+      Number(data.id),
+    );
+  }, [data.id, form, isSignedIn, userId]);
 
   return (
     <React.Fragment>
@@ -64,22 +71,6 @@ function UpdateLibraryForm({
               {...form.register("name")}
               style={{ width: "auto" }}
               onChange={(event) => form.setValue("name", event.target.value)}
-            />
-          </Field.Wrapper>
-        </Field.Root>
-        <Field.Root>
-          <Field.Wrapper className="grid fs-medium-10">
-            <Field.Label htmlFor="title" optional>
-              Title
-            </Field.Label>
-            <Field
-              id="title"
-              variant="secondary"
-              sizing="medium"
-              disabled={isPending}
-              {...form.register("title")}
-              style={{ width: "auto" }}
-              onChange={(event) => form.setValue("title", event.target.value)}
             />
           </Field.Wrapper>
         </Field.Root>

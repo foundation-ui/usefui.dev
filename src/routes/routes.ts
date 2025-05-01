@@ -15,19 +15,4 @@ export const APP_ROUTES: AppRouteProperties[] = [
     label: "Workspace",
     path: "workspace",
   },
-  {
-    key: "integrations",
-    label: "Integrations",
-    path: "integrations",
-  },
-  {
-    key: "history",
-    label: "History",
-    path: "history",
-  },
-  {
-    key: "feedback",
-    label: "Feedback",
-    path: "feedback",
-  },
 ];

@@ -1,7 +1,7 @@
 {
   "version": "1",
   "dialect": "singlestore",
-  "id": "0a23c372-88ff-4e6b-8ded-ccd8209131b1",
+  "id": "d96ac758-28c3-47e5-a571-c737c9164c7c",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "fui_engine_libraries_table": {
@@ -16,20 +16,13 @@
         },
         "creatorId": {
           "name": "creatorId",
-          "type": "bigint",
+          "type": "text",
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false
         },
         "name": {
           "name": "name",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        },
-        "title": {
-          "name": "title",
           "type": "text",
           "primaryKey": false,
           "notNull": false,

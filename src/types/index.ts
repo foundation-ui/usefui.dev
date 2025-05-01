@@ -1,9 +1,8 @@
 export type GenerateLibraryProperties = {
-  creatorId: bigint;
+  creatorId: string;
   library: string;
 
   name: string;
-  title: string;
   description: string;
 
   createdAt: string;
