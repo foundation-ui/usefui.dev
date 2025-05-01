@@ -39,7 +39,7 @@ function Navigation() {
           </Tooltip>
         )}
         <CurrentRouteLabel className="fs-medium-20">
-          {segments.at(0)}
+          {segments.at(0)?.replace(/[-_]/g, " ")}
         </CurrentRouteLabel>
       </div>
 
