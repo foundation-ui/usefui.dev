@@ -42,7 +42,7 @@ function Sidebar() {
           <SidebarMenuSection>
             <Toolbar.Section showoncollapse className="h-100">
               <ItemsWrapper className="grid g-medium-60 align-center justify-center">
-                <Icon width={32} height={32}>
+                <Icon width={26} height={26}>
                   <SocialIcon.Foundation />
                 </Icon>
                 <SidebarLinks />

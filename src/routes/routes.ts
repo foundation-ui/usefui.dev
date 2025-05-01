@@ -15,9 +15,4 @@ export const APP_ROUTES: AppRouteProperties[] = [
     label: "Workspace",
     path: "workspace",
   },
-  {
-    key: "history",
-    label: "History",
-    path: "history",
-  },
 ];

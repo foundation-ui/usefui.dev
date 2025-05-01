@@ -49,7 +49,6 @@ function SidebarLinks() {
               <AppLinkIcon as={PixelIcon} fillOpacity={isActiveRoute ? 1 : 0.3}>
                 {key === "overview" && <PixelIcon.Map />}
                 {key === "workspace" && <PixelIcon.Dashbaord />}
-                {key === "history" && <PixelIcon.Clock />}
               </AppLinkIcon>
             </Link>
           </Tooltip>
