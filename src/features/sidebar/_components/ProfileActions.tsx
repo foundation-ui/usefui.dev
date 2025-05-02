@@ -90,17 +90,6 @@ function ProfileActions() {
             </span>
           </SilentItem>
           <DropdownMenu.Item
-            className="flex align-center g-medium-30 justify-between "
-            onClick={() =>
-              window.open("https://github.com/foundation-ui/token-engine")
-            }
-          >
-            Docs
-            <Icon>
-              <PixelIcon.BookOpen />
-            </Icon>
-          </DropdownMenu.Item>
-          <DropdownMenu.Item
             className="flex align-center g-medium-30 justify-between fs-medium-10"
             onClick={() =>
               window.open("https://github.com/foundation-ui/token-engine")

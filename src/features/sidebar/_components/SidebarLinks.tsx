@@ -37,6 +37,7 @@ function SidebarLinks() {
 
         <Editor />
       </Dialog.Root>
+
       {APP_ROUTES.map(({ key, path, label }) => {
         const isActiveRoute =
           pathname === path ||

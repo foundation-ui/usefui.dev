@@ -1,11 +1,16 @@
 "use client";
 
 import React from "react";
+import styled from "styled-components";
 
 import DeleteAction from "../triggers/DeleteAction";
 import LibraryDetailsSheet from "./LibraryDetailsSheet";
 
 import type { libraries_table as librariesSchema } from "@/server/db/schema";
+
+const HeaderContainer = styled.header`
+  flex-wrap: wrap;
+`;
 
 function LibraryDetailsHeader({
   data,
@@ -13,7 +18,7 @@ function LibraryDetailsHeader({
   data: typeof librariesSchema.$inferSelect;
 }) {
   return (
-    <header className="flex justify-between align-end g-medium-60 m-b-medium-60">
+    <HeaderContainer className="flex justify-between align-end g-medium-60 m-b-medium-60">
       <hgroup>
         <h1 className="fs-medium-40">{data.name}</h1>
         <p className="fs-medium-10 opacity-default-30">
@@ -24,7 +29,7 @@ function LibraryDetailsHeader({
         <LibraryDetailsSheet data={data} />
         <DeleteAction libraryId={Number(data.id)} />
       </div>
-    </header>
+    </HeaderContainer>
   );
 }
 
