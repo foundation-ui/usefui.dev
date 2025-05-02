@@ -24,8 +24,8 @@ function LibraryDetails({
   data: typeof librariesSchema.$inferSelect;
 }) {
   return (
-    <PageWrapper className="w-100 h-100">
-      <MaxWidthContainer className="grid g-large-10 w-100 p-medium-60">
+    <PageWrapper className="w-100 h-100 p-medium-60">
+      <MaxWidthContainer className="grid g-large-10 w-100">
         <LibraryDetailsData data={data} />
 
         <section className="grid g-medium-30">

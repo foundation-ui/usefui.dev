@@ -20,7 +20,7 @@ function LibraryDetailsHeader({
   return (
     <HeaderContainer className="flex justify-between align-end g-medium-60 m-b-medium-60">
       <hgroup>
-        <h1 className="fs-medium-40">{data.name}</h1>
+        <h1 className="fs-medium-50">{data.name}</h1>
         <p className="fs-medium-10 opacity-default-30">
           {data.description === "" ? "No description" : data.description}
         </p>
