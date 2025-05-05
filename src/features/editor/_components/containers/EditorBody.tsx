@@ -79,7 +79,6 @@ function EditorBody({
   language,
 }: EditorBodyProps) {
   const languageExtension = React.useMemo(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
     if (language === "css") return css();
     if (language === "json") return json();
   }, [language]) as Extension;
