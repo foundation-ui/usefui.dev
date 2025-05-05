@@ -41,10 +41,12 @@ function Sidebar() {
         <Page.Wrapper $navigations={0.4} $menus={0}>
           <SidebarMenuSection>
             <Toolbar.Section showoncollapse className="h-100">
-              <ItemsWrapper className="grid g-medium-60 align-center justify-center">
+              <ItemsWrapper className="m-b-medium-60">
                 <Icon width={26} height={26}>
                   <SocialIcon.Foundation />
                 </Icon>
+              </ItemsWrapper>
+              <ItemsWrapper className="grid g-medium-60 align-center justify-center">
                 <SidebarLinks />
               </ItemsWrapper>
             </Toolbar.Section>

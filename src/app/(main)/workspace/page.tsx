@@ -16,11 +16,7 @@ async function WorkspacePage() {
       </hgroup>
     );
 
-  return (
-    <section className="w-100 h-100">
-      <LibrariesList libraries={libraries} />
-    </section>
-  );
+  return <LibrariesList libraries={libraries} />;
 }
 
 export default WorkspacePage;

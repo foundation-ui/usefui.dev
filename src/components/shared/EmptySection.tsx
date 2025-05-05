@@ -23,7 +23,7 @@ function EmptySection({ title, description, action, icon }: EmptySectionProps) {
     <EmptySectionWrapper className="h-auto">
       <span className="h-auto m-b-medium-60 ">{icon}</span>
 
-      <h1 className="fs-medium-20">{title}</h1>
+      <h1 className="fs-medium-50">{title}</h1>
       <p className="fs-medium-10 opacity-default-30 m-b-medium-60">
         {description}
       </p>

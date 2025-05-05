@@ -10,6 +10,9 @@ import {
 } from "@/schemas/library-schema";
 
 export async function InsertLibraryAction(payload: GenerateLibraryProperties) {
+  const { success } = updateLibrarySchema.safeParse(payload);
+  if (!success) throw new Error("Invalid library name");
+
   const result = await MUTATIONS.InsertLibraryData(payload);
   if (result) revalidatePath("/workspace");
 

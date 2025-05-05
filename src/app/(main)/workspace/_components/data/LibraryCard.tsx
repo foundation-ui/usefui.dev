@@ -22,6 +22,7 @@ function LibraryCard({
       as={Link}
       href={`workspace/library/${String(id)}`}
       className="p-medium-60 grid g-medium-30"
+      data-mode="link"
     >
       <hgroup>
         <h6 className="fs-medium-20">{name}</h6>

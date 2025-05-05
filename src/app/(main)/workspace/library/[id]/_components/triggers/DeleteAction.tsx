@@ -10,26 +10,21 @@ import DeleteLibraryForm from "../forms/DeleteLibraryForm";
 function DeleteAction({ libraryId }: { libraryId: number }) {
   return (
     <Dialog.Root>
-      <Dialog.Trigger variant="secondary" sizing="large" rawicon>
+      <Dialog.Trigger variant="secondary" sizing="large">
         <span className="fs-medium-10">Delete</span>
 
-        <Icon width={18} height={18} fill="var(--color-red)">
+        <Icon>
           <PixelIcon.Delete />
         </Icon>
       </Dialog.Trigger>
 
       <Portal container="portal-container">
         <Dialog sizing="small">
-          <hgroup className="flex align-start g-large-10">
-            <div>
-              <h6 className="fs-medium-30">Attention</h6>
-              <p className="fs-medium-20 opacity-default-60">
-                This action is permanent and cannot be reversed.
-              </p>
-            </div>
-            <Icon width={24} height={24} fill="var(--color-red)">
-              <PixelIcon.Alert />
-            </Icon>
+          <hgroup>
+            <h6 className="fs-medium-30">Attention</h6>
+            <p className="fs-medium-20 opacity-default-60">
+              This action is permanent and cannot be reversed.
+            </p>
           </hgroup>
           <Divider className="m-y-medium-60" />
           <DeleteLibraryForm libraryId={libraryId} />

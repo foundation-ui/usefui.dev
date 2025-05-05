@@ -6,7 +6,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@clerk/nextjs";
 
-import { Button, Dialog, Field } from "@foundation-ui/components";
+import { Badge, Button, Dialog, Field } from "@foundation-ui/components";
 
 import { DeleteLibraryAction } from "@/server/actions";
 import { toast } from "sonner";
@@ -41,11 +41,11 @@ function DeleteLibraryForm({ libraryId }: { libraryId: number }) {
 
   return (
     <React.Fragment>
-      <form className="grid g-medium-30 m-b-medium-60">
+      <form className="grid g-medium-30 m-b-large-10">
         <Field.Root>
           <Field.Wrapper className="grid fs-medium-10">
             <Field.Label htmlFor="confirm_name">
-              Type <b>{libraryId}</b> to confirm
+              Type <Badge variant="secondary">{libraryId}</Badge> to confirm
             </Field.Label>
             <Field
               id="confirm_name"

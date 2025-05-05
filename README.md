@@ -32,10 +32,11 @@ Handled by Netlify for now
 - [x] Library CRUD Actions
 - [x] Add Auth using Clerk
 - [x] Restrict usage for non-auth users
+- [x] General tidying-up
 
 - [ ] Add Analytics
+- [ ] Add Homepage
 - [ ] Add Testing suites Github Actions to trigger it
-- [ ] General tidying-up
 
 ## Notes
 
