@@ -7,11 +7,9 @@ import { MaxWidthContainer } from "@/components";
 
 function UserProfileWrapper() {
   return (
-    <section className="w-100 h-100 flex align-center justify-center">
-      <MaxWidthContainer className="grid g-medium-60">
-        <UserProfile />
-      </MaxWidthContainer>
-    </section>
+    <MaxWidthContainer className="grid g-medium-60 p-y-medium-60">
+      <UserProfile />
+    </MaxWidthContainer>
   );
 }
 
