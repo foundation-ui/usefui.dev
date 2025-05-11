@@ -1,5 +1,5 @@
 import React from "react";
-import LibrariesList from "./_components/data/LibrariesList";
+import LibrariesDetails from "./_components/data/LibrariesDetails";
 
 import { auth } from "@clerk/nextjs/server";
 import { QUERIES } from "@/server/db/queries";
@@ -16,7 +16,7 @@ async function WorkspacePage() {
       </hgroup>
     );
 
-  return <LibrariesList libraries={libraries} />;
+  return <LibrariesDetails libraries={libraries} />;
 }
 
 export default WorkspacePage;

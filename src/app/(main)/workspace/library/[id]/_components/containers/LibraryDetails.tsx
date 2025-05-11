@@ -3,11 +3,13 @@
 import React from "react";
 import styled from "styled-components";
 
-import LibraryDetailsData from "./LibraryDetailsData";
 import JsonVariablesConsole from "../data/console/JsonVariablesConsole";
 import CssVariablesConsole from "../data/console/CssVariablesConsole";
+import LibrarySizeCard from "../data/card/LibrarySizeCard";
+import PayloadSizeCard from "../data/card/PayloadSizeCard";
+import LibraryDetailsHeader from "./LibraryDetailsHeader";
 
-import { MaxWidthContainer } from "@/components";
+import { GridLayout, MaxWidthContainer } from "@/components";
 import { Divider } from "@foundation-ui/components";
 
 import type { libraries_table as librariesSchema } from "@/server/db/schema";
@@ -25,9 +27,14 @@ function LibraryDetails({
 }) {
   return (
     <PageWrapper className="w-100 h-100 p-medium-60">
-      <MaxWidthContainer className="grid g-large-10 w-100">
-        <LibraryDetailsData data={data} />
+      <LibraryDetailsHeader data={data} />
+      <Divider className="m-y-large-10" />
 
+      <MaxWidthContainer className="grid g-large-10 w-100">
+        <GridLayout>
+          <LibrarySizeCard data={data} />
+          <PayloadSizeCard data={data} />
+        </GridLayout>
         <section className="grid g-medium-30">
           <JsonVariablesConsole data={data} />
           <Divider className="m-y-medium-60" />
