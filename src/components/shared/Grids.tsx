@@ -10,6 +10,10 @@ export const GridLayout = styled.div`
   );
   grid-gap: var(--measurement-medium-10) var(--measurement-medium-10);
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(1fr, 1fr));
+  }
 `;
 
 export const GridLayoutSmall = styled.div`

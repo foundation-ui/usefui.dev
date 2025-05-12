@@ -19,13 +19,13 @@ const QUICK_ACTIONS_CATALOG = [
 
 function OverviewHero() {
   return (
-    <section className="grid align-center justify-center g-medium-60 p-y-large-30">
+    <section className="grid align-center justify-center g-medium-60 p-t-large-30">
       <HeroHeading className="grid align-center justiy-center">
         <HeroTitle>Build the Design Tokens your Applications needs.</HeroTitle>
       </HeroHeading>
 
       <div
-        className="flex g-medium-60 justify-center align-center"
+        className="flex g-medium-60 justify-center align-center m-b-large-10"
         style={{ flexWrap: "wrap" }}
       >
         <Dialog.Root>
