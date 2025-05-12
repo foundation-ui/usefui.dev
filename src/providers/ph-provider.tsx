@@ -3,7 +3,7 @@
 import React from "react";
 import posthog from "posthog-js";
 
-import { usePathname, useSearchParams } from "next/navigation";
+// import { usePathname, useSearchParams } from "next/navigation";
 import { usePostHog } from "posthog-js/react";
 import { useUser } from "@clerk/nextjs";
 
@@ -14,11 +14,11 @@ import { env } from "@/env";
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
   React.useEffect(() => {
     posthog.init(`${env.NEXT_PUBLIC_POSTHOG_KEY}`, {
-      person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
-      capture_pageview: false, // Disable automatic pageview capture, as we capture manually
-
-      api_host: "/ingest",
+      api_host: env.NEXT_PUBLIC_POSTHOG_HOST,
       ui_host: "https://eu.posthog.com",
+
+      person_profiles: "always", // or 'identified_only' to create profiles only for identified users
+      capture_pageview: true,
     });
   }, []);
 
@@ -31,11 +31,9 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
 }
 
 function PostHogPageView() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
   const posthog = usePostHog();
-
   const userInfo = useUser();
+
   // Identify user
   React.useEffect(() => {
     if (userInfo.user?.id) {
@@ -47,28 +45,9 @@ function PostHogPageView() {
     }
   }, [posthog, userInfo.user?.id, userInfo.user?.primaryEmailAddress]);
 
-  // Track pageviews
-  React.useEffect(() => {
-    if (pathname && posthog) {
-      let url = window.origin + pathname;
-      if (searchParams.toString()) {
-        url = url + "?" + searchParams.toString();
-      }
-
-      posthog.capture("$pageview", { $current_url: url });
-    }
-  }, [pathname, searchParams, posthog]);
-
   return null;
 }
 
-// Wrap PostHogPageView in Suspense to avoid the useSearchParams usage above
-// from de-opting the whole app into client-side rendering
-// See: https://nextjs.org/docs/messages/deopted-into-client-rendering
 function SuspendedPostHogPageView() {
-  return (
-    <React.Suspense fallback={null}>
-      <PostHogPageView />
-    </React.Suspense>
-  );
+  return <PostHogPageView />;
 }

@@ -19,9 +19,9 @@ export default function RootLayout({
     <StyledComponentsRegistry>
       <ClientProvider>
         <AuthProvider>
-          <html lang="en">
-            <body>
-              <PostHogProvider>
+          <PostHogProvider>
+            <html lang="en">
+              <body>
                 <div id="portal-container" />
                 <Toaster
                   toastOptions={{
@@ -35,9 +35,9 @@ export default function RootLayout({
                   }}
                 />
                 {children}
-              </PostHogProvider>
-            </body>
-          </html>
+              </body>
+            </html>
+          </PostHogProvider>
         </AuthProvider>
       </ClientProvider>
     </StyledComponentsRegistry>
