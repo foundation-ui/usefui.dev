@@ -12,13 +12,13 @@ export const HeroLink = styled(Link)`
 `;
 export const HeroTitle = styled.h1`
   font-weight: 600;
-  font-size: clamp(var(--fontsize-medium-10), 5vw, var(--fontsize-large-50));
+  font-size: clamp(var(--fontsize-large-10), 5vw, var(--fontsize-large-50));
   letter-spacing: -0.5px;
   line-height: 1;
 `;
 export const HeroSubtitle = styled.h1`
   font-weight: 600;
-  font-size: clamp(var(--fontsize-medium-30), 5vw, var(--fontsize-medium-60));
+  font-size: clamp(var(--fontsize-medium-60), 5vw, var(--fontsize-large-10));
   letter-spacing: -0.5px;
   line-height: 1;
 `;

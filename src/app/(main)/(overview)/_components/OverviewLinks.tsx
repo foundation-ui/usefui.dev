@@ -54,7 +54,7 @@ function OverviewLinks() {
           <Icon>
             <PixelIcon.BookOpen />
           </Icon>
-          <h6 className="fs-medium-20  ">Browse docs</h6>
+          <h6 className="fs-medium-20  ">Browse solutions</h6>
         </span>
         <p className="fs-medium-10 opacity-default-60">
           Explore the full capabilities of Foundation UI.

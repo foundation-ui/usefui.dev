@@ -25,15 +25,15 @@ function OverviewHero() {
       </HeroHeading>
 
       <div
-        className="flex g-medium-10 justify-center align-center"
+        className="flex g-medium-60 justify-center align-center"
         style={{ flexWrap: "wrap" }}
       >
         <Dialog.Root>
           <Dialog.Trigger sizing="large" variant="primary">
             <Icon>
-              <PixelIcon.Zap />
+              <PixelIcon.Plus />
             </Icon>
-            Create new libraries
+            Generate Design Tokens
           </Dialog.Trigger>
 
           <Editor />
@@ -41,7 +41,7 @@ function OverviewHero() {
 
         {QUICK_ACTIONS_CATALOG.map((action) => (
           <HeroLink key={action.name} href={`${action.link}`}>
-            <Button sizing="large" variant="primary">
+            <Button variant="ghost">
               <Icon>{action.icon}</Icon>
               {action.label}
             </Button>

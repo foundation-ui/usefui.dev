@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import styled from "styled-components";
 
 import JsonVariablesConsole from "../data/console/JsonVariablesConsole";
 import CssVariablesConsole from "../data/console/CssVariablesConsole";
@@ -9,16 +8,10 @@ import LibrarySizeCard from "../data/card/LibrarySizeCard";
 import PayloadSizeCard from "../data/card/PayloadSizeCard";
 import LibraryDetailsHeader from "./LibraryDetailsHeader";
 
-import { GridLayout, MaxWidthContainer } from "@/components";
+import { MaxWidthContainer } from "@/components";
 import { Divider } from "@foundation-ui/components";
 
 import type { libraries_table as librariesSchema } from "@/server/db/schema";
-
-const PageWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
 
 function LibraryDetails({
   data,
@@ -26,22 +19,23 @@ function LibraryDetails({
   data: typeof librariesSchema.$inferSelect;
 }) {
   return (
-    <PageWrapper className="w-100 h-100 p-medium-60">
-      <LibraryDetailsHeader data={data} />
-      <Divider className="m-y-large-10" />
-
-      <MaxWidthContainer className="grid g-large-10 w-100">
-        <GridLayout>
-          <LibrarySizeCard data={data} />
-          <PayloadSizeCard data={data} />
-        </GridLayout>
-        <section className="grid g-medium-30">
-          <JsonVariablesConsole data={data} />
-          <Divider className="m-y-medium-60" />
-          <CssVariablesConsole data={data} />
-        </section>
+    <section className="w-100 h-100 p-medium-60">
+      <MaxWidthContainer className="w-100 p-t-medium-60 p-b-medium-30 flex align-start justify-between g-medium-60">
+        <LibraryDetailsHeader data={data} />
       </MaxWidthContainer>
-    </PageWrapper>
+      <MaxWidthContainer className="w-100">
+        <LibrarySizeCard data={data} />
+        <PayloadSizeCard data={data} />
+      </MaxWidthContainer>
+
+      <Divider className="m-y-medium-60" />
+
+      <MaxWidthContainer className="w-100 p-b-medium-60 grid  g-medium-30">
+        <JsonVariablesConsole data={data} />
+        <Divider className="m-y-medium-60" />
+        <CssVariablesConsole data={data} />
+      </MaxWidthContainer>
+    </section>
   );
 }
 

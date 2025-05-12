@@ -46,8 +46,10 @@ function LibrariesDetails({
 
   return (
     <section className="w-100 h-100 p-medium-60">
-      <LibraryHero />
-      <Divider className="m-y-large-10" />
+      <MaxWidthContainer className="w-100 p-y-medium-60 flex align-start justify-between g-medium-60">
+        <LibraryHero />
+      </MaxWidthContainer>
+      <Divider className="m-y-medium-60" />
       <MaxWidthContainer className="w-100 p-b-medium-60">
         <LibrariesTable libraries={libraries} />
       </MaxWidthContainer>

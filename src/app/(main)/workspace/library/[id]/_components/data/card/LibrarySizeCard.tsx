@@ -6,8 +6,7 @@
 
 import React from "react";
 
-import { CardBody } from "@/components";
-import { Divider } from "@foundation-ui/components";
+import { Badge } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 import { countColorTokens, countScaleTokens } from "@/utils";
@@ -29,21 +28,13 @@ function LibrarySizeCard({
     colorCount + fontSizeCount + measurementCount + opacityCount + depthCount;
 
   return (
-    <CardBody className="p-medium-60">
-      <hgroup>
-        <div className="flex justify-between align-center g-medium-30">
-          <span className="fs-medium-10 opacity-default-60">Total Tokens</span>
-          <Icon>
-            <PixelIcon.ChevronsHorizontal />
-          </Icon>
-        </div>
-        <h3 className="fs-medium-20">{totalTokens}</h3>
-      </hgroup>
-      <Divider className="m-y-medium-60" />
-      <p className="fs-medium-10 opacity-default-30">
-        Breakdown of all token categories
-      </p>
-    </CardBody>
+    <Badge variant="border" shape="round">
+      <Icon>
+        <PixelIcon.ChevronsHorizontal />
+      </Icon>
+      <b>{totalTokens}</b>
+      Design Tokens
+    </Badge>
   );
 }
 

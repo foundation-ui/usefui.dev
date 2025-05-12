@@ -15,6 +15,7 @@ import type { libraries_table as librariesSchema } from "@/server/db/schema";
 const TableWrapper = styled(Table)`
   border: none !important;
 `;
+
 const TableLink = styled(Link)`
   display: table-row;
 
@@ -47,13 +48,13 @@ function LibrariesTable({
           <Icon opacity={0.6}>
             <PixelIcon.Clock />
           </Icon>
-          Created At
+          Created&nbsp;At
         </Table.HeadCell>
         <Table.HeadCell>
           <Icon opacity={0.6}>
             <PixelIcon.Timeline />
           </Icon>
-          Last update
+          Last&nbsp;update
         </Table.HeadCell>
         <Table.HeadCell />
       </Table.Head>
@@ -62,7 +63,7 @@ function LibrariesTable({
         {libraries.map(
           (item: typeof librariesSchema.$inferSelect, key: number) => (
             <TableLink key={key} href={`workspace/library/${String(item.id)}`}>
-              <Table.Cell className="p-l-medium-60 fs-medium-20">
+              <Table.Cell className="p-l-medium-60 fs-medium-10">
                 {item.name}
               </Table.Cell>
               <Table.Cell>
