@@ -3,16 +3,16 @@
 import React from "react";
 
 import LibraryHero from "./LibraryHero";
-import LibraryCard from "./LibraryCard";
+import LibrariesTable from "./LibrariesTable";
 
 import { Editor } from "@/features";
-import { EmptySection, GridLayoutSmall, MaxWidthContainer } from "@/components";
+import { EmptySection, MaxWidthContainer } from "@/components";
 import { Dialog, Divider } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 import type { libraries_table as librariesSchema } from "@/server/db/schema";
 
-function LibrariesList({
+function LibrariesDetails({
   libraries,
 }: {
   libraries: (typeof librariesSchema.$inferSelect)[];
@@ -46,29 +46,15 @@ function LibrariesList({
 
   return (
     <section className="w-100 h-100 p-medium-60">
-      <MaxWidthContainer className="w-100 p-b-medium-60">
+      <MaxWidthContainer className="w-100 p-y-medium-60 flex align-start justify-between g-medium-60">
         <LibraryHero />
-
-        <Divider className="m-y-large-10" />
-        <GridLayoutSmall>
-          {libraries.map(
-            (item: typeof librariesSchema.$inferSelect, key: number) => (
-              <LibraryCard
-                key={key}
-                id={item.id}
-                creatorId={item.creatorId}
-                name={item.name}
-                description={item.description}
-                library={item.library}
-                createdAt={item.createdAt}
-                updatedAt={item.updatedAt}
-              />
-            ),
-          )}
-        </GridLayoutSmall>
+      </MaxWidthContainer>
+      <Divider className="m-y-medium-60" />
+      <MaxWidthContainer className="w-100 p-b-medium-60">
+        <LibrariesTable libraries={libraries} />
       </MaxWidthContainer>
     </section>
   );
 }
 
-export default LibrariesList;
+export default LibrariesDetails;

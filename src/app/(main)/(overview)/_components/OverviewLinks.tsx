@@ -10,22 +10,39 @@ import { Icon, PixelIcon, SocialIcon } from "@foundation-ui/icons";
 
 const WIKI_CATALOG = [
   {
-    label: "@foundation-ui/core",
+    name: "@foundation-ui/tokens",
+    label: "Core",
     description:
       "Dynamically generate Design Tokens based your application properties.",
     link: "https://github.com/foundation-ui/design-system/pkgs/npm/core",
   },
   {
-    label: "@foundation-ui/tokens",
+    name: "@foundation-ui/tokens",
+    label: "Tokens",
     description:
       "Use @foundation-ui/tokens default Design Tokens library in your application.",
     link: "https://github.com/foundation-ui/design-system/pkgs/npm/tokens",
   },
   {
-    label: "@foundation-ui/cli",
+    name: "@foundation-ui/tokens",
+    label: "Components",
     description:
       "Use @foundation-ui/cli to generate your Design Tokens Library.",
-    link: "https://github.com/foundation-ui/cli",
+    link: "https://github.com/foundation-ui/components",
+  },
+  {
+    name: "@foundation-ui/tokens",
+    label: "Hooks",
+    description:
+      "Use @foundation-ui/cli to generate your Design Tokens Library.",
+    link: "https://github.com/foundation-ui/hooks",
+  },
+  {
+    name: "@foundation-ui/tokens",
+    label: "Analytics",
+    description:
+      "Use @foundation-ui/cli to generate your Design Tokens Library.",
+    link: "https://github.com/foundation-ui/analytics",
   },
 ];
 
@@ -37,28 +54,29 @@ function OverviewLinks() {
           <Icon>
             <PixelIcon.BookOpen />
           </Icon>
-          <h6 className="fs-medium-20  ">Browse docs</h6>
+          <h6 className="fs-medium-20  ">Browse solutions</h6>
         </span>
         <p className="fs-medium-10 opacity-default-60">
           Explore the full capabilities of Foundation UI.
         </p>
       </hgroup>
       <GridLayoutSmall>
-        {WIKI_CATALOG.map((wiki) => (
-          <CardBody key={wiki.label} className="p-medium-60 grid g-medium-30">
+        {WIKI_CATALOG.map((wiki, key) => (
+          <CardBody key={key} className="p-large-10 grid g-medium-30">
             <hgroup>
-              <p className="fs-medium-10 opacity-default-60 m-b-medium-10">
-                {wiki.label}
+              <h6 className="m-b-medium-10">{wiki.label}</h6>
+
+              <p className="fs-medium-10 opacity-default-60">
+                {wiki.description}
               </p>
-              <h6 className="fs-medium-10">{wiki.description}</h6>
             </hgroup>
-            <Divider className="m-y-medium-60" />
+            <Divider className="m-y-medium-30" />
 
             <footer className="flex align-center justify-between">
               <Badge variant="secondary">
                 npm&nbsp;i&nbsp;
-                <b className="m-r-medium-10">{wiki.label}</b>
-                <CopyCode value={`npm i ${wiki.label}`} />
+                <b className="m-r-medium-10">{wiki.name}</b>
+                <CopyCode value={`npm i ${wiki.name}`} />
               </Badge>
               <AppLink href={wiki.link} target="_blank">
                 <Icon viewBox="0 0 14 14">
