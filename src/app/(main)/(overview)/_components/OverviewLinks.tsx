@@ -2,47 +2,31 @@
 
 import React from "react";
 
-import CopyCode from "@/features/console/_components/triggers/CopyCode";
-
 import { AppLink, CardBody, GridLayoutSmall } from "@/components";
-import { Badge, Divider } from "@foundation-ui/components";
+import { Divider } from "@foundation-ui/components";
 import { Icon, PixelIcon, SocialIcon } from "@foundation-ui/icons";
 
 const WIKI_CATALOG = [
   {
-    name: "@foundation-ui/tokens",
+    name: "foundation-ui/core",
     label: "Core",
     description:
       "Dynamically generate Design Tokens based your application properties.",
     link: "https://github.com/foundation-ui/design-system/pkgs/npm/core",
   },
   {
-    name: "@foundation-ui/tokens",
+    name: "foundation-ui/tokens",
     label: "Tokens",
     description:
-      "Use @foundation-ui/tokens default Design Tokens library in your application.",
+      "Use foundation-ui/tokens default Design Tokens library in your application.",
     link: "https://github.com/foundation-ui/design-system/pkgs/npm/tokens",
   },
   {
-    name: "@foundation-ui/tokens",
+    name: "foundation-ui/components",
     label: "Components",
     description:
-      "Use @foundation-ui/cli to generate your Design Tokens Library.",
+      "Use foundation-ui/components to build your React applications.",
     link: "https://github.com/foundation-ui/components",
-  },
-  {
-    name: "@foundation-ui/tokens",
-    label: "Hooks",
-    description:
-      "Use @foundation-ui/cli to generate your Design Tokens Library.",
-    link: "https://github.com/foundation-ui/hooks",
-  },
-  {
-    name: "@foundation-ui/tokens",
-    label: "Analytics",
-    description:
-      "Use @foundation-ui/cli to generate your Design Tokens Library.",
-    link: "https://github.com/foundation-ui/analytics",
   },
 ];
 
@@ -65,7 +49,6 @@ function OverviewLinks() {
           <CardBody key={key} className="p-large-10 grid g-medium-30">
             <hgroup>
               <h6 className="m-b-medium-10">{wiki.label}</h6>
-
               <p className="fs-medium-10 opacity-default-60">
                 {wiki.description}
               </p>
@@ -73,15 +56,15 @@ function OverviewLinks() {
             <Divider className="m-y-medium-30" />
 
             <footer className="flex align-center justify-between">
-              <Badge variant="secondary">
-                npm&nbsp;i&nbsp;
-                <b className="m-r-medium-10">{wiki.name}</b>
-                <CopyCode value={`npm i ${wiki.name}`} />
-              </Badge>
-              <AppLink href={wiki.link} target="_blank">
+              <AppLink
+                href={wiki.link}
+                target="_blank"
+                className="fs-medium-10 flex align-center g-medium-30"
+              >
                 <Icon viewBox="0 0 14 14">
                   <SocialIcon.Github />
                 </Icon>
+                {wiki.name}
               </AppLink>
             </footer>
           </CardBody>
