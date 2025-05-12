@@ -46,11 +46,11 @@ function OverviewLinks() {
           <div>
             <hgroup>
               <Badge
-                variant="warning"
+                variant="border"
                 shape="round"
                 className="flex align-center g-medium-30 m-b-medium-30"
               >
-                <Icon fill="var(--color-orange)">
+                <Icon>
                   <PixelIcon.Zap />
                 </Icon>
                 {WIKI_CATALOG[0]?.name}
