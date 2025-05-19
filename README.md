@@ -37,8 +37,3 @@ pnpm dev
 
 Feel free to contribute to this project but please read the [Contributing Guidelines]() before opening an issue or PR so you understand the branching strategy and local development environment.
 We also welcome you to join our Discord community for either support or contributing guidance.
-
-## TODO
-
-- [ ] Add Homepage
-- [ ] Add Testing suites Github Actions to trigger it
