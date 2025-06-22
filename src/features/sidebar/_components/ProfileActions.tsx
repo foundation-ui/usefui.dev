@@ -103,9 +103,7 @@ function ProfileActions() {
           <Divider />
           <DropdownMenu.Item
             className="flex align-center g-medium-30 justify-between fs-medium-10"
-            onClick={() =>
-              window.open("https://github.com/foundation-ui/token-engine")
-            }
+            onClick={() => router.push("/")}
           >
             Home Page
             <Icon>
