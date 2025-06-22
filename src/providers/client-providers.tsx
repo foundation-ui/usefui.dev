@@ -32,6 +32,13 @@ const cssVariables = generateCSSVariables({
     color: [
       ...design_tokens.color,
       {
+        name: "mono-black",
+        base: { hex: "#000000" },
+        alpha: generateAlpha("#000000"),
+        tint: [],
+        shade: [],
+      },
+      {
         name: "mono-dark",
         base: { hex: "#111313" },
         alpha: generateAlpha("#111313"),
@@ -42,6 +49,13 @@ const cssVariables = generateCSSVariables({
         name: "mono-darker",
         base: { hex: "#0C0E0E" },
         alpha: generateAlpha("#0C0E0E"),
+        tint: [],
+        shade: [],
+      },
+      {
+        name: "mono-darkest",
+        base: { hex: "#0E0E0E" },
+        alpha: generateAlpha("#0E0E0E"),
         tint: [],
         shade: [],
       },
@@ -93,6 +107,7 @@ const CSSRoot = createGlobalStyle`
 		--breakpoint-desktop: 1440px;
 		--breakpoint-deskto-large: 1589px;
 	}
+
 `;
 
 export function ClientProvider({
@@ -108,11 +123,11 @@ export function ClientProvider({
         config={{
           body: {
             light: "var(--color-mono-light)",
-            dark: "var(--color-mono-darker)",
+            dark: "var(--color-mono-darkest)",
           },
           contrast: {
             light: "var(--color-mono-white)",
-            dark: "var(--color-mono-dark)",
+            dark: "var(--color-mono-darker)",
           },
         }}
       >
