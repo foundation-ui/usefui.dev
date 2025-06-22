@@ -5,9 +5,32 @@ import { Toaster } from "sonner";
 
 import type { Metadata } from "next";
 
+const metadataHead = {
+  title:
+    "Foundation UI - Flow through Development with Production-Grade Libraries",
+  description:
+    "An open source Frontend Toolkit by Nicolas Nunes to help create cohesive UIs using robust components. It is a personnal toolbox, used to develop both commercial and open source software. Access the technique, components, code, and tools.",
+};
 export const metadata: Metadata = {
-  title: "Foundation UI Engine",
-  description: "Open Source Design Tokens Engine",
+  ...metadataHead,
+  openGraph: {
+    ...metadataHead,
+    images: [
+      {
+        url: "https://www.usefui.dev.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "usefui.dev Banner",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    ...metadataHead,
+    card: "summary_large_image",
+    images: ["https://www.usefui.dev.com/twitter-image.png"],
+  },
 };
 
 export default function RootLayout({
