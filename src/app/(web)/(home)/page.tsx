@@ -6,9 +6,8 @@ import WebNavigation from "../_components/WebNavigation";
 import LandingHero from "./_components/LandingHero";
 import LandingProducts from "./_components/LandingProducts";
 import LandingSocials from "./_components/LandingSocials";
-import LandingFooter from "./_components/LandingFooter";
 
-import { MaxWidthContainer } from "@/components";
+import { Footer, MaxWidthContainer } from "@/components";
 
 function LandingPage() {
   return (
@@ -22,7 +21,7 @@ function LandingPage() {
           <LandingSocials />
         </MaxWidthContainer>
       </section>
-      <LandingFooter />
+      <Footer />
     </React.Fragment>
   );
 }

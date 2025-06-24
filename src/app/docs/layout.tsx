@@ -1,15 +1,10 @@
 "use client";
 
-import styled from "styled-components";
+import DocsSidebar from "./_components/DocsSidebar";
+import DocsNavigation from "./_components/DocsNavigation";
 
-import { Navigation, Sidebar } from "@/features";
 import { Page, ScrollArea } from "@foundation-ui/components";
-
-const BodyWrapper = styled(ScrollArea)`
-  flex-direction: column;
-  border-radius: var(--measurement-medium-30);
-  background: var(--contrast-color);
-`;
+import { Footer, MaxWidthContainerSmall } from "@/components";
 
 function layout({
   children,
@@ -20,22 +15,21 @@ function layout({
     <Page>
       <Page.Content>
         <Page.Wrapper $menus={0} $navigations={0} className="flex">
-          {/* <Sidebar /> */}
+          <DocsSidebar />
           <section className="w-100 h-100">
-            {/* <Navigation /> */}
-            {/* <Page.Wrapper
+            <DocsNavigation />
+            <Page.Wrapper
               $menus={1}
               $navigations={0.068} // Margins/Paddings
-              className="h-100 w-100 p-r-medium-60 p-b-medium-60"
+              className="h-100 w-100"
             >
-              <BodyWrapper className="h-100 w-100 flex justify-between">
-                {children}
-              </BodyWrapper>
-            </Page.Wrapper> */}
-
-            <BodyWrapper className="h-100 w-100 flex justify-between">
-              {children}
-            </BodyWrapper>
+              <ScrollArea className="h-100 w-100">
+                <MaxWidthContainerSmall className="h-100 w-100 p-x-medium-60 p-t-large-10 p-b-medium-60">
+                  {children}
+                </MaxWidthContainerSmall>
+              </ScrollArea>
+              <Footer />
+            </Page.Wrapper>
           </section>
         </Page.Wrapper>
       </Page.Content>

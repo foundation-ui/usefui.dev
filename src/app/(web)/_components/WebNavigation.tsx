@@ -4,10 +4,10 @@ import React from "react";
 import styled from "styled-components";
 
 import { useRouter } from "next/navigation";
-
-import { Avatar, Button, Tooltip } from "@foundation-ui/components";
-import { Icon, PixelIcon, SocialIcon } from "@foundation-ui/icons";
 import { useColorMode } from "@foundation-ui/tokens";
+
+import { Avatar, Button } from "@foundation-ui/components";
+import { Icon, PixelIcon, SocialIcon } from "@foundation-ui/icons";
 
 const FixedNavigation = styled.nav`
   display: flex;
@@ -41,6 +41,8 @@ const DesktopNavigation = styled.div`
 function WebNavigation() {
   const { colorMode, setColorMode } = useColorMode();
   const router = useRouter();
+
+  const nextColorMode = colorMode === "light" ? "dark" : "light";
   const LINKS = [
     {
       link: "docs/components",
@@ -56,7 +58,6 @@ function WebNavigation() {
     },
   ];
 
-  const nextColorMode = colorMode === "light" ? "dark" : "light";
   return (
     <FixedNavigation
       className="flex justify-between align-center"

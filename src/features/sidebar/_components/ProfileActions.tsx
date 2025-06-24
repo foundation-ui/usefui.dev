@@ -92,7 +92,11 @@ function ProfileActions() {
           <DropdownMenu.Item
             className="flex align-center g-medium-30 justify-between fs-medium-10"
             onClick={() =>
-              window.open("https://github.com/foundation-ui/token-engine")
+              window.open(
+                "https://github.com/foundation-ui/token-engine",
+                "_blank",
+                "noopener,noreferrer",
+              )
             }
           >
             Github

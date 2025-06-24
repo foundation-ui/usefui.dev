@@ -54,8 +54,8 @@ const cssVariables = generateCSSVariables({
       },
       {
         name: "mono-darkest",
-        base: { hex: "#0E0E0E" },
-        alpha: generateAlpha("#0E0E0E"),
+        base: { hex: "#010101" },
+        alpha: generateAlpha("#010101"),
         tint: [],
         shade: [],
       },
