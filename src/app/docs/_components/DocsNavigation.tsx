@@ -4,6 +4,8 @@ import React from "react";
 
 import { useColorMode } from "@foundation-ui/tokens";
 
+import Breadcrumbs from "@/components/Breadcrumbs";
+
 import { Button, Page } from "@foundation-ui/components";
 import { Icon, PixelIcon, SocialIcon } from "@foundation-ui/icons";
 
@@ -12,7 +14,8 @@ function DocsNavigation() {
   const nextColorMode = colorMode === "light" ? "dark" : "light";
 
   return (
-    <Page.Menu className="p-r-medium-60 flex justify-end align-center">
+    <Page.Menu className="p-r-medium-60 flex justify-between align-center">
+      <Breadcrumbs />
       <div className="flex align-center g-medium-60">
         <Button
           variant="ghost"
