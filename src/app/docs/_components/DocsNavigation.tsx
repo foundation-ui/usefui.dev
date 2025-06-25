@@ -4,8 +4,7 @@ import React from "react";
 
 import { useColorMode } from "@foundation-ui/tokens";
 
-import Breadcrumbs from "@/components/Breadcrumbs";
-
+import { Breadcrumbs } from "@/components";
 import { Button, Page } from "@foundation-ui/components";
 import { Icon, PixelIcon, SocialIcon } from "@foundation-ui/icons";
 

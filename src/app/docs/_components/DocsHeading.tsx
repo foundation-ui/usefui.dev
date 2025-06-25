@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { DisplayXl } from "@/app/(web)/(home)/_components/LandingHero";
+import { DisplayXl } from "@/components";
 
 function DocsHeading({
   title,

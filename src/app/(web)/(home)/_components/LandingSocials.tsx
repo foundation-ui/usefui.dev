@@ -3,9 +3,14 @@
 import React from "react";
 import styled from "styled-components";
 
-import { DisplayMd, DisplaySmall } from "./LandingHero";
 import { CardBody } from "./LandingProducts";
-import { MaxWidthContainer, GridLayout, AppLink } from "@/components";
+import {
+  MaxWidthContainer,
+  GridLayout,
+  AppLink,
+  DisplayMd,
+  DisplaySmall,
+} from "@/components";
 import { Icon, PixelIcon, SocialIcon } from "@foundation-ui/icons";
 
 const SocialsWrapper = styled(MaxWidthContainer)`

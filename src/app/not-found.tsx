@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { useRouter } from "next/navigation";
 
 import { Button, Page } from "@foundation-ui/components";
-import { DisplayXl } from "./(web)/(home)/_components/LandingHero";
+import { DisplayXl } from "@/components";
 
 const Hgroup = styled.hgroup`
   text-align: center;

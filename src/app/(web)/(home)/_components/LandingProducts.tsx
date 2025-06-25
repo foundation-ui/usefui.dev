@@ -5,11 +5,9 @@ import styled from "styled-components";
 
 import Link from "next/link";
 
-import { GridLayout } from "@/components";
+import { DisplayXl, DisplayMd, GridLayout } from "@/components";
 import { Badge, Button } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
-
-import { DisplayXl, DisplayMd } from "./LandingHero";
 
 export const CardBody = styled.article`
   --border: var(--measurement-small-30) solid var(--font-color-alpha-10);
