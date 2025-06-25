@@ -4,7 +4,7 @@ import React from "react";
 
 import CopyCode from "./CopyCode";
 
-import { TextMuted } from "@/components/shared/TextMuted";
+import { TextMuted } from "@/components";
 import { Toolbar, Tooltip } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 

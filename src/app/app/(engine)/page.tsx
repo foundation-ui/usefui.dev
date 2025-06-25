@@ -1,7 +1,8 @@
 import React from "react";
+import Engine from "./_components/Engine";
 
 async function EnginePage() {
-  return <p>Engine</p>;
+  return <Engine />;
 }
 
 export default EnginePage;

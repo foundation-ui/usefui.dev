@@ -6,7 +6,7 @@ import FormatCode from "../triggers/FormatCode";
 import ResetCode from "../triggers/ResetCode";
 import RunCode from "../triggers/RunCode";
 
-import { TextMuted } from "@/components/shared/TextMuted";
+import { TextMuted } from "@/components";
 
 import {
   Tooltip,
