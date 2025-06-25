@@ -2,38 +2,40 @@
 
 import React from "react";
 import styled from "styled-components";
-import Link from "next/link";
 
-import { Page } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
-import { AppLink } from "@/components";
+import { useRouter } from "next/navigation";
+
+import { Button, Page } from "@foundation-ui/components";
+import { DisplayXl } from "./(web)/(home)/_components/LandingHero";
 
 const Hgroup = styled.hgroup`
   text-align: center;
+
+  button {
+    justify-self: center;
+  }
 `;
 
 function NotFoundPage() {
+  const router = useRouter();
+
   return (
     <Page>
       <Page.Content>
         <section className="grid h-100 justify-center align-center">
           <section>
-            <Hgroup className="grid g-medium-30">
-              <h1>Page Not Found</h1>
-              <small className="opacity-default-30">
-                If you believe this is an error, please contact our support
-                team.
-              </small>
-              <AppLink
-                as={Link}
-                href="/"
-                className="fs-medium-20 p-medium-60 flex align-center justify-center g-medium-30"
+            <Hgroup className="grid g-medium-30 align-center justify-center">
+              <DisplayXl>Page not found</DisplayXl>
+              <p className="fs-medium-20 opacity-default-60 m-b-medium-60">
+                If you believe this is an error, please contact the support.
+              </p>
+              <Button
+                variant="border"
+                sizing="large"
+                onClick={() => router.push("/")}
               >
-                <Icon>
-                  <PixelIcon.Open />
-                </Icon>
-                Back to overview
-              </AppLink>
+                Go back
+              </Button>
             </Hgroup>
           </section>
         </section>

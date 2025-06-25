@@ -16,7 +16,7 @@ const HeroDescWrapper = styled.div`
   max-width: var(--breakpoint-tablet);
 `;
 export const DisplayXxl = styled.h1`
-  font-size: clamp(var(--fontsize-large-60), 5vw, var(--fontsize-large-90));
+  font-size: clamp(var(--fontsize-large-60), 8vw, var(--fontsize-large-90));
   letter-spacing: -0.06em;
   line-height: 1;
   font-weight: 500;

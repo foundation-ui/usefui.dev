@@ -23,6 +23,7 @@ import {
   ANALYTICS_LINKS,
   ICONS_LINKS,
   COMMUNITY_LINKS,
+  COMMON_LINKS,
 } from "../_routes";
 function DocsSidebar() {
   const router = useRouter();
@@ -59,20 +60,16 @@ function DocsSidebar() {
         <Page.Wrapper $navigations={2.5} $menus={0}>
           <Toolbar.Section className="h-100">
             <div className="grid g-small-30">
-              <AppLink
-                as={Toolbar.Item}
-                onClick={() => router.push("/docs/")}
-                className="fs-medium-20"
-              >
-                Overview
-              </AppLink>
-              <AppLink
-                as={Toolbar.Item}
-                onClick={() => router.push("/docs/getting-started")}
-                className="fs-medium-20"
-              >
-                Getting Started
-              </AppLink>
+              {COMMON_LINKS.map((commonLink, key) => (
+                <AppLink
+                  key={key}
+                  as={Toolbar.Item}
+                  onClick={() => router.push(commonLink.link)}
+                  className="fs-medium-20"
+                >
+                  {commonLink.label}
+                </AppLink>
+              ))}
             </div>
 
             <Divider className="m-y-medium-60" />
