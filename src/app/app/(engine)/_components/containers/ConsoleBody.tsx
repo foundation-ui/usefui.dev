@@ -6,11 +6,9 @@ import styled from "styled-components";
 import { Toolbar } from "@foundation-ui/components";
 
 export const ConsoleWrapper = styled(Toolbar)`
-  border: none !important;
+  /* border: none !important; */
   padding: var(--measurement-medium-30) 0 !important;
-  menu {
-    align-self: center !important;
-  }
+  align-self: end !important;
 `;
 
 function ConsoleBody({ children }: { children: React.ReactNode }) {
@@ -26,7 +24,6 @@ function ConsoleBody({ children }: { children: React.ReactNode }) {
         shortcut
         hotkey={hotkey}
         bindkey={bindkey}
-        defaultOpen
       >
         {children}
       </ConsoleWrapper>

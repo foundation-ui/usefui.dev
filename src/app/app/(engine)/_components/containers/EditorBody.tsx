@@ -22,20 +22,30 @@ type EditorBodyProps = {
 };
 
 const EditorWrapper = styled(ScrollArea)`
-  border-radius: var(--measurement-medium-30);
-
   .cm-foldGutter span {
     color: var(--font-color-alpha-60) !important;
   }
   .cm-lineNumbers .cm-gutterElement {
     color: var(--font-color-alpha-10) !important;
   }
+  .cm-scroller {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+    &::-moz-scrollbar {
+      display: none;
+    }
+  }
 `;
 
 const EditorTheme = createTheme({
   theme: "light",
   settings: {
-    background: "var(--contrast-color)",
+    background: "var(--body-color)",
     backgroundImage: "",
     foreground: "",
     caret: "var(--font-color-alpha-60)",
@@ -44,7 +54,7 @@ const EditorTheme = createTheme({
     fontSize: "var(--fontsize-small-60)",
     gutterActiveForeground: "var(--font-color-alpha-30)",
 
-    gutterBackground: "var(--contrast-color)",
+    gutterBackground: "var(--body-color)",
     gutterBorder: "var(--font-color-alpha-10)",
     lineHighlight: "var(--font-color-alpha-10)",
   },

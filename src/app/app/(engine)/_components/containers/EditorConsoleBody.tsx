@@ -3,6 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import { Icon, PixelIcon } from "@foundation-ui/icons";
 import type { EditorConsoleProps } from "../EditorConsole";
 
 const ConsoleBodyWrapper = styled.div`
@@ -25,8 +26,14 @@ const ConsoleBodyWrapper = styled.div`
 
 function EditorConsoleBody({ mode, value }: EditorConsoleProps) {
   return (
-    <ConsoleBodyWrapper data-mode={mode}>
-      <code>{value}</code>
+    <ConsoleBodyWrapper data-mode={mode} className="p-medium-30">
+      {value ? (
+        <code>{value}</code>
+      ) : (
+        <Icon fillOpacity={0.3}>
+          <PixelIcon.ChevronRight />
+        </Icon>
+      )}
     </ConsoleBodyWrapper>
   );
 }

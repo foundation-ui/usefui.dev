@@ -19,18 +19,18 @@ function EditorConsole({ mode, value }: EditorConsoleProps) {
 
   return (
     <ConsoleBody>
-      <Toolbar.Item
-        showfirstchild
-        className="flex align-center justify-between p-y-medium-30"
+      <Toolbar.Section
+        showoncollapse
+        className="flex align-center justify-between p-medium-30 w-100"
       >
-        <div className="flex align-center g-medium-10">
-          <Icon fill={hasErrors ? "var(--color-red)" : "currentColor"}>
+        <Toolbar.Trigger className="flex align-center g-medium-10" rawicon>
+          <Icon fill={hasErrors ? "var(--color-red)" : "var(--color-green)"}>
             {hasErrors ? <PixelIcon.Debug /> : <PixelIcon.DebugCheck />}
           </Icon>
-        </div>
+        </Toolbar.Trigger>
 
         <EditorConsoleActions value={value} />
-      </Toolbar.Item>
+      </Toolbar.Section>
 
       <Toolbar.Section>
         <EditorConsoleBody mode={mode} value={value} />

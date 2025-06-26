@@ -7,14 +7,7 @@ import ResetCode from "../triggers/ResetCode";
 import RunCode from "../triggers/RunCode";
 
 import { TextMuted } from "@/components";
-
-import {
-  Tooltip,
-  DialogControl,
-  Field,
-  Divider,
-} from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Field, Page } from "@foundation-ui/components";
 
 import { LibraryTemplate } from "@/templates";
 
@@ -47,44 +40,18 @@ function EditorMenu({
   };
 
   return (
-    <header className="m-b-medium-60 w-100">
-      <nav className="flex align-center justify-between g-large-10 w-100">
-        <div className="flex g-medium-60 align-center">
-          <RunCode value={value} name={libraryName} setError={setError} />
-          <TextMuted className="opacity-default-10">|</TextMuted>
-          <FormatCode
-            value={value}
-            setValue={setValue}
-            setError={setError}
-            onChange={onChange}
-          />
-          <ResetCode resetCallback={resetEditor} />
-        </div>
-
-        <div className="flex g-medium-60 align-center">
-          <Tooltip content="Close Editor">
-            <DialogControl sizing="small" variant="ghost" onClick={resetEditor}>
-              <Icon>
-                <PixelIcon.Close />
-              </Icon>
-            </DialogControl>
-          </Tooltip>
-        </div>
-      </nav>
-      <Divider className="m-y-medium-60" />
+    <Page.Navigation className="flex align-center justify-between g-medium-60 w-100">
       <Field.Root>
         <Field.Label
-          className="flex align-center"
+          className="flex align-center w-100"
           htmlFor="library-name"
           optional
         >
-          <Icon>
-            <PixelIcon.LabelAlt />
-          </Icon>
           <Field
             autoComplete="false"
             id="library-name"
             variant="ghost"
+            className="fs-medium-10"
             sizing="small"
             placeholder={libraryName}
             value={libraryName}
@@ -93,7 +60,19 @@ function EditorMenu({
           />
         </Field.Label>
       </Field.Root>
-    </header>
+      <div className="flex align-center g-medium-60">
+        <FormatCode
+          value={value}
+          setValue={setValue}
+          setError={setError}
+          onChange={onChange}
+        />
+        <ResetCode resetCallback={resetEditor} />
+        <TextMuted className="opacity-default-10">|</TextMuted>
+
+        <RunCode value={value} name={libraryName} setError={setError} />
+      </div>
+    </Page.Navigation>
   );
 }
 

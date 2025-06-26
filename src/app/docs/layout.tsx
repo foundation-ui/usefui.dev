@@ -1,7 +1,7 @@
 "use client";
 
 import DocsSidebar from "./_components/DocsSidebar";
-import DocsNavigation from "./_components/DocsNavigation";
+import AppNavigation from "../../components/AppNavigation";
 
 import { Page, ScrollArea } from "@foundation-ui/components";
 import { Footer, MaxWidthContainerSmall } from "@/components";
@@ -17,7 +17,7 @@ function layout({
         <Page.Wrapper $menus={0} $navigations={0} className="flex">
           <DocsSidebar />
           <section className="w-100 h-100">
-            <DocsNavigation />
+            <AppNavigation />
             <Page.Wrapper
               $menus={1}
               $navigations={0.068} // Margins/Paddings
