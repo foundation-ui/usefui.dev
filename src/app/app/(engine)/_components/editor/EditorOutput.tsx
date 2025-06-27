@@ -2,15 +2,47 @@
 
 import React from "react";
 
-import EditorBody from "./EditorBody";
-import AnalyticsMenu from "../analytics/AnalyticsMenu";
+import { useEngineStore } from "@/stores";
 
+import EditorBody from "./EditorBody";
+import CSSEditor from "./CSSEditor";
+import AnalyticsMenu from "../analytics/AnalyticsMenu";
 import CopyCode from "../triggers/CopyCode";
 
-import { TextMuted } from "@/components";
-import { Page, Tabs } from "@foundation-ui/components";
+import { Page, ScrollArea, Tabs, Tooltip } from "@foundation-ui/components";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
+
+const WELCOME_PAYLOAD = {
+  ahoy: ["Hello! 👋", "Thank you for trying out Foundation UI ✨"],
+  get_started: [
+    "1 - Give a name to the library 📦",
+    "2 - Customize the values in the left panel 🎨",
+    "3 - Click 'Run' to generate design tokens 🏭",
+    "4 - Download or copy your library! 🎉",
+  ],
+  side_quests: [
+    "- Check out the live analytics",
+    "- Star this project on github",
+    "- Join the community",
+  ],
+  practical_tips: [
+    "- Drag the editors handle to resize",
+    "- Use CTRL + < to toggle the input console",
+  ],
+  links: {
+    homepage: "https://usefui.dev",
+    documentation: "https://usefui.dev/docs",
+    discord: "https://discord.gg/yer3CgTTwD",
+    github: "https://github.com/foundation-ui",
+  },
+};
 
 function EditorOutput() {
+  const library = useEngineStore((state) => state.library);
+  const clearOutput = useEngineStore((state) => state.clearOutput);
+
+  const disableTrigger = typeof library === typeof null;
+
   return (
     <Tabs.Root>
       <Tabs
@@ -27,57 +59,55 @@ function EditorOutput() {
             >
               JSON
             </Tabs.Trigger>
-            <TextMuted className="opacity-default-10">|</TextMuted>
             <Tabs.Trigger
               className="fs-medium-10"
-              value="css"
-              disabled
+              value="css-vars"
+              disabled={disableTrigger}
               id="css-tabs-trigger"
             >
               CSS
             </Tabs.Trigger>
           </div>
-          <CopyCode value="" />
+          <div className="flex align-center g-medium-30">
+            <Tooltip content="Discard">
+              <Tabs.Trigger
+                sizing="small"
+                variant="ghost"
+                value="json"
+                onClick={() => clearOutput()}
+                disabled={disableTrigger}
+              >
+                <Icon>
+                  <PixelIcon.Redo />
+                </Icon>
+              </Tabs.Trigger>
+            </Tooltip>
+            <CopyCode value={library} />
+          </div>
         </Page.Navigation>
 
-        <div className="h-100">
-          <Tabs.Content value="json">
+        <ScrollArea className="h-100">
+          <Tabs.Content value="json" className="w-100 h-auto">
             <EditorBody
-              value={JSON.stringify(
-                {
-                  ahoy: [
-                    "Hello! 👋",
-                    "Thank you for trying out Foundation UI ✨",
-                  ],
-                  get_started: [
-                    "1 - Give a name to the library",
-                    "2 - Customize the values in the left panel 🎨",
-                    "3 - Click 'Run' to generate design tokens 🏭",
-                  ],
-                  links: {
-                    homepage: "https://usefui.dev",
-                    documentation: "https://usefui.dev/docs",
-                    discord: "https://discord.gg/yer3CgTTwD",
-                    github: "https://github.com/foundation-ui",
-                  },
-                },
-                null,
-                4,
-              )}
+              key={library}
+              value={
+                disableTrigger
+                  ? JSON.stringify(WELCOME_PAYLOAD, null, 2)
+                  : JSON.stringify(JSON.parse(String(library)), null, 2)
+              }
               readOnly
               language="json"
             />
           </Tabs.Content>
-          <Tabs.Content value="css">
-            <EditorBody
-              value={"--css-var: var(--css-value);"}
-              readOnly
-              language="css"
+          <Tabs.Content value="css-vars" className="w-100 h-auto">
+            <CSSEditor
+              key={library}
+              data={JSON.stringify(JSON.parse(String(library)), null, 2)}
             />
           </Tabs.Content>
-        </div>
+        </ScrollArea>
 
-        <AnalyticsMenu />
+        {library && <AnalyticsMenu data={library} />}
       </Tabs>
     </Tabs.Root>
   );

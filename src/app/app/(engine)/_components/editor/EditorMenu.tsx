@@ -2,6 +2,8 @@
 
 import React from "react";
 
+import { useEngineStore } from "@/stores";
+
 import FormatCode from "../triggers/FormatCode";
 import ResetCode from "../triggers/ResetCode";
 import RunCode from "../triggers/RunCode";
@@ -9,33 +11,27 @@ import RunCode from "../triggers/RunCode";
 import { TextMuted } from "@/components";
 import { Field, Page } from "@foundation-ui/components";
 
-import { LibraryTemplate } from "@/templates";
-
 type EditorMenuProps = {
   value: string;
   defaultValue?: string;
-  libraryName: string;
-  defaultLibraryName: string;
 
   setValue: React.Dispatch<React.SetStateAction<string>>;
-  setName: React.Dispatch<React.SetStateAction<string>>;
   setError: React.Dispatch<React.SetStateAction<string | null>>;
   onChange?: (value: string) => void;
 };
 
 function EditorMenu({
   value,
-  libraryName,
   defaultValue,
-  defaultLibraryName,
   setValue,
-  setName,
   setError,
   onChange,
 }: EditorMenuProps) {
+  const name = useEngineStore((state) => state.name);
+  const setLibraryName = useEngineStore((state) => state.setLibraryName);
+
   const resetEditor = () => {
-    setValue(defaultValue ?? JSON.stringify(LibraryTemplate.template, null, 2));
-    setName(defaultLibraryName);
+    setValue(String(defaultValue));
     setError(null);
   };
 
@@ -53,9 +49,9 @@ function EditorMenu({
             variant="ghost"
             className="fs-medium-10"
             sizing="small"
-            placeholder={libraryName}
-            value={libraryName}
-            onChange={(event) => setName(event.target.value)}
+            placeholder={name}
+            value={name}
+            onChange={(event) => setLibraryName(event.target.value)}
             style={{ width: "100%" }}
           />
         </Field.Label>
@@ -70,7 +66,7 @@ function EditorMenu({
         <ResetCode resetCallback={resetEditor} />
         <TextMuted className="opacity-default-10">|</TextMuted>
 
-        <RunCode value={value} name={libraryName} setError={setError} />
+        <RunCode value={value} name={name} setError={setError} />
       </div>
     </Page.Navigation>
   );

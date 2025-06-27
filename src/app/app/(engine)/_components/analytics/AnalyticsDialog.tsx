@@ -34,7 +34,7 @@ function AnalyticsDialog({ uba }: AnalyticsDialogProps) {
 
       <Page.Wrapper $navigations={1.9} $menus={0}>
         <EditorBody
-          value={JSON.stringify(uba, null, 4)}
+          value={JSON.stringify(uba, null, 2)}
           readOnly
           language="json"
         />

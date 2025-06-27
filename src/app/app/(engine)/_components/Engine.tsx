@@ -19,12 +19,9 @@ interface EditorProps {
   readOnly?: boolean;
 }
 
-const DEFAULT_LIBRARY_NAME = "Untitled";
-
 function Engine({
-  defaultValue = JSON.stringify(LibraryTemplate.template, null, 4),
+  defaultValue = JSON.stringify(LibraryTemplate.template, null, 2),
   onChange,
-  readOnly = false,
 }: EditorProps) {
   // const uba = useBehaviorAnalytics({
   //   silent: false,
@@ -43,11 +40,9 @@ function Engine({
   // });
 
   const [value, setValue] = React.useState<string>(defaultValue);
-  const [name, setName] = React.useState<string>(DEFAULT_LIBRARY_NAME);
   const [error, setError] = React.useState<string | null>(null);
 
   const deferredEditorValue = React.useDeferredValue(value);
-  const deferredLibraryName = React.useDeferredValue(name);
 
   return (
     <React.Fragment>
@@ -61,16 +56,12 @@ function Engine({
               defaultWidth={50}
               left={
                 <EditorInput
+                  error={error}
                   value={deferredEditorValue}
                   defaultValue={defaultValue}
                   setValue={setValue}
-                  name={deferredLibraryName}
-                  defaultName={DEFAULT_LIBRARY_NAME}
-                  setName={setName}
-                  error={error}
                   setError={setError}
                   onChange={onChange}
-                  readOnly={readOnly}
                 />
               }
               right={<EditorOutput />}

@@ -10,7 +10,6 @@ export const QUERIES = {
     const result = await db
       .select()
       .from(librariesSchema)
-      .where(eq(librariesSchema.creatorId, userId))
       .orderBy(librariesSchema.createdAt);
 
     if (!result) throw new Error("Failed to fetch libraries");

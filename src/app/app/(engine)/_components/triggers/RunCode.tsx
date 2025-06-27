@@ -3,15 +3,14 @@
 import React from "react";
 
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
-import { useAuth } from "@clerk/nextjs";
+import { useEngineStore } from "@/stores";
 
 import { SVGSpinner } from "@/components";
 import { Icon, PixelIcon, WebIcon } from "@foundation-ui/icons";
 import { Button } from "@foundation-ui/components";
 
 import { LibraryTemplate } from "@/templates";
-import { InsertLibraryAction } from "@/server/actions";
+// import { InsertLibraryAction } from "@/server/actions";
 
 import { toast } from "sonner";
 
@@ -24,18 +23,23 @@ function RunCode({
   name: string;
   setError: React.Dispatch<React.SetStateAction<string | null>>;
 }) {
-  const router = useRouter();
+  const addLibrary = useEngineStore((state) => state.addLibrary);
 
-  const { userId, isSignedIn } = useAuth();
   const { mutate, isPending } = useMutation({
-    mutationFn: InsertLibraryAction,
-    onSuccess: () => {
-      router.push("/workspace");
+    mutationFn: async () => {
+      addLibrary(
+        JSON.stringify(
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+          LibraryTemplate.fn(name, JSON.parse(value)),
+        ),
+      );
+    },
 
+    onSuccess: () => {
       setError(null);
       toast("Library generated", {
         id: "generate-library",
-        description: "Close the editor to access your library.",
+        description: "Navigate the variations to get the full detail.",
       });
     },
     onError: (data) => {
@@ -44,23 +48,8 @@ function RunCode({
   });
 
   const handleRunCode = React.useCallback(() => {
-    if (!isSignedIn || !userId) {
-      setError(`[Unauthorized] - Sign In to generate libraries`);
-      return;
-    }
-
-    mutate({
-      creatorId: String(userId),
-      name: name,
-      description: "",
-      library: JSON.stringify(
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-        LibraryTemplate.fn("untitled", JSON.parse(value)),
-      ),
-      createdAt: Date.now().toString(),
-      updatedAt: Date.now().toString(),
-    });
-  }, [isSignedIn, mutate, name, setError, userId, value]);
+    mutate();
+  }, [mutate]);
 
   return (
     <Button

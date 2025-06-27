@@ -9,10 +9,8 @@ import EditorConsole from "../console/EditorConsole";
 interface EditorInputProps {
   value: string;
   defaultValue: string;
-  defaultName: string;
-  name: string;
   error: string | null;
-  setName: React.Dispatch<React.SetStateAction<string>>;
+
   setValue: React.Dispatch<React.SetStateAction<string>>;
   setError: React.Dispatch<React.SetStateAction<string | null>>;
   onChange: ((value: string) => void) | undefined;
@@ -22,10 +20,7 @@ interface EditorInputProps {
 function EditorInput({
   value,
   defaultValue,
-  defaultName,
-  name,
   error,
-  setName,
   setError,
   setValue,
   onChange,
@@ -36,10 +31,7 @@ function EditorInput({
       <EditorMenu
         value={value}
         defaultValue={defaultValue}
-        defaultLibraryName={defaultName}
-        libraryName={name}
         setValue={setValue}
-        setName={setName}
         setError={setError}
         onChange={onChange}
       />

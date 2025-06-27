@@ -6,36 +6,33 @@
 
 import React from "react";
 
-import { Badge } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { TextMuted } from "@/components";
+import { CalculateJsonSize, countColorTokens, countScaleTokens } from "@/utils";
 
-import { countColorTokens, countScaleTokens } from "@/utils";
-import type { libraries_table as librariesSchema } from "@/server/db/schema";
-
-function LibrarySizeCard({
-  data,
-}: {
-  data: typeof librariesSchema.$inferSelect;
-}) {
-  const lib = JSON.parse(String(data.library));
+function AnalyticsMeta({ data }: { data: string }) {
+  const lib = JSON.parse(String(data));
+  const size = CalculateJsonSize(data);
 
   const colorCount = countColorTokens(lib?.design_tokens?.color);
   const fontSizeCount = countScaleTokens(lib?.design_tokens?.fontsize);
   const measurementCount = countScaleTokens(lib?.design_tokens?.measurement);
   const opacityCount = countScaleTokens(lib?.design_tokens?.opacity);
   const depthCount = countScaleTokens(lib?.design_tokens?.depth);
+
   const totalTokens =
     colorCount + fontSizeCount + measurementCount + opacityCount + depthCount;
 
   return (
-    <Badge variant="border" shape="round">
-      <Icon>
-        <PixelIcon.ChevronsHorizontal />
-      </Icon>
-      <b>{totalTokens}</b>
-      Design Tokens
-    </Badge>
+    <div className="flex align-center g-medium-30 p-y-small-30">
+      <TextMuted className="fs-medium-10 opacity-default-30">
+        {size.kilobytes.toFixed(2)}&nbsp;KB
+      </TextMuted>
+      <TextMuted className="fs-medium-10 opacity-default-10">/</TextMuted>
+      <TextMuted className="fs-medium-10 opacity-default-30">
+        {totalTokens}&nbsp;Tokens
+      </TextMuted>
+    </div>
   );
 }
 
-export default LibrarySizeCard;
+export default AnalyticsMeta;

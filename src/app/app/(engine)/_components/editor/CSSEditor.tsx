@@ -46,7 +46,7 @@ function CSSEditor({ data }: { data: string }) {
     // Remove trailing whitespace
     .replace(/\s+$/gm, "");
 
-  return <EditorBody value={vars} language="css" />;
+  return <EditorBody value={vars} language="css" readOnly />;
 }
 
 export default CSSEditor;

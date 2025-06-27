@@ -6,11 +6,8 @@ import { eq } from "drizzle-orm";
 import { libraries_table as librariesSchema } from "@/server/db/schema";
 
 type GenerateLibraryProperties = {
-  creatorId: string;
   library: string;
-
   name: string;
-  description: string;
 
   createdAt: string;
   updatedAt: string;
@@ -25,7 +22,7 @@ export const MUTATIONS = {
   },
 
   UpdateLibraryData: async function (
-    data: { name: string; description?: string | undefined },
+    data: { name: string },
     libraryId: number,
   ) {
     const result = await db
