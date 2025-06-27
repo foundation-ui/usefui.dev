@@ -1,7 +1,7 @@
 export const COMMON_LINKS = [
   {
     link: "/docs/",
-    label: "Overview",
+    label: "Introduction",
   },
   {
     link: "/docs/getting-started",
