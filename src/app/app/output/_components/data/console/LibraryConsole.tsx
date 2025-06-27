@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import EditorBody from "@/app/app/(engine)/_components/containers/EditorBody";
+import EditorBody from "@/app/app/(engine)/_components/editor/EditorBody";
 import { ScrollArea } from "@foundation-ui/components";
 
 const ConsoleWrapper = styled(ScrollArea)`

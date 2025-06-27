@@ -6,7 +6,7 @@ import { ScrollArea } from "@foundation-ui/components";
 
 import EditorMenu from "./EditorMenu";
 import EditorBody from "./EditorBody";
-import EditorConsoleProps from "./EditorConsole";
+import EditorConsoleProps from "../console/EditorConsole";
 
 import { LibraryTemplate } from "@/templates";
 

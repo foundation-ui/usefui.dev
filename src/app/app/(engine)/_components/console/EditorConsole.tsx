@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import EditorConsoleActions from "../triggers/EditorConsoleActions";
+import EditorConsoleActions from "./EditorConsoleActions";
 import EditorConsoleBody from "./EditorConsoleBody";
 import ConsoleBody from "./ConsoleBody";
 

@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import CopyCode from "./CopyCode";
+import CopyCode from "../triggers/CopyCode";
 
 import { TextMuted } from "@/components";
 import { Toolbar, Tooltip } from "@foundation-ui/components";

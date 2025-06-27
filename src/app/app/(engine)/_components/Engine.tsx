@@ -2,25 +2,18 @@
 
 import React from "react";
 
-import EditorMenu from "./containers/EditorMenu";
-import EditorSidebar from "./containers/EditorSidebar";
-import EditorBody from "./containers/EditorBody";
-import EditorConsole from "./containers/EditorConsole";
+import EditorMenu from "./editor/EditorMenu";
+import EditorSidebar from "./editor/EditorSidebar";
+import EditorBody from "./editor/EditorBody";
+import EditorConsole from "./console/EditorConsole";
 
-import SplitScreenEditor from "./containers/SplitScreenEditor";
+import SplitScreenEditor from "./editor/SplitScreenEditor";
 
 import { LibraryTemplate } from "@/templates";
-import {
-  Badge,
-  Button,
-  Page,
-  Tabs,
-  Toolbar,
-  Tooltip,
-} from "@foundation-ui/components";
+import { Page, Tabs, Toolbar } from "@foundation-ui/components";
 import { AppNavigation, TextMuted } from "@/components";
 import CopyCode from "./triggers/CopyCode";
-import { Icon, PixelIcon, WebIcon } from "@foundation-ui/icons";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 interface EditorProps {
   defaultValue?: string;
