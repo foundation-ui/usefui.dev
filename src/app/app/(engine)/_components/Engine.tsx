@@ -2,18 +2,14 @@
 
 import React from "react";
 
-import EditorMenu from "./editor/EditorMenu";
 import EditorSidebar from "./editor/EditorSidebar";
-import EditorBody from "./editor/EditorBody";
-import EditorConsole from "./console/EditorConsole";
-
 import SplitScreenEditor from "./editor/SplitScreenEditor";
+import EditorInput from "./editor/EditorInput";
+import EditorOutput from "./editor/EditorOutput";
 
 import { LibraryTemplate } from "@/templates";
-import { Page, Tabs, Toolbar } from "@foundation-ui/components";
-import { AppNavigation, TextMuted } from "@/components";
-import CopyCode from "./triggers/CopyCode";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { AppNavigation } from "@/components";
+import { Page } from "@foundation-ui/components";
 
 interface EditorProps {
   defaultValue?: string;
@@ -46,118 +42,20 @@ function Engine({
             <SplitScreenEditor
               defaultWidth={50}
               left={
-                <div
-                  className="flex w-100 h-100"
-                  style={{ flexDirection: "column" }}
-                >
-                  <EditorMenu
-                    value={deferredEditorValue}
-                    defaultValue={defaultValue}
-                    defaultLibraryName={DEFAULT_LIBRARY_NAME}
-                    libraryName={deferredLibraryName}
-                    setValue={setValue}
-                    setName={setName}
-                    setError={setError}
-                    onChange={onChange}
-                  />
-                  <EditorBody
-                    value={deferredEditorValue}
-                    readOnly={readOnly}
-                    setValue={setValue}
-                    setError={setError}
-                    onChange={onChange}
-                    language="json"
-                  />
-                  <EditorConsole
-                    mode={error ? "error" : "meta"}
-                    value={error}
-                  />
-                </div>
+                <EditorInput
+                  value={deferredEditorValue}
+                  defaultValue={defaultValue}
+                  setValue={setValue}
+                  name={deferredLibraryName}
+                  defaultName={DEFAULT_LIBRARY_NAME}
+                  setName={setName}
+                  error={error}
+                  setError={setError}
+                  onChange={onChange}
+                  readOnly={readOnly}
+                />
               }
-              right={
-                <Tabs.Root>
-                  <Tabs
-                    defaultOpen="json"
-                    className="flex w-100 h-100"
-                    style={{ flexDirection: "column" }}
-                  >
-                    <Page.Navigation className="p-y-medium-60 flex align-center justify-between g-medium-30">
-                      <div className="flex align-center g-medium-30">
-                        <Tabs.Trigger className="fs-medium-10" value="json">
-                          JSON
-                        </Tabs.Trigger>
-                        <TextMuted className="opacity-default-10">|</TextMuted>
-                        <Tabs.Trigger
-                          className="fs-medium-10"
-                          value="css"
-                          disabled
-                        >
-                          CSS
-                        </Tabs.Trigger>
-                      </div>
-                      <CopyCode value="" />
-                    </Page.Navigation>
-
-                    <div className="h-100">
-                      <Tabs.Content value="json">
-                        <EditorBody
-                          value={JSON.stringify(
-                            {
-                              ahoy: [
-                                "Hello! 👋",
-                                "Thank you for trying out Foundation UI ✨",
-                              ],
-                              get_started: [
-                                "1 - Give a name to the library",
-                                "2 - Customize the values in the left panel 🎨",
-                                "3 - Click 'Run' to generate design tokens 🏭",
-                              ],
-                              links: {
-                                homepage: "https://usefui.dev",
-                                documentation: "https://usefui.dev/docs",
-                                discord: "https://discord.gg/yer3CgTTwD",
-                                github: "https://github.com/foundation-ui",
-                              },
-                            },
-                            null,
-                            4,
-                          )}
-                          readOnly={readOnly}
-                          setValue={setValue}
-                          setError={setError}
-                          onChange={onChange}
-                          language="json"
-                        />
-                      </Tabs.Content>
-                      <Tabs.Content value="css">
-                        <EditorBody
-                          value={"--css-var: var(--css-value);"}
-                          readOnly={readOnly}
-                          setValue={setValue}
-                          setError={setError}
-                          onChange={onChange}
-                          language="css"
-                        />
-                      </Tabs.Content>
-                    </div>
-
-                    <Toolbar.Root>
-                      <Toolbar side="bottom" defaultOpen={false}>
-                        <Toolbar.Section showoncollapse className="p-medium-30">
-                          <span className="flex align-center g-medium-10">
-                            <Icon fillOpacity={0.1}>
-                              <PixelIcon.File />
-                            </Icon>
-                            <TextMuted className="fs-medium-10 opacity-default-10 p-y-small-50">
-                              00&nbsp;Kb
-                            </TextMuted>
-                          </span>
-                        </Toolbar.Section>
-                      </Toolbar>
-                    </Toolbar.Root>
-                  </Tabs>
-                </Tabs.Root>
-              }
+              right={<EditorOutput />}
             />
           </Page.Wrapper>
         </div>
