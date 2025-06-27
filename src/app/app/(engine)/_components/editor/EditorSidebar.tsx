@@ -4,11 +4,8 @@
 
 import React from "react";
 
-// import AnalyticsDialog from "../analytics/AnalyticsDialog";
-
-import { Avatar, Dialog, Toolbar, Tooltip } from "@foundation-ui/components";
+import { Avatar, Toolbar } from "@foundation-ui/components";
 import { Icon, SocialIcon } from "@foundation-ui/icons";
-import { AnimatedHumanSvg } from "@/components";
 
 export type EditorSidebarProperties = {
   uba?: void | {
@@ -61,21 +58,6 @@ function EditorSidebar({ uba }: EditorSidebarProperties) {
               <SocialIcon.Foundation />
             </Icon>
           </Avatar>
-        </Toolbar.Section>
-
-        <Toolbar.Section
-          showoncollapse
-          className="flex align-start justify-center w-100 p-b-medium-40"
-        >
-          <Dialog.Root>
-            <Tooltip content="Live Analytics">
-              <Dialog.Trigger variant="ghost" sizing="small" disabled>
-                <AnimatedHumanSvg />
-              </Dialog.Trigger>
-            </Tooltip>
-            {/* <AnalyticsDialog uba={uba} /> */}
-            <Dialog.Overlay />
-          </Dialog.Root>
         </Toolbar.Section>
       </Toolbar>
     </Toolbar.Root>
