@@ -10,8 +10,6 @@ import { Icon, PixelIcon, WebIcon } from "@foundation-ui/icons";
 import { Button } from "@foundation-ui/components";
 
 import { LibraryTemplate } from "@/templates";
-// import { InsertLibraryAction } from "@/server/actions";
-
 import { toast } from "sonner";
 
 function RunCode({
