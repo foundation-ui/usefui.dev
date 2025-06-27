@@ -19,7 +19,7 @@ const HeroDescWrapper = styled.div`
 
 const Pulse = keyframes`
   0% {
-    box-shadow: 0 0 0 var(--measurement-small-10) var(--alpha-mono-white-30);
+    box-shadow: 0 0 0 var(--measurement-small-10) var(--font-color-alpha-30);
   }
   100% {
     box-shadow: 0 0 0 var(--measurement-medium-60) transparent;
