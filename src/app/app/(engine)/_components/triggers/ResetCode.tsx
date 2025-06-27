@@ -12,7 +12,7 @@ type ResetCodeProps = {
 function ResetCode({ resetCallback }: ResetCodeProps) {
   return (
     <Tooltip content="Reset">
-      <Button variant="ghost" onClick={resetCallback}>
+      <Button variant="ghost" onClick={resetCallback} id="reset-code-trigger">
         <Icon>
           <PixelIcon.Reload />
         </Icon>

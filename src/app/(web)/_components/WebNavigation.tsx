@@ -65,7 +65,7 @@ function WebNavigation() {
         <Button
           variant="ghost"
           sizing="small"
-          onClick={() => router.push("docs/getting-started")}
+          onClick={() => router.push("docs")}
         >
           Docs
         </Button>

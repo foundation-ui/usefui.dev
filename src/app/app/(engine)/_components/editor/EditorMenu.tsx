@@ -49,7 +49,7 @@ function EditorMenu({
         >
           <Field
             autoComplete="false"
-            id="library-name"
+            id="library-name-field"
             variant="ghost"
             className="fs-medium-10"
             sizing="small"

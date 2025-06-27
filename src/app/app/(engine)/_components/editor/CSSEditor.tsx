@@ -4,20 +4,12 @@
 "use client";
 
 import React from "react";
-
-import LibraryConsole from "./LibraryConsole";
-import CopyCode from "@/app/app/(engine)/_components/console/_components/triggers/CopyCode";
+import EditorBody from "./EditorBody";
 
 import { generateCSSVariables } from "@foundation-ui/core";
 
-import type { libraries_table as librariesSchema } from "@/server/db/schema";
-
-function CssVariablesConsole({
-  data,
-}: {
-  data: typeof librariesSchema.$inferSelect;
-}) {
-  const [library] = React.useState<any>(JSON.parse(String(data.library)));
+function CSSEditor({ data }: { data: string }) {
+  const [library] = React.useState<any>(JSON.parse(String(data)));
 
   const cssVars = generateCSSVariables(library);
   const colorVars = cssVars.color.toString();
@@ -54,15 +46,7 @@ function CssVariablesConsole({
     // Remove trailing whitespace
     .replace(/\s+$/gm, "");
 
-  return (
-    <React.Fragment>
-      <hgroup className="flex align-center g-medium-10">
-        <h6 className="fs-medium-20">CSS Variables</h6>
-        <CopyCode value={vars} />
-      </hgroup>
-      <LibraryConsole value={vars} language="css" />
-    </React.Fragment>
-  );
+  return <EditorBody value={vars} language="css" />;
 }
 
-export default CssVariablesConsole;
+export default CSSEditor;

@@ -14,7 +14,7 @@ function EditorConsoleActions({ value }: { value: string | null }) {
       <CopyCode value={value} />
       <TextMuted className="opacity-default-10">|</TextMuted>
       <Tooltip content="Ctrl + <">
-        <Toolbar.Trigger variant="ghost">
+        <Toolbar.Trigger variant="ghost" id="toggle-console-trigger">
           <Icon>
             <PixelIcon.ChevronsVertical />
           </Icon>

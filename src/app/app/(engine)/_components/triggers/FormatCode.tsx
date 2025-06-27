@@ -30,7 +30,11 @@ function FormatCode({ value, setValue, setError, onChange }: FormatCodeProps) {
 
   return (
     <Tooltip content="Format code">
-      <Button variant="ghost" onClick={formatJsonValue}>
+      <Button
+        variant="ghost"
+        onClick={formatJsonValue}
+        id="format-code-trigger"
+      >
         <Icon>
           <PixelIcon.Zap />
         </Icon>

@@ -65,6 +65,7 @@ function RunCode({
   return (
     <Button
       className="fs-medium-10"
+      id="run-code-trigger"
       variant="primary"
       sizing="small"
       onClick={handleRunCode}

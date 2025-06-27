@@ -90,7 +90,7 @@ function LandingProducts() {
           className="grid align-end h-100 w-100 p-large-10"
           as={Link}
           data-mode="link"
-          href="/docs/getting-started"
+          href="/docs"
         >
           <p className="w-100 fs-medium-20 opacity-default-60 m-b-large-30">
             Foundation UI is designed to work as a standalone library or
@@ -217,7 +217,7 @@ function LandingProducts() {
         style={{ borderTop: "none" }}
         as={Link}
         data-mode="link"
-        href="/docs/getting-started"
+        href="/docs"
       >
         <Button variant="ghost">
           Get started for free

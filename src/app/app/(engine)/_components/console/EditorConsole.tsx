@@ -23,7 +23,11 @@ function EditorConsole({ mode, value }: EditorConsoleProps) {
         showoncollapse
         className="flex align-center justify-between p-medium-30 w-100"
       >
-        <Toolbar.Trigger className="flex align-center g-medium-10" rawicon>
+        <Toolbar.Trigger
+          className="flex align-center g-medium-10"
+          rawicon
+          id="console-indicator"
+        >
           <Icon fill={hasErrors ? "var(--color-red)" : "var(--color-green)"}>
             {hasErrors ? <PixelIcon.Debug /> : <PixelIcon.DebugCheck />}
           </Icon>

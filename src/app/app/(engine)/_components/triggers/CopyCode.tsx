@@ -29,6 +29,7 @@ function CopyCode({
     <Tooltip content={copied ? "Copied!" : "Copy"}>
       <Button
         variant="ghost"
+        id="copy-code-trigger"
         onClick={copyToClipboard}
         disabled={typeof value === typeof null}
       >

@@ -129,7 +129,10 @@ function SpitScreenEditor({
           onMouseDown={handleMouseDown}
           onTouchStart={handleMouseDown}
         >
-          <DragHandle className="flex align-center justify-center">
+          <DragHandle
+            className="flex align-center justify-center"
+            id="drag-handle"
+          >
             <DragIndicator className="drag-indicator-handle" />
           </DragHandle>
         </Divider>

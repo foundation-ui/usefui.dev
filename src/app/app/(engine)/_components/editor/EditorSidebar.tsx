@@ -1,15 +1,49 @@
+/* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React from "react";
 
-import { useRouter } from "next/navigation";
+// import AnalyticsDialog from "../analytics/AnalyticsDialog";
 
-import { Avatar, Button, Toolbar, Tooltip } from "@foundation-ui/components";
-import { Icon, PixelIcon, SocialIcon } from "@foundation-ui/icons";
+import { Avatar, Dialog, Toolbar, Tooltip } from "@foundation-ui/components";
+import { Icon, SocialIcon } from "@foundation-ui/icons";
+import { AnimatedHumanSvg } from "@/components";
 
-function EditorSidebar() {
-  const router = useRouter();
+export type EditorSidebarProperties = {
+  uba?: void | {
+    interactions: any[] | [];
+    session: {
+      html_snapshot: string;
+      entry_time: string;
+      entry_epoch: number;
+      last_interaction_time: string | null;
+      last_interaction_epoch: number | null;
+      time_before_interact: number | null;
+    };
+    system: {
+      path: string;
+      user_agent: string;
+      device_os: string;
+      performances: any | null;
+      viewport: {
+        width: number;
+        height: number;
+      };
+      screen: {
+        width: number;
+        height: number;
+        pixel_depth: number;
+        orientation: {
+          angle: number;
+          type: string;
+        };
+      };
+    };
+  };
+};
 
+function EditorSidebar({ uba }: EditorSidebarProperties) {
   return (
     <Toolbar.Root>
       <Toolbar side="left" defaultOpen={false}>
@@ -33,21 +67,15 @@ function EditorSidebar() {
           showoncollapse
           className="flex align-start justify-center w-100 p-b-medium-40"
         >
-          <div className="grid g-medium-60">
-            <Tooltip content="Docs">
-              <Button
-                variant="ghost"
-                sizing="small"
-                onClick={() => router.push("/docs")}
-              >
-                <Icon>
-                  <PixelIcon.BookOpen />
-                </Icon>
-              </Button>
+          <Dialog.Root>
+            <Tooltip content="Live Analytics">
+              <Dialog.Trigger variant="ghost" sizing="small" disabled>
+                <AnimatedHumanSvg />
+              </Dialog.Trigger>
             </Tooltip>
-          </div>
-
-          {/* <AppDropdown /> */}
+            {/* <AnalyticsDialog uba={uba} /> */}
+            <Dialog.Overlay />
+          </Dialog.Root>
         </Toolbar.Section>
       </Toolbar>
     </Toolbar.Root>

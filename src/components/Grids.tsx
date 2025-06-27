@@ -19,6 +19,6 @@ export const GridLayoutSmall = styled.div`
     auto-fill,
     minmax(var(--measurement-large-90), 1fr)
   );
-  grid-gap: var(--measurement-medium-30) var(--measurement-medium-30);
+  /* grid-gap: var(--measurement-medium-30) var(--measurement-medium-30); */
   box-sizing: border-box;
 `;

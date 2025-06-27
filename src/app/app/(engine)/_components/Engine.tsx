@@ -2,6 +2,8 @@
 
 import React from "react";
 
+// import { useBehaviorAnalytics } from "@foundation-ui/core";
+
 import EditorSidebar from "./editor/EditorSidebar";
 import SplitScreenEditor from "./editor/SplitScreenEditor";
 import EditorInput from "./editor/EditorInput";
@@ -24,6 +26,22 @@ function Engine({
   onChange,
   readOnly = false,
 }: EditorProps) {
+  // const uba = useBehaviorAnalytics({
+  //   silent: false,
+  //   flags: [
+  //     "run-code-trigger",
+  //     "copy-code-trigger",
+  //     "reset-code-trigger",
+  //     "format-code-trigger",
+  //     "toggle-console-trigger",
+  //     "console-indicator",
+  //     "json-tabs-trigger",
+  //     "css-tabs-trigger",
+  //     "library-name-field",
+  //     "drag-handle",
+  //   ],
+  // });
+
   const [value, setValue] = React.useState<string>(defaultValue);
   const [name, setName] = React.useState<string>(DEFAULT_LIBRARY_NAME);
   const [error, setError] = React.useState<string | null>(null);

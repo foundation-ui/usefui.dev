@@ -3,11 +3,12 @@
 import React from "react";
 
 import EditorBody from "./EditorBody";
+import AnalyticsMenu from "../analytics/AnalyticsMenu";
+
 import CopyCode from "../triggers/CopyCode";
 
 import { TextMuted } from "@/components";
-import { Page, Tabs, Toolbar } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Page, Tabs } from "@foundation-ui/components";
 
 function EditorOutput() {
   return (
@@ -19,11 +20,20 @@ function EditorOutput() {
       >
         <Page.Navigation className="p-y-medium-60 flex align-center justify-between g-medium-30">
           <div className="flex align-center g-medium-30">
-            <Tabs.Trigger className="fs-medium-10" value="json">
+            <Tabs.Trigger
+              className="fs-medium-10"
+              value="json"
+              id="json-tabs-trigger"
+            >
               JSON
             </Tabs.Trigger>
             <TextMuted className="opacity-default-10">|</TextMuted>
-            <Tabs.Trigger className="fs-medium-10" value="css" disabled>
+            <Tabs.Trigger
+              className="fs-medium-10"
+              value="css"
+              disabled
+              id="css-tabs-trigger"
+            >
               CSS
             </Tabs.Trigger>
           </div>
@@ -67,20 +77,7 @@ function EditorOutput() {
           </Tabs.Content>
         </div>
 
-        <Toolbar.Root>
-          <Toolbar side="bottom" defaultOpen={false}>
-            <Toolbar.Section showoncollapse className="p-medium-30">
-              <span className="flex align-center g-medium-10">
-                <Icon fillOpacity={0.1}>
-                  <PixelIcon.File />
-                </Icon>
-                <TextMuted className="fs-medium-10 opacity-default-10 p-y-small-50">
-                  00&nbsp;Kb
-                </TextMuted>
-              </span>
-            </Toolbar.Section>
-          </Toolbar>
-        </Toolbar.Root>
+        <AnalyticsMenu />
       </Tabs>
     </Tabs.Root>
   );
