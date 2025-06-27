@@ -42,22 +42,35 @@ function DocsSidebar() {
         defaultOpen
       >
         <Toolbar.Section
-          className="flex align-end m-b-medium-60"
+          className="flex align-start justify-start m-b-medium-70"
           showoncollapse
         >
-          <Avatar
-            style={{
-              background: "var(--font-color)",
-              borderRadius: "var(--measurement-medium-30)",
-            }}
+          <Toolbar.Item
+            showfirstchild
+            className="flex align-center justify-between w-100"
           >
-            <Icon fill="var(--body-color)">
-              <SocialIcon.Foundation />
-            </Icon>
-          </Avatar>
+            <Avatar
+              style={{
+                background: "var(--font-color)",
+                borderRadius: "var(--measurement-medium-30)",
+              }}
+            >
+              <Icon fill="var(--body-color)">
+                <SocialIcon.Foundation />
+              </Icon>
+            </Avatar>
+
+            <Tooltip content={`Ctrl + ${hotkey}`}>
+              <Toolbar.Trigger variant="ghost" sizing="small">
+                <Icon>
+                  <PixelIcon.LayoutSidebarLeft />
+                </Icon>
+              </Toolbar.Trigger>
+            </Tooltip>
+          </Toolbar.Item>
         </Toolbar.Section>
 
-        <Page.Wrapper $navigations={2.5} $menus={0}>
+        <Page.Wrapper $navigations={1.9} $menus={0}>
           <Toolbar.Section className="h-100">
             <div className="grid g-small-30">
               {COMMON_LINKS.map((commonLink, key) => (
@@ -337,16 +350,6 @@ function DocsSidebar() {
             </Accordion.Root>
           </Toolbar.Section>
         </Page.Wrapper>
-
-        <Toolbar.Section className="flex align-end" showoncollapse>
-          <Tooltip content={`Ctrl + ${hotkey}`}>
-            <Toolbar.Trigger variant="border" sizing="small">
-              <Icon>
-                <PixelIcon.ChevronsHorizontal />
-              </Icon>
-            </Toolbar.Trigger>
-          </Tooltip>
-        </Toolbar.Section>
       </Toolbar>
     </Toolbar.Root>
   );

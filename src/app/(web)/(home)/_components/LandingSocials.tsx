@@ -3,11 +3,12 @@
 import React from "react";
 import styled from "styled-components";
 
+import Link from "next/link";
+
 import { CardBody } from "./LandingProducts";
 import {
   MaxWidthContainer,
   GridLayout,
-  AppLink,
   DisplayMd,
   DisplaySmall,
 } from "@/components";
@@ -39,7 +40,7 @@ function LandingSocials() {
       <GridLayout>
         <CardBody
           className="grid align-end w-100 p-large-10"
-          as={AppLink}
+          as={Link}
           data-mode="link"
           href="https://github.com/foundation-ui/design-system"
           target="_blank"
@@ -64,7 +65,7 @@ function LandingSocials() {
         </CardBody>
         <CardBody
           className="grid align-end w-100 p-large-10"
-          as={AppLink}
+          as={Link}
           data-mode="link"
           href="https://discord.gg/yer3CgTTwD"
           target="_blank"

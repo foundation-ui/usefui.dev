@@ -13,24 +13,15 @@ const FixedNavigation = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   position: fixed;
   top: 0;
-  width: calc(100% - (var(--measurement-medium-60) * 2));
+  width: 100%;
   margin: 0 auto;
+  border: var(--measurement-small-30) solid transparent;
+  background-color: var(--body-color);
   padding: var(--measurement-medium-30);
   z-index: var(--depth-default-100);
-
-  /* background-color: var(--alpha-mono-dark-10); */
-  border: var(--measurement-small-30) solid var(--font-color-alpha-10);
-
-  border-radius: var(--measurement-medium-30);
-  box-shadow: inset 0 var(--measurement-small-30) var(--measurement-small-30) 0
-    var(--font-color-alpha-10);
-
-  backdrop-filter: blur(var(--measurement-medium-60));
-
-  margin: var(--measurement-medium-60) var(--measurement-medium-60) 0
-    var(--measurement-medium-60);
 `;
 const DesktopNavigation = styled.div`
   @media (max-width: 768px) {
@@ -39,10 +30,7 @@ const DesktopNavigation = styled.div`
 `;
 
 function WebNavigation() {
-  const { colorMode, setColorMode } = useColorMode();
   const router = useRouter();
-
-  const nextColorMode = colorMode === "light" ? "dark" : "light";
   const LINKS = [
     {
       link: "docs/components",
@@ -74,7 +62,6 @@ function WebNavigation() {
             <SocialIcon.Foundation />
           </Icon>
         </Avatar>
-
         <Button
           variant="ghost"
           sizing="small"
@@ -100,18 +87,6 @@ function WebNavigation() {
       <div className="flex align-center g-medium-60">
         <Button
           variant="ghost"
-          sizing="small"
-          onClick={() => setColorMode(nextColorMode)}
-        >
-          <Icon>
-            {colorMode === "light" && <PixelIcon.Moon />}
-            {colorMode === "dark" && <PixelIcon.SunAlt />}
-          </Icon>
-        </Button>
-
-        <span className="opacity-default-10">|</span>
-        <Button
-          variant="ghost"
           onClick={() =>
             window.open(
               "https://github.com/foundation-ui",
@@ -125,7 +100,7 @@ function WebNavigation() {
           </Icon>
         </Button>
         <Button
-          variant="primary"
+          variant="border"
           sizing="large"
           onClick={() => router.push("/app")}
         >

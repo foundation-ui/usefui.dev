@@ -36,7 +36,7 @@ function LandingHero() {
         <hgroup className="m-b-large-30">
           <Badge variant="secondary" shape="round" className="m-b-medium-60">
             <BetaBadge shape="round">&beta;</BetaBadge>
-            <span className="p-x-small-60">Open Beta</span>
+            <span className="p-r-medium-10">Open Beta</span>
           </Badge>
           <DisplayXxl className="m-b-medium-30">
             Flow through Development with Production-Grade Libraries

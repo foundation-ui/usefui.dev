@@ -43,6 +43,7 @@ function Engine({
 
           <Page.Wrapper $navigations={0} $menus={1.07}>
             <SplitScreenEditor
+              defaultWidth={66.6}
               left={
                 <div
                   className="flex w-100 h-100"

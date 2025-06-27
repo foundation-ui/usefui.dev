@@ -24,6 +24,7 @@ function ConsoleBody({ children }: { children: React.ReactNode }) {
         shortcut
         hotkey={hotkey}
         bindkey={bindkey}
+        defaultOpen
       >
         {children}
       </ConsoleWrapper>

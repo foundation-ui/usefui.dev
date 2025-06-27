@@ -60,14 +60,19 @@ const DragOverlay = styled.div`
 `;
 
 type SplitScreenEditorProperties = {
+  defaultWidth?: number;
   left: React.ReactNode;
   right: React.ReactNode;
 };
 
-function SpitScreenEditor({ left, right }: SplitScreenEditorProperties) {
+function SpitScreenEditor({
+  defaultWidth,
+  left,
+  right,
+}: SplitScreenEditorProperties) {
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  const [leftWidth, setLeftWidth] = React.useState(50); // Percentage
+  const [leftWidth, setLeftWidth] = React.useState(defaultWidth ?? 50); // Percentage
   const [isDragging, setIsDragging] = React.useState(false);
 
   const handleMouseDown = React.useCallback(() => setIsDragging(true), []);
@@ -81,8 +86,13 @@ function SpitScreenEditor({ left, right }: SplitScreenEditorProperties) {
       const newLeftWidth =
         ((e.clientX - containerRect.left) / containerRect.width) * 100;
 
-      // Constrain between 10% and 90%
-      const constrainedWidth = Math.min(Math.max(newLeftWidth, 10), 90);
+      // Constrain between 20% and 80%
+      const threshold = { min: 20, max: 80 };
+
+      const constrainedWidth = Math.min(
+        Math.max(newLeftWidth, threshold.min),
+        threshold.max,
+      );
       setLeftWidth(constrainedWidth);
     },
     [isDragging],
