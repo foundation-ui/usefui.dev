@@ -5,14 +5,22 @@ import React from "react";
 import EditorMenu from "./containers/EditorMenu";
 import EditorSidebar from "./containers/EditorSidebar";
 import EditorBody from "./containers/EditorBody";
-import EditorConsole from "./EditorConsole";
+import EditorConsole from "./containers/EditorConsole";
 
-import SplitScreenEditor from "./SplitScreenEditor";
+import SplitScreenEditor from "./containers/SplitScreenEditor";
 
 import { LibraryTemplate } from "@/templates";
-import { Page, Tabs } from "@foundation-ui/components";
+import {
+  Badge,
+  Button,
+  Page,
+  Tabs,
+  Toolbar,
+  Tooltip,
+} from "@foundation-ui/components";
 import { AppNavigation, TextMuted } from "@/components";
 import CopyCode from "./triggers/CopyCode";
+import { Icon, PixelIcon, WebIcon } from "@foundation-ui/icons";
 
 interface EditorProps {
   defaultValue?: string;
@@ -75,24 +83,52 @@ function Engine({
               }
               right={
                 <Tabs.Root>
-                  <Tabs defaultOpen="json">
+                  <Tabs
+                    defaultOpen="json"
+                    className="flex w-100 h-100"
+                    style={{ flexDirection: "column" }}
+                  >
                     <Page.Navigation className="p-y-medium-60 flex align-center justify-between g-medium-30">
                       <div className="flex align-center g-medium-30">
                         <Tabs.Trigger className="fs-medium-10" value="json">
                           JSON
                         </Tabs.Trigger>
                         <TextMuted className="opacity-default-10">|</TextMuted>
-                        <Tabs.Trigger className="fs-medium-10" value="css">
+                        <Tabs.Trigger
+                          className="fs-medium-10"
+                          value="css"
+                          disabled
+                        >
                           CSS
                         </Tabs.Trigger>
                       </div>
                       <CopyCode value="" />
                     </Page.Navigation>
 
-                    <div>
+                    <div className="h-100">
                       <Tabs.Content value="json">
                         <EditorBody
-                          value={JSON.stringify({ json: true }, null, 4)}
+                          value={JSON.stringify(
+                            {
+                              ahoy: [
+                                "Hello! 👋",
+                                "Thank you for trying out Foundation UI ✨",
+                              ],
+                              get_started: [
+                                "1 - Give a name to the library",
+                                "2 - Customize the values in the left panel 🎨",
+                                "3 - Click 'Run' to generate design tokens 🏭",
+                              ],
+                              links: {
+                                homepage: "https://usefui.dev",
+                                documentation: "https://usefui.dev/docs",
+                                discord: "https://discord.gg/yer3CgTTwD",
+                                github: "https://github.com/foundation-ui",
+                              },
+                            },
+                            null,
+                            4,
+                          )}
                           readOnly={readOnly}
                           setValue={setValue}
                           setError={setError}
@@ -111,6 +147,21 @@ function Engine({
                         />
                       </Tabs.Content>
                     </div>
+
+                    <Toolbar.Root>
+                      <Toolbar side="bottom" defaultOpen={false}>
+                        <Toolbar.Section showoncollapse className="p-medium-30">
+                          <span className="flex align-center g-medium-10">
+                            <Icon fillOpacity={0.1}>
+                              <PixelIcon.File />
+                            </Icon>
+                            <TextMuted className="fs-medium-10 opacity-default-10 p-y-small-50">
+                              00&nbsp;Kb
+                            </TextMuted>
+                          </span>
+                        </Toolbar.Section>
+                      </Toolbar>
+                    </Toolbar.Root>
                   </Tabs>
                 </Tabs.Root>
               }

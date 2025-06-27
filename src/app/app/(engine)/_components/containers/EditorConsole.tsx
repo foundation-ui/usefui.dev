@@ -2,9 +2,9 @@
 
 import React from "react";
 
-import ConsoleBody from "./containers/ConsoleBody";
-import EditorConsoleActions from "./triggers/EditorConsoleActions";
-import EditorConsoleBody from "./containers/EditorConsoleBody";
+import EditorConsoleActions from "../triggers/EditorConsoleActions";
+import EditorConsoleBody from "./EditorConsoleBody";
+import ConsoleBody from "./ConsoleBody";
 
 import { Toolbar } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";

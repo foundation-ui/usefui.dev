@@ -4,8 +4,8 @@ import React from "react";
 
 import { ScrollArea } from "@foundation-ui/components";
 
-import EditorMenu from "./containers/EditorMenu";
-import EditorBody from "./containers/EditorBody";
+import EditorMenu from "./EditorMenu";
+import EditorBody from "./EditorBody";
 import EditorConsoleProps from "./EditorConsole";
 
 import { LibraryTemplate } from "@/templates";
