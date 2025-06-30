@@ -5,8 +5,8 @@ async function GettingStartedPage() {
   return (
     <React.Fragment>
       <DocsHeading
-        title="Getting Started"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo in, sit eligendi vel quasi officia. Animi sed quia quae eligendi sint, nesciunt, et impedit illo molestiae eum eaque tempore nam!"
+        title="Work in progress"
+        description="This page is under construction"
       />
     </React.Fragment>
   );
