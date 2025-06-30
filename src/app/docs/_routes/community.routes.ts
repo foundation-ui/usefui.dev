@@ -1,6 +1,6 @@
 export const COMMUNITY_LINKS = [
   {
-    link: "/docs/community/contribute",
+    link: "/docs/contribute",
     label: "Contribute",
   },
   {
