@@ -1,20 +1,58 @@
 ---
 title: Introduction
-description: How to install dependencies and structure your app.
+description: Foundation UI offers a suite of powerful Engines and Libraries optimized to create cohesive UIs using accessible, robust, and intuitive components alongside User Behavior Analytics.
 ---
 
-## Foundation Design System
+<DocsTextBlock>
+  Foundation UI is designed to work as a standalone library or integrate to an
+  existing toolset and craft production-grade applications.
+</DocsTextBlock>
 
-`@foundation-ui/design-system` is a React Design System built to generate and use low-level UI foundations, bringing cohesion throughout your Libraries and User Interfaces along the way.
-Foundation is divided into three distinct packages, each serving a specific purpose and allowing you to include only the dependencies you need.
+<DocsSection>
+  ### Components
+  <DocsTextBlock>
+    `@foundation-ui/components` provides low-level components such as Buttons,
+    Accordions, .. with a focus on accessibility, customization and developer
+    experience. Use it with `@foundation-ui/core` and `@foundation-ui/tokens` to
+    get cohesive UIs.
+  </DocsTextBlock>
+</DocsSection>
 
----
+<DocsSection>
+  ### Tokens
+  <DocsTextBlock>
+    `@foundation-ui/tokens` is an assets library with built-int Design Tokens.
+    Use it with `@foundation-ui/core` to generate your custom Design Tokens
+    library on build-time.
+  </DocsTextBlock>
+</DocsSection>
 
-### Core
+<DocsSection>
+  ### Styles
+  <DocsTextBlock>
+    `@foundation-ui/styles` provides reset styles, common styles definition and
+    CSS variables generated using `@foundation-ui/core` or from a built-in
+    library available throught `@foundation-ui/tokens`.
+  </DocsTextBlock>
+</DocsSection>
 
-<span className="fs-medium-10 opacity-default-60">
-  `@foundation-ui/core` is a Design Tokens System built to bring frictionless
-  cohesion across apps. Use it coupled with `@foundation-ui/tokens` and
-  `@foundation-ui/components` or as a standalone package to customize your own
-  Design Tokens System.
-</span>
+<DocsSection>
+  ### Core
+  <DocsTextBlock>
+    `@foundation-ui/core` is a Design Tokens Engine built to generate JSON based
+    libraries that can be used in any kind of app. Use it coupled with
+    `@foundation-ui/tokens` and `@foundation-ui/components` or as a standalone
+    package to customize your own Design System.
+  </DocsTextBlock>
+</DocsSection>
+
+<DocsSection>
+  ### Analytics
+  <DocsTextBlock>
+    `@foundation-ui/analytics` provides live User analytics and system
+    informations to gain insights into user behavior and improve user
+    experience.
+  </DocsTextBlock>
+</DocsSection>
+
+<DocsFooter next="/docs/getting-started" />

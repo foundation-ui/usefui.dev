@@ -3,7 +3,125 @@ title: Getting started
 description: How to install dependencies and structure your app.
 ---
 
-## Install dependencies
+<DocsSection>
+### Install
 
-Start by selecting your framework of choice. Then follow the instructions to install the dependencies and structure your app.
-foundation-ui is built to work with all React frameworks.
+<DocsTextBlock>
+  To get the most out of `@foundation-ui`, it is hight recommended to use at
+  least `@foundation-ui/components` and `@foundation-ui/tokens`.
+</DocsTextBlock>
+<br />
+<DocsTextBlock>
+  Run the following commands to install `@foundation-ui` packages in project:
+</DocsTextBlock>
+
+<br />
+
+**_Components:_**
+
+<DocsCodePreview language="shell" code={`pnpm add @foundation-ui/components`} />
+
+**_Tokens:_**
+
+<DocsCodePreview language="shell" code={`pnpm add @foundation-ui/tokens`} />
+
+**_Styles:_**
+
+<DocsCodePreview language="shell" code={`pnpm add @foundation-ui/styles`} />
+
+**_Core:_**
+
+<DocsCodePreview language="shell" code={`pnpm add @foundation-ui/core`} />
+
+**_Analytics:_**
+
+<DocsCodePreview language="shell" code={`pnpm add @foundation-ui/analytics`} />
+
+**_Hooks:_**
+
+  <DocsCodePreview language="shell" code={`pnpm add @foundation-ui/hooks`} />
+</DocsSection>
+
+<DocsSection>
+  ### Setup
+  <DocsTextBlock>
+    Foundation Design System is styled using CSS in JS with
+    [styled-components](https://styled-components.com/). This technique, coupled
+    with `@foundation-ui/core`, requires a
+    [GlobalStyle](https://styled-components.com/docs/faqs#note-regarding-css-import-and-createglobalstyle)
+    definition to convert your Design Tokens Library as CSS variables.
+     **_The styling can be done using styled-components or any other techniques/frameworks._**
+  </DocsTextBlock>
+
+  <br />
+  <DocsTextBlock>
+    Add the `ColorModeProvider` component to your setup to support the design tokens
+    provided by `@foundation-ui/tokens` or generated using `@foundation-ui/core`.
+    It enables you to switch between Themes based on user preferences.
+  </DocsTextBlock>
+  <br />
+  <DocsTextBlock>
+    `@foundation-ui/tokens` comes with a set of pre-built GlobalStyles
+    definitions to ensure a consistent visual language across all your apps,
+    regardless of platform or device. You can build your own using `@foundation-ui/core` and replace the default integration using your custom values.
+  </DocsTextBlock>
+  <DocsCodePreview
+    code={`
+      "use client"; // For nextjs apps
+
+      import React from "react";
+      import { ColorModeProvider } from "@foundation-ui/tokens";
+
+      import {
+        ResetStyles,
+        TypographyRoot,
+        CSSRoot
+      } from "@foundation-ui/styles";
+
+      export function ClientProvider({ children }: Readonly<{
+        children: React.ReactNode;
+      }>) {
+        return (
+          <ColorModeProvider config={}>
+            <ResetStyles />
+            <TypographyRoot />
+            <CSSRoot />
+
+            {children}
+          </ColorModeProvider>
+        );}`} />
+
+</DocsSection>
+
+<DocsSection>
+### Usage
+<DocsTextBlock>
+  That's it! You can now use Foundation Design System.
+</DocsTextBlock>
+<DocsCodePreview
+  code={`
+    "use client"; // For nextjs apps
+
+    import React from "react";
+    import { Button } from "@foundation-ui/components";
+    import { useColorMode } from "@foundation-ui/tokens";
+
+    export default () => {
+      const { colorMode, setColorMode } = useColorMode();
+      const updateColorMode = () => {
+        if (colorMode === "dark") setColorMode("light");
+        else if (colorMode === "light") setColorMode("dark");
+      };
+
+      return (
+        <Button sizing="small" variant="ghost">
+          Color mode:&nbsp;{colorMode}
+        </Button>
+      );
+    }`}
+
+/>
+
+</DocsSection>
+
+<DocsFooter prev="/docs/introduction" next="/docs/components/installation" />
