@@ -22,7 +22,6 @@ import {
   CORE_LINKS,
   ANALYTICS_LINKS,
   ICONS_LINKS,
-  COMMUNITY_LINKS,
   COMMON_LINKS,
 } from "../_routes";
 function DocsSidebar() {
@@ -303,46 +302,6 @@ function DocsSidebar() {
                       className="fs-medium-20"
                     >
                       {alink.label}
-                    </AppLink>
-                  ))}
-                </Accordion.Content>
-              </Accordion>
-            </Accordion.Root>
-
-            <Divider className="m-y-medium-60" />
-
-            <Accordion.Root>
-              <Accordion>
-                <Accordion.Trigger
-                  value="community"
-                  className="m-b-medium-60 w-100 justify-between align-center"
-                >
-                  <b>Community</b>
-                  <Icon>
-                    <PixelIcon.ChevronsVertical />
-                  </Icon>
-                </Accordion.Trigger>
-                <Accordion.Content
-                  value="community"
-                  defaultOpen
-                  className="grid g-small-30"
-                >
-                  {COMMUNITY_LINKS.map((communityLink, key) => (
-                    <AppLink
-                      key={key}
-                      as={Toolbar.Item}
-                      onClick={() =>
-                        communityLink.external
-                          ? window.open(
-                              communityLink.link,
-                              "_blank",
-                              "noopener,noreferrer",
-                            )
-                          : router.push(communityLink.link)
-                      }
-                      className="fs-medium-20"
-                    >
-                      {communityLink.label}
                     </AppLink>
                   ))}
                 </Accordion.Content>

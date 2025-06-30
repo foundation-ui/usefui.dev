@@ -8,10 +8,6 @@ export const COMPONENTS_LINKS = [
     label: "Components API",
   },
   {
-    link: "/docs/components/components-hooks",
-    label: "Components Hooks",
-  },
-  {
     link: "/docs/components/accordion",
     label: "Accordion",
   },

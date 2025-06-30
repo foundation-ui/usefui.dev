@@ -5,5 +5,4 @@ export * from "./color-mode.routes";
 export * from "./core.routes";
 export * from "./design_tokens.routes";
 export * from "./icons.routes";
-export * from "./community.routes";
 export * from "./common.routes";

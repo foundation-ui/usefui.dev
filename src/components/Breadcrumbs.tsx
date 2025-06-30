@@ -3,7 +3,7 @@
 import React from "react";
 import { usePathname, useRouter } from "next/navigation";
 
-import { Button } from "@foundation-ui/components";
+import { Button, Tooltip } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 interface BreadcrumbsProps {
@@ -34,11 +34,13 @@ function Breadcrumbs({ capitalizeItems = true }: BreadcrumbsProps) {
 
   return (
     <div className="flex align-center g-medium-30">
-      <Button variant="ghost" sizing="small" onClick={() => router.push("/")}>
-        <Icon>
-          <PixelIcon.ChevronLeft />
-        </Icon>
-      </Button>
+      <Tooltip content="Home">
+        <Button variant="ghost" sizing="small" onClick={() => router.push("/")}>
+          <Icon>
+            <PixelIcon.ChevronLeft />
+          </Icon>
+        </Button>
+      </Tooltip>
 
       <span className="opacity-default-10">|</span>
 

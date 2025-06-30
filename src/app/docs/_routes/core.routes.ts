@@ -15,8 +15,4 @@ export const CORE_LINKS = [
     link: "/docs/core/generate-css-classes",
     label: "CSS classes",
   },
-  {
-    link: "/docs/core/formatters",
-    label: "Formatters",
-  },
 ];

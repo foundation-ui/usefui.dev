@@ -12,7 +12,7 @@ export const COMPONENTS_HOOKS_LINKS = [
     label: "useCheckbox",
   },
   {
-    link: "/docs/components-hooks/use-collpasible",
+    link: "/docs/components-hooks/use-collapsible",
     label: "useCollapsible",
   },
   {

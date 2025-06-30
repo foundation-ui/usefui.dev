@@ -7,4 +7,17 @@ export const COMMON_LINKS = [
     link: "/docs/getting-started",
     label: "Getting Started",
   },
+  {
+    link: "/docs/changelog",
+    label: "Changelog",
+  },
+  {
+    link: "/docs/contribute",
+    label: "Contribute",
+  },
+  {
+    link: "https://discord.gg/yer3CgTTwD",
+    external: true,
+    label: "Join the community",
+  },
 ];
