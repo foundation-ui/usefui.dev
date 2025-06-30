@@ -107,7 +107,6 @@ const CSSRoot = createGlobalStyle`
 		--breakpoint-desktop: 1440px;
 		--breakpoint-deskto-large: 1589px;
 	}
-
 `;
 
 export function ClientProvider({

@@ -1,6 +1,10 @@
 import React from "react";
 
 import DocsHeading from "../_components/DocsHeading";
+import DocsCodePreview from "../_components/DocsCodePreview";
+import DocsTextBlock from "../_components/DocsTextBlock";
+import DocsSection from "../_components/DocsSection";
+import DocsFooter from "../_components/DocsFooter";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllDocSlugs, getDocBySlug } from "@/lib/docs";
@@ -14,10 +18,8 @@ interface DocPageProps {
   params: Promise<{ slug: string[] }>;
 }
 
-// The page component is an async Server Component
 export default async function DocPage({ params }: DocPageProps) {
   const { slug } = await params;
-  const components = {};
 
   const docSlug = slug ?? ["index"];
   const doc = await getDocBySlug(docSlug);
@@ -30,6 +32,13 @@ export default async function DocPage({ params }: DocPageProps) {
       />
     );
   }
+
+  const components = {
+    DocsCodePreview,
+    DocsTextBlock,
+    DocsSection,
+    DocsFooter,
+  };
 
   return (
     <React.Fragment>

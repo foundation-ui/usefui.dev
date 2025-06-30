@@ -90,27 +90,59 @@ function DocsSidebar() {
             <Accordion.Root>
               <Accordion>
                 <Accordion.Trigger
-                  value="core"
+                  value="components"
                   className="m-b-medium-60 w-100 justify-between align-center"
                 >
-                  <b>Core</b>
+                  <b>Components</b>
                   <Icon>
                     <PixelIcon.ChevronsVertical />
                   </Icon>
                 </Accordion.Trigger>
                 <Accordion.Content
-                  value="core"
+                  value="components"
                   defaultOpen
                   className="grid g-small-30"
                 >
-                  {CORE_LINKS.map((coreLink, key) => (
+                  {COMPONENTS_LINKS.map((clink, key) => (
                     <AppLink
                       key={key}
                       as={Toolbar.Item}
-                      onClick={() => router.push(coreLink.link)}
+                      onClick={() => router.push(clink.link)}
                       className="fs-medium-20"
                     >
-                      {coreLink.label}
+                      {clink.label}
+                    </AppLink>
+                  ))}
+                </Accordion.Content>
+              </Accordion>
+            </Accordion.Root>
+
+            <Divider className="m-y-medium-60" />
+
+            <Accordion.Root>
+              <Accordion>
+                <Accordion.Trigger
+                  value="components_hooks"
+                  className="m-b-medium-60 w-100 justify-between align-center"
+                >
+                  <b>Components Hooks</b>
+                  <Icon>
+                    <PixelIcon.ChevronsVertical />
+                  </Icon>
+                </Accordion.Trigger>
+                <Accordion.Content
+                  value="components_hooks"
+                  defaultOpen
+                  className="grid g-small-30"
+                >
+                  {COMPONENTS_HOOKS_LINKS.map((chlink, key) => (
+                    <AppLink
+                      key={key}
+                      as={Toolbar.Item}
+                      onClick={() => router.push(chlink.link)}
+                      className="fs-medium-20"
+                    >
+                      {chlink.label}
                     </AppLink>
                   ))}
                 </Accordion.Content>
@@ -186,59 +218,27 @@ function DocsSidebar() {
             <Accordion.Root>
               <Accordion>
                 <Accordion.Trigger
-                  value="components"
+                  value="core"
                   className="m-b-medium-60 w-100 justify-between align-center"
                 >
-                  <b>Components</b>
+                  <b>Core</b>
                   <Icon>
                     <PixelIcon.ChevronsVertical />
                   </Icon>
                 </Accordion.Trigger>
                 <Accordion.Content
-                  value="components"
+                  value="core"
                   defaultOpen
                   className="grid g-small-30"
                 >
-                  {COMPONENTS_LINKS.map((clink, key) => (
+                  {CORE_LINKS.map((coreLink, key) => (
                     <AppLink
                       key={key}
                       as={Toolbar.Item}
-                      onClick={() => router.push(clink.link)}
+                      onClick={() => router.push(coreLink.link)}
                       className="fs-medium-20"
                     >
-                      {clink.label}
-                    </AppLink>
-                  ))}
-                </Accordion.Content>
-              </Accordion>
-            </Accordion.Root>
-
-            <Divider className="m-y-medium-60" />
-
-            <Accordion.Root>
-              <Accordion>
-                <Accordion.Trigger
-                  value="components_hooks"
-                  className="m-b-medium-60 w-100 justify-between align-center"
-                >
-                  <b>Components Hooks</b>
-                  <Icon>
-                    <PixelIcon.ChevronsVertical />
-                  </Icon>
-                </Accordion.Trigger>
-                <Accordion.Content
-                  value="components_hooks"
-                  defaultOpen
-                  className="grid g-small-30"
-                >
-                  {COMPONENTS_HOOKS_LINKS.map((chlink, key) => (
-                    <AppLink
-                      key={key}
-                      as={Toolbar.Item}
-                      onClick={() => router.push(chlink.link)}
-                      className="fs-medium-20"
-                    >
-                      {chlink.label}
+                      {coreLink.label}
                     </AppLink>
                   ))}
                 </Accordion.Content>
