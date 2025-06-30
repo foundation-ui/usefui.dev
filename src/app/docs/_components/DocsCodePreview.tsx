@@ -1,14 +1,13 @@
 "use client";
 
 import React from "react";
+import styled from "styled-components";
 
-import { ScrollArea } from "@foundation-ui/components";
+import { Button, ScrollArea } from "@foundation-ui/components";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
+
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-
-import {
-  oneDark,
-  oneLight,
-} from "react-syntax-highlighter/dist/esm/styles/prism";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface CodePreviewProps {
   code: string;
@@ -17,7 +16,30 @@ interface CodePreviewProps {
   maxHeight?: string;
 }
 
+const PreviewWrapper = styled(ScrollArea)`
+  position: relative;
+`;
+const PreviewButton = styled(Button)`
+  position: absolute !important;
+  top: var(--measurement-medium-60);
+  right: var(--measurement-medium-40);
+`;
+
 function DocsCodePreview({ code, language }: CodePreviewProps) {
+  const [showCopy, setShowCopy] = React.useState<boolean>(false);
+  const [copied, setCopied] = React.useState(false);
+
+  const copyToClipboard = async () => {
+    if (!code) return;
+
+    await navigator.clipboard.writeText(code).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1000);
+    });
+
+    clearTimeout(1000);
+  };
+
   const customStyle = {
     padding: "var(--measurement-medium-60)",
     background: "var(--contrast-color)",
@@ -25,7 +47,15 @@ function DocsCodePreview({ code, language }: CodePreviewProps) {
   };
 
   return (
-    <ScrollArea>
+    <PreviewWrapper
+      onMouseEnter={() => setShowCopy(true)}
+      onMouseLeave={() => setShowCopy(false)}
+    >
+      {showCopy && (
+        <PreviewButton variant="mono" sizing="small" onClick={copyToClipboard}>
+          <Icon>{copied ? <PixelIcon.Check /> : <PixelIcon.Duplicate />}</Icon>
+        </PreviewButton>
+      )}
       <SyntaxHighlighter
         language={language ?? "tsx"}
         customStyle={customStyle}
@@ -48,7 +78,7 @@ function DocsCodePreview({ code, language }: CodePreviewProps) {
       >
         {code}
       </SyntaxHighlighter>
-    </ScrollArea>
+    </PreviewWrapper>
   );
 }
 

@@ -28,7 +28,7 @@ export default async function DocPage({ params }: DocPageProps) {
     return (
       <DocsHeading
         title="Not found"
-        description="Looks like this documentation is missing."
+        description="The page you are looking for does not exists."
       />
     );
   }
