@@ -1,6 +1,6 @@
 export const COMMON_LINKS = [
   {
-    link: "/docs/",
+    link: "/docs/introduction",
     label: "Introduction",
   },
   {

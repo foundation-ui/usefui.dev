@@ -30,7 +30,7 @@ function AppDropdown() {
         <DropdownMenu.Content>
           <DropdownMenu.Item
             className="flex g-medium-30 align-center"
-            onClick={() => router.push("/docs")}
+            onClick={() => router.push("/docs/introduction")}
           >
             <Icon fillOpacity={0.6}>
               <PixelIcon.BookOpen />

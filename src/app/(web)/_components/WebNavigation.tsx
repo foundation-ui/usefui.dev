@@ -4,7 +4,6 @@ import React from "react";
 import styled from "styled-components";
 
 import { useRouter } from "next/navigation";
-import { useColorMode } from "@foundation-ui/tokens";
 
 import { Avatar, Button } from "@foundation-ui/components";
 import { Icon, PixelIcon, SocialIcon } from "@foundation-ui/icons";
@@ -33,15 +32,15 @@ function WebNavigation() {
   const router = useRouter();
   const LINKS = [
     {
-      link: "docs/components",
+      link: "/docs/components",
       label: "Components",
     },
     {
-      link: "docs/core",
+      link: "/docs/core",
       label: "Core",
     },
     {
-      link: "docs/analytics",
+      link: "/docs/analytics",
       label: "Analytics",
     },
   ];
@@ -65,7 +64,7 @@ function WebNavigation() {
         <Button
           variant="ghost"
           sizing="small"
-          onClick={() => router.push("docs")}
+          onClick={() => router.push("/docs/introduction")}
         >
           Docs
         </Button>

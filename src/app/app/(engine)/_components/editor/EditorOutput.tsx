@@ -31,7 +31,7 @@ const WELCOME_PAYLOAD = {
   ],
   links: {
     homepage: "https://usefui.dev",
-    documentation: "https://usefui.dev/docs",
+    documentation: "https://usefui.dev/docs/introduction",
     discord: "https://discord.gg/yer3CgTTwD",
     github: "https://github.com/foundation-ui",
   },

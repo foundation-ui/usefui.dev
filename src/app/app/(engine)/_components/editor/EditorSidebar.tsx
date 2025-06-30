@@ -40,7 +40,7 @@ export type EditorSidebarProperties = {
   };
 };
 
-function EditorSidebar({ uba }: EditorSidebarProperties) {
+function EditorSidebar() {
   return (
     <Toolbar.Root>
       <Toolbar side="left" defaultOpen={false}>

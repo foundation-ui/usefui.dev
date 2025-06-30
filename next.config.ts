@@ -4,8 +4,17 @@
  */
 import "./src/env.js";
 
-/** @type {import("next").NextConfig} */
-const config = {
+import createMDX from "@next/mdx";
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  transpilePackages: ["next-mdx-remote"],
+  compiler: {
+    styledComponents: true,
+  },
+
+  // Posthog
   async rewrites() {
     return [
       {
@@ -24,10 +33,7 @@ const config = {
   },
   // This is required to support PostHog trailing slash API requests
   skipTrailingSlashRedirect: true,
-
-  compiler: {
-    styledComponents: true,
-  },
 };
 
-export default config;
+const withMDX = createMDX({});
+export default withMDX(nextConfig);
