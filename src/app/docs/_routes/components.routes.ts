@@ -4,10 +4,6 @@ export const COMPONENTS_LINKS = [
     label: "Installation",
   },
   {
-    link: "/docs/components/components-api",
-    label: "Components API",
-  },
-  {
     link: "/docs/components/accordion",
     label: "Accordion",
   },

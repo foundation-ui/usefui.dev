@@ -8,10 +8,6 @@ export const COMMON_LINKS = [
     label: "Getting Started",
   },
   {
-    link: "/docs/changelog",
-    label: "Changelog",
-  },
-  {
     link: "/docs/contribute",
     label: "Contribute",
   },
