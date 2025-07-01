@@ -5,6 +5,7 @@ import DocsCodePreview from "../_components/DocsCodePreview";
 import DocsTextBlock from "../_components/DocsTextBlock";
 import DocsLink from "../_components/DocsLink";
 import DocsSection from "../_components/DocsSection";
+import DocsPropsTable from "../_components/DocsPropsTable";
 import DocsPreview from "../_components/DocsPreview";
 import DocsFooter from "../_components/DocsFooter";
 
@@ -42,6 +43,7 @@ export default async function DocPage({ params }: DocPageProps) {
     DocsTextBlock,
     DocsLink,
     DocsPreview,
+    DocsPropsTable,
     DocsSection,
     DocsFooter,
 
