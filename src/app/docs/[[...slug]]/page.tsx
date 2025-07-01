@@ -9,9 +9,11 @@ import DocsPropsTable from "../_components/DocsPropsTable";
 import DocsPreview from "../_components/DocsPreview";
 import DocsFooter from "../_components/DocsFooter";
 
+import AccordionTemplate from "../_components/_templates/AccordionTemplate";
+import AvatarTemplate from "../_components/_templates/AvatarTemplate";
+
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllDocSlugs, getDocBySlug } from "@/lib/docs";
-import AccordionTemplate from "../_components/_templates/AccordionTemplate";
 
 export async function generateStaticParams() {
   const slugs = await getAllDocSlugs();
@@ -49,6 +51,7 @@ export default async function DocPage({ params }: DocPageProps) {
 
     // Components templates
     AccordionTemplate,
+    AvatarTemplate,
   };
 
   return (
