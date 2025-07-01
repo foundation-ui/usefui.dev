@@ -11,6 +11,7 @@ import DocsFooter from "../_components/DocsFooter";
 
 import AccordionTemplate from "../_components/_templates/AccordionTemplate";
 import AvatarTemplate from "../_components/_templates/AvatarTemplate";
+import BadgeTemplate from "../_components/_templates/BadgeTemplate";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllDocSlugs, getDocBySlug } from "@/lib/docs";
@@ -52,6 +53,7 @@ export default async function DocPage({ params }: DocPageProps) {
     // Components templates
     AccordionTemplate,
     AvatarTemplate,
+    BadgeTemplate,
   };
 
   return (
