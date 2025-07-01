@@ -3,11 +3,14 @@ import React from "react";
 import DocsHeading from "../_components/DocsHeading";
 import DocsCodePreview from "../_components/DocsCodePreview";
 import DocsTextBlock from "../_components/DocsTextBlock";
+import DocsLink from "../_components/DocsLink";
 import DocsSection from "../_components/DocsSection";
+import DocsPreview from "../_components/DocsPreview";
 import DocsFooter from "../_components/DocsFooter";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllDocSlugs, getDocBySlug } from "@/lib/docs";
+import AccordionTemplate from "../_components/_templates/AccordionTemplate";
 
 export async function generateStaticParams() {
   const slugs = await getAllDocSlugs();
@@ -34,10 +37,16 @@ export default async function DocPage({ params }: DocPageProps) {
   }
 
   const components = {
+    // Docs components
     DocsCodePreview,
     DocsTextBlock,
+    DocsLink,
+    DocsPreview,
     DocsSection,
     DocsFooter,
+
+    // Components templates
+    AccordionTemplate,
   };
 
   return (

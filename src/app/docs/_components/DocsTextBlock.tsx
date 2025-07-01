@@ -9,11 +9,17 @@ const TextWrapper = styled.div`
   b,
   strong {
     color: var(--font-color-alpha-60);
+    line-height: 1.3;
   }
 `;
 
-function DocsTextBlock({ children }: { children: React.ReactNode }) {
-  return <TextWrapper>{children}</TextWrapper>;
+function DocsTextBlock({
+  children,
+  ...restProps
+}: {
+  children: React.ReactNode;
+}) {
+  return <TextWrapper {...restProps}>{children}</TextWrapper>;
 }
 
 export default DocsTextBlock;

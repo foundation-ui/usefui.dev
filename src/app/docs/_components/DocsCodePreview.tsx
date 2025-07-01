@@ -24,6 +24,9 @@ const PreviewButton = styled(Button)`
   top: var(--measurement-medium-60);
   right: var(--measurement-medium-40);
 `;
+const CodePreviewBox = styled(ScrollArea)`
+  max-height: var(--breakpoint-mobile);
+`;
 
 function DocsCodePreview({ code, language }: CodePreviewProps) {
   const [showCopy, setShowCopy] = React.useState<boolean>(false);
@@ -44,6 +47,7 @@ function DocsCodePreview({ code, language }: CodePreviewProps) {
     padding: "var(--measurement-medium-60)",
     background: "var(--contrast-color)",
     borderRadius: "var(--measurement-medium-30)",
+    minWidth: "fit-content !important",
   };
 
   return (
@@ -56,28 +60,30 @@ function DocsCodePreview({ code, language }: CodePreviewProps) {
           <Icon>{copied ? <PixelIcon.Check /> : <PixelIcon.Duplicate />}</Icon>
         </PreviewButton>
       )}
-      <SyntaxHighlighter
-        language={language ?? "tsx"}
-        customStyle={customStyle}
-        style={oneDark}
-        lineNumberStyle={{
-          paddingRight: "var(--measurement-medium-10)",
-          textAlign: "right",
-          userSelect: "none",
-          opacity: 0.6,
-        }}
-        wrapLines={true}
-        lineProps={{
-          style: {
-            backgroundColor: "transparent",
-            display: "block",
-            width: "100%",
-          },
-        }}
-        PreTag="div"
-      >
-        {code}
-      </SyntaxHighlighter>
+      <CodePreviewBox>
+        <SyntaxHighlighter
+          language={language ?? "tsx"}
+          customStyle={customStyle}
+          style={oneDark}
+          lineNumberStyle={{
+            paddingRight: "var(--measurement-medium-10)",
+            textAlign: "right",
+            userSelect: "none",
+            opacity: 0.6,
+          }}
+          wrapLines={true}
+          lineProps={{
+            style: {
+              backgroundColor: "transparent",
+              display: "block",
+              width: "100%",
+            },
+          }}
+          PreTag="div"
+        >
+          {code}
+        </SyntaxHighlighter>
+      </CodePreviewBox>
     </PreviewWrapper>
   );
 }
