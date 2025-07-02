@@ -19,6 +19,7 @@ import DialogTemplate from "../_components/_templates/DialogTemplate";
 import DividerTemplate from "../_components/_templates/DividerTemplate";
 import DropdownMenuTemplate from "../_components/_templates/DropdownMenuTemplate";
 import FieldTemplate from "../_components/_templates/FieldTemplate";
+import OverlayTemplate from "../_components/_templates/OverlayTemplate";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllDocSlugs, getDocBySlug } from "@/lib/docs";
@@ -68,6 +69,7 @@ export default async function DocPage({ params }: DocPageProps) {
     DividerTemplate,
     DropdownMenuTemplate,
     FieldTemplate,
+    OverlayTemplate,
   };
 
   return (

@@ -3,4 +3,89 @@ title: Overlay
 description: Overlay are used to display content on top of the current layer.
 ---
 
+<DocsSection>
+
+<DocsPreview language="tsx" component={<OverlayTemplate />} code={`import React from "react";
+import { Button, Overlay } from "@foundation-ui/components";
+
+function OverlayTemplate() {
+const [show, setShow] = React.useState<boolean>(false);
+
+    return (
+        <div className="grid g-medium-30 p-t-large-30 p-x-medium-60 align-center justify-center">
+            <Button variant="border" sizing="large" onClick={() => setShow(true)}>
+                Open overlay
+            </Button>
+            <Overlay
+                visible={show}
+                onClick={() => setShow(false)}
+                className="flex align-center justify-center"
+            >
+                Click to close the overlay
+            </Overlay>
+        </div>
+    );
+
+}
+
+export default OverlayTemplate;
+`} />
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  The Overlay component **_is not_** built using the [Compound
+  pattern](https://www.patterns.dev/react/compound-pattern/), it carries all the
+  properties required to make to component work as intended.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Overlay } from "@foundation-ui/components";
+
+export function OverlayComponent() {
+    return <Overlay />;
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "visible",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "closeOnInteract",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLDivElement>) => void",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+
+</DocsSection>
+
 <DocsFooter prev="/docs/components/field" next="/docs/components/page" />
