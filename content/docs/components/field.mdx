@@ -3,4 +3,212 @@ title: Field
 description: Fields are input element that provides additional functionality such as error and hint messages.
 ---
 
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<FieldTemplate />}
+  code={`import { Field } from "@foundation-ui/components";
+
+export function FieldComponent() {
+    return (
+        <div className="grid align-center justify-center g-medium-60 p-t-large-30 p-x-medium-60">
+            <Field.Root>
+                <Field.Wrapper>
+                    <Field.Label htmlFor="demo-field">Label</Field.Label>
+                    <Field
+                        name="demo-field"
+                        variant="secondary"
+                        placeholder="Placeholder.."
+                    />
+                    <Field.Meta variant="hint">Field meta</Field.Meta>
+                </Field.Wrapper>
+            </Field.Root>
+            <Field.Root>
+                <Field.Wrapper>
+                    <Field.Label htmlFor="demo-field-2">Label</Field.Label>
+                    <Field
+                        name="demo-field-2"
+                        variant="secondary"
+                        placeholder="Placeholder.."
+                        error="Error"
+                    />
+                    <Field.Meta variant="hint">Field meta</Field.Meta>
+                </Field.Wrapper>
+            </Field.Root>
+        </div>
+    );
+
+}
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Field } from "@foundation-ui/components";
+
+export function FieldComponent() {
+    return (
+      <Field.Root>
+        <Field.Wrapper>
+          <Field.Label />
+          <Field />
+        </Field.Wrapper>
+      </Field.Root>
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Root
+
+<DocsTextBlock className="m-b-medium-60">
+  Contains the Field component provider.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Field
+
+<DocsTextBlock className="m-b-medium-60">
+  The Field component that holds and controls states.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "variant",
+      type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost"',
+      defaultValue: "primary",
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "error",
+      type: "string",
+      required: false,
+    },
+    {
+      name: "hint",
+      type: "string",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Wrapper
+
+<DocsTextBlock className="m-b-medium-60">
+  Field.Wrapper is used to contains Field and Field.Meta components.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "value",
+      type: "string",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Label
+
+<DocsTextBlock className="m-b-medium-60">
+  Field.Label is used associated to a Field component to conain the label text.
+</DocsTextBlock>
+
+<DocsPropsTable
+ properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "optional",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Meta
+
+<DocsTextBlock className="m-b-medium-60">
+  Field.Meta is used associated to a Field component to convey additional
+  informations.
+</DocsTextBlock>
+
+<DocsPropsTable
+ properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "variant",
+      type: '"default" | "hint" | "emphasis" | "error"',
+      defaultValue: "emphasis",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
 <DocsFooter prev="/docs/components/dropdown" next="/docs/components/overlay" />
