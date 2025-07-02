@@ -3,4 +3,251 @@ title: Dropdown
 description: Dropdown are used to expand and collapse list of actions.
 ---
 
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<DropdownMenuTemplate />}
+  code={`import React from "react";
+import { Divider, DropdownMenu } from "@foundation-ui/components";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
+
+export function DropdownMenuComponent() {
+    return (
+        <div className="flex align-center justify-center w-100 h-100 p-t-large-30 p-x-medium-60">
+            <DropdownMenu.Root>
+                <DropdownMenu>
+                    <DropdownMenu.Trigger variant="secondary" sizing="large">
+                        @foundation-ui
+                    </DropdownMenu.Trigger>
+
+                    <DropdownMenu.Content>
+                        <DropdownMenu.Item
+                        radio
+                        className="flex align-center justify-between"
+                        >
+                        Radio Item
+                        <Icon>
+                            <PixelIcon.ArrowRight />
+                        </Icon>
+                        </DropdownMenu.Item>
+                        <Divider />
+                        <DropdownMenu.Item>Components</DropdownMenu.Item>
+                        <DropdownMenu.Item>Tokens</DropdownMenu.Item>
+                        <DropdownMenu.Item>Core</DropdownMenu.Item>
+                        <DropdownMenu.Item>Styles</DropdownMenu.Item>
+                        <DropdownMenu.Item>Hooks</DropdownMenu.Item>
+                        <DropdownMenu.Item>Icons</DropdownMenu.Item>
+                        <DropdownMenu.Item>Analytics</DropdownMenu.Item>
+                    </DropdownMenu.Content>
+                </DropdownMenu>
+            </DropdownMenu.Root>
+        </div>
+    );
+
+}
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { DropdownMenu } from "@foundation-ui/components";
+
+export function DropdownMenuComponent() {
+    return (
+        <DropdownMenu.Root>
+            <DropdownMenu.Trigger />
+            <DropdownMenu>
+                <DropdownMenu.Content>
+                <DropdownMenu.Item />
+                </DropdownMenu.Content>
+            </DropdownMenu>
+        </DropdownMenu.Root>
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Root
+
+<DocsTextBlock className="m-b-medium-60">
+  Contains the DropdownMenu component provider.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### DropdownMenu
+
+<DocsTextBlock className="m-b-medium-60">
+  The DropdownMenu component that contains both triggers and content blocks.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },    
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Trigger
+
+<DocsTextBlock className="m-b-medium-60">
+  DropdownMenu.Trigger is used to triggers the expansion and collapse of the
+  associated DropdownMenu.Content component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "variant",
+      type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost"',
+      defaultValue: "ghost",
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLButtonElement>) => void",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "rawicon",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Content
+
+<DocsTextBlock className="m-b-medium-60">
+  DropdownMenu.Content is used to contains the content of the associated
+  DropdownMenu.Trigger component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "defaultOpen",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Item
+
+<DocsTextBlock className="m-b-medium-60">
+  DropdownMenu.Item is used associated to DropdownMenu.Content component.
+</DocsTextBlock>
+
+<DocsPropsTable
+ properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "radio",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLLIElement> | KeyboardEvent<HTMLLIElement>) => void",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
 <DocsFooter prev="/docs/components/divider" next="/docs/components/field" />

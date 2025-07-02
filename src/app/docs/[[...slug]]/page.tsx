@@ -13,6 +13,11 @@ import AccordionTemplate from "../_components/_templates/AccordionTemplate";
 import AvatarTemplate from "../_components/_templates/AvatarTemplate";
 import BadgeTemplate from "../_components/_templates/BadgeTemplate";
 import ButtonTemplate from "../_components/_templates/ButtonTemplate";
+import CheckboxTemplate from "../_components/_templates/CheckboxTemplate";
+import CollapsibleTemplate from "../_components/_templates/CollapsibleTemplate";
+import DialogTemplate from "../_components/_templates/DialogTemplate";
+import DividerTemplate from "../_components/_templates/DividerTemplate";
+import DropdownMenuTemplate from "../_components/_templates/DropdownMenuTemplate";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllDocSlugs, getDocBySlug } from "@/lib/docs";
@@ -56,6 +61,11 @@ export default async function DocPage({ params }: DocPageProps) {
     AvatarTemplate,
     BadgeTemplate,
     ButtonTemplate,
+    CheckboxTemplate,
+    CollapsibleTemplate,
+    DialogTemplate,
+    DividerTemplate,
+    DropdownMenuTemplate,
   };
 
   return (

@@ -3,6 +3,281 @@ title: Dialog
 description: Dialog are used displays a modal window to the user on top of the current layer.
 ---
 
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<DialogTemplate />}
+  code={`import React from "react";
+import { Dialog } from "@foundation-ui/components";
+
+    function DialogTemplate() {
+        return (
+            <Dialog.Root>
+
+            </Dialog.Root>
+        );
+
+}
+
+export default DialogTemplate;
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Dialog } from "@foundation-ui/components";
+
+export function DialogComponent() {
+    return (
+    <Dialog.Root>
+      <Dialog.Trigger />
+      <Dialog>
+        <Dialog.Menu>
+          <Dialog.Control />
+        </Dialog.Menu>
+      </Dialog>
+      <Dialog.Overlay />
+    </Dialog.Root>
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Root
+
+<DocsTextBlock className="m-b-medium-60">
+  Contains the Dialog component provider.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Dialog
+
+<DocsTextBlock className="m-b-medium-60">
+  The Dialog component that contains both triggers, menus and content blocks.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "open",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "lock",
+      type: "boolean",
+      defaultValue: "true",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Menu
+
+<DocsTextBlock className="m-b-medium-60">
+  Dialog.Menu is used to contains the links, controls,.. of a Dialog.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Trigger
+
+<DocsTextBlock className="m-b-medium-60">
+  Dialog.Trigger is used to toggle the rendering of the associated Dialog
+  component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "variant",
+      type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost"',
+      defaultValue: "mono",
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLButtonElement>) => void",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "rawicon",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Control
+
+<DocsTextBlock className="m-b-medium-60">
+  Dialog.Control is used to close the associated Dialog component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "variant",
+      type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost"',
+      defaultValue: "mono",
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLButtonElement>) => void",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "rawicon",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Overlay
+
+<DocsTextBlock className="m-b-medium-60">
+  Dialog.Overlay is used to separate the Dialog layer from the rest of the page
+  content.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "closeOnInteract",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLDivElement>) => void",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+
+</DocsSection>
+
 <DocsFooter
   prev="/docs/components/collapsible"
   next="/docs/components/divider"
