@@ -39,7 +39,7 @@ function LandingHero() {
             <span className="p-r-medium-10">Open Beta</span>
           </Badge>
           <DisplayXxl className="m-b-medium-30">
-            Flow through Development with Production-Grade Libraries
+            Headless Design System Platform for Modern Product Teams
           </DisplayXxl>
           <HeroDescWrapper>
             <DisplaySmall className="m-b-medium-30">
@@ -50,9 +50,12 @@ function LandingHero() {
               <span className="opacity-default-60">
                 optimized to create cohesive UIs
               </span>
-              &nbsp;using accessible, robust, and intuitive components{" "}
-              <span className="opacity-default-60">alongside</span>
-              &nbsp;User Behavior Analytics.
+              &nbsp;using accessible, robust, and intuitive components—
+              <span className="opacity-default-60">all while leveraging</span>
+              &nbsp;build-time user analytics{" "}
+              <span className="opacity-default-60">
+                to make smarter decisions.
+              </span>
             </DisplaySmall>
           </HeroDescWrapper>
         </hgroup>

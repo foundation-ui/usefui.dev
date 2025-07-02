@@ -7,9 +7,9 @@ import type { Metadata } from "next";
 
 const metadataHead = {
   title:
-    "Foundation UI - Flow through Development with Production-Grade Libraries",
+    "Foundation UI - Headless Design System Platform for Modern Product Teams",
   description:
-    "An open source Frontend Toolkit by Nicolas Nunes to help create cohesive UIs using robust components. It is a personnal toolbox, used to develop both commercial and open source software. Access the technique, components, code, and tools.",
+    "An open source Headless Design System Platform to help create Design System and Applications.",
 };
 export const metadata: Metadata = {
   ...metadataHead,
