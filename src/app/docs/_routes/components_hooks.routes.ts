@@ -4,6 +4,10 @@ export const COMPONENTS_HOOKS_LINKS = [
     label: "Usage",
   },
   {
+    link: "/docs/components-hooks/api-reference",
+    label: "API Reference",
+  },
+  {
     link: "/docs/components-hooks/use-accordion",
     label: "useAccordion",
   },
