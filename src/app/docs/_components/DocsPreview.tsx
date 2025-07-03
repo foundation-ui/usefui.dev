@@ -20,7 +20,7 @@ function DocsPreview({
   language,
   component,
 }: {
-  code: string;
+  code?: string;
   language?: string;
   component: React.ReactNode;
 }) {
@@ -28,15 +28,21 @@ function DocsPreview({
     <Tabs.Root>
       <Tabs className="flex align-center g-medium-30 m-b-medium-60">
         <Tabs.Trigger value="demo">Demo</Tabs.Trigger>
-        <TextMuted className="opacity-default-10">|</TextMuted>
-        <Tabs.Trigger value="code">Code</Tabs.Trigger>
+        {code && (
+          <React.Fragment>
+            <TextMuted className="opacity-default-10">|</TextMuted>
+            <Tabs.Trigger value="code">Code</Tabs.Trigger>
+          </React.Fragment>
+        )}
       </Tabs>
 
       <PreviewBox>
         <Tabs.Content value="demo">{component}</Tabs.Content>
-        <Tabs.Content value="code">
-          <DocsCodePreview code={code} language={language} />
-        </Tabs.Content>
+        {code && (
+          <Tabs.Content value="code">
+            <DocsCodePreview code={code} language={language} />
+          </Tabs.Content>
+        )}
       </PreviewBox>
     </Tabs.Root>
   );

@@ -3,6 +3,59 @@ title: useCollapsible
 description: Import and use the Collapsible component's Hooks in your project.
 ---
 
+<DocsCodePreview
+  language="tsx"
+  code={`import { useCollapsible } from "@foundation-ui/components";
+
+export function HookComponent() {
+    const collapsible = useCollapsible();
+    const { id, states, methods } = collapsible;
+
+    const { expanded, defaultOpen } = states;
+    const { toggleCollapsible, applyDefaultOpen } = methods;
+
+    return ( {/** Your code here **/} );
+
+}
+`} />
+
+<DocsSection className="m-y-large-10">
+### API Reference
+
+<DocsTextBlock>
+  <p>The properties and functions returned by the useCollapsible hook.</p>
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "id",
+      type: "string",
+      defaultValue: "React.useId",
+    },
+    {
+      name: "expanded",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "defaultOpen",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "toggleCollapsible",
+      type: "(): => void",
+    },
+    {
+      name: "applyDefaultOpen",
+      type: "() => void",
+    },
+  ]}
+/>
+
 <DocsFooter
   prev="/docs/components-hooks/use-checkbox"
   next="/docs/components-hooks/use-dialog"

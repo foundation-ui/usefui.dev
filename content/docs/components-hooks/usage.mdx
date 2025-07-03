@@ -33,6 +33,34 @@ description: Import and use Component Hooks in your project.
 
 </DocsSection>
 
+### API Reference
+
+<DocsSection className="m-y-large-10">
+
+<DocsPropsTable
+  extended
+  properties={[
+    {
+      name: "id",
+      type: "Record<string, string> | string",
+      description: "Component main ID(s)",
+    },
+    {
+      name: "states",
+      type: "Record<string, string | number | boolean | null>",
+      description: "States shared between components",
+    },
+    {
+      name: "methods",
+      type: "Record<string, Function>",
+      description: "Functions used to mutate the states shared between components",
+    },
+
+]}
+/>
+
+</DocsSection>
+
 <DocsFooter
   prev="/docs/components/installation"
   next="/docs/components-hooks/use-accordion"

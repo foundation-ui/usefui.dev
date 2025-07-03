@@ -3,6 +3,60 @@ title: useSheet
 description: Import and use the Sheet component's Hooks in your project.
 ---
 
+<DocsCodePreview
+  language="tsx"
+  code={`import { useSheet } from "@foundation-ui/components";
+
+export function HookComponent() {
+    const sheet = useSheet();
+    const { id, states, methods } = sheet;
+
+    const { containerId, triggerId, controlId } = id;
+    const { open } = states;
+    const { toggle, setOpen } = methods;
+
+    return ( {/** Your code here **/} );
+
+}
+`} />
+
+<DocsSection className="m-y-large-10">
+### API Reference
+
+<DocsTextBlock>
+  <p>The properties and functions returned by the useSheet hook.</p>
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "containerId",
+      type: "string",
+      defaultValue: "React.useId",
+    },
+    {
+      name: "triggerId",
+      type: "string",
+      defaultValue: "React.useId",
+    },
+    {
+      name: "controlId",
+      type: "string",
+      defaultValue: "React.useId",
+    },
+    {
+      name: "toggle",
+      type: "(): => void",
+    },
+    {
+      name: "setOpen",
+      type: "(state: boolean): => void",
+    },
+  ]}
+/>
+
 <DocsFooter
   prev="/docs/components-hooks/use-field"
   next="/docs/components-hooks/use-switch"

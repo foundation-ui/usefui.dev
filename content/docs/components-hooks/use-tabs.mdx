@@ -3,6 +3,54 @@ title: useTabs
 description: Import and use the Tabs component's Hooks in your project.
 ---
 
+<DocsCodePreview
+  language="tsx"
+  code={`import { useTabs } from "@foundation-ui/components";
+
+export function HookComponent() {
+    const tabs = useTabs();
+    const { id, states, methods } = tabs;
+
+    const { value } = states;
+    const { applyValue, getTabsId } = methods;
+
+    return ( {/** Your code here **/} );
+
+}
+`} />
+
+<DocsSection className="m-y-large-10">
+### API Reference
+
+<DocsTextBlock>
+  <p>The properties and functions returned by the useTabs hook.</p>
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "id",
+      type: "string",
+      defaultValue: "React.useId",
+    },
+    {
+      name: "value",
+      type: "string | null",
+      defaultValue: "null",
+    },
+    {
+      name: "applyValue",
+      type: "(value: string):  => string | void",
+    },
+    {
+      name: "getTabsId",
+      type: "({ value, type }: Record<string, string>): => string",
+    },
+  ]}
+/>
+
 <DocsFooter
   prev="/docs/components-hooks/use-switch"
   next="/docs/components-hooks/use-toolbar"
