@@ -3,4 +3,359 @@ title: Page
 description: Pages are structured components used to build User Interface layouts.
 ---
 
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<PageTemplate />}
+  code={`import { Page } from "@foundation-ui/components";
+
+export function PageComponent() {
+    return (
+        <div className="w-100 h-100 flex" style={{ position: "relative" }}>
+            <Page.Tools side="left" sizing="small" />
+            <Page.Content className="h-100">
+                <Page.Navigation>
+                    <p className="fs-medium-10 opacity-default-30">Navigation</p>
+                </Page.Navigation>
+                <Page.Menu>
+                    <p className="fs-medium-10 opacity-default-30">Menu</p>
+                </Page.Menu>
+                <ScrollArea className="h-100 p-large-10" style={{ maxHeight: 292 }}>
+                    <h6>@foundation-ui</h6>
+                    <Divider className="m-y-medium-60" />
+                    <p className="fs-medium-20 opacity-default-60">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+                        vitae incidunt libero veniam rerum molestias atque hic enim!
+                        Incidunt soluta repellat iusto, adipisci pariatur veniam quo vitae
+                        saepe? Sed, accusamus. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Consectetur vitae incidunt libero veniam rerum
+                        molestias atque hic enim! Incidunt soluta repellat iusto, adipisci
+                        pariatur veniam quo vitae saepe? Sed, accusamus. saepe?
+                    </p>
+                    <br />
+                    <p className="fs-medium-20 opacity-default-60">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+                        vitae incidunt libero veniam rerum molestias atque hic enim!
+                        Incidunt soluta repellat iusto, adipisci pariatur veniam quo vitae
+                        saepe? Sed, accusamus. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Consectetur vitae incidunt libero veniam rerum
+                        molestias atque hic enim! Incidunt soluta repellat iusto, adipisci
+                        pariatur veniam quo vitae saepe? Sed, accusamus. saepe?
+                    </p>
+                </ScrollArea>
+            </Page.Content>
+            <Page.Tools side="right" sizing="large" />
+        </div>
+    );
+
+}
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Page } from "@foundation-ui/components";
+
+export function PageComponent() {
+    return (
+        <Page>
+            <Page.Content>
+                <Page.Tools />
+                <Page.Wrapper>
+                    <Page.Navigation />
+                    <Page.Menu />
+                </Page.Wrapper>
+                <Page.Panel />
+            </Page.Content>
+        </Page>
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Page
+
+<DocsTextBlock className="m-b-medium-60">
+  Page is used to contain other Page components.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Content
+
+<DocsTextBlock className="m-b-medium-60">
+  Page.Content used alongside the Page component and wraps its children in a
+  theme-ready area.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Wrapper
+
+<DocsTextBlock className="m-b-medium-60">
+  Page.Wrapper used alongside the Page.Content component and wraps its children
+  in a scrollable area.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "$menus",
+      type: "number",
+      required: false,
+    },
+    {
+      name: "$navigations",
+      type: "number",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Navigation
+
+<DocsTextBlock className="m-b-medium-60">
+  Page.Navigation is used tyo carry navigation menus and is used alongside the
+  Page component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Menu
+
+<DocsTextBlock className="m-b-medium-60">
+  Page.Menu is used tyo carry menus and is used alongside the Page component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Tools
+
+<DocsTextBlock className="m-b-medium-60">
+  Page.Tools is a Toolbar component embeded with the Page component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+ {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "shortcut",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "hotkey",
+      type: "string",
+      required: false,
+    },
+    {
+      name: "bindkey",
+      type: '"ctrlKey" | "metaKey" | "altKey" | "shiftKey"',
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      required: false,
+    },
+    {
+      name: "height",
+      type: '"fullscreen" | "display" | "auto"',
+      required: false,
+    },
+    {
+      name: "side",
+      type: '"top" | "right" | "bottom" | "left"',
+      required: false,
+    },
+    {
+      name: "defaultOpen",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "fixed",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "showoncollapse",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "trigger",
+      type: "ReactNode",
+      required: false,
+    },
+    {
+      name: "triggerProps",
+      type: "IButtonProperties",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLButtonElement>) => void",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Panel
+
+<DocsTextBlock className="m-b-medium-60">
+  Page.Panel is a Toolbar component embeded with the Page component and designed
+  to work as a bottom/top panel in addition to existing Page.Tools components.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "shortcut",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "hotkey",
+      type: "string",
+      required: false,
+    },
+    {
+      name: "bindkey",
+      type: '"ctrlKey" | "metaKey" | "altKey" | "shiftKey"',
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      required: false,
+    },
+    {
+      name: "height",
+      type: '"fullscreen" | "display" | "auto"',
+      defaultValue: "auto",
+      required: false,
+    },
+    {
+      name: "side",
+      type: '"top" | "right" | "bottom" | "left"',
+      required: false,
+    },
+    {
+      name: "defaultOpen",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "fixed",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "showoncollapse",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "trigger",
+      type: "ReactNode",
+      required: false,
+    },
+    {
+      name: "triggerProps",
+      type: "IButtonProperties",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLButtonElement>) => void",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
 <DocsFooter prev="/docs/components/overlay" next="/docs/components/portal" />

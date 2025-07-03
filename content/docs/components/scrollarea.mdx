@@ -3,4 +3,66 @@ title: Scroll Area
 description: Add native scroll functionality to custom components.
 ---
 
+<DocsSection>
+
+<DocsPreview language="tsx" component={<ScrollAreaTemplate />} code={`import React from "react";
+import { ScrollArea } from "@foundation-ui/components";
+
+function ScrollAreaTemplate() {
+
+    return (
+        <div className="grid g-medium-30 p-t-large-30 p-x-medium-60">
+
+        </div>
+    );
+
+}
+
+export default ScrollAreaTemplate;
+`} />
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  The ScrollArea component **_is not_** built using the [Compound
+  pattern](https://www.patterns.dev/react/compound-pattern/), it carries all the
+  properties required to make to component work as intended.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { ScrollArea } from "@foundation-ui/components";
+
+export function ScrollAreaComponent() {
+    return <ScrollArea />;
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "scrollbar",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
 <DocsFooter prev="/docs/components/sheet" next="/docs/components/switch" />

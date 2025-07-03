@@ -8,7 +8,7 @@ function OverlayTemplate() {
   return (
     <div className="grid g-medium-30 p-t-large-30 p-x-medium-60 align-center justify-center">
       <Button variant="border" sizing="large" onClick={() => setShow(true)}>
-        Open overlay
+        @foundation-ui
       </Button>
       <Overlay
         visible={show}

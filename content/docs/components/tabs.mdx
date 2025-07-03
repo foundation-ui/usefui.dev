@@ -3,4 +3,185 @@ title: Tabs
 description: Tabs are components for a set of tab panels that allows the user to switch between them.
 ---
 
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<TabsTemplate />}
+  code={`import { Tabs, Divider } from "@foundation-ui/components";
+
+export function TabsComponent() {
+    return (
+      <Tabs.Root>
+        <Tabs
+          defaultOpen="info"
+          className="grid g-medium-30 p-t-large-30 p-x-medium-60"
+          style={{ maxWidth: "var(--breakpoint-mobile)", margin: "0 auto" }}
+        >
+          <div className="flex align-center justify-start g-medium-60">
+            <Tabs.Trigger value="info">Informations</Tabs.Trigger>
+            <Tabs.Trigger value="features">Features</Tabs.Trigger>
+          </div>
+          <Divider />
+          <div className="flex">
+            <Tabs.Content value="info">
+              <p className="fs-medium-10 opacity-default-60">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
+                quidem culpa asperiores. Suscipit, iusto consectetur.
+              </p>
+            </Tabs.Content>
+            <Tabs.Content value="features">
+              <p className="fs-medium-10 opacity-default-60">
+                Iure corrupti eos non cupiditate architecto totam fuga suscipit
+                fugiat officiis quasi, aperiam ad debitis.
+              </p>
+            </Tabs.Content>
+          </div>
+        </Tabs>
+      </Tabs.Root>
+    );
+}
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Tabs } from "@foundation-ui/components";
+
+export function TabsComponent() {
+    return (
+      <Tabs.Root>
+        <Tabs>
+          <Tabs.Trigger value="demo"/>
+          <Tabs.Content value="demo"/>>
+        </Tabs>
+      </Tabs.Root>
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Root
+
+<DocsTextBlock className="m-b-medium-60">
+  Contains the Tabs component provider.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Tabs
+
+<DocsTextBlock className="m-b-medium-60">
+  The Tabs component that contains both triggers and content blocks.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "value",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "defaultOpen",
+      type: "string",
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Trigger
+
+<DocsTextBlock className="m-b-medium-60">
+  Tabs.Trigger is used to triggers the expansion and collapse of the associated
+  Tabs.Content component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "value",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLButtonElement>) => void",
+      required: false,
+    },
+    {
+      name: "variant",
+      type: "primary | secondary | mono | border | ghost",
+      defaultValue: "ghost",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Content
+
+<DocsTextBlock className="m-b-medium-60">
+  Tabs.Content is used to contains the content of the associated Tabs.Trigger
+  component.
+</DocsTextBlock>
+
+<DocsPropsTable
+ properties={[
+    {
+      name: "value",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    }
+  ]}
+/>
+</DocsSection>
+
 <DocsFooter prev="/docs/components/table" next="/docs/components/toggle" />

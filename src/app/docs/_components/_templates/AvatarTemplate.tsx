@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Avatar } from "@foundation-ui/components";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 function AvatarTemplate() {
   return (
@@ -22,7 +23,9 @@ function AvatarTemplate() {
             status={status as "online" | "away" | "busy" | "offline"}
             style={{ background: "var(--font-color-alpha-10)" }}
           >
-            <small>UI</small>
+            <Icon fillOpacity={0.3}>
+              <PixelIcon.Downasaur />
+            </Icon>
           </Avatar>
         ))}
       </div>

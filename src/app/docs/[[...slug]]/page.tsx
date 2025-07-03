@@ -1,36 +1,20 @@
 import React from "react";
 
-import DocsHeading from "../_components/DocsHeading";
-import DocsCodePreview from "../_components/DocsCodePreview";
-import DocsTextBlock from "../_components/DocsTextBlock";
-import DocsLink from "../_components/DocsLink";
-import DocsSection from "../_components/DocsSection";
-import DocsPropsTable from "../_components/DocsPropsTable";
-import DocsPreview from "../_components/DocsPreview";
-import DocsFooter from "../_components/DocsFooter";
-
-import AccordionTemplate from "../_components/_templates/AccordionTemplate";
-import AvatarTemplate from "../_components/_templates/AvatarTemplate";
-import BadgeTemplate from "../_components/_templates/BadgeTemplate";
-import ButtonTemplate from "../_components/_templates/ButtonTemplate";
-import CheckboxTemplate from "../_components/_templates/CheckboxTemplate";
-import CollapsibleTemplate from "../_components/_templates/CollapsibleTemplate";
-import DialogTemplate from "../_components/_templates/DialogTemplate";
-import DividerTemplate from "../_components/_templates/DividerTemplate";
-import DropdownMenuTemplate from "../_components/_templates/DropdownMenuTemplate";
-import FieldTemplate from "../_components/_templates/FieldTemplate";
-import OverlayTemplate from "../_components/_templates/OverlayTemplate";
-
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllDocSlugs, getDocBySlug } from "@/lib/docs";
+
+import {
+  COMPONENTS as DocsComponents,
+  TEMPLATES as DocsTemplates,
+} from "../_mapping/docs-components";
+
+interface DocPageProps {
+  params: Promise<{ slug: string[] }>;
+}
 
 export async function generateStaticParams() {
   const slugs = await getAllDocSlugs();
   return slugs.map((slug) => ({ slug }));
-}
-
-interface DocPageProps {
-  params: Promise<{ slug: string[] }>;
 }
 
 export default async function DocPage({ params }: DocPageProps) {
@@ -41,45 +25,24 @@ export default async function DocPage({ params }: DocPageProps) {
 
   if (!doc) {
     return (
-      <DocsHeading
+      <DocsComponents.DocsHeading
         title="Not found"
         description="The page you are looking for does not exists."
       />
     );
   }
 
-  const components = {
-    // Docs components
-    DocsCodePreview,
-    DocsTextBlock,
-    DocsLink,
-    DocsPreview,
-    DocsPropsTable,
-    DocsSection,
-    DocsFooter,
-
-    // Components templates
-    AccordionTemplate,
-    AvatarTemplate,
-    BadgeTemplate,
-    ButtonTemplate,
-    CheckboxTemplate,
-    CollapsibleTemplate,
-    DialogTemplate,
-    DividerTemplate,
-    DropdownMenuTemplate,
-    FieldTemplate,
-    OverlayTemplate,
-  };
-
   return (
     <React.Fragment>
-      <DocsHeading
+      <DocsComponents.DocsHeading
         title={doc.frontmatter.title as string}
         description={doc.frontmatter.description as string}
       />
 
-      <MDXRemote source={doc.content} components={components} />
+      <MDXRemote
+        source={doc.content}
+        components={{ ...DocsComponents, ...DocsTemplates }}
+      />
     </React.Fragment>
   );
 }

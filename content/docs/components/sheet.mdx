@@ -3,4 +3,225 @@ title: Sheet
 description: Sheets are component that provides additional information in a top layer.
 ---
 
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<SheetTemplate />}
+  code={`import { Sheet } from "@foundation-ui/components";
+
+export function SheetComponent() {
+    return (
+        <Sheet.Root>
+            <div className="grid g-medium-10 align-center justify-center w-100 h-100 p-t-large-30 p-x-medium-60">
+              <Sheet.Trigger variant="border" sizing="large">
+                @foundation-ui
+              </Sheet.Trigger>
+              <div className="w-100 flex justify-center">
+                <small className="opacity-default-10">{"Ctrl + $"}</small>
+              </div>
+            </div>
+
+            <Sheet sizing="medium" shortcut bindkey="ctrlKey" hotkey="$">
+                <div className="flex justify-between">
+                <p className="fs-medium-20">@foundation-ui</p>
+
+                <Sheet.Trigger variant="ghost">
+                    <Icon>
+                    <PixelIcon.Close />
+                    </Icon>
+                </Sheet.Trigger>
+                </div>
+
+                <Divider className="m-y-medium-60" />
+
+                <p className="fs-medium-10 opacity-default-30">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                    distinctio nemo delectus in ex. Sed quam labore ut quae dicta aperiam
+                    delectus numquam alias reiciendis? Dolore placeat repellendus voluptas
+                    et.
+                </p>
+            </Sheet>
+        </Sheet.Root>
+    );
+
+}
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Sheet } from "@foundation-ui/components";
+
+export function SheetComponent() {
+    return (
+        <Sheet.Root>
+            <Sheet.Trigger />
+            <Sheet />
+        </Sheet.Root>
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Root
+
+<DocsTextBlock className="m-b-medium-60">
+  Contains the Sheet component provider.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Sheet
+
+<DocsTextBlock className="m-b-medium-60">
+  The Sheet component that contains both triggers and content blocks.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+  {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "open",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "side",
+      type: '"top" | "right" | "bottom" | "left"',
+      defaultValue: "right",
+      required: false,
+    },
+    {
+      name: "lock",
+      type: "boolean",
+      deprecated: true,
+    },
+    {
+      name: "overlay",
+      type: "boolean",
+      defaultValue: "true",
+      required: false,
+    },
+    {
+      name: "closeOnInteract",
+      type: "boolean",
+      defaultValue: "true",
+      required: false,
+    },
+    {
+      name: "shortcut",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "hotkey",
+      type: "string",
+      required: false,
+    },
+    {
+      name: "bindkey",
+      type: '"ctrlKey" | "metaKey" | "altKey" | "shiftKey"',
+      defaultValue: "ctrlKey",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Trigger
+
+<DocsTextBlock className="m-b-medium-60">
+  Sheet.Trigger is used to triggers the expansion and collapse of the associated
+  Sheet component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "variant",
+      type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost"',
+      defaultValue: "mono",
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLButtonElement>) => void",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "rawicon",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
 <DocsFooter prev="/docs/components/portal" next="/docs/components/scrollarea" />
