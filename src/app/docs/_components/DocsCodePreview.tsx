@@ -14,6 +14,7 @@ interface CodePreviewProps {
   language?: string;
   showLineNumbers?: boolean;
   maxHeight?: string;
+  scrollbar?: boolean;
 }
 
 const PreviewWrapper = styled(ScrollArea)`
@@ -28,7 +29,7 @@ const CodePreviewBox = styled(ScrollArea)`
   max-height: var(--breakpoint-mobile);
 `;
 
-function DocsCodePreview({ code, language }: CodePreviewProps) {
+function DocsCodePreview({ code, language, scrollbar }: CodePreviewProps) {
   const [showCopy, setShowCopy] = React.useState<boolean>(false);
   const [copied, setCopied] = React.useState(false);
 
@@ -60,7 +61,7 @@ function DocsCodePreview({ code, language }: CodePreviewProps) {
           <Icon>{copied ? <PixelIcon.Check /> : <PixelIcon.Duplicate />}</Icon>
         </PreviewButton>
       )}
-      <CodePreviewBox>
+      <CodePreviewBox scrollbar={scrollbar}>
         <SyntaxHighlighter
           language={language ?? "tsx"}
           customStyle={customStyle}
