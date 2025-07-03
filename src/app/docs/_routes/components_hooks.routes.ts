@@ -20,7 +20,7 @@ export const COMPONENTS_HOOKS_LINKS = [
     label: "useDialog",
   },
   {
-    link: "/docs/components-hooks/use-dropdownmenu",
+    link: "/docs/components-hooks/use-dropdown-menu",
     label: "useDropdownMenu",
   },
   {
