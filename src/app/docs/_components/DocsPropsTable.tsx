@@ -9,12 +9,10 @@ import { TextMuted } from "@/components";
 export interface TableProps {
   name: string;
   type: string;
+  description?: string;
   required?: boolean;
   defaultValue?: string;
   deprecated?: boolean;
-}
-interface DocsTableProps {
-  properties: TableProps[];
 }
 
 const PropertyName = styled.span<{ $deprecated?: boolean }>`
@@ -26,14 +24,21 @@ const PropertyName = styled.span<{ $deprecated?: boolean }>`
   `}
 `;
 
-function DocsPropsTable({ properties }: DocsTableProps) {
+function DocsPropsTable({
+  extended,
+  properties,
+}: {
+  extended: boolean;
+  properties: TableProps[];
+}) {
   return (
     <Table className="w-100">
       <Table.Head>
         <Table.Row>
           <Table.HeadCell>Prop</Table.HeadCell>
+          {extended && <Table.HeadCell>Description</Table.HeadCell>}
           <Table.HeadCell>Type</Table.HeadCell>
-          <Table.HeadCell>Default</Table.HeadCell>
+          {!extended && <Table.HeadCell>Default</Table.HeadCell>}
         </Table.Row>
       </Table.Head>
       <Table.Body>
@@ -41,7 +46,10 @@ function DocsPropsTable({ properties }: DocsTableProps) {
           <Table.Row key={index}>
             <Table.Cell>
               <div className="flex align-center g-medium-30">
-                <PropertyName $deprecated={property.deprecated}>
+                <PropertyName
+                  $deprecated={property.deprecated}
+                  className="fs-medium-10"
+                >
                   {property.name}
                 </PropertyName>
                 <div className="flex g-medium-30">
@@ -52,18 +60,30 @@ function DocsPropsTable({ properties }: DocsTableProps) {
                 </div>
               </div>
             </Table.Cell>
+
+            {extended && (
+              <Table.Cell>
+                <span className="fs-medium-10 opacity-default-60">
+                  {property?.description}
+                </span>
+              </Table.Cell>
+            )}
+
             <Table.Cell>
               <Badge variant="border">{property.type}</Badge>
             </Table.Cell>
-            <Table.Cell>
-              {property.defaultValue ? (
-                <Badge variant="border">{property.defaultValue}</Badge>
-              ) : (
-                <TextMuted className="fs-medium-10 opacity-default-10">
-                  —
-                </TextMuted>
-              )}
-            </Table.Cell>
+
+            {!extended && (
+              <Table.Cell>
+                {property.defaultValue ? (
+                  <Badge variant="border">{property.defaultValue}</Badge>
+                ) : (
+                  <TextMuted className="fs-medium-10 opacity-default-10">
+                    —
+                  </TextMuted>
+                )}
+              </Table.Cell>
+            )}
           </Table.Row>
         ))}
       </Table.Body>
