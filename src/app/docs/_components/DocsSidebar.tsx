@@ -249,38 +249,6 @@ function DocsSidebar() {
             <Accordion.Root>
               <Accordion>
                 <Accordion.Trigger
-                  value="icons"
-                  className="m-b-medium-60 w-100 justify-between align-center"
-                >
-                  <b>Icons</b>
-                  <Icon>
-                    <PixelIcon.ChevronsVertical />
-                  </Icon>
-                </Accordion.Trigger>
-                <Accordion.Content
-                  value="icons"
-                  defaultOpen
-                  className="grid g-small-30"
-                >
-                  {ICONS_LINKS.map((iconLink, key) => (
-                    <AppLink
-                      key={key}
-                      as={Toolbar.Item}
-                      onClick={() => router.push(iconLink.link)}
-                      className="fs-medium-20"
-                    >
-                      {iconLink.label}
-                    </AppLink>
-                  ))}
-                </Accordion.Content>
-              </Accordion>
-            </Accordion.Root>
-
-            <Divider className="m-y-medium-60" />
-
-            <Accordion.Root>
-              <Accordion>
-                <Accordion.Trigger
                   value="uba"
                   className="m-b-medium-60 w-100 justify-between align-center"
                 >
@@ -302,6 +270,38 @@ function DocsSidebar() {
                       className="fs-medium-20"
                     >
                       {alink.label}
+                    </AppLink>
+                  ))}
+                </Accordion.Content>
+              </Accordion>
+            </Accordion.Root>
+
+            <Divider className="m-y-medium-60" />
+
+            <Accordion.Root>
+              <Accordion>
+                <Accordion.Trigger
+                  value="icons"
+                  className="m-b-medium-60 w-100 justify-between align-center"
+                >
+                  <b>Icons</b>
+                  <Icon>
+                    <PixelIcon.ChevronsVertical />
+                  </Icon>
+                </Accordion.Trigger>
+                <Accordion.Content
+                  value="icons"
+                  defaultOpen
+                  className="grid g-small-30"
+                >
+                  {ICONS_LINKS.map((iconLink, key) => (
+                    <AppLink
+                      key={key}
+                      as={Toolbar.Item}
+                      onClick={() => router.push(iconLink.link)}
+                      className="fs-medium-20"
+                    >
+                      {iconLink.label}
                     </AppLink>
                   ))}
                 </Accordion.Content>
