@@ -24,7 +24,7 @@ function layout({
               $navigations={0} // Margins/Paddings
               className="h-100 w-100"
             >
-              <ScrollArea as={DocsWrapper} className="h-100 w-100">
+              <ScrollArea as={DocsWrapper} className="h-100 w-100" scrollbar>
                 <MaxWidthContainerSmall className="h-100 w-100 p-x-medium-60 p-t-large-10 p-b-medium-60">
                   {children}
                 </MaxWidthContainerSmall>
