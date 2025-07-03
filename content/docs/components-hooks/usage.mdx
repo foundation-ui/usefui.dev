@@ -3,6 +3,36 @@ title: Component Hooks
 description: Import and use Component Hooks in your project.
 ---
 
+<DocsSection className="m-y-large-10">
+
+<DocsTextBlock className="m-b-medium-60">
+  Components are built using the [Compound
+  pattern](https://www.patterns.dev/react/compound-pattern/), they manage their
+  own internal state and share them among the other components within the same
+  `Root`.
+</DocsTextBlock>
+
+<DocsTextBlock className="m-b-medium-60">
+  `Root` components always refers to the internal [Context
+  API](https://react.dev/reference/react/useContext) used to share internal
+  states.
+</DocsTextBlock>
+
+<DocsTextBlock className="m-b-medium-60">
+
+###### When the Compound pattern is used, you can import the Component Hook to access its internal functions and adjust the component behavior to handle complex interactions and or mutations.
+
+</DocsTextBlock>
+
+<DocsTextBlock className="m-b-medium-60">
+  To use the Component Hooks, you first need to install
+  `@foundation-ui/components`.
+</DocsTextBlock>
+
+<DocsCodePreview language="shell" code={`pnpm add @foundation-ui/components`} />
+
+</DocsSection>
+
 <DocsFooter
   prev="/docs/components/installation"
   next="/docs/components-hooks/use-accordion"
