@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import {
   Accordion,
@@ -25,6 +25,8 @@ import {
 } from "../_routes";
 function DocsSidebar() {
   const router = useRouter();
+  const pathname = usePathname();
+
   const hotkey = "k";
   const binkey = "ctrlKey";
 
@@ -76,6 +78,7 @@ function DocsSidebar() {
                   key={key}
                   as={Toolbar.Item}
                   onClick={() => router.push(commonLink.link)}
+                  data-current={commonLink.link === pathname}
                   className="fs-medium-20"
                 >
                   {commonLink.label}
@@ -107,6 +110,7 @@ function DocsSidebar() {
                       as={Toolbar.Item}
                       onClick={() => router.push(clink.link)}
                       className="fs-medium-20"
+                      data-current={clink.link === pathname}
                     >
                       {clink.label}
                     </AppLink>
@@ -138,6 +142,7 @@ function DocsSidebar() {
                       key={key}
                       as={Toolbar.Item}
                       onClick={() => router.push(chlink.link)}
+                      data-current={chlink.link === pathname}
                       className="fs-medium-20"
                     >
                       {chlink.label}
@@ -170,6 +175,7 @@ function DocsSidebar() {
                       key={key}
                       as={Toolbar.Item}
                       onClick={() => router.push(tlink.link)}
+                      data-current={tlink.link === pathname}
                       className="fs-medium-20"
                     >
                       {tlink.label}
@@ -202,6 +208,7 @@ function DocsSidebar() {
                       key={key}
                       as={Toolbar.Item}
                       onClick={() => router.push(cmlink.link)}
+                      data-current={cmlink.link === pathname}
                       className="fs-medium-20"
                     >
                       {cmlink.label}
@@ -234,6 +241,7 @@ function DocsSidebar() {
                       key={key}
                       as={Toolbar.Item}
                       onClick={() => router.push(coreLink.link)}
+                      data-current={coreLink.link === pathname}
                       className="fs-medium-20"
                     >
                       {coreLink.label}
@@ -266,6 +274,7 @@ function DocsSidebar() {
                       key={key}
                       as={Toolbar.Item}
                       onClick={() => router.push(alink.link)}
+                      data-current={alink.link === pathname}
                       className="fs-medium-20"
                     >
                       {alink.label}

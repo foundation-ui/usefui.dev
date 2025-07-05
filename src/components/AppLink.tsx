@@ -23,6 +23,11 @@ export const AppLink = styled.a`
     background-color: var(--font-color-alpha-10);
   }
 
+  &[data-current="true"] {
+    opacity: var(--opacity-default-100);
+    background-color: var(--font-color-alpha-10);
+  }
+
   &:has(svg) {
     display: flex;
     align-items: center;
