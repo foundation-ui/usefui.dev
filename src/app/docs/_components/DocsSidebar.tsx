@@ -21,7 +21,6 @@ import {
   DESIGN_TOKENS_LINKS,
   CORE_LINKS,
   ANALYTICS_LINKS,
-  ICONS_LINKS,
   COMMON_LINKS,
 } from "../_routes";
 function DocsSidebar() {
@@ -92,7 +91,7 @@ function DocsSidebar() {
                   value="components"
                   className="m-b-medium-60 w-100 justify-between align-center"
                 >
-                  <b>Components</b>
+                  Components
                   <Icon>
                     <PixelIcon.ChevronsVertical />
                   </Icon>
@@ -116,7 +115,7 @@ function DocsSidebar() {
               </Accordion>
             </Accordion.Root>
 
-            <Divider className="m-y-medium-60" />
+            <Divider className="m-y-medium-70" />
 
             <Accordion.Root>
               <Accordion>
@@ -124,7 +123,7 @@ function DocsSidebar() {
                   value="components_hooks"
                   className="m-b-medium-60 w-100 justify-between align-center"
                 >
-                  <b>Components Hooks</b>
+                  Components Hooks
                   <Icon>
                     <PixelIcon.ChevronsVertical />
                   </Icon>
@@ -148,7 +147,7 @@ function DocsSidebar() {
               </Accordion>
             </Accordion.Root>
 
-            <Divider className="m-y-medium-60" />
+            <Divider className="m-y-medium-70" />
 
             <Accordion.Root>
               <Accordion>
@@ -156,7 +155,7 @@ function DocsSidebar() {
                   value="design-tokens"
                   className="m-b-medium-60 w-100 justify-between align-center"
                 >
-                  <b>Design Tokens</b>
+                  Design Tokens
                   <Icon>
                     <PixelIcon.ChevronsVertical />
                   </Icon>
@@ -180,7 +179,7 @@ function DocsSidebar() {
               </Accordion>
             </Accordion.Root>
 
-            <Divider className="m-y-medium-60" />
+            <Divider className="m-y-medium-70" />
 
             <Accordion.Root>
               <Accordion>
@@ -188,7 +187,7 @@ function DocsSidebar() {
                   value="color-mode"
                   className="m-b-medium-60 w-100 justify-between align-center"
                 >
-                  <b>Color Mode</b>
+                  Color Mode
                   <Icon>
                     <PixelIcon.ChevronsVertical />
                   </Icon>
@@ -212,7 +211,7 @@ function DocsSidebar() {
               </Accordion>
             </Accordion.Root>
 
-            <Divider className="m-y-medium-60" />
+            <Divider className="m-y-medium-70" />
 
             <Accordion.Root>
               <Accordion>
@@ -220,7 +219,7 @@ function DocsSidebar() {
                   value="core"
                   className="m-b-medium-60 w-100 justify-between align-center"
                 >
-                  <b>Core</b>
+                  Core
                   <Icon>
                     <PixelIcon.ChevronsVertical />
                   </Icon>
@@ -244,7 +243,7 @@ function DocsSidebar() {
               </Accordion>
             </Accordion.Root>
 
-            <Divider className="m-y-medium-60" />
+            <Divider className="m-y-medium-70" />
 
             <Accordion.Root>
               <Accordion>
@@ -252,7 +251,7 @@ function DocsSidebar() {
                   value="uba"
                   className="m-b-medium-60 w-100 justify-between align-center"
                 >
-                  <b>User Behavior Analytics</b>
+                  Behavior Analytics
                   <Icon>
                     <PixelIcon.ChevronsVertical />
                   </Icon>
@@ -270,38 +269,6 @@ function DocsSidebar() {
                       className="fs-medium-20"
                     >
                       {alink.label}
-                    </AppLink>
-                  ))}
-                </Accordion.Content>
-              </Accordion>
-            </Accordion.Root>
-
-            <Divider className="m-y-medium-60" />
-
-            <Accordion.Root>
-              <Accordion>
-                <Accordion.Trigger
-                  value="icons"
-                  className="m-b-medium-60 w-100 justify-between align-center"
-                >
-                  <b>Icons</b>
-                  <Icon>
-                    <PixelIcon.ChevronsVertical />
-                  </Icon>
-                </Accordion.Trigger>
-                <Accordion.Content
-                  value="icons"
-                  defaultOpen
-                  className="grid g-small-30"
-                >
-                  {ICONS_LINKS.map((iconLink, key) => (
-                    <AppLink
-                      key={key}
-                      as={Toolbar.Item}
-                      onClick={() => router.push(iconLink.link)}
-                      className="fs-medium-20"
-                    >
-                      {iconLink.label}
                     </AppLink>
                   ))}
                 </Accordion.Content>

@@ -1,0 +1,141 @@
+---
+title: Generate Color Tokens
+description: Generate Color Design Tokens using custom values.
+---
+
+<DocsCodePreview
+  language="tsx"
+  code={`
+    import { generateColorTokens } from "@foundation-ui/core";
+
+    const name = "color-dt";
+    const hex = "ff0000";
+    const variants = {
+        alpha: true,
+        tint: true,
+        shade: true,
+    };
+
+    const msTokens = generateColorTokens(name, hex, variants);
+
+`} />
+
+<DocsSection className="m-y-large-10">
+### API Reference
+
+<DocsTextBlock>
+  The arguments used and values returned by the generateColorTokens function.
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Args
+
+<DocsTextBlock className="m-b-medium-60">
+  The values passed to generateColorTokens.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "name",
+      type: "string",
+      defaultValue: "",
+      required: true,
+    },
+    {
+      name: "hex",
+      type: "string",
+      defaultValue: "",
+      required: true,
+    },
+    {
+      name: "variants",
+      type: "{ alpha?: boolean; tint?: boolean; shade?: boolean; }",
+      defaultValue: "",
+      required: true,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Returned values
+
+<DocsTextBlock className="m-b-medium-60">
+  The values returned by the generateColorTokens function.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "name",
+      type: "string",
+      defaultValue: "string",
+    },
+    {
+      name: "base",
+      type: "IColorVariation",
+      defaultValue: "IColorVariation",
+    },
+    {
+      name: "alpha",
+      type: "IColorVariation[] | []",
+      defaultValue: "IColorVariation[] | []",
+    },
+    {
+      name: "tint",
+      type: "IColorVariation[] | []",
+      defaultValue: "IColorVariation[] | []",
+    },
+    {
+      name: "shade",
+      type: "IColorVariation[] | []",
+      defaultValue: "IColorVariation[] | []",
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Types
+
+<DocsTextBlock className="m-b-medium-60">
+  The types used by the generateColorTokens function.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`
+    type TColorVariant = "alpha" | "tint" | "shade";
+    type TColorFormat = "hex" | "rgb" | "hsl";
+
+    interface IContrastScore {
+        light: string;
+        dark: string;
+    }
+
+    interface IColorVariation {
+        hex?: string;
+        rgb?: string;
+        hsl?: string;
+        contrast_score?: IContrastScore;
+    }
+
+    interface IColorProperties {
+        alpha?: IColorVariation[] | [];
+        tint?: IColorVariation[] | [];
+        shade?: IColorVariation[] | [];
+    }
+
+`} />
+
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/core/generate-tokens"
+  next="/docs/core/generate-ms-tokens"
+/>

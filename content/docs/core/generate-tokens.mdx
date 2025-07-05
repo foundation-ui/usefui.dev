@@ -1,9 +1,205 @@
 ---
 title: Generate Design Tokens
-description: Use @founfation-ui/core to generate Design Tokens libraries.
+description: Generate a Design Tokens library using custom values.
 ---
 
-<DocsFooter
-  prev="/docs/core/installation"
-  next="/docs/core/generate-css-vars"
+<DocsCodePreview
+  language="tsx"
+  code={`
+    import { generateTokensLibrary } from "@foundation-ui/core";
+
+    const payload = [
+        {
+            type: 'measurement',
+            values: [{
+                name: "small",
+                base: 3,
+                ratio: 1.62,
+                units: 2,
+            }]
+        },
+        {
+            "type": "color",
+            "values": [{
+                "name": "purple",
+                "base": "944BBB",
+                "variations": {
+                "alpha": true,
+                "shade": true,
+                "tint": true
+                }
+            }]
+        },
+        {
+            "type": "fontsize",
+            "values": [
+                {
+                    "name": "medium",
+                    "base": 16,
+                    "ratio": 1.13,
+                    "units": 10
+                }
+            ]
+        },
+        {
+            "type": "depth",
+            "values": [
+                {
+                    "name": "layout",
+                    "base": 1,
+                    "units": 10,
+                    "steps": 10
+                },
+            ]
+        },
+        {
+            "type": "opacity",
+            "values": [
+                {
+                    "name": "base",
+                    "base": 1,
+                    "units": 10,
+                    "steps": 10,
+                    "decimal": true
+                },
+            ]
+        }
+    ];
+
+    const tokenLibrary = generateTokensLibrary("demo-dt", payload);
+
+`} />
+
+<DocsSection className="m-y-large-10">
+### API Reference
+
+<DocsTextBlock>
+  The arguments used and values returned by the generateTokensLibrary function.
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Args
+
+<DocsTextBlock className="m-b-medium-60">
+  The values passed to generateTokensLibrary.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "name",
+      type: "string",
+      defaultValue: "",
+      required: true,
+    },
+    {
+      name: "template",
+      type: "{ type: string; values: ITemplateValues[]; }",
+      defaultValue: "",
+      required: true,
+    },
+  ]}
 />
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Returned values
+
+<DocsTextBlock className="m-b-medium-60">
+  The values returned by the generateTokensLibrary function.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "name",
+      type: "string",
+      defaultValue: "",
+    },
+    {
+      name: "design_tokens",
+      type: "Record<'color' | 'measurement' | 'fontsize' | 'opacity' | 'depth', IComposedLibraryItem[]>",
+      defaultValue: "",
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Types
+
+<DocsTextBlock className="m-b-medium-60">
+  The types used by the generateTokensLibrary function.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`
+    interface ITemplateValues {
+        name?: string;
+        base?: string | number;
+        ratio?: number;
+        units?: number;
+        steps?: number;
+        decimal?: boolean;
+        variations?: {
+            alpha?: boolean;
+            shade?: boolean;
+            tint?: boolean;
+        };
+    }
+
+    interface IScaleVariation {
+        px: number;
+        rem: number;
+        pt: number;
+    }
+
+    interface IColorVariation {
+        hex?: string;
+        rgb?: string;
+        hsl?: string;
+        contrast_score?: IContrastScore;
+    }
+
+    interface ISequenceVariation {
+        value: number;
+        usage: string[];
+        contrast_score?: IContrastScore;
+        stack_order?: IStackOrder;
+    }
+
+    interface IComposedLibraryItem {
+        name?: string;
+        base?: number | IColorVariation;
+        alpha?: any[] | [];
+        tint?: any[] | [];
+        shade?: any[] | [];
+        units?: number;
+        ratio?: number;
+        variant?: TScaleVariant;
+        values?: ISequenceVariation[] | IScaleVariation[] | [];
+    }
+
+    interface IDesignTokensSet {
+        color: IComposedLibraryItem[];
+        measurement: IComposedLibraryItem[];
+        fontsize: IComposedLibraryItem[];
+        depth: IComposedLibraryItem[];
+        opacity: IComposedLibraryItem[];
+    }
+
+    interface IDesignTokensLibrary {
+        name: string;
+        design_tokens: IDesignTokensSet;
+    }
+
+`} />
+
+</DocsSection>
+
+<DocsFooter prev="/docs/core/usage" next="/docs/core/generate-color-tokens" />

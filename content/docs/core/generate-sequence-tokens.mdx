@@ -1,0 +1,149 @@
+---
+title: Generate Sequence Tokens
+description: Generate Sequence Design Tokens using custom values.
+---
+
+<DocsCodePreview
+  language="tsx"
+  code={`
+    import { generateSequenceTokens } from "@foundation-ui/core";
+
+    const name = "zindex-dt";
+    const base = 12;
+    const units = 10;
+    const steps = 10;
+    const decimal = false;
+
+    const msTokens = generateSequenceTokens(name, base, units, steps, decimal);
+
+`} />
+
+<DocsSection className="m-y-large-10">
+### API Reference
+
+<DocsTextBlock>
+  The arguments used and values returned by the generateSequenceTokens function.
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Args
+
+<DocsTextBlock className="m-b-medium-60">
+  The values passed to generateSequenceTokens.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "name",
+      type: "string",
+      defaultValue: "",
+      required: true,
+    },
+    {
+      name: "base",
+      type: "number",
+      defaultValue: "",
+      required: true,
+    },
+    {
+      name: "units",
+      type: "number",
+      defaultValue: "",
+      required: true,
+    },
+    {
+      name: "steps",
+      type: "number",
+      defaultValue: "",
+      required: true,
+    },
+    {
+      name: "decimal",
+      type: "boolean",
+      defaultValue: "",
+      required: true,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Returned values
+
+<DocsTextBlock className="m-b-medium-60">
+  The values returned by the generateSequenceTokens function.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "name",
+      type: "string",
+      defaultValue: "string",
+    },
+    {
+      name: "base",
+      type: "number",
+      defaultValue: "number",
+    },
+    {
+      name: "steps",
+      type: "number",
+      defaultValue: "number",
+    },
+    {
+      name: "units",
+      type: "number",
+      defaultValue: "number",
+    },
+    {
+      name: "values",
+      type: "ISequenceProperties[] | []",
+      defaultValue: "ISequenceProperties[] |[]",
+    },
+
+]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Types
+
+<DocsTextBlock className="m-b-medium-60">
+  The types used by the generateSequenceTokens function.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`
+  interface IStackOrder {
+    label: string;
+    score: number;
+  }
+  interface ISequenceVariation {
+    value: number;
+    usage: string[];
+    contrast_score?: IContrastScore;
+    stack_order?: IStackOrder;
+  }
+  interface ISequenceProperties {
+    base: number;
+    units: number;
+    steps: number;
+    name: string;
+    values: ISequenceVariation[];
+  }
+
+`} />
+
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/core/generate-ms-tokens"
+  next="/docs/core/generate-css-vars"
+/>
