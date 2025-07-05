@@ -4,7 +4,18 @@ description: Setup and use @founfation-ui/tokens's color mode hook in your proje
 ---
 
 <DocsSection>
-#### Setup
+### Get started with Color Mode
+
+<DocsTextBlock>
+  Color Mode in available on `@foundation-ui/tokens`, to use it, you first need
+  to install the package:
+</DocsTextBlock>
+
+<DocsCodePreview language="shell" code={`pnpm add @foundation-ui/tokens`} />
+</DocsSection>
+
+<DocsSection>
+### Setup
 
 <DocsTextBlock className="m-b-medium-60">
   `@foundation-ui` uses a custom Design Tokens Engine and requires a context and
@@ -14,8 +25,8 @@ description: Setup and use @founfation-ui/tokens's color mode hook in your proje
 
 <DocsTextBlock className="m-b-medium-60">
   `ColorModeProvider` comes with a pre-built Design Token library set as
-  default. You can use a custom design tokens library by passing it using the
-  `config` property but it must be structured as defined in the type definition.
+  default. You can use a custom design tokens by passing it using the `config`
+  property but it must be structured as defined in the type definition.
 </DocsTextBlock>
 
 <DocsTextBlock className="m-b-medium-60">
@@ -30,14 +41,21 @@ description: Setup and use @founfation-ui/tokens's color mode hook in your proje
   <DocsCodePreview
     code={`import { ColorModeProvider } from "@foundation-ui/tokens";
 
-      function Provider({ children }: Readonly<{
-        children: React.ReactNode;
-      }>) {
+      function Provider() {
         return (
           <ColorModeProvider config={/** */}>
-            {children}
+            <Component />
           </ColorModeProvider>
-        );}`} />
+        );
+      }
+
+      function Component() {
+        const { colorMode, setColorMode } = useColorMode();
+
+        return ( {/** Your code here **/} );
+      }
+
+`}/>
 
 </DocsSection>
 
@@ -61,7 +79,7 @@ description: Setup and use @founfation-ui/tokens's color mode hook in your proje
     },
     {
       name: "ConfigProperties",
-      type: "{ body: ConfigItemProperties; contrast: ConfigItemProperties; }",
+      type: "{ font: ConfigItemProperties; body: ConfigItemProperties; contrast: ConfigItemProperties; }",
       description: "Define the body/contrast values",
     },
   ]}

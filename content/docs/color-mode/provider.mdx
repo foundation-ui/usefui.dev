@@ -3,4 +3,254 @@ title: Color Mode Provider
 description: Setup and use @founfation-ui/tokens's color mode context in your project.
 ---
 
-<DocsFooter prev="/docs/color-mode/usage" next="/docs/core/installation" />
+<DocsCodePreview
+    code={`import { ColorModeProvider } from "@foundation-ui/tokens";
+
+      function Provider({ children }: { children: React.ReactNode }) {
+        return (
+          <ColorModeProvider config={/** */}>
+            {children}
+          </ColorModeProvider>
+        );
+      }
+
+`}/>
+
+<DocsSection>
+### Overview
+
+<DocsTextBlock className="m-b-medium-60">
+  `ColorModeProvider` relies on `@foundation-ui/tokens` and `localStorage` to
+  get/set the values required to perform the color mode update.
+</DocsTextBlock>
+
+<DocsTextBlock className="m-b-medium-60">
+  **_If you are not planning to use the pre-built Design Token libraries_**,
+  there are a few variables that must be defined in your `config` in order to
+  get the expected behaviorfrom `useColorMode`.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "font",
+      type: "{ light: string; dark: string; }",
+      defaultValue:
+        "{ light: 'var(--color-mono-darkest)'; dark: 'var(--color-mono-white)'; }",
+      required: true,
+    },
+    {
+      name: "body",
+      type: "{ light: string; dark: string; }",
+      defaultValue:
+        "{ light: 'var(--color-mono-white)'; dark: 'var(--color-mono-darker)'; }",
+      required: true,
+    },
+    {
+      name: "contrast",
+      type: "{ light: string; dark: string; }",
+      defaultValue:
+        "{ light: 'var(--color-mono-light)'; dark: 'var(--color-mono-dark)'; }",
+      required: true,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### How does it work
+
+<DocsTextBlock className="m-b-medium-60">
+  `ColorModeProvider` has a single purpose: **_Read and distribute design token
+  according to the current color mode_**. While it relies on several components
+  and methods to achieve that, it **_is not_** built using the [Compound
+  pattern](https://www.patterns.dev/react/compound-pattern/), it carries all the
+  properties required to make to component work as intended.
+</DocsTextBlock>
+
+<DocsTextBlock className="m-b-medium-60">
+  Consequently, you won't be able to import the components and methods used by
+  `ColorModeProvider`.
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+
+#### getPreferredColorScheme
+
+<DocsTextBlock className="m-b-medium-60">
+  Read preferred user color mode from system preferences
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`const getPreferredColorScheme = (): TColorMode => {
+    if (typeof window !== "undefined" && window.matchMedia) {
+        if (window.matchMedia(DARK_QUERY).matches) return "dark";
+        if (window.matchMedia(LIGHT_QUERY).matches) return "light";
+        if (window.matchMedia(SYSTEM_QUERY).matches) return "system";
+    }
+
+    return "system"; // Safe initialization
+
+};
+`}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+
+#### writeColorModeStyles
+
+<DocsTextBlock className="m-b-medium-60">
+  Write preferred user color mode from system preferences.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`const writeColorModeStyles = (
+  colorMode: TColorMode,
+  config?: ColorModeConfig
+) => {
+    // Ensure safe usage of window and document
+    if (typeof window === "undefined" || typeof document === "undefined") {
+        return;
+    }
+
+    const head = document.head ?? document?.getElementsByTagName("head")[0];
+    const current = head.querySelector('style[title="color_mode_vars"]');
+
+    // Remove existing value if defined to prevent duplication
+    if (current) head.removeChild(current);
+
+    const style = document.createElement("style");
+    style.type = "text/css";
+    style.title = "color_mode_vars";
+
+    const is_light = colorMode === ColorModesEnum.Light;
+    const vars_array = Array.from({ length: 10 }, (_, key) => (key + 1) * 10);
+
+    let css = "";
+
+
+    /**
+      * Flip the colors orders to handle contrasted values such as Font colors.
+      * For instance: If customColor colors will be used on top of a highly contrasted body,
+      * the values passed to generateAlphaVars for customColor should be chromatically opposed to
+      * the body's.
+      *
+      * This should be enhanced to handle default preferences in a better way.
+    */
+     if (colorMode) {
+        /** Check the source code to get the full definition **/
+     }
+
+    // Append style element to head
+    if (css) style.textContent = css;
+    head.appendChild(style);
+
+};
+`}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+
+#### Provider
+
+<DocsTextBlock className="m-b-medium-60">
+  How ColorModeProvider works behind the hood.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`const ColorModeProvider = ({
+  config,
+  children,
+}: {
+  config?: ColorModeConfig;
+  children: React.ReactNode;
+}) => {
+    const fetchedMode = storage.get() as ColorModesEnum;
+    const [colorMode, setColorMode] = React.useState<FetchedColorModeType>(
+        fetchedMode ?? getPreferredColorScheme()
+    );
+
+    /**
+    * IIFE <https://developer.mozilla.org/en-US/docs/Glossary/IIFE> runs as soon as it is defined.
+    * Used to write CSS vars defined by the color mode as soon a every values are available.
+    */
+    (function () {
+        return writeColorModeStyles(colorMode as TColorMode, config);
+    })();
+
+    // Read the color mode from localStorage on render
+    React.useEffect(() => {
+        const canWriteMode =
+        fetchedMode !== ColorModesEnum.System && fetchedMode !== colorMode;
+        if (fetchedMode && canWriteMode) setColorMode(fetchedMode);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    // Save mode in localStorage when it is updated
+    React.useEffect(() => {
+        if (colorMode) {
+        document.documentElement.setAttribute("data-theme", colorMode);
+        storage.set(colorMode);
+        }
+    }, [colorMode]);
+
+    // Prevents flicker by not rendering anything until mode is known
+    if (!colorMode) return null;
+    return (
+        <ColorModeContext.Provider value={{ colorMode, setColorMode }}>
+        {children}
+        </ColorModeContext.Provider>
+    );
+
+};
+`}
+/>
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Types
+
+<DocsTextBlock className="m-b-medium-60">
+  `@foundation-ui/tokens` connects Design Tokens libraries using the
+  `ColorModeProvider` component. You can customize the `config` property to use
+  your own library.
+</DocsTextBlock>
+
+<DocsPropsTable
+  extended
+  properties={[
+    {
+      name: "ConfigItemProperties",
+      type: "{ light: string; dark: string; }",
+      description:
+        "Define the dark/light design tokens that will be used to generate CSS variables",
+    },
+    {
+      name: "ConfigProperties",
+      type: "{ font: ConfigItemProperties; body: ConfigItemProperties; contrast: ConfigItemProperties; }",
+      description: "Define the body/contrast values",
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/color-mode/usage"
+  next="/docs/color-mode/use-color-mode"
+/>
