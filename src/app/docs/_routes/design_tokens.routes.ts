@@ -4,8 +4,8 @@ export const DESIGN_TOKENS_LINKS = [
     label: "Installation",
   },
   {
-    link: "/docs/tokens/api-reference",
-    label: "API Reference",
+    link: "/docs/tokens/usage",
+    label: "Usage",
   },
   {
     link: "/docs/tokens/libraries",

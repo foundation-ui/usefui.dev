@@ -40,9 +40,9 @@ export default function RootLayout({
 }>) {
   return (
     <StyledComponentsRegistry>
-      <ClientProvider>
-        <PostHogProvider>
-          <html lang="en">
+      <PostHogProvider>
+        <html lang="en">
+          <ClientProvider>
             <body>
               <div id="portal-container" />
               <Toaster
@@ -58,9 +58,9 @@ export default function RootLayout({
               />
               {children}
             </body>
-          </html>
-        </PostHogProvider>
-      </ClientProvider>
+          </ClientProvider>
+        </html>
+      </PostHogProvider>
     </StyledComponentsRegistry>
   );
 }

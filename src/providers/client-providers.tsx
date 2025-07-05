@@ -115,21 +115,23 @@ export function ClientProvider({
   children: React.ReactNode;
 }>) {
   const [queryClient] = React.useState(() => new QueryClient());
+  const colorModeConfig = React.useMemo(
+    () => ({
+      body: {
+        light: "var(--color-mono-light)",
+        dark: "var(--color-mono-darkest)",
+      },
+      contrast: {
+        light: "var(--color-mono-white)",
+        dark: "var(--color-mono-darker)",
+      },
+    }),
+    [],
+  );
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ColorModeProvider
-        config={{
-          body: {
-            light: "var(--color-mono-light)",
-            dark: "var(--color-mono-darkest)",
-          },
-          contrast: {
-            light: "var(--color-mono-white)",
-            dark: "var(--color-mono-darker)",
-          },
-        }}
-      >
+      <ColorModeProvider config={colorModeConfig}>
         <ResetStyles />
         <TypographyRoot />
         <CSSRoot />

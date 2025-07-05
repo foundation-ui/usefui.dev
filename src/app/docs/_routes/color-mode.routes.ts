@@ -5,6 +5,10 @@ export const COLOR_MODE_LINKS = [
   },
   {
     link: "/docs/color-mode/provider",
-    label: "ColorModeProvider",
+    label: "Provider",
+  },
+  {
+    link: "/docs/color-mode/use-color-mode",
+    label: "useColorMode",
   },
 ];
