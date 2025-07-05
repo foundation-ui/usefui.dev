@@ -10,15 +10,16 @@ import { Badge, Button } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
 
 export const CardBody = styled.article`
-  --border: var(--measurement-small-30) solid var(--font-color-alpha-10);
+  --border: var(--measurement-small-10) solid var(--font-color-alpha-10);
 
   border: var(--border);
 
   &[data-mode="link"] {
     text-decoration: none;
     transition: all ease-in-out 0.2s;
+
     &:hover {
-      background-color: var(--font-color-alpha-10);
+      background: var(--contrast-color);
     }
   }
 `;
@@ -45,20 +46,25 @@ export const PatternBackground = styled.div`
       center / var(--dot-space) var(--dot-space),
     radial-gradient(var(--dot-color) 100%, transparent 100%) !important;
 `;
+export const CenteredWrapper = styled.hgroup`
+  max-width: var(--breakpoint-tablet);
+  margin: 0 auto;
+  text-align: center;
+`;
 
 const WIKI_CATALOG = [
   {
     name: "foundation-ui/core",
     title: "Token Engine",
     description:
-      "Dynamically generate design tokens based your application properties.",
+      "Dynamically generate design tokens based on your application properties.",
     link: "/docs/core",
   },
   {
     name: "foundation-ui/tokens",
     title: "Built-in Design Tokens",
     description:
-      "Use all or parts of pre-built design tokens libraries in your application.",
+      "Use all or parts of pre-built design tokens libraries within your application.",
     link: "/docs/tokens",
   },
   {
@@ -72,45 +78,20 @@ const WIKI_CATALOG = [
     name: "foundation-ui/analytics",
     title: "User Behavior Analytics",
     description:
-      "Programmatically update user interfaces using real-time User Behavior Analytics.",
+      "Capture real-time user interactions and system insights and use it during development.",
     link: "/docs/analytics",
   },
 ];
 
 function LandingProducts() {
   return (
-    <div className="grid p-x-medium-60">
-      <GridLayout>
-        <CardBody className="grid align-end h-100 w-100 p-large-10">
-          <DisplayXl as="h3" className="m-b-large-10">
-            Ready-to-use Frontend Toolkit
-          </DisplayXl>
-        </CardBody>
-        <CardBody
-          className="grid align-end h-100 w-100 p-large-10"
-          as={Link}
-          data-mode="link"
-          href="/docs/introduction"
-        >
-          <p className="w-100 fs-medium-20 opacity-default-60 m-b-large-30">
-            Foundation UI is designed to work as a standalone library or
-            integrate to an existing toolset and craft production-grade
-            applications.
-          </p>
-          <Button variant="ghost">
-            Read the docs
-            <Icon>
-              <PixelIcon.ArrowRight />
-            </Icon>
-          </Button>
-        </CardBody>
-      </GridLayout>
-
-      <CardBody
-        className="p-y-large-10"
-        as={PatternBackground}
-        style={{ borderTop: "none", borderBottom: "none" }}
-      />
+    <section className="p-x-medium-60">
+      <CenteredWrapper className="m-y-large-60 grid g-medium-60">
+        <DisplayXl as="h3">
+          Build Apps people love to use with Data&nbsp;Driven Tools optimized
+          for fast development
+        </DisplayXl>
+      </CenteredWrapper>
 
       <GridLayout>
         {WIKI_CATALOG.map((item, key) => (
@@ -226,7 +207,7 @@ function LandingProducts() {
           </Icon>
         </Button>
       </CardBody>
-    </div>
+    </section>
   );
 }
 
