@@ -86,7 +86,7 @@ function EditorOutput() {
           </div>
         </Page.Navigation>
 
-        <ScrollArea className="h-100">
+        <ScrollArea className="h-100" scrollbar>
           <Tabs.Content value="json" className="w-100 h-auto">
             <EditorBody
               key={library}

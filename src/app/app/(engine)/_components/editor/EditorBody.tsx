@@ -132,7 +132,7 @@ function EditorBody({
   );
 
   return (
-    <EditorWrapper className="h-100 w-100">
+    <EditorWrapper className="h-100 w-100" scrollbar>
       <CodeMirror
         value={value}
         height="100%"
