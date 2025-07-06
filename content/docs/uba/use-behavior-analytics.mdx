@@ -3,4 +3,160 @@ title: useBehaviorAnalytics
 description: Use @founfation-ui/analytics's Hooks in your project.
 ---
 
+<DocsCodePreview
+  language="tsx"
+  code={`import { useBehaviorAnalytics } from "@foundation-ui/analytics";
+
+export function HookComponent() {
+    const uba = useBehaviorAnalytics({
+        silent: false,
+        flags: [
+        "run-code-trigger",
+        "copy-code-trigger",
+        "reset-code-trigger",
+        "format-code-trigger",
+        "toggle-console-trigger",
+        "console-indicator",
+        "json-tabs-trigger",
+        "css-tabs-trigger",
+        "library-name-field",
+        "drag-handle",
+        ],
+    });
+    
+    return ( {/** Your code here **/} );
+}
+`} />
+
+<DocsSection className="m-y-large-10">
+### API Reference
+
+<DocsTextBlock>
+  <p>The properties and functions returned by the useBehaviorAnalytics hook.</p>
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsCodePreview
+  scrollbar
+  language="json"
+  code={`
+{
+    "session": {
+        "entry_time": "2025-07-06T00:45:02.968Z",
+        "entry_epoch": 1751762702968,
+        "last_interaction_time": "2025-07-06T00:45:02.967Z",
+        "last_interaction_epoch": 1751762702967,
+        "time_before_interact": 0.316,
+        "html_snapshot": "..."
+    },
+    "interactions": [
+        {
+            "origin": "json-tabs-trigger",
+            "frequency": 1,
+            "events": [
+                {
+                    "type": "mouseover",
+                    "occured_at": "2025-07-06T00:45:02.112Z",
+                    "occured_at_epoch": 1751762702112,
+                    "dimension": {
+                        "width": 34.859375,
+                        "height": 16.59375
+                    },
+                    "position": {
+                        "x": 557.765625,
+                        "y": 69.390625,
+                        "top": 69.390625,
+                        "right": 592.625,
+                        "bottom": 85.984375,
+                        "left": 557.765625
+                    }
+                }
+            ],
+            "types": [
+                "mouseover"
+            ]
+        },
+        {
+            "origin": "drag-handle",
+            "frequency": 1,
+            "events": [
+                {
+                    "type": "mouseover",
+                    "occured_at": "2025-07-06T00:45:02.148Z",
+                    "occured_at_epoch": 1751762702148,
+                    "dimension": {
+                        "width": 11.9375,
+                        "height": 876.578125
+                    },
+                    "position": {
+                        "x": 541.765625,
+                        "y": 56.453125,
+                        "top": 56.453125,
+                        "right": 553.703125,
+                        "bottom": 933.03125,
+                        "left": 541.765625
+                    }
+                }
+            ],
+            "types": [
+                "mouseover"
+            ]
+        },
+        {
+            "origin": "run-code-trigger",
+            "element": "button",
+            "content": "Run",
+            "frequency": 3,
+            "events": [
+                {
+                    "type": "mouseover",
+                    "occured_at": "2025-07-06T00:45:02.622Z",
+                    "occured_at_epoch": 1751762702622,
+                    "dimension": {
+                        "width": 58.96875,
+                        "height": 25.28125
+                    },
+                    "position": {
+                        "x": 478.734375,
+                        "y": 65.03125,
+                        "top": 65.03125,
+                        "right": 537.703125,
+                        "bottom": 90.3125,
+                        "left": 478.734375
+                    }
+                }
+            ],
+            "types": [
+                "mouseover"
+            ]
+        }
+    ],
+    "system": {
+        "path": "http://localhost:3000/app",
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+        "device_os": "macOS 10_15_7",
+        "viewport": {
+            "width": 1039,
+            "height": 937
+        },
+        "performances": {
+            "memory_usage": "39.18MB",
+            "network_latency": "6.30ms"
+        },
+        "screen": {
+            "width": 3440,
+            "height": 1358,
+            "pixel_depth": 24,
+            "orientation": {
+                "angle": 0,
+                "type": "landscape-primary"
+            }
+        }
+    }
+}
+
+`}
+/>
+
 <DocsFooter prev="/docs/uba/installation" />
