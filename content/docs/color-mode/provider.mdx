@@ -23,38 +23,53 @@ description: Setup and use @founfation-ui/tokens's color mode context in your pr
   `ColorModeProvider` relies on `@foundation-ui/tokens` and `localStorage` to
   get/set the values required to perform the color mode update.
 </DocsTextBlock>
+</DocsSection>
 
-<DocsTextBlock className="m-b-medium-60">
-  **_If you are not planning to use the pre-built Design Token libraries_**,
-  there are a few variables that must be defined in your `config` in order to
-  get the expected behaviorfrom `useColorMode`.
-</DocsTextBlock>
+<DocsSection>
+  <DocsBanner
+    title="Pitfall"
+    description="If you are not planning to use the pre-built Design Token libraries, there are a few variables that must be defined in your config in order to get the expected behaviorfrom useColorMode."
+    mode="warning"
+  />
+</DocsSection>
 
-<DocsPropsTable
-  properties={[
-    {
-      name: "font",
-      type: "{ light: string; dark: string; }",
-      defaultValue:
-        "{ light: 'var(--color-mono-darkest)'; dark: 'var(--color-mono-white)'; }",
-      required: true,
-    },
-    {
-      name: "body",
-      type: "{ light: string; dark: string; }",
-      defaultValue:
-        "{ light: 'var(--color-mono-white)'; dark: 'var(--color-mono-darker)'; }",
-      required: true,
-    },
-    {
-      name: "contrast",
-      type: "{ light: string; dark: string; }",
-      defaultValue:
-        "{ light: 'var(--color-mono-light)'; dark: 'var(--color-mono-dark)'; }",
-      required: true,
-    },
-  ]}
-/>
+<DocsSection>
+  <DocsPropsTable
+    properties={[
+      {
+        name: "font",
+        type: "ColorModeItem",
+        defaultValue: "ColorModeItem",
+        required: true,
+      },
+      {
+        name: "body",
+        type: "ColorModeItem",
+        defaultValue: "ColorModeItem",
+        required: true,
+      },
+      {
+        name: "contrast",
+        type: "ColorModeItem",
+        defaultValue: "ColorModeItem",
+        required: true,
+      },
+    ]}
+  />
+  <DocsCodePreview
+    code={`
+    type ColorModeItem = {
+      light: string;
+      dark: string;
+    };
+
+    type ColorModeConfig = {
+      font?: ColorModeItem;
+      body?: ColorModeItem;
+      contrast?: ColorModeItem;
+    };
+
+`}/>
 
 </DocsSection>
 

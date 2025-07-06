@@ -6,6 +6,7 @@ import DocsSection from "../_components/DocsSection";
 import DocsPropsTable from "../_components/DocsPropsTable";
 import DocsPreview from "../_components/DocsPreview";
 import DocsFooter from "../_components/DocsFooter";
+import DocsBanner from "../_components/DocsBanner";
 
 import AccordionTemplate from "../_components/_templates/AccordionTemplate";
 import AvatarTemplate from "../_components/_templates/AvatarTemplate";
@@ -36,6 +37,7 @@ export const COMPONENTS = {
   DocsLink,
   DocsPreview,
   DocsPropsTable,
+  DocsBanner,
   DocsSection,
   DocsFooter,
 };
