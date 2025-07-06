@@ -1,0 +1,131 @@
+---
+title: Toggle
+description: Toggle are button that can be switched on or off.
+---
+
+<DocsSection>
+
+<DocsPreview language="tsx" component={<ToggleTemplate />} code={`import React from "react";
+import { Toggle } from "@foundation-ui/components";
+
+function ToggleTemplate() {
+const [checkedItem, setCheckedItem] = React.useState<string>("primary");
+
+    return (
+        <div className="grid g-medium-30 p-t-large-30 p-x-medium-60 flex align-center g-medium-10 justify-center">
+            <Badge
+                variant="border"
+                className="flex align-center g-medium-10 justify-center"
+            >
+                {["primary", "secondary", "tertiary"].map((variant, key) => (
+                    <Toggle
+                        key={key}
+                        variant={variant === checkedItem ? "primary" : "border"}
+                        value={variant}
+                        sizing="small"
+                        onClick={() => setCheckedItem(variant)}
+                    >
+                        <Icon>
+                        {variant === checkedItem ? (
+                            <PixelIcon.Check />
+                        ) : (
+                            <PixelIcon.Downasaur />
+                        )}
+                        </Icon>
+                    </Toggle>
+                ))}
+            </Badge>
+        </div>
+    );
+
+}
+
+export default ToggleTemplate;
+`} />
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  The Toggle component **_is not_** built using the [Compound
+  pattern](https://www.patterns.dev/react/compound-pattern/), it carries all the
+  properties required to make to component work as intended.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Toggle } from "@foundation-ui/components";
+
+export function ToggleComponent() {
+    return <Toggle />;
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "variant",
+      type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost"',
+      defaultValue: "mono",
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "value",
+      type: "string",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "defaultChecked",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLButtonElement>) => void",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "rawicon",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsFooter prev="/docs/components/tabs" next="/docs/components/toolbar" />

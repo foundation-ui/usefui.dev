@@ -1,0 +1,65 @@
+---
+title: API Reference
+description: How Component Hooks are build and how do they work.
+---
+
+<DocsSection>
+
+<DocsTextBlock className="m-b-medium-60">
+  Components are built using the [Compound
+  pattern](https://www.patterns.dev/react/compound-pattern/), they manage their
+  own internal state and share them among the other components within the same
+  `Root`.
+</DocsTextBlock>
+
+<DocsTextBlock className="m-b-medium-60">
+  `Root` components always refers to the internal [Context
+  API](https://react.dev/reference/react/useContext) used to share internal
+  states.
+</DocsTextBlock>
+</DocsSection>
+
+<DocsSection>
+  <DocsBanner
+    title="Compound pattern and Component Hook"
+    description="When the Compound pattern is used, you can import the Component Hook to access its internal functions and adjust the component behavior to handle complex interactions and or mutations."
+    mode="meta"
+  />
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Common Properties
+
+<DocsTextBlock className="m-b-medium-60">
+  `@foundation-ui` components hooks are using the same structure to return
+  states, methods and ids.
+</DocsTextBlock>
+
+<DocsPropsTable
+  extended
+  properties={[
+    {
+      name: "id",
+      type: "Record<string, string> | string",
+      description: "Component main ID(s)",
+    },
+    {
+      name: "states",
+      type: "Record<string, string | number | boolean | null>",
+      description: "States shared between components",
+    },
+    {
+      name: "methods",
+      type: "Record<string, Function>",
+      description: "Functions used to mutate the states shared between components",
+    },
+
+]}
+/>
+
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/components-hooks/usage"
+  next="/docs/components-hooks/use-accordion"
+/>

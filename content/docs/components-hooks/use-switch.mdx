@@ -1,0 +1,53 @@
+---
+title: useSwitch
+description: Import and use the Switch component's Hooks in your project.
+---
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { useSwitch } from "@foundation-ui/components";
+
+export function HookComponent() {
+    const switch = useSwitch();
+    const { id, states, methods } = switch;
+
+    const { checked } = states;
+    const { toggleSwitch } = methods;
+
+    return ( {/** Your code here **/} );
+
+}
+`} />
+
+<DocsSection className="m-y-large-10">
+### API Reference
+
+<DocsTextBlock>
+  <p>The properties and functions returned by the useSwitch hook.</p>
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "id",
+      type: "string",
+      defaultValue: "React.useId",
+    },
+    {
+      name: "checked",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "toggleSwitch",
+      type: "(): => void",
+    },
+  ]}
+/>
+
+<DocsFooter
+  prev="/docs/components-hooks/use-sheet"
+  next="/docs/components-hooks/use-tabs"
+/>

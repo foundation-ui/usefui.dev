@@ -31,31 +31,39 @@ const cssVariables = generateCSSVariables({
   design_tokens: {
     color: [
       ...design_tokens.color,
+
       {
         name: "mono-dark",
-        base: { hex: "#111313" },
-        alpha: generateAlpha("#111313"),
+        base: { hex: "#212121" },
+        alpha: generateAlpha("#212121"),
         tint: [],
         shade: [],
       },
       {
         name: "mono-darker",
-        base: { hex: "#0C0E0E" },
-        alpha: generateAlpha("#0C0E0E"),
+        base: { hex: "#212121" },
+        alpha: generateAlpha("#212121"),
+        tint: [],
+        shade: [],
+      },
+      {
+        name: "mono-darkest",
+        base: { hex: "#111111" },
+        alpha: generateAlpha("#111111"),
         tint: [],
         shade: [],
       },
       {
         name: "mono-white",
-        base: { hex: "#F2F3F0" },
-        alpha: generateAlpha("#F2F3F0"),
+        base: { hex: "#F1F1F1" },
+        alpha: generateAlpha("#F1F1F1"),
         tint: [],
         shade: [],
       },
       {
         name: "mono-light",
-        base: { hex: "#FFFFFF" },
-        alpha: generateAlpha("#FFFFFF"),
+        base: { hex: "#FAFAFA" },
+        alpha: generateAlpha("#FAFAFA"),
         tint: [],
         shade: [],
       },
@@ -101,21 +109,23 @@ export function ClientProvider({
   children: React.ReactNode;
 }>) {
   const [queryClient] = React.useState(() => new QueryClient());
+  const colorModeConfig = React.useMemo(
+    () => ({
+      body: {
+        light: "var(--color-mono-light)",
+        dark: "var(--color-mono-darkest)",
+      },
+      contrast: {
+        light: "var(--color-mono-white)",
+        dark: "var(--color-mono-darker)",
+      },
+    }),
+    [],
+  );
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ColorModeProvider
-        config={{
-          body: {
-            light: "var(--color-mono-light)",
-            dark: "var(--color-mono-darker)",
-          },
-          contrast: {
-            light: "var(--color-mono-white)",
-            dark: "var(--color-mono-dark)",
-          },
-        }}
-      >
+      <ColorModeProvider config={colorModeConfig}>
         <ResetStyles />
         <TypographyRoot />
         <CSSRoot />

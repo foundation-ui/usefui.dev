@@ -1,0 +1,125 @@
+---
+title: Generate Dimension CSS Classes
+description: Generate Dimension CSS classes using a custom Design Tokens library.
+---
+
+<DocsCodePreview
+  language="tsx"
+  code={`
+    import { generateDimensionClasses } from "@foundation-ui/core";
+
+    const DimensionClasses = generateDimensionClasses();
+
+`} />
+
+<DocsSection className="m-y-large-10">
+### Returned values
+
+<DocsTextBlock className="m-b-medium-60">
+  The values returned by the generateDimensionClasses function.
+</DocsTextBlock>
+
+<DocsCodePreview
+  scrollbar
+  language="css"
+  code={`
+    .w-100 {
+        width: 100%;
+    }
+    .w-95 {
+        width: 95%;
+    }
+    .w-90 {
+        width: 90%;
+    }
+    .w-85 {
+        width: 85%;
+    }
+    .w-80 {
+        width: 80%;
+    }
+    .w-75 {
+        width: 75%;
+    }
+    .w-70 {
+        width: 70%;
+    }
+    .w-66 {
+        width: 66%;
+    }
+    .w-50 {
+        width: 50%;
+    }
+    .w-33 {
+        width: 33%;
+    }
+    .w-25 {
+        width: 25%;
+    }
+    .w-10 {
+        width: 10%;
+    }
+    .w-auto {
+        width: auto;
+    }
+    .w-fit-content {
+        width: fit-content;
+    }
+    .w-max-content {
+        width: max-content;
+    }
+    .h-100 {
+        height: 100%;
+    }
+    .h-95 {
+        height: 95%;
+    }
+    .h-90 {
+        height: 90%;
+    }
+    .h-85 {
+        height: 85%;
+    }
+    .h-80 {
+        height: 80%;
+    }
+    .h-75 {
+        height: 75%;
+    }
+    .h-70 {
+        height: 70%;
+    }
+    .h-66 {
+        height: 66%;
+    }
+    .h-50 {
+        height: 50%;
+    }
+    .h-33 {
+        height: 33%;
+    }
+    .h-25 {
+        height: 25%;
+    }
+    .h-10 {
+        height: 10%;
+    }
+    .h-auto {
+        height: auto;
+    }
+    .h-fit-content {
+        height: fit-content;
+    }
+    .h-max-content {
+        height: max-content;
+    }
+
+`}
+/>
+
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/core/generate-css-vars"
+  next="/docs/core/generate-fs-classes"
+/>

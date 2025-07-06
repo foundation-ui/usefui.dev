@@ -1,0 +1,115 @@
+---
+title: Badge
+description: Badges are used to convey data or states to the users.
+---
+
+<DocsSection>
+
+<DocsPreview language="tsx" component={<BadgeTemplate />} code={`import React from "react";
+import { Badge } from "@foundation-ui/components";
+
+function BadgeTemplate() {
+
+    return (
+        <div className="grid g-medium-30 p-t-large-30 p-x-medium-60">
+            <div className="flex align-center g-medium-10 justify-center">
+                {[
+                "primary",
+                "secondary",
+                "border",
+                "error",
+                "warning",
+                "success",
+                "meta",
+                ].map((variant, key) => (
+                <Badge
+                    key={key}
+                    variant={
+                    variant as
+                        | "primary"
+                        | "secondary"
+                        | "border"
+                        | "error"
+                        | "warning"
+                        | "success"
+                        | "meta"
+                    }
+                >
+                    @fui
+                </Badge>
+                ))}
+            </div>
+            <div className="flex align-center g-medium-10 justify-center">
+                {["square", "smooth", "round"].map((shape, key) => (
+                <Badge key={key} shape={shape as "square" | "smooth" | "round"}>
+                    @fui
+                </Badge>
+                ))}
+            </div>
+        </div>
+    );
+
+}
+
+export default BadgeTemplate;
+`} />
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  The Badge component **_is not_** built using the [Compound
+  pattern](https://www.patterns.dev/react/compound-pattern/), it carries all the
+  properties required to make to component work as intended.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Badge } from "@foundation-ui/components";
+
+export function BadgeComponent() {
+    return (
+      <Badge />
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "variant",
+      type: '"primary" | "secondary" | "border" | "error" | "warning" | "success" | "meta"',
+      defaultValue: "primary",
+      required: false,
+    },
+    {
+      name: "shape",
+      type: '"square" | "smooth" | "round"',
+      defaultValue: "smooth",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsFooter prev="/docs/components/avatar" next="/docs/components/button" />

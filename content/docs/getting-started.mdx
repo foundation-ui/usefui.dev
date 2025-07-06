@@ -1,0 +1,144 @@
+---
+title: Getting started
+description: How to install dependencies and structure your app.
+---
+
+<DocsSection>
+  <DocsBanner
+    title="@foundation-ui is deployed as a private package"
+    description="If you want to install @foundation-ui packages, you can either fork the repository or join the community to get an installation token during the Beta program."
+    mode="warning"
+  />
+</DocsSection>
+
+<DocsSection>
+### Install
+
+<DocsTextBlock className="m-b-medium-60">
+  To get the most out of `@foundation-ui`, it is strongly recommended to use at
+  least `@foundation-ui/components` and `@foundation-ui/tokens`.
+</DocsTextBlock>
+
+<DocsTextBlock className="m-b-medium-60">
+  Run the following commands to install `@foundation-ui` packages in project:
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="shell"
+  code={`pnpm add @foundation-ui/components @foundation-ui/tokens @foundation-ui/core @foundation-ui/styles @foundation-ui/analytics @foundation-ui/hooks`}
+/>
+</DocsSection>
+
+<DocsSection>
+### Fork the repository
+
+<DocsTextBlock>
+  You can fork the repository by clicking the fork button in the top right
+  corner of [this page](https://github.com/foundation-ui/design-system).
+</DocsTextBlock>
+
+<DocsTextBlock className="m-b-medium-60">
+  Run the following commands to fork `@foundation-ui`:
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="shell"
+  code={`git clone https://github.com/foundation-ui/design-system.git`}
+/>
+
+<br />
+#### Install dependencies
+<DocsCodePreview language="shell" code={`pnpm -r install`} />
+
+<br />
+#### Run Storybook
+<DocsCodePreview language="shell" code={`pnpm run storybook`} />
+
+</DocsSection>
+
+<DocsSection>
+  ### Setup
+  <DocsTextBlock>
+    Foundation Design System is styled using CSS in JS with
+    [styled-components](https://styled-components.com/). This technique, coupled
+    with `@foundation-ui/core`, requires a
+    [GlobalStyle](https://styled-components.com/docs/faqs#note-regarding-css-import-and-createglobalstyle)
+    definition to convert your Design Tokens Library as CSS variables.
+     **_The styling can be done using styled-components or any other techniques/frameworks._**
+  </DocsTextBlock>
+
+  <br />
+  <DocsTextBlock>
+    Add the `ColorModeProvider` component to your setup to support the design tokens
+    provided by `@foundation-ui/tokens` or generated using `@foundation-ui/core`.
+    It enables you to switch between Themes based on user preferences.
+  </DocsTextBlock>
+  <br />
+  <DocsTextBlock className="m-b-medium-60">
+    `@foundation-ui/tokens` comes with a set of pre-built GlobalStyles
+    definitions to ensure a consistent visual language across all your apps,
+    regardless of platform or device. You can build your own using `@foundation-ui/core` and replace the default integration using your custom values.
+  </DocsTextBlock>
+  <DocsCodePreview
+    code={`
+      "use client"; // For nextjs apps
+
+      import React from "react";
+      import { ColorModeProvider } from "@foundation-ui/tokens";
+
+      import {
+        ResetStyles,
+        TypographyRoot,
+        CSSRoot
+      } from "@foundation-ui/styles";
+
+      export function ClientProvider({ children }: Readonly<{
+        children: React.ReactNode;
+      }>) {
+        return (
+          <ColorModeProvider config={}>
+            <ResetStyles />
+            <TypographyRoot />
+            <CSSRoot />
+
+            {children}
+          </ColorModeProvider>
+        );}`} />
+
+</DocsSection>
+
+<DocsSection>
+
+### Usage
+
+<DocsTextBlock className="m-b-medium-60">
+  That's it! You can now use Foundation Design System.
+</DocsTextBlock>
+
+<DocsCodePreview
+  code={`
+    "use client"; // For nextjs apps
+
+    import React from "react";
+    import { Button } from "@foundation-ui/components";
+    import { useColorMode } from "@foundation-ui/tokens";
+
+    export default () => {
+      const { colorMode, setColorMode } = useColorMode();
+      const updateColorMode = () => {
+        if (colorMode === "dark") setColorMode("light");
+        else if (colorMode === "light") setColorMode("dark");
+      };
+
+      return (
+        <Button sizing="small" variant="ghost">
+          Color mode:&nbsp;{colorMode}
+        </Button>
+      );
+    }`}
+
+/>
+
+</DocsSection>
+
+<DocsFooter prev="/docs/introduction" next="/docs/components/installation" />

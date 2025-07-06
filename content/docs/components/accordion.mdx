@@ -1,0 +1,232 @@
+---
+title: Accordion
+description: Accordions are used to expand and collapse sections of content.
+---
+
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<AccordionTemplate />}
+  code={`import { Accordion, Divider } from "@foundation-ui/components";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
+
+export function AccordionComponent() {
+    return (
+        <Accordion.Root>
+          <Accordion
+            className="grid g-medium-30 p-t-large-30 p-x-medium-60"
+            style={{ maxWidth: "var(--breakpoint-mobile)", margin: "0 auto" }}
+          >
+            <div className="grid g-medium-30">
+              <Accordion.Trigger
+                value="info"
+                className="w-100 flex justify-between align-center"
+              >
+                Informations
+                <Icon>
+                  <PixelIcon.ChevronsVertical />
+                </Icon>
+              </Accordion.Trigger>
+              <Accordion.Content value="info">
+                <p className="fs-medium-10">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
+                  quidem culpa asperiores. Suscipit, iusto consectetur.
+                </p>
+                <br />
+                <i className="fs-medium-10 opacity-default-60">
+                  Iure corrupti eos non cupiditate architecto totam fuga suscipit
+                  fugiat officiis quasi, aperiam ad debitis.
+                </i>
+              </Accordion.Content>
+            </div>
+            <Divider />
+            <div className="grid g-medium-30">
+              <Accordion.Trigger
+                value="feat"
+                className="w-100 flex justify-between align-center"
+              >
+                Features
+                <Icon>
+                  <PixelIcon.ChevronsVertical />
+                </Icon>
+              </Accordion.Trigger>
+              <Accordion.Content value="feat">
+                <p className="fs-medium-10">
+                  Iure corrupti eos non cupiditate architecto totam fuga suscipit
+                  fugiat officiis quasi, aperiam ad debitis.
+                </p>
+              </Accordion.Content>
+            </div>
+            <Divider />
+            <div className="grid g-medium-30">
+              <Accordion.Trigger
+                value="requests"
+                className="w-100 flex justify-between align-center"
+              >
+                Requests
+                <Icon>
+                  <PixelIcon.ChevronsVertical />
+                </Icon>
+              </Accordion.Trigger>
+              <Accordion.Content value="requests">
+                <i className="fs-medium-10 opacity-default-60">
+                  Iure corrupti eos non cupiditate architecto totam fuga suscipit
+                  fugiat officiis quasi, aperiam ad debitis.
+                </i>
+              </Accordion.Content>
+            </div>
+          </Accordion>
+        </Accordion.Root>
+    );
+}
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Accordion } from "@foundation-ui/components";
+
+export function AccordionComponent() {
+    return (
+      <Accordion.Root>
+        <Accordion>
+          <Accordion.Trigger value="demo"/>
+          <Accordion.Content value="demo"/>>
+        </Accordion>
+      </Accordion.Root>
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Root
+
+<DocsTextBlock className="m-b-medium-60">
+  Contains the accordion component provider.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Accordion
+
+<DocsTextBlock className="m-b-medium-60">
+  The Accordion component that contains both triggers and content blocks.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },    
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Trigger
+
+<DocsTextBlock className="m-b-medium-60">
+  Accordion.Trigger is used to triggers the expansion and collapse of the
+  associated Accordion.Content component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "value",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLButtonElement>) => void",
+      required: false,
+    },
+    {
+      name: "variant",
+      type: "primary | secondary | mono | border | ghost",
+      defaultValue: "ghost",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Content
+
+<DocsTextBlock className="m-b-medium-60">
+  Accordion.Content is used to contains the content of the associated
+  Accordion.Trigger component.
+</DocsTextBlock>
+
+<DocsPropsTable
+ properties={[
+    {
+      name: "value",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "defaultOpen",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "spacing",
+      type: "small | medium | large",
+      required: false,
+      deprecated: true
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/components/api-reference"
+  next="/docs/components/avatar"
+/>

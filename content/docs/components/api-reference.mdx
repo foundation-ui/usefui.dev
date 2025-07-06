@@ -1,0 +1,63 @@
+---
+title: API Reference
+description: How component are built and common properties.
+---
+
+<DocsSection>
+
+<DocsTextBlock>
+  `@foundation-ui/components` is made of Headless Components that handles common
+  interactions you'll need to build User Interfaces. They can be used as is or
+  combined with other components to handle more complex interactions such as
+  pages shortcuts, collapsible list of actions..
+</DocsTextBlock>
+<br />
+<DocsTextBlock>
+  Components are built using the [Compound
+  pattern](https://www.patterns.dev/react/compound-pattern/), they manage their
+  own internal state and share them among the other components within the same
+  `Root`.
+</DocsTextBlock>
+<br />
+<DocsTextBlock>
+  `Root` components always refers to the internal [Context
+  API](https://react.dev/reference/react/useContext) used to share internal
+  states.
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Common Properties
+
+<DocsTextBlock className="m-b-medium-60">
+  Most of `@foundation-ui` components are using the same properties to define
+  their styles variants, spacing definitions, etc.
+</DocsTextBlock>
+
+<DocsPropsTable
+  extended
+  properties={[
+    {
+      name: "raw",
+      type: "boolean",
+      description: 'Whether the component is styled or not',
+    },
+    {
+      name: "sizing",
+      type: "small | medium | large",
+      description: 'Control the size of the component',
+    },
+    {
+      name: "variant",
+      type: "primary | secondary | tertiary | border | mono | ghost",
+      description: 'Control the size of the component',
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/components/installation"
+  next="/docs/components/accordion"
+/>

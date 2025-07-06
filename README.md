@@ -9,9 +9,7 @@ Get started with [Foundation UI Token Engine](https://usefui.dev).
 - [next.js](https://nextjs.org/docs)
 - [styled-components](https://styled-components.com/)
 - [tanstack/react-query](https://tanstack.com/query/v4/docs/framework/react/devtools)
-- [drizzle](https://orm.drizzle.team/docs/overview)
-- [clerk](https://clerk.com/docs)
-- [posthog](https://orm.drizzle.team)
+- [posthog](https://posthog.com)
 
 ## Overview
 

@@ -1,0 +1,213 @@
+---
+title: Table
+description: Table components are used to display structured data.
+---
+
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<TableTemplate />}
+  code={`import { Table, Badge } from "@foundation-ui/components";
+
+export function TableComponent() {
+    return (
+        <div className="grid g-medium-30 p-t-large-30 p-x-medium-60">
+          <Table className="w-100">
+            <Table.Head>
+              <Table.Row>
+                <Table.HeadCell>Prop</Table.HeadCell>
+                <Table.HeadCell>Type</Table.HeadCell>
+                <Table.HeadCell>Default</Table.HeadCell>
+              </Table.Row>
+            </Table.Head>
+            <Table.Body>
+              {[1, 2, 3].map((key) => (
+                <Table.Row key={key}>
+                  <Table.Cell>
+                    <Badge variant="border">children</Badge>
+                  </Table.Cell>
+                  <Table.Cell>
+                    <Badge variant="border">ReactNode</Badge>
+                  </Table.Cell>
+                  <Table.Cell>-</Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+            <Table.Footer>
+              <Table.Row>
+                <Table.Cell className="opacity-default-10">v.0.0.0</Table.Cell>
+                <Table.Cell />
+                <Table.Cell />
+              </Table.Row>
+            </Table.Footer>
+          </Table>
+        </div>
+    );
+
+}
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Table } from "@foundation-ui/components";
+
+export function TableComponent() {
+    return (
+        <Table>
+          <Table.Head>
+            <Table.Row>
+              <Table.HeadCell/>
+            </Table.Row>
+          </Table.Head>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell />
+            </Table.Row>
+          </Table.Body>
+          <Table.Footer />
+        </Table>
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Table
+
+<DocsTextBlock className="m-b-medium-60">
+  <p>The table components.</p>
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Head
+
+<DocsTextBlock className="m-b-medium-60">
+  <p>The thead component.</p>
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### HeadCell
+
+<DocsTextBlock className="m-b-medium-60">The th component.</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Body
+
+<DocsTextBlock className="m-b-medium-60">
+  <p>The tbody component.</p>
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Row
+
+<DocsTextBlock className="m-b-medium-60">
+  <p>The tr component.</p>
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Cell
+
+<DocsTextBlock className="m-b-medium-60">
+  <p>The td component.</p>
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Footer
+
+<DocsTextBlock className="m-b-medium-60">
+  <p>The tfoot component.</p>
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsFooter prev="/docs/components/switch" next="/docs/components/tabs" />

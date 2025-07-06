@@ -1,0 +1,216 @@
+---
+title: Core usage
+description: Install and setup @founfation-ui/core in your project.
+---
+
+<DocsSection>
+#### Build-time generation
+
+<DocsTextBlock className="m-b-medium-60">
+  To dynamically generate design tokens on build-time with
+  `@foundation-ui/core`, you need to create a `ClientProvider` to handle your
+  custom variables and distribute them as CSS variables.
+</DocsTextBlock>
+
+<DocsCodePreview
+    code={`import { js_design_tokens } from "@foundation-ui/tokens";
+
+    import {
+      generateAlpha,
+      generateCSSVariables,
+      generateDimensionClasses,
+      generateFontSizesClasses,
+      generateLayoutClasses,
+      generateOpacityClasses,
+      generateSizeClasses,
+    } from "@foundation-ui/core";
+
+    const cssLayoutClasses = generateLayoutClasses();
+    const cssWidthHeightClasses = generateDimensionClasses();
+    const cssSizeClasses = generateSizeClasses(design_tokens.measurement);
+    const cssFSClasses = generateFontSizesClasses(design_tokens.fontsize);
+    const cssOpacityClasses = generateOpacityClasses(design_tokens.opacity);
+
+    const cssVariables = generateCSSVariables({
+      name: js_design_tokens.name,
+      design_tokens: {
+        color: [
+          ...design_tokens.color,
+          {
+            name: "emphasis",
+            base: { hex: "#FF0000" },
+            alpha: generateAlpha("#FF0000"),
+            tint: [],
+            shade: [],
+          },
+        ],
+        measurement: [...design_tokens.measurement],
+        fontsize: [...design_tokens.fontsize],
+        opacity: [...design_tokens.opacity],
+        depth: [...design_tokens.depth],
+      },
+    });
+
+    const CSSRoot = createGlobalStyle'
+        :root {
+            {cssVariables.color}
+            {cssVariables.alpha}
+            {cssVariables.tint}
+            {cssVariables.shade}
+            {cssVariables.fontsize}
+            {cssVariables.measurement}
+            {cssVariables.depth}
+            {cssVariables.opacity}
+            {cssSizeClasses}
+            {cssFSClasses}
+            {cssOpacityClasses}
+            {cssLayoutClasses}
+            {cssWidthHeightClasses}
+        }
+    ';
+
+    function ClientProvider({ children }: { children: React.ReactNode }) {
+      const colorModeConfig = React.useMemo(() => ({
+          body: {
+            light: "var(--color-mono-light)",
+            dark: "var(--color-mono-darkest)",
+          },
+          contrast: {
+            light: "var(--color-mono-white)",
+            dark: "var(--color-mono-darker)",
+          },
+        }),
+        [],
+      );
+
+      return (
+        <ColorModeProvider config={colorModeConfig}>
+          <CSSRoot />
+          {children}
+        </ColorModeProvider>
+      );
+    }
+
+`}/>
+
+</DocsSection>
+
+<DocsSection>
+#### On demand generation
+
+<DocsTextBlock className="m-b-medium-60">
+  To use `@foundation-ui/core` generators on demand, you need to prepare
+  `generateTokensLibrary`'s payload and fire the generator when needed.
+</DocsTextBlock>
+
+<DocsCodePreview
+    code={`import { generateTokensLibrary } from "@foundation-ui/core";
+
+    type GeneratorFunctionProperties = (
+        name: string,
+        template?: any,
+        ) => {
+        name: string;
+        design_tokens: any;
+    };
+    type GeneratorTemplateProperties = {
+        type: TemplateType;
+        label: string;
+        template: Record<string, any>[];
+        fn: GeneratorFunctionProperties;
+    };
+    export const LibraryTemplate = {
+        type: TemplateType.LIBRARY,
+        label: "Generate Tokens Library",
+        template: { /** Your template here **/},
+        fn: generateTokensLibrary,
+    } satisfies GeneratorTemplateProperties;
+
+    function Component() {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        const addLibrary = () => LibraryTemplate.fn(name, JSON.parse(value));
+        return (
+            <button onClick={addLibrary}>{LibraryTemplate.label}</button>
+        );
+      }
+
+`}/>
+
+</DocsSection>
+
+<DocsSection>
+#### Payload
+
+<DocsTextBlock className="m-b-medium-60">
+  `@foundation-ui/tokens` provides template to generate design tokens. You can
+  use them as is or customize values to generate custom libraries.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="json"
+  code={`[
+    {
+        "type": "color",
+        "values": [
+            {
+                "name": "purple",
+                "base": "944BBB",
+                "variations": {
+                "alpha": true,
+                "shade": true,
+                "tint": true
+                }
+            }
+        ]
+    },
+    {
+        "type": "measurement",
+        "values": [
+            {
+                "name": "medium",
+                "base": 3,
+                "ratio": 1.62,
+                "units": 10
+            }
+        ]
+    },
+    {
+        "type": "fontsize",
+        "values": [
+            {
+                "name": "medium",
+                "base": 16,
+                "ratio": 1.13,
+                "units": 10
+            }
+        ]
+    },
+    {
+        "type": "depth",
+        "values": [
+            {
+                "name": "layout",
+                "base": 1,
+                "units": 10,
+                "steps": 10
+            },
+        ]
+    },
+    {
+        "type": "opacity",
+        "values": [
+            {
+                "name": "base",
+                "base": 1,
+                "units": 10,
+                "steps": 10,
+                "decimal": true
+            },
+        ]
+    }
+]`}
+/>
+
+</DocsSection>
+
+<DocsFooter prev="/docs/core/installation" next="/docs/core/generate-tokens" />

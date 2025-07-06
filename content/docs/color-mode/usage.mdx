@@ -1,0 +1,90 @@
+---
+title: Color Mode
+description: Setup and use @founfation-ui/tokens's color mode hook in your project.
+---
+
+<DocsSection>
+### Get started with Color Mode
+
+<DocsTextBlock>
+  Color Mode in available on `@foundation-ui/tokens`, to use it, you first need
+  to install the package:
+</DocsTextBlock>
+
+<DocsCodePreview language="shell" code={`pnpm add @foundation-ui/tokens`} />
+</DocsSection>
+
+<DocsSection>
+### Setup
+
+<DocsTextBlock className="m-b-medium-60">
+  `@foundation-ui` uses a custom Design Tokens Engine and requires a context and
+  a structured design tokens values, make sure to have the `ColorModeProvider`
+  context in your application setup.
+</DocsTextBlock>
+
+<DocsTextBlock className="m-b-medium-60">
+  `ColorModeProvider` comes with a pre-built Design Token library set as
+  default. You can use a custom design tokens by passing it using the `config`
+  property but it must be structured as defined in the type definition.
+</DocsTextBlock>
+
+<DocsTextBlock className="m-b-medium-60">
+  Go to the `@foundation-ui/core` details to see how to generate your custom
+  Design Tokens library.
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsSection>
+
+  <DocsCodePreview
+    code={`import { ColorModeProvider } from "@foundation-ui/tokens";
+
+      function Provider() {
+        return (
+          <ColorModeProvider config={/** */}>
+            <Component />
+          </ColorModeProvider>
+        );
+      }
+
+      function Component() {
+        const { colorMode, setColorMode } = useColorMode();
+
+        return ( {/** Your code here **/} );
+      }
+
+`}/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Types
+
+<DocsTextBlock className="m-b-medium-60">
+  `@foundation-ui/tokens` connects Design Tokens libraries using the
+  `ColorModeProvider` component. You can customize the `config` property to use
+  your own library.
+</DocsTextBlock>
+
+<DocsPropsTable
+  extended
+  properties={[
+    {
+      name: "ConfigItemProperties",
+      type: "{ light: string; dark: string; }",
+      description:
+        "Define the dark/light design tokens that will be used to generate CSS variables",
+    },
+    {
+      name: "ConfigProperties",
+      type: "{ font: ConfigItemProperties; body: ConfigItemProperties; contrast: ConfigItemProperties; }",
+      description: "Define the body/contrast values",
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsFooter prev="/docs/tokens/installation" next="/docs/color-mode/provider" />

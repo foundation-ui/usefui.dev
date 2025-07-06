@@ -1,0 +1,191 @@
+---
+title: Collapsible
+description: Collapsible is a component that can be expanded or collapsed by its child trigger component.
+---
+
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<CollapsibleTemplate />}
+  code={`import React from "react";
+import { Collapsible, Divider } from "@foundation-ui/components";
+
+    function CollapsibleTemplate() {
+        return (
+            <Collapsible.Root>
+                <Collapsible className="grid g-medium-30 p-t-large-30 p-x-medium-60">
+                    <Collapsible.Trigger>@foundation-ui</Collapsible.Trigger>
+                    <Divider />
+                    <Collapsible.Content showFirstChild>
+                        <Collapsible.Trigger>Components</Collapsible.Trigger>
+                        <Collapsible.Trigger>Tokens</Collapsible.Trigger>
+                        <Collapsible.Trigger>Core</Collapsible.Trigger>
+                        <Collapsible.Trigger>Styles</Collapsible.Trigger>
+                        <Collapsible.Trigger>Hooks</Collapsible.Trigger>
+                        <Collapsible.Trigger>Icons</Collapsible.Trigger>
+                        <Collapsible.Trigger>Analytics</Collapsible.Trigger>
+                    </Collapsible.Content>
+                </Collapsible>
+            </Collapsible.Root>
+        );
+
+}
+
+export default CollapsibleTemplate;
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Collapsible } from "@foundation-ui/components";
+
+export function CollapsibleComponent() {
+    return (
+    <Collapsible.Root>
+      <Collapsible>
+        <Collapsible.Trigger />
+        <Collapsible.Content />
+      </Collapsible>
+    </Collapsible.Root>
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Root
+
+<DocsTextBlock className="m-b-medium-60">
+  Contains the Collapsible component provider.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Collapsible
+
+<DocsTextBlock className="m-b-medium-60">
+  The Collapsible component that contains both triggers and content blocks.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Trigger
+
+<DocsTextBlock className="m-b-medium-60">
+  Collapsible.Trigger is used to triggers the expansion and collapse of the
+  associated Collapsible.Content component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "variant",
+      type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost"',
+      defaultValue: "ghost",
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLButtonElement>) => void",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "rawicon",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Content
+
+<DocsTextBlock className="m-b-medium-60">
+  Collapsible.Content is used to contains the content of the associated
+  Collapsible.Trigger component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "defaultOpen",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "showFirstChild",
+      type: "boolean",
+      required: false,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsFooter prev="/docs/components/checkbox" next="/docs/components/dialog" />

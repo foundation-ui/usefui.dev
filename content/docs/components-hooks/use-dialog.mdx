@@ -1,0 +1,57 @@
+---
+title: useDialog
+description: Import and use the Dialog component's Hooks in your project.
+---
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { useDialog } from "@foundation-ui/components";
+
+export function HookComponent() {
+    const dialog = useDialog();
+    const { id, states, methods } = dialog;
+
+    const { open } = states;
+    const { toggleDialog, getDialogId } = methods;
+
+    return ( {/** Your code here **/} );
+
+}
+`} />
+
+<DocsSection className="m-y-large-10">
+### API Reference
+
+<DocsTextBlock>
+  <p>The properties and functions returned by the useDialog hook.</p>
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "id",
+      type: "string",
+      defaultValue: "React.useId",
+    },
+    {
+      name: "open",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "toggleDialog",
+      type: "(): => void",
+    },
+    {
+      name: "getDialogId",
+      type: "(type: 'trigger' | 'dialog' | 'inner-control') => void",
+    },
+  ]}
+/>
+
+<DocsFooter
+  prev="/docs/components-hooks/use-collapsible"
+  next="/docs/components-hooks/use-dropdown-menu"
+/>

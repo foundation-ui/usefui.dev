@@ -1,0 +1,191 @@
+---
+title: Checkbox
+description: Checkbox are used to select one or more options from a set.
+---
+
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<CheckboxTemplate />}
+  code={`import { Checkbox } from "@foundation-ui/components";
+
+export function CheckboxComponent() {
+    return (
+      <div className="grid g-medium-30 p-t-large-30 p-x-medium-60">
+        <div className="flex align-center g-medium-10 justify-center">
+          {["primary", "mono", "border", "ghost"].map(
+            (variant, key) => (
+              <Checkbox.Root key={key}>
+                <Checkbox
+                  defaultChecked
+                  key={key}
+                  variant={
+                    variant as
+                      | "primary"
+                      | "mono"
+                      | "border"
+                      | "ghost"
+                  }
+                >
+                  <Checkbox.Indicator />
+                </Checkbox>
+              </Checkbox.Root>
+            ),
+          )}
+        </div>
+        <div className="flex align-center g-medium-10 justify-center">
+          {["small", "medium", "large"].map((size, key) => (
+            <Checkbox.Root key={key}>
+              <Checkbox sizing={size as "small" | "medium" | "large"}>
+                <Checkbox.Indicator />
+              </Checkbox>
+            </Checkbox.Root>
+          ))}
+        </div>
+      </div>
+    );
+}
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Checkbox } from "@foundation-ui/components";
+
+export function CheckboxComponent() {
+    return (
+      <Checkbox.Root>
+        <Checkbox>
+          <Checkbox.Indicator />
+        </Checkbox>
+      </Checkbox.Root>
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Root
+
+<DocsTextBlock className="m-b-medium-60">
+  Contains the Checkbox component provider.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Checkbox
+
+<DocsTextBlock className="m-b-medium-60">
+  The Checkbox component that holds states and contains the indicator.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+ {
+      name: "name",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "children",
+      type: "ReactNode",
+      required: false,
+    },
+    {
+      name: "variant",
+      type: '"primary" | "mono" | "border" | "ghost"',
+      defaultValue: "mono",
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "defaultChecked",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "required",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "value",
+      type: "string",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLInputElement>) => void",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    }, 
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Indicator
+
+<DocsTextBlock className="m-b-medium-60">
+  Checkbox.Indicator is used to show users the current state of the Checkbox.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      defaultValue: "Icon.Check",
+      required: false,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/components/button"
+  next="/docs/components/collapsible"
+/>

@@ -1,0 +1,88 @@
+---
+title: Design Tokens
+description: Setup and use @founfation-ui/tokens's color mode hook in your project.
+---
+
+<DocsSection>
+### Setup
+
+<DocsTextBlock className="m-b-medium-60">
+  `@foundation-ui` comes with a pre-built Design Token library set as default.
+  You can use a custom design tokens library to **_generate your own CSS
+  variables_** using `@foundation-ui/core`.
+</DocsTextBlock>
+
+<DocsTextBlock className="m-b-medium-60">
+  Go to the `@foundation-ui/core` details to see how to generate your custom
+  Design Tokens library.
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsSection>
+
+  <DocsCodePreview
+    code={`import { js_design_tokens } from "@foundation-ui/tokens";
+
+    import {
+      generateAlpha,
+      generateCSSVariables,
+      generateDimensionClasses,
+      generateFontSizesClasses,
+      generateLayoutClasses,
+      generateOpacityClasses,
+      generateSizeClasses,
+    } from "@foundation-ui/core";
+
+    const cssLayoutClasses = generateLayoutClasses();
+    const cssWidthHeightClasses = generateDimensionClasses();
+    const cssSizeClasses = generateSizeClasses(design_tokens.measurement);
+    const cssFSClasses = generateFontSizesClasses(design_tokens.fontsize);
+    const cssOpacityClasses = generateOpacityClasses(design_tokens.opacity);
+
+    const cssVariables = generateCSSVariables({
+      name: js_design_tokens.name,
+      design_tokens: {
+        color: [
+          ...design_tokens.color,
+          {
+            name: "emphasis",
+            base: { hex: "#FF0000" },
+            alpha: generateAlpha("#FF0000"),
+            tint: [],
+            shade: [],
+          },
+        ],
+        measurement: [...design_tokens.measurement],
+        fontsize: [...design_tokens.fontsize],
+        opacity: [...design_tokens.opacity],
+        depth: [...design_tokens.depth],
+      },
+    });
+
+    function ClientProvider({ children }: { children: React.ReactNode }) {
+      const colorModeConfig = React.useMemo(() => ({
+          body: {
+            light: "var(--color-mono-light)",
+            dark: "var(--color-mono-darkest)",
+          },
+          contrast: {
+            light: "var(--color-mono-white)",
+            dark: "var(--color-mono-darker)",
+          },
+        }),
+        [],
+      );
+
+      return (
+        <ColorModeProvider config={colorModeConfig}>
+          {children}
+        </ColorModeProvider>
+      );
+    }
+
+`}/>
+
+</DocsSection>
+
+<DocsFooter prev="/docs/tokens/installation" next="/docs/tokens/libraries" />

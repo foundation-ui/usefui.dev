@@ -1,0 +1,103 @@
+---
+title: useDropdownMenu
+description: Import and use the DropdownMenu component's Hooks in your project.
+---
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { useDropdownMenu } from "@foundation-ui/components";
+
+export function HookComponent() {
+    const dropdown = useDropdownMenu();
+    const { id, states, methods } = dropdown;
+
+    const { open, contentProp, triggerPropss } = states;
+    const { toggleOpen, setContentProps, setTriggerProps } = methods;
+
+    return ( {/** Your code here **/} );
+
+}
+`} />
+
+<DocsSection className="m-y-large-10">
+### API Reference
+
+<DocsTextBlock>
+  <p>The properties and functions returned by the useDropdownMenu hook.</p>
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+
+#### Types
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "RectProperties",
+      type: "object",
+      defaultValue:
+        "{ top: number; right: number; bottom: number; left: number;}",
+    },
+    {
+      name: "DimensionsProperties",
+      type: "object",
+      defaultValue: "{ width: number; height: number}",
+    },
+    {
+      name: "PositionProperties",
+      type: "object",
+      defaultValue: "RectProperties & DimensionsProperties",
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Properties
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "id",
+      type: "string",
+      defaultValue: "React.useId",
+    },
+    {
+      name: "open",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "contentProps",
+      type: "PositionProperties",
+      defaultValue: "PositionProperties",
+    },
+    {
+      name: "triggerProps",
+      type: "PositionProperties",
+      defaultValue: "PositionProperties",
+    },
+    {
+      name: "toggleOpen",
+      type: "():  => boolean | void",
+    },
+    {
+      name: "setContentProps",
+      type: "(props: PositionProperties) => void",
+    },
+    {
+      name: "setTriggerProps",
+      type: "(props: PositionProperties) => void",
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/components-hooks/use-dialog"
+  next="/docs/components-hooks/use-field"
+/>

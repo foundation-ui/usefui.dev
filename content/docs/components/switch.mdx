@@ -1,0 +1,153 @@
+---
+title: Switch
+description: Switch are toggle components that allows the user to turn a setting on or off.
+---
+
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<SwitchTemplate />}
+  code={`import { Switch } from "@foundation-ui/components";
+
+export function SwitchComponent() {
+    return (
+      <div className="grid g-medium-30 p-t-large-30 p-x-medium-60">
+      </div>
+    );
+}
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Switch } from "@foundation-ui/components";
+
+export function SwitchComponent() {
+    return (
+      <Switch.Root>
+        <Switch>
+          <Switch.Thumb />
+        </Switch>
+      </Switch.Root>
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Root
+
+<DocsTextBlock className="m-b-medium-60">
+  Contains the Switch component provider.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Switch
+
+<DocsTextBlock className="m-b-medium-60">
+  The Switch component that holds states and contains the indicator.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: false,
+    },
+    {
+      name: "variant",
+      type: '"primary" | "secondary" | "ghost"',
+      defaultValue: "primary",
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "defaultChecked",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "value",
+      type: "string",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLButtonElement>) => void",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Thumb
+
+<DocsTextBlock className="m-b-medium-60">
+  Switch.Thumb is used to show users the current state of the Switch.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsFooter prev="/docs/components/scrollarea" next="/docs/components/table" />

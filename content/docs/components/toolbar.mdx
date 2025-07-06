@@ -1,0 +1,274 @@
+---
+title: Toolbar
+description: Toolbar are component that provides a set of tools or actions for the user.
+---
+
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<ToolbarTemplate />}
+  code={`import { Toolbar, Avatar } from "@foundation-ui/components";
+import { Icon, PixelIcon } from "@foundation-ui/icons";
+
+export function ToolbarComponent() {
+    return (
+        <div className="w-100 h-100" style={{ position: "relative" }}>
+            <Toolbar.Root>
+                <Toolbar side="left" defaultOpen={false} height="auto">
+                <Toolbar.Trigger variant="ghost">
+                    <Avatar style={{ background: "var(--font-color-alpha-10)" }}>
+                    <Icon fillOpacity={0.3}>
+                        <PixelIcon.Downasaur />
+                    </Icon>
+                    </Avatar>
+                </Toolbar.Trigger>
+                <Toolbar.Section
+                    showoncollapse
+                    className="flex justify-center w-100 h-100 align-center p-t-large-90 p-b-medium-30"
+                >
+                    <Toolbar.Item
+                    showfirstchild
+                    className="flex align-center w-100 g-medium-30"
+                    >
+                    <Icon>
+                        <PixelIcon.Link />
+                    </Icon>
+                    <p className="fs-medium-10 opacity-default-30">Link</p>
+                    </Toolbar.Item>
+                </Toolbar.Section>
+                </Toolbar>
+            </Toolbar.Root>
+        </div>
+    );
+
+}
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Toolbar } from "@foundation-ui/components";
+
+export function ToolbarComponent() {
+    return (
+        <Toolbar.Root>
+            <Toolbar>
+                <Toolbar.Section>
+                    <Toolbar.Item />
+                </Toolbar.Section>
+                <Toolbar.Trigger />
+            </Toolbar>
+        </Toolbar.Root>
+    );
+
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Root
+
+<DocsTextBlock className="m-b-medium-60">
+  Contains the Toolbar component provider.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Toolbar
+
+<DocsTextBlock className="m-b-medium-60">
+  The Toolbar component that contains both triggers and content blocks.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+ {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "shortcut",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "hotkey",
+      type: "string",
+      required: false,
+    },
+    {
+      name: "bindkey",
+      type: '"ctrlKey" | "metaKey" | "altKey" | "shiftKey"',
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      required: false,
+    },
+    {
+      name: "height",
+      type: '"fullscreen" | "display" | "auto"',
+      required: false,
+    },
+    {
+      name: "side",
+      type: '"top" | "right" | "bottom" | "left"',
+      required: false,
+    },
+    {
+      name: "defaultOpen",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "fixed",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "showoncollapse",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "trigger",
+      type: "ReactNode",
+      required: false,
+    },
+    {
+      name: "triggerProps",
+      type: "IButtonProperties",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLButtonElement>) => void",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Trigger
+
+<DocsTextBlock className="m-b-medium-60">
+  Toolbar.Trigger is used to triggers the expansion and collapse of the
+  associated Toolbar component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "value",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+    {
+      name: "onClick",
+      type: "(event: MouseEvent<HTMLButtonElement>) => void",
+      required: false,
+    },
+    {
+      name: "variant",
+      type: "primary | secondary | mono | border | ghost",
+      defaultValue: "ghost",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Section
+
+<DocsTextBlock className="m-b-medium-60">
+  Toolbar.Section is used to contains the content of the associated Toolbar
+  component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "showoncollapse",
+      type: "boolean",
+      defaultValue: false,
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Item
+
+<DocsTextBlock className="m-b-medium-60">
+  Toolbar.Item is used to contains the content of the associated Toolbar.Section
+  component.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+    {
+      name: "showfirstchild",
+      type: "boolean",
+      defaultValue: false,
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsFooter prev="/docs/components/toggle" next="/docs/components/tooltip" />
