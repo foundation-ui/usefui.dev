@@ -67,8 +67,9 @@ function WebNavigation() {
         <AppLink as={Link} className="fs-medium-10" href="/docs/introduction">
           Docs
         </AppLink>
-        <span className="opacity-default-10">|</span>
         <DesktopNavigation className="flex align-center g-small-30">
+          <span className="opacity-default-10">|</span>
+
           {LINKS.map((link, key) => (
             <AppLink
               as={Link}
