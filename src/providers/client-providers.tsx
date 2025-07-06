@@ -99,7 +99,7 @@ const CSSRoot = createGlobalStyle`
 		--breakpoint-tablet-landscape: 1024px;
 		--breakpoint-desktop-small: 1240px;
 		--breakpoint-desktop: 1440px;
-		--breakpoint-deskto-large: 1589px;
+		--breakpoint-desktop-large: 1589px;
 	}
 `;
 

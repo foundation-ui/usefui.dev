@@ -1,6 +1,5 @@
 "use client";
 
-import WebNavigation from "./_components/WebNavigation";
 import { Page } from "@foundation-ui/components";
 
 function layout({
@@ -10,10 +9,7 @@ function layout({
 }>) {
   return (
     <Page className="h-100 w-100">
-      <Page.Content>
-        <WebNavigation />
-        {children}
-      </Page.Content>
+      <Page.Content>{children}</Page.Content>
     </Page>
   );
 }
