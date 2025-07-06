@@ -1,5 +1,5 @@
 ---
-title: Core Installation
+title: Core installation
 description: Install and setup @founfation-ui/core in your project.
 ---
 
@@ -20,6 +20,37 @@ description: Install and setup @founfation-ui/core in your project.
 </DocsTextBlock>
 
 <DocsCodePreview language="shell" code={`pnpm add @foundation-ui/core`} />
+</DocsSection>
+
+<DocsSection>
+
+<DocsTextBlock className="m-b-medium-60">
+  `@foundation-ui/core` comes with a set of methods built to generate a
+  stuctured Design Tokens based on a few parameters. Each design token come with
+  a key-value and a set of annotations that you can use in your application.
+</DocsTextBlock>
+<DocsTextBlock className="m-b-medium-60">
+  A specific a set of ratio is used to generate FontSizes/Measurement Design
+  Tokens. It is based on this [documentation](https://www.modularscale.com/)
+  from [Scott Kellum](https://scottkellum.com/) and [Tim
+  Brown](https://twitter.com/nicewebtype).
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`
+  enum RatioEnum {
+    MinorSecond = 16 / 15,
+    MajorSecond = 9 / 8,
+    MinorThird = 6 / 5,
+    MajorThird = 5 / 4,
+    PerfectFourth = 4 / 3,
+    PerfectFifth = 3 / 2,
+    GoldenRatio = 1.618 / 1,
+  }
+`}
+/>
+
 </DocsSection>
 
 <DocsFooter prev="/docs/color-mode/usage" next="/docs/core/usage" />

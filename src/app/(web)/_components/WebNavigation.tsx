@@ -33,15 +33,15 @@ function WebNavigation() {
   const router = useRouter();
   const LINKS = [
     {
-      link: "/docs/components",
+      link: "/docs/components/installation",
       label: "Components",
     },
     {
-      link: "/docs/core",
+      link: "/docs/core/installation",
       label: "Core",
     },
     {
-      link: "/docs/analytics",
+      link: "/docs/uba/installation",
       label: "Analytics",
     },
   ];

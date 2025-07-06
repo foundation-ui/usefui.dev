@@ -58,28 +58,28 @@ const WIKI_CATALOG = [
     title: "Token Engine",
     description:
       "Dynamically generate design tokens based on your application properties.",
-    link: "/docs/core",
+    link: "/docs/core/installation",
   },
   {
     name: "foundation-ui/tokens",
     title: "Built-in Design Tokens",
     description:
       "Use all or parts of pre-built design tokens libraries within your application.",
-    link: "/docs/tokens",
+    link: "/docs/tokens/installation",
   },
   {
     name: "foundation-ui/components",
     title: "React Components",
     description:
       "Get fast and accessible components to enhance your UI development.",
-    link: "/docs/components",
+    link: "/docs/components/installation",
   },
   {
     name: "foundation-ui/analytics",
     title: "User Behavior Analytics",
     description:
       "Capture real-time user interactions and system insights and use it during development.",
-    link: "/docs/analytics",
+    link: "/docs/uba/installation",
   },
 ];
 
