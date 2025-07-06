@@ -29,7 +29,7 @@ function LandingSocials() {
     <div className="p-y-large-30 p-x-medium-60">
       <SocialsWrapper className="flex align-center justify-center m-b-large-10">
         <hgroup>
-          <DisplayMd className="m-b-medium-30">Stay in the loop.</DisplayMd>
+          <DisplayMd className="m-b-medium-30">Stay in the loop</DisplayMd>
           <DisplaySmall className=" opacity-default-60">
             Join the community and learn how other people get the most out of
             Foundation UI.

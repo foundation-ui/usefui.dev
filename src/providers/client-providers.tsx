@@ -26,6 +26,8 @@ const cssSizeClasses = generateSizeClasses(design_tokens.measurement);
 const cssFSClasses = generateFontSizesClasses(design_tokens.fontsize);
 const cssOpacityClasses = generateOpacityClasses(design_tokens.opacity);
 
+console.log(cssSizeClasses);
+
 const cssVariables = generateCSSVariables({
   name: js_design_tokens.name,
   design_tokens: {

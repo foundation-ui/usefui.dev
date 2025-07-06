@@ -127,7 +127,7 @@ function LandingProducts() {
       <GridLayout>
         <CardBody className="grid align-end h-100 w-100 p-large-10">
           <DisplayXl as="h3" className="m-b-large-10">
-            Integrate with your favorite tools
+            Integrate with your favorite frameworks
           </DisplayXl>
         </CardBody>
         <CardBody

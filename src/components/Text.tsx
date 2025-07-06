@@ -7,9 +7,9 @@ export const DisplayXxl = styled.h1`
   font-weight: 500;
 `;
 export const DisplayXl = styled.h1`
-  font-size: clamp(var(--fontsize-large-30), 5vw, var(--fontsize-large-60));
+  font-size: clamp(var(--fontsize-large-30), 5vw, var(--fontsize-large-50));
   letter-spacing: -0.05em;
-  line-height: 1;
+  line-height: 0.95;
   font-weight: 500;
 `;
 export const DisplayMd = styled.h3`

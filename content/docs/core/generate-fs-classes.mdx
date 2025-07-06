@@ -1,0 +1,154 @@
+---
+title: Generate Font Size CSS Classes
+description: Generate Font Size CSS classes using a custom Design Tokens library.
+---
+
+<DocsCodePreview
+  language="tsx"
+  code={`
+    import { generateFontSizesClasses } from "@foundation-ui/core";
+    import { js_design_tokens } from "@foundation-ui/tokens";
+
+    const { design_tokens } = js_design_tokens;
+    const CSSVars = generateFontSizesClasses(design_tokens.fontsize);
+
+`} />
+
+<DocsSection className="m-y-large-10">
+### API Reference
+
+<DocsTextBlock>
+  The arguments used and values returned by the generateFontSizesClasses
+  function.
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Args
+
+<DocsTextBlock className="m-b-medium-60">
+  The values passed to generateFontSizesClasses.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "name",
+      type: "string",
+      defaultValue: "",
+      required: true,
+    },
+    {
+      name: "values",
+      type: "{ px: number; rem: number; pt: number; }[] | []",
+      defaultValue: "",
+      required: true,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Returned values
+
+<DocsTextBlock className="m-b-medium-60">
+  The values returned by the generateFontSizesClasses function.
+</DocsTextBlock>
+
+<DocsCodePreview
+  scrollbar
+  language="css"
+  code={`
+    .fs-small-10 {
+      font-size: 6.779999999999999px;
+    }
+    .fs-small-20 {
+      font-size: 7.661399999999999px;
+    }
+    .fs-small-30 {
+      font-size: 8.657381999999998px;
+    }
+    .fs-small-40 {
+      font-size: 9.782841659999997px;
+    }
+    .fs-small-50 {
+      font-size: 11.054611075799995px;
+    }
+    .fs-small-60 {
+      font-size: 12.491710515653994px;
+    }
+    .fs-small-70 {
+      font-size: 14.115632882689011px;
+    }
+    .fs-small-80 {
+      font-size: 15.950665157438582px;
+    }
+    .fs-small-90 {
+      font-size: 18.024251627905596px;
+    }
+    .fs-medium-10 {
+      font-size: 13.559999999999999px;
+    }
+    .fs-medium-20 {
+      font-size: 15.322799999999997px;
+    }
+    .fs-medium-30 {
+      font-size: 17.314763999999997px;
+    }
+    .fs-medium-40 {
+      font-size: 19.565683319999994px;
+    }
+    .fs-medium-50 {
+      font-size: 22.10922215159999px;
+    }
+    .fs-medium-60 {
+      font-size: 24.983421031307987px;
+    }
+    .fs-medium-70 {
+      font-size: 28.231265765378023px;
+    }
+    .fs-medium-80 {
+      font-size: 31.901330314877164px;
+    }
+    .fs-medium-90 {
+      font-size: 36.04850325581119px;
+    }
+    .fs-large-10 {
+      font-size: 27.119999999999997px;
+    }
+    .fs-large-20 {
+      font-size: 30.645599999999995px;
+    }
+    .fs-large-30 {
+      font-size: 34.62952799999999px;
+    }
+    .fs-large-40 {
+      font-size: 39.13136663999999px;
+    }
+    .fs-large-50 {
+      font-size: 44.21844430319998px;
+    }
+    .fs-large-60 {
+      font-size: 49.966842062615974px;
+    }
+    .fs-large-70 {
+      font-size: 56.462531530756046px;
+    }
+    .fs-large-80 {
+      font-size: 63.80266062975433px;
+    }
+    .fs-large-90 {
+      font-size: 72.09700651162238px;
+    }
+
+`}
+/>
+
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/core/generate-dimension-classes"
+  next="/docs/core/generate-layout-classes"
+/>

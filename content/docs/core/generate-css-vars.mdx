@@ -1,6 +1,220 @@
 ---
 title: Generate CSS Variables
-description: Use @founfation-ui/core to generate custom CSS variables based on your design token library.
+description: Generate CSS variables using a custom Design Tokens library.
 ---
 
-<DocsFooter prev="/docs/core/" next="/docs/core/" />
+<DocsCodePreview
+  language="tsx"
+  code={`
+    import { generateCSSVariables } from "@foundation-ui/core";
+
+    const payload = {
+        "color": [
+            {
+                "name": "dark",
+                "base": {
+                "hex": "#353531",
+                "rgb": "rgb(53, 53, 49)",
+                "hsl": "hsl(60deg 4% 20%)",
+                "contrast_score": {
+                    "light": "AAA",
+                    "dark": "F"
+                }
+                },
+                "alpha": [],
+                "tint": [],
+                "shade": []
+            }
+        ],
+        "measurement": [
+            {
+                "name": "small",
+                "base": 3,
+                "units": 1,
+                "ratio": 1.62,
+                "values": []
+            }
+        ],
+        "fontsize": [
+            {
+                "name": "small",
+                "base": 16,
+                "units": 1,
+                "ratio": 1.13,
+                "values": []
+            }
+        ],
+        "opacity": [
+            {
+                "name": "base",
+                "base": 1,
+                "units": 1,
+                "steps": 1,
+                "values": [
+                {
+                    "value": 0.01,
+                    "usage": [
+                    "backdrop",
+                    "transparent"
+                    ],
+                    "contrast_score": {
+                    "light": "F",
+                    "dark": "F"
+                    }
+                }
+                ]
+            }
+        ],
+        "depth": [
+            {
+                "name": "layout",
+                "base": 1,
+                "units": 1,
+                "steps": 1,
+                "values": [
+                {
+                    "value": 1,
+                    "usage": [
+                    "base",
+                    "toolbar",
+                    "dropdown"
+                    ],
+                    "stack_order": {
+                    "label": "low",
+                    "score": 1
+                    }
+                }
+                ]
+            }
+        ]
+    };
+
+    const CSSVars = generateCSSVariables(payload);
+
+`} />
+
+<DocsSection className="m-y-large-10">
+### API Reference
+
+<DocsTextBlock>
+  The arguments used and values returned by the generateCSSVariables function.
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Args
+
+<DocsTextBlock className="m-b-medium-60">
+  The values passed to generateCSSVariables.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "design_tokens",
+      type: "IDesignTokensLibrary",
+      defaultValue: "",
+      required: true,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Returned values
+
+<DocsTextBlock className="m-b-medium-60">
+  The values returned by the generateCSSVariables function.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "css",
+      type: "string",
+      defaultValue: "",
+    },
+  ]}
+/>
+
+<DocsCodePreview
+  scrollbar
+  language="css"
+  code={`
+    :root {
+        --color-dark: #353531;
+        --fontsize-small-10: 1.13rem;
+        --measurement-small-10: 0.30375rem;
+        --depth-layout-10: 1;
+        --opacity-base-10: 0.1;
+    }
+`}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Types
+
+<DocsTextBlock className="m-b-medium-60">
+  The types used by the generateCSSVariables function.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`
+    interface IScaleVariation {
+        px: number;
+        rem: number;
+        pt: number;
+    }
+
+    interface IColorVariation {
+        hex?: string;
+        rgb?: string;
+        hsl?: string;
+        contrast_score?: IContrastScore;
+    }
+
+    interface ISequenceVariation {
+        value: number;
+        usage: string[];
+        contrast_score?: IContrastScore;
+        stack_order?: IStackOrder;
+    }
+
+    interface IComposedLibraryItem {
+        name?: string;
+        base?: number | IColorVariation;
+        alpha?: any[] | [];
+        tint?: any[] | [];
+        shade?: any[] | [];
+        units?: number;
+        ratio?: number;
+        variant?: TScaleVariant;
+        values?: ISequenceVariation[] | IScaleVariation[] | [];
+    }
+
+    interface IDesignTokensSet {
+        color: IComposedLibraryItem[];
+        measurement: IComposedLibraryItem[];
+        fontsize: IComposedLibraryItem[];
+        depth: IComposedLibraryItem[];
+        opacity: IComposedLibraryItem[];
+    }
+
+    interface IDesignTokensLibrary {
+        name: string;
+        design_tokens: IDesignTokensSet;
+    }
+
+`} />
+
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/core/generate-sequence-tokens"
+  next="/docs/core/generate-dimension-classes"
+/>

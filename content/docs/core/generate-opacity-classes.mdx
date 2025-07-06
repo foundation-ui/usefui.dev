@@ -1,0 +1,132 @@
+---
+title: Generate Opacity CSS Classes
+description: Generate Opacity CSS classes using a custom Design Tokens library.
+---
+
+<DocsCodePreview
+  language="tsx"
+  code={`
+    import { generateOpacityClasses } from "@foundation-ui/core";
+    import { js_design_tokens } from "@foundation-ui/tokens";
+
+    const { design_tokens } = js_design_tokens;
+    const CSSVars = generateOpacityClasses(design_tokens.opacity);
+
+`} />
+
+<DocsSection className="m-y-large-10">
+### API Reference
+
+<DocsTextBlock>
+  The arguments used and values returned by the generateOpacityClasses function.
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Args
+
+<DocsTextBlock className="m-b-medium-60">
+  The values passed to generateOpacityClasses.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "opacity",
+      type: "ISequenceProperties[]",
+      defaultValue: "",
+      required: true,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Returned values
+
+<DocsTextBlock className="m-b-medium-60">
+  The values returned by the generateOpacityClasses function.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="css"
+  scrollbar
+  code={`
+    .opacity-default-10 {
+      opacity: 0.1;
+    }
+    
+    .opacity-default-20 {
+      opacity: 0.2;
+    }
+    
+    .opacity-default-30 {
+      opacity: 0.3;
+    }
+    
+    .opacity-default-40 {
+      opacity: 0.4;
+    }
+    
+    .opacity-default-50 {
+      opacity: 0.5;
+    }
+    
+    .opacity-default-60 {
+      opacity: 0.6;
+    }
+    
+    .opacity-default-70 {
+      opacity: 0.7;
+    }
+    
+    .opacity-default-80 {
+      opacity: 0.8;
+    }
+    
+    .opacity-default-90 {
+      opacity: 0.9;
+    }
+    
+    .opacity-default-100 {
+      opacity: 1;
+    }
+`}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Types
+
+<DocsTextBlock className="m-b-medium-60">
+  The types used by the generateOpacityClasses function.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`
+    interface ISequenceVariation {
+        value: number;
+        usage: string[];
+        contrast_score?: IContrastScore;
+        stack_order?: IStackOrder;
+    }
+    interface ISequenceProperties {
+        base: number;
+        units: number;
+        steps: number;
+        name: string;
+        values: ISequenceVariation[];
+    }
+
+`} />
+
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/core/generate-layout-classes"
+  next="/docs/core/generate-size-classes"
+/>

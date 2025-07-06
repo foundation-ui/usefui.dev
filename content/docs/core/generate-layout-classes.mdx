@@ -1,0 +1,245 @@
+---
+title: Generate Dimension CSS Classes
+description: Generate Dimension CSS classes using a custom Design Tokens library.
+---
+
+<DocsCodePreview
+  language="tsx"
+  code={`
+    import { generateLayoutClasses } from "@foundation-ui/core";
+
+    const DimensionClasses = generateLayoutClasses();
+
+`} />
+
+<DocsSection className="m-y-large-10">
+### Returned values
+
+<DocsTextBlock className="m-b-medium-60">
+  The values returned by the generateLayoutClasses function.
+</DocsTextBlock>
+
+<DocsCodePreview
+  scrollbar
+  language="css"
+    code={`
+    .flex {
+        display: flex;
+    }
+    .justify-start {
+        justify-content: flex-start;
+    }
+    .justify-end {
+        justify-content: flex-end;
+    }
+    .justify-center {
+        justify-content: center;
+    }
+    .justify-between {
+        justify-content: space-between;
+    }
+    .justify-around {
+        justify-content: space-around;
+    }
+    .justify-evenly {
+        justify-content: space-evenly;
+    }
+    .justify-stretch {
+        justify-content: stretch;
+    }
+    .justify-start {
+        justify-content: start;
+    }
+    .justify-end {
+        justify-content: end;
+    }
+    .justify-left {
+        justify-content: left;
+    }
+    .justify-right {
+        justify-content: right;
+    }
+    .justify-baseline {
+        justify-content: baseline;
+    }
+    .justify-revert {
+        justify-content: revert;
+    }
+    .align-start {
+        align-items: flex-start;
+    }
+    .align-end {
+        align-items: flex-end;
+    }
+    .align-center {
+        align-items: center;
+    }
+    .align-between {
+        align-items: space-between;
+    }
+    .align-around {
+        align-items: space-around;
+    }
+    .align-evenly {
+        align-items: space-evenly;
+    }
+    .align-stretch {
+        align-items: stretch;
+    }
+    .align-start {
+        align-items: start;
+    }
+    .align-end {
+        align-items: end;
+    }
+    .align-left {
+        align-items: left;
+    }
+    .align-right {
+        align-items: right;
+    }
+    .align-baseline {
+        align-items: baseline;
+    }
+    .align-revert {
+        align-items: revert;
+    }
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+    .flex-reverse {
+        flex-wrap: wrap-reverse;
+    }
+    .flex-nowrap {
+        flex-wrap: nowrap;
+    }
+    .flex-revert {
+        flex-wrap: revert;
+    }
+    .flex-layer {
+        flex-wrap: revert-layer;
+    }
+    .flex-unset {
+        flex-wrap: unset;
+    }
+    .flex-inherit {
+        flex-wrap: inherit;
+    }
+    .flex-initial {
+        flex-wrap: initial;
+    }
+    .grid {
+        display: grid;
+    }
+    .justify-start {
+        justify-content: flex-start;
+    }
+    .justify-end {
+        justify-content: flex-end;
+    }
+    .justify-center {
+        justify-content: center;
+    }
+    .justify-between {
+        justify-content: space-between;
+    }
+    .justify-around {
+        justify-content: space-around;
+    }
+    .justify-evenly {
+        justify-content: space-evenly;
+    }
+    .justify-stretch {
+        justify-content: stretch;
+    }
+    .justify-start {
+        justify-content: start;
+    }
+    .justify-end {
+        justify-content: end;
+    }
+    .justify-left {
+        justify-content: left;
+    }
+    .justify-right {
+        justify-content: right;
+    }
+    .justify-baseline {
+        justify-content: baseline;
+    }
+    .justify-revert {
+        justify-content: revert;
+    }
+    .align-start {
+        align-items: flex-start;
+    }
+    .align-end {
+        align-items: flex-end;
+    }
+    .align-center {
+        align-items: center;
+    }
+    .align-between {
+        align-items: space-between;
+    }
+    .align-around {
+        align-items: space-around;
+    }
+    .align-evenly {
+        align-items: space-evenly;
+    }
+    .align-stretch {
+        align-items: stretch;
+    }
+    .align-start {
+        align-items: start;
+    }
+    .align-end {
+        align-items: end;
+    }
+    .align-left {
+        align-items: left;
+    }
+    .align-right {
+        align-items: right;
+    }
+    .align-baseline {
+        align-items: baseline;
+    }
+    .align-revert {
+        align-items: revert;
+    }
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+    .flex-reverse {
+     flex-wrap: wrap-reverse;
+    }
+    .flex-nowrap {
+        flex-wrap: nowrap;
+    }
+    .flex-revert {
+        flex-wrap: revert;
+    }
+    .flex-layer {
+        flex-wrap: revert-layer;
+    }
+    .flex-unset {
+        flex-wrap: unset;
+    }
+    .flex-inherit {
+        flex-wrap: inherit;
+    }
+    .flex-initial {
+        flex-wrap: initial;
+    }
+
+`}
+/>
+
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/core/generate-fs-classes"
+  next="/docs/core/generate-opacity-classes"
+/>
