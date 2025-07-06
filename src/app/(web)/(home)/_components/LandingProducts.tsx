@@ -130,12 +130,7 @@ function LandingProducts() {
             Integrate with your favorite frameworks
           </DisplayXl>
         </CardBody>
-        <CardBody
-          className="grid align-end h-100 w-100 p-large-10"
-          as={Link}
-          data-mode="link"
-          href="/docs/templates"
-        >
+        <CardBody className="grid align-end h-100 w-100 p-large-10">
           <p className="w-100 fs-medium-20  m-b-large-30">
             <span className="opacity-default-60">Foundation UI is</span>
             &nbsp;
@@ -150,13 +145,6 @@ function LandingProducts() {
           </p>
 
           <hgroup className="flex align-center g-medium-30 justify-between">
-            <Button variant="ghost">
-              Browse templates
-              <Icon>
-                <PixelIcon.ArrowRight />
-              </Icon>
-            </Button>
-
             <div className="flex align-center g-medium-10">
               <Icon
                 viewBox="-11.5 -10.23174 23 20.46348"
