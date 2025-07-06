@@ -33,7 +33,7 @@ function Breadcrumbs({ capitalizeItems = true }: BreadcrumbsProps) {
   });
 
   return (
-    <div className="flex align-center g-medium-30">
+    <div className="flex align-center g-medium-60">
       <Tooltip content="Home">
         <Button variant="ghost" sizing="small" onClick={() => router.push("/")}>
           <Icon>
@@ -42,16 +42,18 @@ function Breadcrumbs({ capitalizeItems = true }: BreadcrumbsProps) {
         </Button>
       </Tooltip>
 
-      <span className="opacity-default-10 m-x-medium-30">|</span>
-
-      {items.map((item) => (
-        <p
-          key={item.href}
-          className={`fs-medium-10 ${item.isLastItem && "opacity-default-30"}`}
-        >
-          {item.label}
-        </p>
-      ))}
+      <div className="flex align-center g-medium-30">
+        {items.map((item, key) => (
+          <React.Fragment key={key}>
+            <p
+              className={`fs-medium-10 ${!item.isLastItem ? "opacity-default-30" : "opacity-default-60"}`}
+            >
+              {item.label}
+            </p>
+            {!item.isLastItem && <span className="opacity-default-10">\</span>}
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 }

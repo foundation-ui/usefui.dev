@@ -21,6 +21,8 @@ export const DisplayMd = styled.h3`
 export const DisplaySmall = styled.span`
   font-size: clamp(var(--fontsize-medium-20), 5vw, var(--fontsize-medium-40));
   max-width: var(--breakpoint-tablet);
+  letter-spacing: -0.03em;
+  font-weight: 500;
 `;
 
 export const TextMuted = styled.span`

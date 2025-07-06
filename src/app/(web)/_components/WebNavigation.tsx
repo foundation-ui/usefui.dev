@@ -4,9 +4,11 @@ import React from "react";
 import styled from "styled-components";
 
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 import { Avatar, Button } from "@foundation-ui/components";
 import { Icon, PixelIcon, SocialIcon } from "@foundation-ui/icons";
+import { AppLink } from "@/components";
 
 const FixedNavigation = styled.nav`
   display: flex;
@@ -51,7 +53,7 @@ function WebNavigation() {
       className="flex justify-between align-center"
       style={{ alignSelf: "start" }}
     >
-      <div className="flex align-center g-medium-60">
+      <div className="flex align-center g-medium-30">
         <Avatar
           style={{
             background: "var(--font-color)",
@@ -62,24 +64,20 @@ function WebNavigation() {
             <SocialIcon.Foundation />
           </Icon>
         </Avatar>
-        <Button
-          variant="ghost"
-          sizing="small"
-          onClick={() => router.push("/docs/introduction")}
-        >
+        <AppLink as={Link} className="fs-medium-10" href="/docs/introduction">
           Docs
-        </Button>
-        <DesktopNavigation className="flex align-center g-medium-60">
-          <span className="opacity-default-10">|</span>
+        </AppLink>
+        <span className="opacity-default-10">|</span>
+        <DesktopNavigation className="flex align-center g-small-30">
           {LINKS.map((link, key) => (
-            <Button
+            <AppLink
+              as={Link}
               key={key}
-              variant="ghost"
-              sizing="small"
-              onClick={() => router.push(link.link)}
+              className="fs-medium-10"
+              href={link.link}
             >
               {link.label}
-            </Button>
+            </AppLink>
           ))}
         </DesktopNavigation>
       </div>
@@ -106,7 +104,7 @@ function WebNavigation() {
         >
           Go to App
           <Icon>
-            <PixelIcon.ArrowRight />
+            <PixelIcon.ChevronRight />
           </Icon>
         </Button>
       </div>

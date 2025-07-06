@@ -13,6 +13,7 @@ import {
   Tooltip,
 } from "@foundation-ui/components";
 import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { TextMuted } from "./Text";
 
 function AppDropdown() {
   const router = useRouter();
@@ -23,7 +24,7 @@ function AppDropdown() {
       <DropdownMenu>
         <DropdownMenu.Trigger variant="ghost">
           <Icon>
-            <PixelIcon.Sliders />
+            <PixelIcon.ChevronsVertical />
           </Icon>
         </DropdownMenu.Trigger>
 
@@ -37,24 +38,20 @@ function AppDropdown() {
             </Icon>
             Documentation
           </DropdownMenu.Item>
-          <DropdownMenu.Item className="flex g-medium-30 align-center">
-            <Icon fillOpacity={0.6}>
-              <PixelIcon.Message />
-            </Icon>
-            Feedback
-          </DropdownMenu.Item>
-          <DropdownMenu.Item className="flex g-medium-30 align-center">
+          <DropdownMenu.Item
+            className="flex g-medium-30 align-center"
+            onClick={() => router.push("https://discord.gg/yer3CgTTwD")}
+          >
             <Icon fillOpacity={0.6}>
               <PixelIcon.User />
             </Icon>
             Community
           </DropdownMenu.Item>
-          <Divider />
-          <DropdownMenu.Item
-            className="flex g-medium-30 align-center justify-between"
-            radio
-          >
-            Theme
+          <Divider className="m-y-medium-40" />
+          <div className="flex g-medium-30 align-center justify-between">
+            <TextMuted className="fs-medium-20 opacity-default-60">
+              Theme
+            </TextMuted>
             <Badge variant="border">
               <span className="flex align-center g-medium-30">
                 <Tooltip content="System">
@@ -83,8 +80,8 @@ function AppDropdown() {
                 </Tooltip>
               </span>
             </Badge>
-          </DropdownMenu.Item>
-          <Divider />
+          </div>
+          <Divider className="m-y-medium-40" />
           <DropdownMenu.Item
             className="flex g-medium-30 align-center"
             onClick={() => router.push("/")}

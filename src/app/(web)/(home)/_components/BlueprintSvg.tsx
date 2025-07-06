@@ -7,7 +7,24 @@ import { Icon } from "@foundation-ui/icons";
 
 const BlueprintWrapper = styled.div`
   max-width: var(--breakpoint-desktop);
+  min-width: var(--breakpoint-tablet-landscape) !important;
+
   margin: 0 auto;
+  rotate: -20deg;
+
+  transition: all ease-in-out 0.2s;
+
+  @media (max-width: 1024px) {
+    overflow: hidden;
+    rotate: 0deg;
+
+    transform: translate(-25%, 0%);
+  }
+
+  @media (max-width: 768px) {
+    rotate: 0deg;
+    transform: translate(0%, 0%);
+  }
 
   svg {
     width: 100% !important;
