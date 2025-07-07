@@ -9,15 +9,15 @@ import { ScrollArea } from "@foundation-ui/components";
 const BlueprintWrapper = styled(ScrollArea)`
   margin: 0 auto;
 
-  transform: translate(-25%, 0%);
+  transform: rotate(-20deg);
   transform-origin: center center;
-
   transition: all ease-in-out 0.2s;
 
+  width: 100%;
+  max-width: var(--breakpoint-desktop-large);
+
   @media (max-width: 1240px) {
-    transform: translate(-10%, 0%);
-  }
-  @media (max-width: 1024px) {
+    transform: rotate(0deg);
     transform: translate(0%, 0%);
   }
 

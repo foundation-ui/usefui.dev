@@ -3,6 +3,8 @@
 import React from "react";
 
 import WebNavigation from "../_components/WebNavigation";
+
+import LandingWrapper from "./_components/LandingWrapper";
 import LandingHero from "./_components/LandingHero";
 import LandingProducts from "./_components/LandingProducts";
 import LandingSocials from "./_components/LandingSocials";
@@ -12,7 +14,7 @@ import { Footer, MaxWidthContainer } from "@/components";
 
 function LandingPage() {
   return (
-    <React.Fragment>
+    <LandingWrapper>
       <WebNavigation />
 
       <LandingHero />
@@ -24,7 +26,7 @@ function LandingPage() {
       </MaxWidthContainer>
 
       <Footer />
-    </React.Fragment>
+    </LandingWrapper>
   );
 }
 
