@@ -1,0 +1,124 @@
+---
+title: OTP Field
+description: A field for entering one-time passwords.
+---
+
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<OTPFieldTemplate />}
+  code={`import { OTPField } from "@foundation-ui/components";
+
+export function OTPFieldComponent() {
+    return (
+        <div className="grid align-center justify-center g-medium-60 p-t-large-30 p-x-medium-60">
+            <OTPField length={6} onComplete={(value:string) => console.log(value)}>
+              <OTPField.Group>
+                {Array.from({ length: 6 }).map((_, index) => (
+                  <OTPField.Slot key={index} index={index} />
+                ))}
+              </OTPField.Group>
+            </OTPField>
+        </div>
+    );
+}
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Field } from "@foundation-ui/components";
+
+export function FieldComponent() {
+    return (
+      <OTPField>
+        <OTPField.Group>
+            <OTPField.Slot />
+        </OTPField.Group>
+      </OTPField>
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### OTPField
+
+<DocsTextBlock className="m-b-medium-60">
+  This component holds the state and logic for the entire OTP input group.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "name",
+      type: 'string',
+      defaultValue: "",
+      required: false,
+    },
+    {
+      name: "length",
+      type: 'number',
+      defaultValue: "6",
+      required: false,
+    },
+    {
+      name: "onComplete",
+      type: "(value: string) => void",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Group
+
+<DocsTextBlock className="m-b-medium-60">
+  A container for the OTP input slots.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "React.ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Slot
+
+<DocsTextBlock className="m-b-medium-60">
+  Represents a single character input slot in the OTP field.
+</DocsTextBlock>
+
+<DocsPropsTable
+ properties={[
+    {
+      name: "index",
+      type: "number",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsFooter prev="/docs/components/field" next="/docs/components/overlay" />

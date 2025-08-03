@@ -18,6 +18,7 @@ import DialogTemplate from "../_components/_templates/DialogTemplate";
 import DividerTemplate from "../_components/_templates/DividerTemplate";
 import DropdownMenuTemplate from "../_components/_templates/DropdownMenuTemplate";
 import FieldTemplate from "../_components/_templates/FieldTemplate";
+import OTPFieldTemplate from "../_components/_templates/OTPFieldTemplate";
 import OverlayTemplate from "../_components/_templates/OverlayTemplate";
 import PageTemplate from "../_components/_templates/PageTemplate";
 import PortalTemplate from "../_components/_templates/PortalTemplate";
@@ -53,6 +54,7 @@ export const TEMPLATES = {
   DividerTemplate,
   DropdownMenuTemplate,
   FieldTemplate,
+  OTPFieldTemplate,
   OverlayTemplate,
   PageTemplate,
   PortalTemplate,

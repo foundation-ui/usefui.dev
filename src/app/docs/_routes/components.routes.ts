@@ -48,6 +48,10 @@ export const COMPONENTS_LINKS = [
     label: "Field",
   },
   {
+    link: "/docs/components/otp-field",
+    label: "OTP Field",
+  },
+  {
     link: "/docs/components/overlay",
     label: "Overlay",
   },
