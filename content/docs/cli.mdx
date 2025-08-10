@@ -1,0 +1,62 @@
+---
+title: CLI
+description: Command Line Interface to bootstrap Foundation UI applications with pre-configured templates.
+---
+
+<DocsSection>
+### Quick Start
+
+<DocsTextBlock className="m-b-medium-60">
+  Run following commands to bootstrap `@foundation-ui` apps:
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="shell"
+  code={`  
+    # Create a new React app
+    pnpx @usefui/create-fui-app my-app --template react
+
+    # Create a new Next.js app
+    pnpx @usefui/create-fui-app my-app --template nextjs
+
+    # Create a new Next.js docs site
+    pnpx @usefui/create-fui-app my-app --template nextjs-docs
+
+    # Interactive mode (choose template)
+    pnpx @usefui/create-fui-app my-app
+
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+### Example
+
+<DocsTextBlock className="m-b-medium-60">
+  This example shows basic usage of the create-fui-app CLI.
+</DocsTextBlock>
+
+#### Setup NextJS App
+
+<DocsTextBlock className="m-b-medium-60">
+  -Run the CLI with your desired template
+</DocsTextBlock>
+<DocsTextBlock className="m-b-medium-60">
+  -Navigate to your project directory
+</DocsTextBlock>
+<DocsTextBlock className="m-b-medium-60">
+  -Install dependencies and start development
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="shell"
+  code={`  
+    pnpx @usefui/create-fui-app my-nextjs-app --template nextjs
+    cd my-nextjs-app
+    pnpm install && pnpm dev
+
+`}
+/>
+
+</DocsSection>

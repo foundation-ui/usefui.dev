@@ -35,6 +35,10 @@ function WebNavigation() {
   const router = useRouter();
   const LINKS = [
     {
+      link: "/docs/cli",
+      label: "CLI",
+    },
+    {
       link: "/docs/components/installation",
       label: "Components",
     },
