@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { generateTokensLibrary } from "@foundation-ui/core";
-import { engine_template } from "@foundation-ui/tokens";
+import { generateTokensLibrary } from "@usefui/core";
+import { engine_template } from "@usefui/tokens";
 
 enum TemplateType {
   LIBRARY = "LIBRARY",

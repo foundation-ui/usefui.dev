@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Badge, Table } from "@foundation-ui/components";
+import { Badge, Table } from "@usefui/components";
 import { TextMuted } from "@/components";
 
 export interface TableProps {

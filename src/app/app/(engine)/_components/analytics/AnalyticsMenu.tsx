@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 import AnalyticsMeta from "./AnalyticsMeta";
-import { Toolbar } from "@foundation-ui/components";
+import { Toolbar } from "@usefui/components";
 
 const MenuWrapper = styled(Toolbar)`
   /* border: none !important; */

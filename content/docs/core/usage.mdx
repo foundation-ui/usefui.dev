@@ -7,13 +7,13 @@ description: Install and setup @founfation-ui/core in your project.
 #### Build-time generation
 
 <DocsTextBlock className="m-b-medium-60">
-  To dynamically generate design tokens on build-time with
-  `@foundation-ui/core`, you need to create a `ClientProvider` to handle your
-  custom variables and distribute them as CSS variables.
+  To dynamically generate design tokens on build-time with `@usefui/core`, you
+  need to create a `ClientProvider` to handle your custom variables and
+  distribute them as CSS variables.
 </DocsTextBlock>
 
 <DocsCodePreview
-    code={`import { js_design_tokens } from "@foundation-ui/tokens";
+    code={`import { js_design_tokens } from "@usefui/tokens";
 
     import {
       generateAlpha,
@@ -23,7 +23,7 @@ description: Install and setup @founfation-ui/core in your project.
       generateLayoutClasses,
       generateOpacityClasses,
       generateSizeClasses,
-    } from "@foundation-ui/core";
+    } from "@usefui/core";
 
     const cssLayoutClasses = generateLayoutClasses();
     const cssWidthHeightClasses = generateDimensionClasses();
@@ -99,12 +99,12 @@ description: Install and setup @founfation-ui/core in your project.
 #### On demand generation
 
 <DocsTextBlock className="m-b-medium-60">
-  To use `@foundation-ui/core` generators on demand, you need to prepare
+  To use `@usefui/core` generators on demand, you need to prepare
   `generateTokensLibrary`'s payload and fire the generator when needed.
 </DocsTextBlock>
 
 <DocsCodePreview
-    code={`import { generateTokensLibrary } from "@foundation-ui/core";
+    code={`import { generateTokensLibrary } from "@usefui/core";
 
     type GeneratorFunctionProperties = (
         name: string,
@@ -142,8 +142,8 @@ description: Install and setup @founfation-ui/core in your project.
 #### Payload
 
 <DocsTextBlock className="m-b-medium-60">
-  `@foundation-ui/tokens` provides template to generate design tokens. You can
-  use them as is or customize values to generate custom libraries.
+  `@usefui/tokens` provides template to generate design tokens. You can use them
+  as is or customize values to generate custom libraries.
 </DocsTextBlock>
 
 <DocsCodePreview

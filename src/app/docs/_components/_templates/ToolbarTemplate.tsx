@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { Toolbar, Avatar } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Toolbar, Avatar } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 
 function ToolbarTemplate() {
   return (

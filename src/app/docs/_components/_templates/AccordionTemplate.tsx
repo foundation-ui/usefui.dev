@@ -2,8 +2,8 @@
 
 import React from "react";
 
-import { Accordion, Divider } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Accordion, Divider } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 
 function AccordionTemplate() {
   return (

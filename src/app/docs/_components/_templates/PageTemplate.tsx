@@ -1,6 +1,6 @@
 "use client";
 
-import { Divider, Page, ScrollArea } from "@foundation-ui/components";
+import { Divider, Page, ScrollArea } from "@usefui/components";
 import React from "react";
 
 function PageTemplate() {
@@ -15,7 +15,7 @@ function PageTemplate() {
           <p className="fs-medium-10 opacity-default-30">Menu</p>
         </Page.Menu>
         <ScrollArea className="h-100 p-large-10" style={{ maxHeight: 292 }}>
-          <h6>@foundation-ui</h6>
+          <h6>@usefui</h6>
           <Divider className="m-y-medium-60" />
           <p className="fs-medium-20 opacity-default-60">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur

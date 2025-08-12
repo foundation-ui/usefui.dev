@@ -3,8 +3,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Icon } from "@foundation-ui/icons";
-import { ScrollArea } from "@foundation-ui/components";
+import { Icon } from "@usefui/icons";
+import { ScrollArea } from "@usefui/components";
 
 const BlueprintWrapper = styled(ScrollArea)`
   margin: 0 auto;

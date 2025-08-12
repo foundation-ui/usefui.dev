@@ -5,9 +5,9 @@ import styled, { keyframes } from "styled-components";
 
 import { useRouter } from "next/navigation";
 
-import { Badge, Button } from "@foundation-ui/components";
+import { Badge, Button } from "@usefui/components";
 import { DisplaySmall, DisplayXxl } from "@/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Icon, PixelIcon } from "@usefui/icons";
 
 const Header = styled.hgroup`
   width: 100%;

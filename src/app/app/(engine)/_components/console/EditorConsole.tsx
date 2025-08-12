@@ -6,8 +6,8 @@ import EditorConsoleBody from "./EditorConsoleBody";
 import ConsoleBody from "./ConsoleBody";
 import CopyCode from "../triggers/CopyCode";
 
-import { Toolbar, Tooltip } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Toolbar, Tooltip } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 import { TextMuted } from "@/components";
 
 export type EditorConsoleProps = {

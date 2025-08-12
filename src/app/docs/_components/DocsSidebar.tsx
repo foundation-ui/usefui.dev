@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 import DocsSidebarLinks from "./DocsSidebarLinks";
 
-import { Avatar, Page, Toolbar, Tooltip } from "@foundation-ui/components";
-import { Icon, PixelIcon, SocialIcon } from "@foundation-ui/icons";
+import { Avatar, Page, Toolbar, Tooltip } from "@usefui/components";
+import { Icon, PixelIcon, SocialIcon } from "@usefui/icons";
 
 const SidebarWrapped = styled(Toolbar)`
   @media (max-width: 768px) {

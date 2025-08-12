@@ -3,8 +3,8 @@
 import React from "react";
 import { usePathname, useRouter } from "next/navigation";
 
-import { Accordion, Divider, Toolbar } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Accordion, Divider, Toolbar } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 import { AppLink } from "@/components";
 import {
   COMPONENTS_LINKS,

@@ -7,18 +7,17 @@ description: Import and use Component Hooks in your project.
 #### Get started with Component Hooks
 
 <DocsTextBlock>
-  To use the Component Hooks, you first need to install
-  `@foundation-ui/components`.
+  To use the Component Hooks, you first need to install `@usefui/components`.
 </DocsTextBlock>
 
-<DocsCodePreview language="shell" code={`pnpm add @foundation-ui/components`} />
+<DocsCodePreview language="shell" code={`pnpm add @usefui/components`} />
 </DocsSection>
 
 <DocsSection>
 ### Setup
 
 <DocsTextBlock className="m-b-medium-60">
-  `@foundation-ui/components` are built using the [React Context
+  `@usefui/components` are built using the [React Context
   API](https://react.dev/reference/react/useContext). When using Component
   Hooks, you need to wrap you component in a `ContextProvider` in order to
   access the states and methods exposed by the Component API.
@@ -26,7 +25,7 @@ description: Import and use Component Hooks in your project.
 
 <DocsCodePreview
   language="tsx"
-  code={`import { Dialog, useDialog } from "@foundation-ui/components";
+  code={`import { Dialog, useDialog } from "@usefui/components";
 
     function Provider() {
         return (

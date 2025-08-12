@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 import EditorBody from "../editor/EditorBody";
 
-import { Dialog, Page } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Dialog, Page } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 import { DisplayMd } from "@/components";
 
 import type { EditorSidebarProperties } from "../editor/EditorSidebar";

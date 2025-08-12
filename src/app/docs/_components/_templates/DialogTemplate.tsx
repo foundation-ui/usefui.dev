@@ -1,15 +1,15 @@
 "use client";
 
 import React from "react";
-import { Dialog, Divider, Portal } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Dialog, Divider, Portal } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 
 function DialogTemplate() {
   return (
     <Dialog.Root>
       <div className="flex align-center justify-center w-100 h-100 p-t-large-30 p-x-medium-60">
         <Dialog.Trigger variant="border" sizing="large">
-          @foundation-ui
+          @usefui
         </Dialog.Trigger>
       </div>
 
@@ -23,7 +23,7 @@ function DialogTemplate() {
             </Dialog.Control>
           </Dialog.Menu>
 
-          <p className="fs-medium-20">@foundation-ui</p>
+          <p className="fs-medium-20">@usefui</p>
           <Divider className="m-y-medium-60" />
           <p className="fs-medium-10 opacity-default-30">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi

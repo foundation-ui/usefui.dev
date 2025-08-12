@@ -7,14 +7,14 @@ description: Setup and use @founfation-ui/tokens's color mode hook in your proje
 ### Setup
 
 <DocsTextBlock className="m-b-medium-60">
-  `@foundation-ui` comes with a pre-built Design Token library set as default.
-  You can use a custom design tokens library to **_generate your own CSS
-  variables_** using `@foundation-ui/core`.
+  `@usefui` comes with a pre-built Design Token library set as default. You can
+  use a custom design tokens library to **_generate your own CSS variables_**
+  using `@usefui/core`.
 </DocsTextBlock>
 
 <DocsTextBlock className="m-b-medium-60">
-  Go to the `@foundation-ui/core` details to see how to generate your custom
-  Design Tokens library.
+  Go to the `@usefui/core` details to see how to generate your custom Design
+  Tokens library.
 </DocsTextBlock>
 
 </DocsSection>
@@ -22,7 +22,7 @@ description: Setup and use @founfation-ui/tokens's color mode hook in your proje
 <DocsSection>
 
   <DocsCodePreview
-    code={`import { js_design_tokens } from "@foundation-ui/tokens";
+    code={`import { js_design_tokens } from "@usefui/tokens";
 
     import {
       generateAlpha,
@@ -32,7 +32,7 @@ description: Setup and use @founfation-ui/tokens's color mode hook in your proje
       generateLayoutClasses,
       generateOpacityClasses,
       generateSizeClasses,
-    } from "@foundation-ui/core";
+    } from "@usefui/core";
 
     const cssLayoutClasses = generateLayoutClasses();
     const cssWidthHeightClasses = generateDimensionClasses();

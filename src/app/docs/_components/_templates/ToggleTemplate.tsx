@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { Badge, Toggle } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Badge, Toggle } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 
 function ToggleTemplate() {
   const [checkedItem, setCheckedItem] = React.useState<string>("primary");

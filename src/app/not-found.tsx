@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import { useRouter } from "next/navigation";
 
-import { Button, Page } from "@foundation-ui/components";
+import { Button, Page } from "@usefui/components";
 import { DisplayXl } from "@/components";
 
 const Hgroup = styled.hgroup`

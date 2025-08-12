@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Icon, PixelIcon } from "@usefui/icons";
 import type { EditorConsoleProps } from "./EditorConsole";
 
 const ConsoleBodyWrapper = styled.div`

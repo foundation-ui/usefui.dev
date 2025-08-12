@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ScrollArea } from "@foundation-ui/components";
+import { ScrollArea } from "@usefui/components";
 
 import CodeMirror, { type Extension } from "@uiw/react-codemirror";
 import { json } from "@codemirror/lang-json";

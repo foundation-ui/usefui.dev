@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Checkbox } from "@foundation-ui/components";
+import { Checkbox } from "@usefui/components";
 
 function CheckboxTemplate() {
   return (

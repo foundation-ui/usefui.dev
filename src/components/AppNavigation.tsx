@@ -3,8 +3,8 @@
 import React from "react";
 
 import { AppDropdown, Breadcrumbs } from "@/components";
-import { Button, Page } from "@foundation-ui/components";
-import { Icon, SocialIcon } from "@foundation-ui/icons";
+import { Button, Page } from "@usefui/components";
+import { Icon, SocialIcon } from "@usefui/icons";
 
 function AppNavigation() {
   return (

@@ -2,7 +2,7 @@
 
 import React from "react";
 
-// import { useBehaviorAnalytics } from "@foundation-ui/core";
+// import { useBehaviorAnalytics } from "@usefui/core";
 
 import EditorSidebar from "./editor/EditorSidebar";
 import SplitScreenEditor from "./editor/SplitScreenEditor";
@@ -11,7 +11,7 @@ import EditorOutput from "./editor/EditorOutput";
 
 import { LibraryTemplate } from "@/templates";
 import { AppNavigation } from "@/components";
-import { Page } from "@foundation-ui/components";
+import { Page } from "@usefui/components";
 
 interface EditorProps {
   defaultValue?: string;

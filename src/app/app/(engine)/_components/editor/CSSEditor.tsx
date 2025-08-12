@@ -6,7 +6,7 @@
 import React from "react";
 import EditorBody from "./EditorBody";
 
-import { generateCSSVariables } from "@foundation-ui/core";
+import { generateCSSVariables } from "@usefui/core";
 
 function CSSEditor({ data }: { data: string }) {
   const [library] = React.useState<any>(JSON.parse(String(data)));

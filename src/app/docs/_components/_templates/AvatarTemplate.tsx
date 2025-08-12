@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { Avatar } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Avatar } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 
 function AvatarTemplate() {
   return (

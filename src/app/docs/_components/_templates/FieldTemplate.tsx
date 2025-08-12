@@ -1,6 +1,6 @@
 "use client";
 
-import { Field } from "@foundation-ui/components";
+import { Field } from "@usefui/components";
 import React from "react";
 
 function FieldTemplate() {

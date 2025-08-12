@@ -4,7 +4,7 @@ description: Setup and use @founfation-ui/tokens's color mode context in your pr
 ---
 
 <DocsCodePreview
-    code={`import { ColorModeProvider } from "@foundation-ui/tokens";
+    code={`import { ColorModeProvider } from "@usefui/tokens";
 
       function Provider({ children }: { children: React.ReactNode }) {
         return (
@@ -20,7 +20,7 @@ description: Setup and use @founfation-ui/tokens's color mode context in your pr
 ### Overview
 
 <DocsTextBlock className="m-b-medium-60">
-  `ColorModeProvider` relies on `@foundation-ui/tokens` and `localStorage` to
+  `ColorModeProvider` relies on `@usefui/tokens` and `localStorage` to
   get/set the values required to perform the color mode update.
 </DocsTextBlock>
 </DocsSection>
@@ -241,7 +241,7 @@ description: Setup and use @founfation-ui/tokens's color mode context in your pr
 #### Types
 
 <DocsTextBlock className="m-b-medium-60">
-  `@foundation-ui/tokens` connects Design Tokens libraries using the
+  `@usefui/tokens` connects Design Tokens libraries using the
   `ColorModeProvider` component. You can customize the `config` property to use
   your own library.
 </DocsTextBlock>

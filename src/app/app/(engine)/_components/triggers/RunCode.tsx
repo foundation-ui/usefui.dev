@@ -6,8 +6,8 @@ import { useMutation } from "@tanstack/react-query";
 import { useEngineStore } from "@/stores";
 
 import { SVGSpinner } from "@/components";
-import { Icon, PixelIcon, WebIcon } from "@foundation-ui/icons";
-import { Button } from "@foundation-ui/components";
+import { Icon, PixelIcon, WebIcon } from "@usefui/icons";
+import { Button } from "@usefui/components";
 
 import { LibraryTemplate } from "@/templates";
 import { toast } from "sonner";

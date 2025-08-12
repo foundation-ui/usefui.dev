@@ -5,8 +5,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Avatar, Toolbar } from "@foundation-ui/components";
-import { Icon, SocialIcon } from "@foundation-ui/icons";
+import { Avatar, Toolbar } from "@usefui/components";
+import { Icon, SocialIcon } from "@usefui/icons";
 
 export type EditorSidebarProperties = {
   uba?: void | {

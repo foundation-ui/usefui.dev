@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Icon, PixelIcon } from "@usefui/icons";
 
 function AnimatedHumanSvg() {
   const [isHandsUp, setIsHandsUp] = React.useState<boolean>(true);

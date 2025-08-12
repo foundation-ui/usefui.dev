@@ -12,7 +12,7 @@ import {
   DisplayMd,
   DisplaySmall,
 } from "@/components";
-import { Icon, PixelIcon, SocialIcon } from "@foundation-ui/icons";
+import { Icon, PixelIcon, SocialIcon } from "@usefui/icons";
 
 const SocialsWrapper = styled(MaxWidthContainer)`
   width: 100%;

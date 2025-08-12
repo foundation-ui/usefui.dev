@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Button } from "@foundation-ui/components";
+import { Button } from "@usefui/components";
 
 function ButtonTemplate() {
   return (

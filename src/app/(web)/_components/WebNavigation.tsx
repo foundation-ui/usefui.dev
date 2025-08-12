@@ -6,8 +6,8 @@ import styled from "styled-components";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-import { Avatar, Button } from "@foundation-ui/components";
-import { Icon, PixelIcon, SocialIcon } from "@foundation-ui/icons";
+import { Avatar, Button } from "@usefui/components";
+import { Icon, PixelIcon, SocialIcon } from "@usefui/icons";
 import { AppLink } from "@/components";
 
 const FixedNavigation = styled.nav`

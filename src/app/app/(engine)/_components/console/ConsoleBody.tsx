@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Toolbar } from "@foundation-ui/components";
+import { Toolbar } from "@usefui/components";
 
 export const ConsoleWrapper = styled(Toolbar)`
   /* border: none !important; */

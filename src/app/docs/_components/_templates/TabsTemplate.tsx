@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Divider, Tabs } from "@foundation-ui/components";
+import { Divider, Tabs } from "@usefui/components";
 
 function TabsTemplate() {
   return (

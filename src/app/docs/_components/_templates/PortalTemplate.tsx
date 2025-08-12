@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { Button, Portal } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Button, Portal } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 function PortalTemplate() {
   const [container, setContainer] = React.useState<string>("portal-demo-1");
 

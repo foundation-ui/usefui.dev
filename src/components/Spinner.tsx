@@ -1,7 +1,7 @@
 "use client";
 
 import styled, { keyframes } from "styled-components";
-import { Icon } from "@foundation-ui/icons";
+import { Icon } from "@usefui/icons";
 
 const Rotate = keyframes`
     0% {

@@ -6,7 +6,7 @@ description: Overlay are used to display content on top of the current layer.
 <DocsSection>
 
 <DocsPreview language="tsx" component={<OverlayTemplate />} code={`import React from "react";
-import { Button, Overlay } from "@foundation-ui/components";
+import { Button, Overlay } from "@usefui/components";
 
 function OverlayTemplate() {
 const [show, setShow] = React.useState<boolean>(false);
@@ -14,7 +14,7 @@ const [show, setShow] = React.useState<boolean>(false);
     return (
         <div className="grid g-medium-30 p-t-large-30 p-x-medium-60 align-center justify-center">
             <Button variant="border" sizing="large" onClick={() => setShow(true)}>
-                @foundation-ui
+                @usefui
             </Button>
             <Overlay
                 visible={show}
@@ -45,7 +45,7 @@ export default OverlayTemplate;
 
 <DocsCodePreview
   language="tsx"
-  code={`import { Overlay } from "@foundation-ui/components";
+  code={`import { Overlay } from "@usefui/components";
 
 export function OverlayComponent() {
     return <Overlay />;

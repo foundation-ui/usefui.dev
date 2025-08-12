@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Badge } from "@foundation-ui/components";
+import { Badge } from "@usefui/components";
 
 function BadgeTemplate() {
   return (

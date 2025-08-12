@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import { Collapsible, Divider } from "@foundation-ui/components";
+import { Collapsible, Divider } from "@usefui/components";
 
 function CollapsibleTemplate() {
   return (
     <Collapsible.Root>
       <Collapsible className="grid g-medium-30 p-t-large-30 p-x-medium-60">
-        <Collapsible.Trigger>@foundation-ui</Collapsible.Trigger>
+        <Collapsible.Trigger>@usefui</Collapsible.Trigger>
         <Divider />
         <Collapsible.Content showFirstChild>
           <Collapsible.Trigger>Components</Collapsible.Trigger>

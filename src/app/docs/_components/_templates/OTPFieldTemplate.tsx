@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { OTPField } from "@foundation-ui/components";
+import { OTPField } from "@usefui/components";
 
 function OTPFieldTemplate() {
   return (

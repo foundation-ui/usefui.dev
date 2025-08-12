@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import DocsCodePreview from "./DocsCodePreview";
 
-import { Tabs } from "@foundation-ui/components";
+import { Tabs } from "@usefui/components";
 import { TextMuted } from "@/components";
 
 const PreviewBox = styled.div`

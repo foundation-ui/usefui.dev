@@ -1,15 +1,15 @@
 "use client";
 
 import React from "react";
-import { Sheet, Divider } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Sheet, Divider } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 
 function SheetTemplate() {
   return (
     <Sheet.Root>
       <div className="grid g-medium-10 align-center justify-center w-100 h-100 p-t-large-30 p-x-medium-60">
         <Sheet.Trigger variant="border" sizing="large">
-          @foundation-ui
+          @usefui
         </Sheet.Trigger>
         <div className="w-100 flex justify-center">
           <small className="opacity-default-10">{"Ctrl + $"}</small>
@@ -18,7 +18,7 @@ function SheetTemplate() {
 
       <Sheet sizing="medium" shortcut bindkey="ctrlKey" hotkey="$">
         <div className="flex justify-between">
-          <p className="fs-medium-20">@foundation-ui</p>
+          <p className="fs-medium-20">@usefui</p>
 
           <Sheet.Trigger variant="ghost">
             <Icon>

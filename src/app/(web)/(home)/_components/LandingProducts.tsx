@@ -6,8 +6,8 @@ import styled from "styled-components";
 import Link from "next/link";
 
 import { DisplayXl, DisplayMd, GridLayout } from "@/components";
-import { Badge, Button } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Badge, Button } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 
 export const CardBody = styled.article`
   --border: var(--measurement-small-10) solid var(--font-color-alpha-10);

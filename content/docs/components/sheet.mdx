@@ -8,14 +8,14 @@ description: Sheets are component that provides additional information in a top 
 <DocsPreview
   language="tsx"
   component={<SheetTemplate />}
-  code={`import { Sheet } from "@foundation-ui/components";
+  code={`import { Sheet } from "@usefui/components";
 
 export function SheetComponent() {
     return (
         <Sheet.Root>
             <div className="grid g-medium-10 align-center justify-center w-100 h-100 p-t-large-30 p-x-medium-60">
               <Sheet.Trigger variant="border" sizing="large">
-                @foundation-ui
+                @usefui
               </Sheet.Trigger>
               <div className="w-100 flex justify-center">
                 <small className="opacity-default-10">{"Ctrl + $"}</small>
@@ -24,7 +24,7 @@ export function SheetComponent() {
 
             <Sheet sizing="medium" shortcut bindkey="ctrlKey" hotkey="$">
                 <div className="flex justify-between">
-                <p className="fs-medium-20">@foundation-ui</p>
+                <p className="fs-medium-20">@usefui</p>
 
                 <Sheet.Trigger variant="ghost">
                     <Icon>
@@ -61,7 +61,7 @@ export function SheetComponent() {
 
 <DocsCodePreview
   language="tsx"
-  code={`import { Sheet } from "@foundation-ui/components";
+  code={`import { Sheet } from "@usefui/components";
 
 export function SheetComponent() {
     return (

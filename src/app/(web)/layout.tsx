@@ -1,6 +1,6 @@
 "use client";
 
-import { Page } from "@foundation-ui/components";
+import { Page } from "@usefui/components";
 
 function layout({
   children,

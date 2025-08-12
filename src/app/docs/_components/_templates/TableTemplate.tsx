@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Badge, Table } from "@foundation-ui/components";
+import { Badge, Table } from "@usefui/components";
 
 function TableTemplate() {
   return (

@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { useColorMode } from "@foundation-ui/tokens";
+import { useColorMode } from "@usefui/tokens";
 import { useRouter } from "next/navigation";
 
 import {
@@ -11,8 +11,8 @@ import {
   Divider,
   DropdownMenu,
   Tooltip,
-} from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+} from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 import { TextMuted } from "./Text";
 
 function AppDropdown() {

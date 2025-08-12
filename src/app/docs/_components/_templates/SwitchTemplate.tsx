@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Switch } from "@foundation-ui/components";
+import { Switch } from "@usefui/components";
 
 function SwitchTemplate() {
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import { ScrollArea } from "@foundation-ui/components";
+import { ScrollArea } from "@usefui/components";
 import React from "react";
 import styled from "styled-components";
 

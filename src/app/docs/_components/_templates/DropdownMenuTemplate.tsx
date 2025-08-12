@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { Divider, DropdownMenu } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Divider, DropdownMenu } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 
 function DropdownMenuTemplate() {
   return (
@@ -10,7 +10,7 @@ function DropdownMenuTemplate() {
       <DropdownMenu.Root>
         <DropdownMenu>
           <DropdownMenu.Trigger variant="secondary" sizing="large">
-            @foundation-ui
+            @usefui
           </DropdownMenu.Trigger>
 
           <DropdownMenu.Content>

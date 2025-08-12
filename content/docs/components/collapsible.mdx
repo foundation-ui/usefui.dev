@@ -9,13 +9,13 @@ description: Collapsible is a component that can be expanded or collapsed by its
   language="tsx"
   component={<CollapsibleTemplate />}
   code={`import React from "react";
-import { Collapsible, Divider } from "@foundation-ui/components";
+import { Collapsible, Divider } from "@usefui/components";
 
     function CollapsibleTemplate() {
         return (
             <Collapsible.Root>
                 <Collapsible className="grid g-medium-30 p-t-large-30 p-x-medium-60">
-                    <Collapsible.Trigger>@foundation-ui</Collapsible.Trigger>
+                    <Collapsible.Trigger>@usefui</Collapsible.Trigger>
                     <Divider />
                     <Collapsible.Content showFirstChild>
                         <Collapsible.Trigger>Components</Collapsible.Trigger>
@@ -48,7 +48,7 @@ export default CollapsibleTemplate;
 
 <DocsCodePreview
   language="tsx"
-  code={`import { Collapsible } from "@foundation-ui/components";
+  code={`import { Collapsible } from "@usefui/components";
 
 export function CollapsibleComponent() {
     return (

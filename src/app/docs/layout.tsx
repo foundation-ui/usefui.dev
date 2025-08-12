@@ -4,7 +4,7 @@ import AppNavigation from "../../components/AppNavigation";
 import DocsSidebar from "./_components/DocsSidebar";
 import DocsWrapper from "./_components/DocsWrapper";
 
-import { Page, ScrollArea } from "@foundation-ui/components";
+import { Page, ScrollArea } from "@usefui/components";
 import { Footer, MaxWidthContainerSmall } from "@/components";
 
 function layout({

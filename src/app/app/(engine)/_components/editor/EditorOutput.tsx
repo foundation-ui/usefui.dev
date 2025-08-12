@@ -9,8 +9,8 @@ import CSSEditor from "./CSSEditor";
 import AnalyticsMenu from "../analytics/AnalyticsMenu";
 import CopyCode from "../triggers/CopyCode";
 
-import { Page, ScrollArea, Tabs, Tooltip } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Page, ScrollArea, Tabs, Tooltip } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 
 const WELCOME_PAYLOAD = {
   ahoy: ["Hello! 👋", "Thank you for trying out Foundation UI ✨"],

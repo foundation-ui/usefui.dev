@@ -2,8 +2,8 @@
 
 import React from "react";
 
-import { Icon, PixelIcon } from "@foundation-ui/icons";
-import { Tooltip, Button } from "@foundation-ui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
+import { Tooltip, Button } from "@usefui/components";
 
 function CopyCode({
   value,

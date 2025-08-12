@@ -3,8 +3,8 @@
 import React from "react";
 import { usePathname, useRouter } from "next/navigation";
 
-import { Button, Tooltip } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Button, Tooltip } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 
 interface BreadcrumbsProps {
   capitalizeItems?: boolean;

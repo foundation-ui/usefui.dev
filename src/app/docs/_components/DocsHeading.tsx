@@ -2,7 +2,7 @@
 
 import React from "react";
 import { DisplayXl } from "@/components";
-import { Divider } from "@foundation-ui/components";
+import { Divider } from "@usefui/components";
 
 function DocsHeading({
   title,

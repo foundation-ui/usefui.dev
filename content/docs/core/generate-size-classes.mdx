@@ -6,8 +6,8 @@ description: Generate Size CSS classes using a custom Design Tokens library.
 <DocsCodePreview
   language="tsx"
   code={`
-    import { generateSizeClasses } from "@foundation-ui/core";
-    import { js_design_tokens } from "@foundation-ui/tokens";
+    import { generateSizeClasses } from "@usefui/core";
+    import { js_design_tokens } from "@usefui/tokens";
 
     const { design_tokens } = js_design_tokens;
     const CSSVars = generateSizeClasses(design_tokens.measurement);

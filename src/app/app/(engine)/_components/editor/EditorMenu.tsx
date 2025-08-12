@@ -9,7 +9,7 @@ import ResetCode from "../triggers/ResetCode";
 import RunCode from "../triggers/RunCode";
 
 import { TextMuted } from "@/components";
-import { Field, Page } from "@foundation-ui/components";
+import { Field, Page } from "@usefui/components";
 
 type EditorMenuProps = {
   value: string;

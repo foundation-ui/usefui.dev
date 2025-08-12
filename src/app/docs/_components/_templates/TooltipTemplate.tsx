@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { Avatar, Tooltip } from "@foundation-ui/components";
-import { Icon, PixelIcon } from "@foundation-ui/icons";
+import { Avatar, Tooltip } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
 import { AnimatedHumanSvg } from "@/components";
 
 function TooltipTemplate() {
