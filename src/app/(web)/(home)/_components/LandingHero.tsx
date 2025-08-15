@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 import { useRouter } from "next/navigation";
 
-import { Badge, Button } from "@usefui/components";
+import { Button } from "@usefui/components";
 import { DisplaySmall, DisplayXxl } from "@/components";
 import { Icon, PixelIcon } from "@usefui/icons";
 
@@ -13,34 +13,19 @@ const Header = styled.hgroup`
   width: 100%;
   margin: 0 auto;
   max-width: var(--breakpoint-tablet-landscape);
+
+  padding-top: calc(var(--measurement-large-30) + var(--measurement-large-60));
+  padding-bottom: var(--measurement-large-60);
 `;
 const HeroDescWrapper = styled.div`
   max-width: var(--breakpoint-tablet);
-`;
-
-const Pulse = keyframes`
-  0% {
-    box-shadow: 0 0 0 var(--measurement-small-10) var(--font-color-alpha-10);
-  }
-  100% {
-    box-shadow: 0 0 0 var(--measurement-medium-60) transparent;
-  }
-`;
-const BetaBadge = styled(Badge)`
-  animation: ${Pulse} 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
 `;
 
 function LandingHero() {
   const router = useRouter();
 
   return (
-    <Header className="p-x-medium-60 p-t-large-80 align-center justify-center m-b-large-30">
-      <div className="m-b-medium-60 flex align-center">
-        <BetaBadge>&beta;</BetaBadge>
-        <small className="p-l-medium-30 p-r-medium-10 opacity-default-60">
-          Open Beta
-        </small>
-      </div>
+    <Header className="p-x-medium-60">
       <DisplayXxl className="m-b-medium-30">
         Headless Design System Platform for Modern Product Teams
       </DisplayXxl>
