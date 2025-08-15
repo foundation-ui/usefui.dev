@@ -16,6 +16,8 @@ const BlueprintWrapper = styled(ScrollArea)`
   width: 100%;
   max-width: var(--breakpoint-desktop-large);
 
+  backdrop-filter: blur(var(--measurement-large-10));
+
   @media (max-width: 1240px) {
     transform: rotate(0deg);
     transform: translate(0%, 0%);
@@ -46,7 +48,7 @@ function BlueprintSvg() {
         />
         <path
           d="M1 357.008L0.99999 124.293L489.548 124.293L489.548 357.008L1 357.008Z"
-          fill="var(--body-color)"
+          // fill="var(--body-color)"
           stroke="var(--font-color)"
           strokeOpacity="0.05"
         />
@@ -69,7 +71,7 @@ function BlueprintSvg() {
         />
         <path
           d="M489.548 357.007L489.548 124.292L1015.08 124.292L1015.08 357.007L489.548 357.007Z"
-          fill="var(--body-color)"
+          // fill="var(--body-color)"
           stroke="var(--font-color)"
           strokeOpacity="0.05"
         />
@@ -113,7 +115,7 @@ function BlueprintSvg() {
         />
         <path
           d="M1015.1 1.00006L1015.1 124.293L1.01278 124.293L1.01278 1.00002L1015.1 1.00006Z"
-          fill="var(--body-color)"
+          // fill="var(--body-color)"
           stroke="var(--font-color)"
           strokeOpacity="0.05"
         />

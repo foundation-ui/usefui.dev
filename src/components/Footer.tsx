@@ -4,7 +4,6 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterWrapper = styled.footer`
-  background: var(--body-color);
   border-top: var(--measurement-small-30) solid var(--font-color-alpha-10);
   flex-wrap: wrap;
 

@@ -118,12 +118,6 @@ function LandingProducts() {
         ))}
       </GridLayout>
 
-      <CardBody
-        className="p-y-large-10"
-        as={PatternBackground}
-        style={{ borderTop: "none", borderBottom: "none" }}
-      />
-
       <GridLayout>
         <CardBody className="grid align-end h-100 w-100 p-large-10">
           <DisplayXl as="h3" className="m-b-large-10">

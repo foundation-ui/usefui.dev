@@ -1,6 +1,18 @@
 "use client";
 
+import styled from "styled-components";
 import { Page } from "@usefui/components";
+
+export const LayoutWrapper = styled(Page.Content)`
+  background-image: url(/vignette.webp);
+  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  background-blend-mode: overlay;
+  mix-blend-mode: overlay;
+`;
 
 function layout({
   children,
@@ -9,7 +21,7 @@ function layout({
 }>) {
   return (
     <Page className="h-100 w-100">
-      <Page.Content>{children}</Page.Content>
+      <LayoutWrapper>{children}</LayoutWrapper>
     </Page>
   );
 }
