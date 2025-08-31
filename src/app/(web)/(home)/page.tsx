@@ -9,7 +9,6 @@ import LandingHero from "./_components/LandingHero";
 import LandingProducts from "./_components/LandingProducts";
 import LandingSocials from "./_components/LandingSocials";
 import BlueprintSvg from "./_components/BlueprintSvg";
-import AnimatedHero from "./_components/AnimatedHero";
 
 import { Footer, MaxWidthContainer } from "@/components";
 
@@ -27,7 +26,6 @@ function LandingPage() {
       </MaxWidthContainer>
 
       <Footer />
-      <AnimatedHero chars="usefui" />
     </LandingWrapper>
   );
 }
