@@ -5,7 +5,8 @@ import styled from "styled-components";
 
 import Link from "next/link";
 
-import { DisplayXl, DisplayMd, GridLayout } from "@/components";
+import { GridLayout } from "./Grids";
+import { DisplayXl, DisplayMd } from "@/components";
 import { Badge, Button } from "@usefui/components";
 import { Icon, PixelIcon } from "@usefui/icons";
 

@@ -6,12 +6,8 @@ import styled from "styled-components";
 import Link from "next/link";
 
 import { CardBody } from "./LandingProducts";
-import {
-  MaxWidthContainer,
-  GridLayout,
-  DisplayMd,
-  DisplaySmall,
-} from "@/components";
+import { GridLayout } from "./Grids";
+import { MaxWidthContainer, DisplayMd, DisplaySmall } from "@/components";
 import { Icon, PixelIcon, SocialIcon } from "@usefui/icons";
 
 const SocialsWrapper = styled(MaxWidthContainer)`
