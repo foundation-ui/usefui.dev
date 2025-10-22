@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import styled from "styled-components";
 
 import { useEngineStore } from "@/stores";
 
@@ -8,8 +9,16 @@ import FormatCode from "../triggers/FormatCode";
 import ResetCode from "../triggers/ResetCode";
 import RunCode from "../triggers/RunCode";
 
-import { TextMuted } from "@/components";
 import { Field, Page } from "@usefui/components";
+
+const MenuWrapper = styled(Page.Navigation)`
+  box-shadow: 0 0 var(--measurement-medium-50) var(--measurement-medium-10)
+    var(--body-color);
+
+  background: var(--contrast-color) !important;
+  border: none;
+  z-index: var(--depth-default-90);
+`;
 
 type EditorMenuProps = {
   value: string;
@@ -36,7 +45,7 @@ function EditorMenu({
   };
 
   return (
-    <Page.Navigation className="flex align-center justify-between g-medium-60 w-100">
+    <MenuWrapper className="flex align-center justify-between g-medium-10 w-100">
       <Field.Root>
         <Field.Label
           className="flex align-center w-100"
@@ -46,17 +55,17 @@ function EditorMenu({
           <Field
             autoComplete="false"
             id="library-name-field"
-            variant="ghost"
-            className="fs-medium-10"
+            variant="secondary"
+            className="w-100"
             sizing="small"
-            placeholder={name}
+            placeholder="design-tokens-library"
             value={name}
             onChange={(event) => setLibraryName(event.target.value)}
-            style={{ width: "100%" }}
           />
         </Field.Label>
       </Field.Root>
-      <div className="flex align-center g-medium-60">
+
+      <div className="flex align-center g-medium-10">
         <FormatCode
           value={value}
           setValue={setValue}
@@ -64,11 +73,9 @@ function EditorMenu({
           onChange={onChange}
         />
         <ResetCode resetCallback={resetEditor} />
-        <TextMuted className="opacity-default-10">|</TextMuted>
-
         <RunCode value={value} name={name} setError={setError} />
       </div>
-    </Page.Navigation>
+    </MenuWrapper>
   );
 }
 

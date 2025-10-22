@@ -5,9 +5,8 @@ import React from "react";
 import { useMutation } from "@tanstack/react-query";
 import { useEngineStore } from "@/stores";
 
-import { SVGSpinner } from "@/components";
-import { Icon, PixelIcon, WebIcon } from "@usefui/icons";
-import { Button } from "@usefui/components";
+import { Icon, PixelIcon } from "@usefui/icons";
+import { Button, Spinner } from "@usefui/components";
 
 import { LibraryTemplate } from "@/templates";
 import { toast } from "sonner";
@@ -51,23 +50,24 @@ function RunCode({
 
   return (
     <Button
-      className="fs-medium-10"
+      className="fs-small-50"
       id="run-code-trigger"
-      variant="primary"
+      variant="mono"
       sizing="small"
+      animation="reflective"
       onClick={handleRunCode}
       disabled={isPending || name === ""}
     >
       Run
-      {isPending ? (
-        <SVGSpinner>
-          <WebIcon.Reload />
-        </SVGSpinner>
-      ) : (
-        <Icon>
-          <PixelIcon.CornerDownRight />
-        </Icon>
-      )}
+      <span className="p-y-small-60 flex align-center justify-center">
+        {isPending ? (
+          <Spinner />
+        ) : (
+          <Icon>
+            <PixelIcon.CornerDownRight />
+          </Icon>
+        )}
+      </span>
     </Button>
   );
 }

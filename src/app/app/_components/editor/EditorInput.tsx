@@ -3,8 +3,10 @@
 import React from "react";
 
 import EditorMenu from "./EditorMenu";
-import EditorBody from "./EditorBody";
 import EditorConsole from "../console/EditorConsole";
+
+import { CodeEditor } from "@/components";
+import { Page } from "@usefui/components";
 
 interface EditorInputProps {
   value: string;
@@ -27,7 +29,7 @@ function EditorInput({
   readOnly,
 }: EditorInputProps) {
   return (
-    <div className="flex w-100 h-100" style={{ flexDirection: "column" }}>
+    <Page.Content className="flex flex-column h-100">
       <EditorMenu
         value={value}
         defaultValue={defaultValue}
@@ -35,7 +37,7 @@ function EditorInput({
         setError={setError}
         onChange={onChange}
       />
-      <EditorBody
+      <CodeEditor
         value={value}
         readOnly={readOnly}
         setValue={setValue}
@@ -44,7 +46,7 @@ function EditorInput({
         language="json"
       />
       <EditorConsole mode={error ? "error" : "meta"} value={error} />
-    </div>
+    </Page.Content>
   );
 }
 

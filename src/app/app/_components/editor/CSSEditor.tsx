@@ -4,9 +4,9 @@
 "use client";
 
 import React from "react";
-import EditorBody from "./EditorBody";
 
 import { generateCSSVariables } from "@usefui/core";
+import { CodeEditor } from "@/components";
 
 function CSSEditor({ data }: { data: string }) {
   const [library] = React.useState<any>(JSON.parse(String(data)));
@@ -22,17 +22,20 @@ function CSSEditor({ data }: { data: string }) {
   const opacityVars = cssVars.opacity.toString();
 
   const vars = `
-    :root {
-      ${colorVars}
-      ${alphaVars}
-      ${tintVars}
-      ${shadesVars}
-      ${fontsizeVars}
-      ${measurementVars}
-      ${depthVars}
-      ${opacityVars}
-    }
-    `
+  :root {
+    ${colorVars}
+    ${alphaVars}
+    ${tintVars}
+    ${shadesVars}
+    ${fontsizeVars}
+    ${measurementVars}
+
+    ${depthVars}
+    ${opacityVars}
+  }
+`;
+
+  const sanitizedVariables = vars
     // Remove trailing commas at the end of lines
     .replace(/,\s*\n/g, "\n")
     // Remove consecutive commas
@@ -42,11 +45,9 @@ function CSSEditor({ data }: { data: string }) {
     // Clean up any remaining empty declarations
     .replace(/--[^:]+:\s*;/g, "")
     // Ensure proper spacing after semicolons
-    .replace(/;(?!\s*[\r\n])/g, ";\n  ")
-    // Remove trailing whitespace
-    .replace(/\s+$/gm, "");
+    .replace(/;(?!\s*[\r\n])/g, ";\n");
 
-  return <EditorBody value={vars} language="css" readOnly />;
+  return <CodeEditor value={sanitizedVariables} language="css" readOnly />;
 }
 
 export default CSSEditor;

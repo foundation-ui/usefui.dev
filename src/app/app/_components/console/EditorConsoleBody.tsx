@@ -7,8 +7,6 @@ import { Icon, PixelIcon } from "@usefui/icons";
 import type { EditorConsoleProps } from "./EditorConsole";
 
 const ConsoleBodyWrapper = styled.div`
-  border-top: var(--measurement-small-30) solid var(--font-color-alpha-10);
-  margin-top: var(--measurement-medium-30);
   padding: var(--measurement-medium-30) 0;
   height: 100%;
   width: 100%;
