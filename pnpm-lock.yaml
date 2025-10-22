@@ -11,6 +11,9 @@ importers:
       '@codemirror/lang-css':
         specifier: ^6.3.1
         version: 6.3.1
+      '@codemirror/lang-javascript':
+        specifier: ^6.2.4
+        version: 6.2.4
       '@codemirror/lang-json':
         specifier: ^6.0.2
         version: 6.0.2
@@ -48,23 +51,23 @@ importers:
         specifier: ^1.0.3
         version: 1.0.3(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@usefui/components':
-        specifier: ^1.5.1
-        version: 1.5.1(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
-      '@usefui/core':
-        specifier: ^1.3.3
-        version: 1.3.3(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
-      '@usefui/hooks':
-        specifier: ^1.3.3
-        version: 1.3.3(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@usefui/icons':
-        specifier: ^1.1.4
-        version: 1.1.4(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
-      '@usefui/styles':
-        specifier: ^1.4.3
-        version: 1.4.3(@types/styled-components@5.1.34)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
-      '@usefui/tokens':
         specifier: ^1.5.2
         version: 1.5.2(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
+      '@usefui/core':
+        specifier: ^1.3.4
+        version: 1.3.4(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
+      '@usefui/hooks':
+        specifier: ^1.3.4
+        version: 1.3.4(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      '@usefui/icons':
+        specifier: ^1.1.5
+        version: 1.1.5(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
+      '@usefui/styles':
+        specifier: ^1.4.4
+        version: 1.4.4(@types/styled-components@5.1.34)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
+      '@usefui/tokens':
+        specifier: ^1.5.3
+        version: 1.5.3(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
       glob:
         specifier: ^11.0.3
         version: 11.0.3
@@ -164,6 +167,9 @@ packages:
 
   '@codemirror/lang-css@6.3.1':
     resolution: {integrity: sha512-kr5fwBGiGtmz6l0LSJIbno9QrifNMUusivHbnA1H6Dmqy4HZFte3UAICix1VuKo0lMPKQr2rqB+0BkKi/S3Ejg==}
+
+  '@codemirror/lang-javascript@6.2.4':
+    resolution: {integrity: sha512-0WVmhp1QOqZ4Rt6GlVGwKJN3KW7Xh4H2q8ZZNGZaP6lRdxXJzmjm4FqvmOojVj6khWJHIb9sp7U/72W7xQgqAA==}
 
   '@codemirror/lang-json@6.0.2':
     resolution: {integrity: sha512-x2OtO+AvwEHrEwR0FyyPtfDUiloG3rnVTSZV1W8UteaLL8/MajQd8DpvUb2YVzC+/T18aSDv0H9mu+xw0EStoQ==}
@@ -409,6 +415,9 @@ packages:
 
   '@lezer/highlight@1.2.1':
     resolution: {integrity: sha512-Z5duk4RN/3zuVO7Jq0pGLJ3qynpxUVsh7IbUbGj88+uV2ApSAn6kWg2au3iJb+0Zi7kKtqffIESgNcRXWZWmSA==}
+
+  '@lezer/javascript@1.5.4':
+    resolution: {integrity: sha512-vvYx3MhWqeZtGPwDStM2dwgljd5smolYD2lR2UyFcHfxbBQebqx8yjmFmxtJ/E6nN6u1D9srOiVWm3Rb4tmcUA==}
 
   '@lezer/json@1.0.3':
     resolution: {integrity: sha512-BP9KzdF9Y35PDpv04r0VeSTKDeox5vVr3efE7eBbx3r4s3oNLfunchejZhjArmeieBH+nVOpgIiBJpEAv8ilqQ==}
@@ -823,8 +832,8 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0
       react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
 
-  '@usefui/components@1.5.1':
-    resolution: {integrity: sha512-TWsciHu9FDLkPLVXO6UdYfL31Kp+hAlU//l/svV9v11/k3MKck8r8jNQlto4cE4mfuHdb2V3dSo2Z7xjgEBalA==}
+  '@usefui/components@1.5.2':
+    resolution: {integrity: sha512-3LPNHkt1LhNlvBvSn9AT9CNWP1kpQaTY1MuBakJU4xs8t6k4x9UO+S//XrYcSTYZXd96IqZVIhFg48IFNeznSQ==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -833,8 +842,8 @@ packages:
       react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
       styled-components: ^5.1.34
 
-  '@usefui/core@1.3.3':
-    resolution: {integrity: sha512-SSMvAVPyBhYjsJwKzNdI2C5AFXRum15tpG1wd059ini4bU5L1evtRyJbnDwVXhYi362EUWOWB3rsDXKfZEmI6w==}
+  '@usefui/core@1.3.4':
+    resolution: {integrity: sha512-3uAZAs8t0OlAdby7TehdJox26/qwtqdn1dzk2pDipRd4/ChPuG/UiEO+J6RafzIYwY5BaZnyodxV/Je9t3YsDg==}
     peerDependencies:
       '@types/react': ^16.8 || ^17.0 || ^18.0 || ^19.0
       '@types/react-dom': ^16.8 || ^17.0 || ^18.0 || ^19.0
@@ -843,16 +852,16 @@ packages:
       react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
       styled-components: ^5.1.34
 
-  '@usefui/hooks@1.3.3':
-    resolution: {integrity: sha512-XXEW41GtuadEhqVS6CDlBJw25W7fqZ/vsRhvAFq1nLq4vg2rzhA5+K8wqy+jegUOL6FuFuHQ9p2S6rG7mCuVsw==}
+  '@usefui/hooks@1.3.4':
+    resolution: {integrity: sha512-n2CLId8+nwxBZuF3ht+LwOFIeXTvoVsoHY3GqFjN/2ug2VziS+brGqZ8kG+HI8YPnwfahYTXz41GD+63zHdl8w==}
     peerDependencies:
       '@types/react': ^16.8 || ^17.0 || ^18.0 || ^19.0
       '@types/react-dom': ^16.8 || ^17.0 || ^18.0 || ^19.0
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0
       react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
 
-  '@usefui/icons@1.1.4':
-    resolution: {integrity: sha512-AuVdiWFTuHDaxdByDtljAxRHQ2IWhdhREpNfqLNDK5fv32llf+uVVzK3s3vCGRqfU/M9bDchOs6DVcLHNtj1hw==}
+  '@usefui/icons@1.1.5':
+    resolution: {integrity: sha512-ceGEq90Nz5koccgkP0XUkHhRzmhPzdU+qHM56HYZu5aMIObDPfXwVydDxeaMSEn/MtdXlXBDT0eJIsDPu5zMiA==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -861,14 +870,14 @@ packages:
       react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
       styled-components: ^5.1.34
 
-  '@usefui/styles@1.4.3':
-    resolution: {integrity: sha512-28sJopWQ79QRm6awGlXM4jmANpDrQIsuk0Q0qimTJdECEvZHqRNcm4rF3NMI1Azqg9lU2sARpGiHm6kAPdWWtA==}
+  '@usefui/styles@1.4.4':
+    resolution: {integrity: sha512-Ar3VDCNEfeCmSiGsO/sAOQ0ApBk0gk+sctvY/CtTBctCKM3EbluvEmQGCoi8jeUnz9sic5LgY/cbLjOGGWIn7Q==}
     peerDependencies:
       '@types/styled-components': '*'
       styled-components: ^5.1.34
 
-  '@usefui/tokens@1.5.2':
-    resolution: {integrity: sha512-pcgJyw1x3tQn08zLP5+FMFrN2Pv92rKJisHW5IVqvzY5MLFRXk+CteVQvhoa7cZfl9Ey/Y/wLqI736WQObHS6g==}
+  '@usefui/tokens@1.5.3':
+    resolution: {integrity: sha512-5ZPxss6feGay+4yHNhZ4BDirJ9yh4Kad8NOkM+364+4TYL37iCmm/j3WbPxvuCZFFZB8r+rfGhq7xY60gZ6AbA==}
     peerDependencies:
       '@types/react': ^16.8 || ^17.0 || ^18.0 || ^19.0
       '@types/react-dom': ^16.8 || ^17.0 || ^18.0 || ^19.0
@@ -2626,6 +2635,16 @@ snapshots:
       '@lezer/common': 1.2.3
       '@lezer/css': 1.3.0
 
+  '@codemirror/lang-javascript@6.2.4':
+    dependencies:
+      '@codemirror/autocomplete': 6.18.6
+      '@codemirror/language': 6.11.2
+      '@codemirror/lint': 6.8.5
+      '@codemirror/state': 6.5.2
+      '@codemirror/view': 6.38.1
+      '@lezer/common': 1.2.3
+      '@lezer/javascript': 1.5.4
+
   '@codemirror/lang-json@6.0.2':
     dependencies:
       '@codemirror/language': 6.11.2
@@ -2867,6 +2886,12 @@ snapshots:
   '@lezer/highlight@1.2.1':
     dependencies:
       '@lezer/common': 1.2.3
+
+  '@lezer/javascript@1.5.4':
+    dependencies:
+      '@lezer/common': 1.2.3
+      '@lezer/highlight': 1.2.1
+      '@lezer/lr': 1.4.2
 
   '@lezer/json@1.0.3':
     dependencies:
@@ -3271,7 +3296,7 @@ snapshots:
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
 
-  '@usefui/components@1.5.1(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))':
+  '@usefui/components@1.5.2(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))':
     dependencies:
       '@types/react': 19.1.10
       '@types/react-dom': 19.1.7(@types/react@19.1.10)
@@ -3280,24 +3305,24 @@ snapshots:
       react-dom: 19.1.1(react@19.1.1)
       styled-components: 6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
 
-  '@usefui/core@1.3.3(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))':
+  '@usefui/core@1.3.4(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))':
     dependencies:
       '@types/react': 19.1.10
       '@types/react-dom': 19.1.7(@types/react@19.1.10)
       '@types/styled-components': 5.1.34
-      '@usefui/hooks': 1.3.3(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      '@usefui/hooks': 1.3.4(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
       styled-components: 6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
 
-  '@usefui/hooks@1.3.3(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@usefui/hooks@1.3.4(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@types/react': 19.1.10
       '@types/react-dom': 19.1.7(@types/react@19.1.10)
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
 
-  '@usefui/icons@1.1.4(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))':
+  '@usefui/icons@1.1.5(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))':
     dependencies:
       '@types/react': 19.1.10
       '@types/react-dom': 19.1.7(@types/react@19.1.10)
@@ -3306,12 +3331,12 @@ snapshots:
       react-dom: 19.1.1(react@19.1.1)
       styled-components: 6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
 
-  '@usefui/styles@1.4.3(@types/styled-components@5.1.34)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))':
+  '@usefui/styles@1.4.4(@types/styled-components@5.1.34)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))':
     dependencies:
       '@types/styled-components': 5.1.34
       styled-components: 6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
 
-  '@usefui/tokens@1.5.2(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))':
+  '@usefui/tokens@1.5.3(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(@types/styled-components@5.1.34)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))':
     dependencies:
       '@types/react': 19.1.10
       '@types/react-dom': 19.1.7(@types/react@19.1.10)
