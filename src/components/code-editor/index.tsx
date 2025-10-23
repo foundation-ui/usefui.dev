@@ -14,7 +14,7 @@ import { createTheme } from "@uiw/codemirror-themes";
 import { tags as t } from "@lezer/highlight";
 
 type CodeEditorProps = {
-  readOnly?: boolean;
+  readOnly?: true;
   value: string;
   setValue?: React.Dispatch<React.SetStateAction<string>>;
   setError?: React.Dispatch<React.SetStateAction<string | null>>;
