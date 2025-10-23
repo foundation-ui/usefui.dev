@@ -36,6 +36,7 @@
     "@usefui/icons": "^1.1.5",
     "@usefui/styles": "^1.4.4",
     "@usefui/tokens": "^1.5.3",
+    "framer-motion": "^12.23.24",
     "glob": "^11.0.3",
     "gray-matter": "^4.0.3",
     "next": "^15.4.6",
