@@ -11,7 +11,7 @@ const Wrapper = styled(ScrollArea)`
 `;
 
 function LandingWrapper({ children }: { children: React.ReactNode }) {
-  return <Wrapper>{children}</Wrapper>;
+  return <Wrapper scrollbar>{children}</Wrapper>;
 }
 
 export default LandingWrapper;

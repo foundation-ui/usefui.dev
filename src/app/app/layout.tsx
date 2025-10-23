@@ -6,16 +6,6 @@ import styled from "styled-components";
 import { Page } from "@usefui/components";
 import { Navigation } from "@/components";
 
-const NoiseBackground = styled(Page.Content)`
-  background-image: url(/vignette.webp);
-  background-size: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-
-  background-blend-mode: overlay;
-  mix-blend-mode: overlay;
-`;
 const LayoutContainer = styled(Page.Content)`
   background-color: var(--contrast-color);
   border-radius: var(--measurement-medium-30);
@@ -30,7 +20,7 @@ function layout({
 }>) {
   return (
     <Page>
-      <NoiseBackground>
+      <Page.Content>
         <Navigation />
         <Page.Wrapper
           $navigations={1.07}
@@ -39,7 +29,7 @@ function layout({
         >
           <LayoutContainer>{children}</LayoutContainer>
         </Page.Wrapper>
-      </NoiseBackground>
+      </Page.Content>
     </Page>
   );
 }
