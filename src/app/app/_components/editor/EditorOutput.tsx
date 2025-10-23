@@ -51,7 +51,7 @@ const OutputNavigation = styled(Page.Navigation)`
     var(--contrast-color);
   background-color: transparent !important;
   border: none;
-  z-index: var(--depth-default-90);
+  z-index: 1;
 `;
 
 function EditorOutput() {

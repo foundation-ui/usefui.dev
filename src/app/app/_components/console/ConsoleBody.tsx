@@ -13,7 +13,7 @@ export const ConsoleWrapper = styled(Toolbar)`
     var(--body-color);
   background: var(--contrast-color) !important;
   border: none !important;
-  z-index: var(--depth-default-90);
+  z-index: 1;
 `;
 
 function ConsoleBody({ children }: { children: React.ReactNode }) {

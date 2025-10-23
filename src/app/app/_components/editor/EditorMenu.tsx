@@ -17,7 +17,7 @@ const MenuWrapper = styled(Page.Navigation)`
 
   background: var(--contrast-color) !important;
   border: none;
-  z-index: var(--depth-default-90);
+  z-index: 1;
 `;
 
 type EditorMenuProps = {
