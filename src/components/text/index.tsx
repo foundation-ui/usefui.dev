@@ -18,7 +18,7 @@ export const DisplayMd = styled.h3`
   font-size: clamp(var(--fontsize-large-10), 5vw, var(--fontsize-large-20));
   letter-spacing: -0.05em;
   line-height: 1;
-  font-weight: 500;
+  font-weight: 400;
 `;
 export const DisplaySmall = styled.span`
   font-size: clamp(var(--fontsize-medium-20), 5vw, var(--fontsize-medium-40));
