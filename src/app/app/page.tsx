@@ -8,17 +8,18 @@ import EditorOutput from "./_components/editor/EditorOutput";
 import { Resizable } from "@usefui/components";
 import { LibraryTemplate } from "@/templates";
 
-interface EditorProps {
+interface TokenEnginePageProps {
   defaultValue?: string;
   onChange?: (value: string) => void;
   readOnly?: boolean;
 }
 
-function TokenEnginePage({
-  defaultValue = JSON.stringify(LibraryTemplate.template, null, 2),
-  onChange,
-}: EditorProps) {
-  const [value, setValue] = React.useState<string>(defaultValue);
+const DEFAULT_VALUE = JSON.stringify(LibraryTemplate.template, null, 2);
+
+function TokenEnginePage(props: TokenEnginePageProps) {
+  const { readOnly, defaultValue, onChange } = props;
+
+  const [value, setValue] = React.useState<string>(DEFAULT_VALUE);
   const [error, setError] = React.useState<string | null>(null);
 
   const deferredEditorValue = React.useDeferredValue(value);
@@ -30,10 +31,11 @@ function TokenEnginePage({
         <EditorInput
           error={error}
           value={deferredEditorValue}
-          defaultValue={defaultValue}
+          defaultValue={defaultValue ?? DEFAULT_VALUE}
           setValue={setValue}
           setError={setError}
           onChange={onChange}
+          readOnly={readOnly}
         />
       }
       right={<EditorOutput />}

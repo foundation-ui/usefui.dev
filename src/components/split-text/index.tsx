@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { motion, type Variant, type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 interface SplitTextProps {
   text: string;
@@ -24,11 +24,6 @@ const CharacterWrapper = styled(motion.span)`
   display: inline-block;
   white-space: pre;
 `;
-
-// const WordWrapper = styled(motion.span)`
-//   display: inline-block;
-//   white-space: pre;
-// `;
 
 const variants: Record<string, Variants> = {
   fade: {
@@ -57,7 +52,7 @@ const variants: Record<string, Variants> = {
   },
 };
 
-export const SplitText: React.FC<SplitTextProps> = ({
+const SplitText: React.FC<SplitTextProps> = ({
   text,
   className = "",
   delay = 0,
