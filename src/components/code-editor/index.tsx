@@ -13,16 +13,19 @@ import { css } from "@codemirror/lang-css";
 import { createTheme } from "@uiw/codemirror-themes";
 import { tags as t } from "@lezer/highlight";
 
-type CodeEditorProps = {
-  readOnly?: true;
+interface CodeEditorProps {
+  readOnly?: boolean;
   value: string;
   setValue?: React.Dispatch<React.SetStateAction<string>>;
   setError?: React.Dispatch<React.SetStateAction<string | null>>;
   onChange?: (value: string) => void;
   language?: "css" | "json" | "jsx" | "tsx" | "ts" | "js";
-};
+}
 
 const EditorWrapper = styled(ScrollArea)`
+  border-top-right-radius: var(--measurement-medium-30);
+  border-bottom-right-radius: var(--measurement-medium-30);
+
   .cm-theme {
     height: 100%;
   }
@@ -58,6 +61,7 @@ const EditorTheme = createTheme({
     selection: "var(--font-color-alpha-10)",
     selectionMatch: "var(--font-color-alpha-10)",
     fontSize: "var(--fontsize-small-60)",
+    fontFamily: "var(--font-mono)",
     gutterActiveForeground: "var(--font-color-alpha-30)",
     gutterBackground: "var(--contrast-color)",
     gutterBorder: "var(--font-color-alpha-10)",

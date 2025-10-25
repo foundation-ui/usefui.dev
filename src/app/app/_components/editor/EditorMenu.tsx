@@ -15,7 +15,9 @@ const MenuWrapper = styled(Page.Navigation)`
   box-shadow: 0 0 var(--measurement-medium-50) var(--measurement-medium-10)
     var(--body-color);
 
+  border-bottom-left-radius: var(--measurement-medium-30);
   background: var(--contrast-color) !important;
+
   border: none;
   z-index: 1;
 `;

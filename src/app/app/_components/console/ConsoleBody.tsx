@@ -9,6 +9,7 @@ export const ConsoleWrapper = styled(Toolbar)`
   padding: var(--measurement-medium-30) 0 !important;
   align-self: end !important;
 
+  border-top-left-radius: var(--measurement-medium-30);
   box-shadow: 0 0 var(--measurement-medium-50) var(--measurement-medium-10)
     var(--body-color);
   background: var(--contrast-color) !important;
