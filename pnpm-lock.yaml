@@ -35,6 +35,9 @@ importers:
       '@next/mdx':
         specifier: ^15.4.6
         version: 15.4.6(@mdx-js/loader@3.1.0(acorn@8.15.0))(@mdx-js/react@3.1.0(@types/react@19.1.10)(react@19.1.1))
+      '@paper-design/shaders-react':
+        specifier: ^0.0.60
+        version: 0.0.60(@types/react@19.1.10)(react@19.1.1)
       '@t3-oss/env-nextjs':
         specifier: ^0.12.0
         version: 0.12.0(typescript@5.9.2)(zod@3.25.76)
@@ -531,6 +534,18 @@ packages:
   '@nolyfill/is-core-module@1.0.39':
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
+
+  '@paper-design/shaders-react@0.0.60':
+    resolution: {integrity: sha512-mlEr4HqiUykAvYx4XepS/eQ4oJhrvKZRc04ICfEeDfwmcj/Bpjpg7PjDuRVKARR4qr4DqXzhVpsYyA+AiNMi4w==}
+    peerDependencies:
+      '@types/react': ^18 || ^19
+      react: ^18 || ^19
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@paper-design/shaders@0.0.60':
+    resolution: {integrity: sha512-z2xPEpPysbNReWnMya2NDZPKwELA+Mat4o9HtZjAlolazL0KS3mJfx4jdMQPn8wDsJwUkLEjBYodQzndmQPi+w==}
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -3029,6 +3044,15 @@ snapshots:
       fastq: 1.19.1
 
   '@nolyfill/is-core-module@1.0.39': {}
+
+  '@paper-design/shaders-react@0.0.60(@types/react@19.1.10)(react@19.1.1)':
+    dependencies:
+      '@paper-design/shaders': 0.0.60
+      react: 19.1.1
+    optionalDependencies:
+      '@types/react': 19.1.10
+
+  '@paper-design/shaders@0.0.60': {}
 
   '@rtsao/scc@1.1.0': {}
 
