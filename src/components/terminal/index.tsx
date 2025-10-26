@@ -99,10 +99,6 @@ const DEFAULT_HISTORY = [
     input: "install",
     output: `npm install ${PACKAGES.join(" ")}\npnpm add ${PACKAGES.join(" ")}\nyarn add ${PACKAGES.join(" ")}\nbun add ${PACKAGES.join(" ")}`,
   },
-  {
-    input: "cli",
-    output: `${SCRIPTS.join("\n")}`,
-  },
 ];
 
 function parseCommand(input: string) {
