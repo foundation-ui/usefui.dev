@@ -17,6 +17,7 @@ const BoxContainer = styled.div`
 `;
 const Box = styled(motion.div)`
   resize: both;
+  outline: none;
   overflow: auto;
   z-index: 10;
   box-sizing: border-box;
@@ -61,10 +62,12 @@ const DragboxContainer = React.forwardRef<
 >((props, forwardedRef): React.ReactElement => {
   const { children, ...restProps } = props;
   return (
-    <BoxContainer ref={forwardedRef} {...restProps}>
-      <motion.div className="flex flex-column justify-center align-center p-large-10">
-        {children}
-      </motion.div>
+    <BoxContainer
+      ref={forwardedRef}
+      className="flex flex-column justify-center align-center p-large-10"
+      {...restProps}
+    >
+      {children}
     </BoxContainer>
   );
 });
