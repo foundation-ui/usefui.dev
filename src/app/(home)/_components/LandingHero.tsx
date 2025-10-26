@@ -2,65 +2,59 @@
 
 import React from "react";
 import styled from "styled-components";
+import { motion, type Variants } from "framer-motion";
 
-import { useRouter } from "next/navigation";
+import { GrainGradient } from "@paper-design/shaders-react";
+import { Dragbox, Terminal } from "@/components";
 
-import { Button } from "@usefui/components";
-import { DisplaySmall, DisplayXxl } from "@/components";
-import { Icon, PixelIcon } from "@usefui/icons";
-
-const Header = styled.hgroup`
+const ShaderContainer = styled.div`
+  position: absolute;
   width: 100%;
-  margin: 0 auto;
-  max-width: var(--breakpoint-tablet-landscape);
+  height: 100%;
+  z-index: 0;
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+`;
 
-  padding-top: calc(var(--measurement-large-30) + var(--measurement-large-60));
-  padding-bottom: var(--measurement-large-60);
-`;
-const HeroDescWrapper = styled.div`
-  max-width: var(--breakpoint-tablet);
-`;
+const fade: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+  },
+};
 
 function LandingHero() {
-  const router = useRouter();
+  const constraintsRef = React.useRef<HTMLDivElement>(null);
 
   return (
-    <Header className="p-x-medium-60">
-      <DisplayXxl className="m-b-medium-30">
-        Headless Design System Platform for Modern Product Teams
-      </DisplayXxl>
-      <HeroDescWrapper>
-        <DisplaySmall as="p" className="m-b-large-10">
-          <span className="opacity-default-60">
-            Foundation offers a suite of
-          </span>
-          &nbsp;powerful Engines and Libraries&nbsp;
-          <span className="opacity-default-60">
-            optimized to create cohesive UIs
-          </span>
-          &nbsp;using accessible, robust, and intuitive components—
-          <span className="opacity-default-60">all while leveraging</span>
-          &nbsp;build-time user analytics{" "}
-          <span className="opacity-default-60">to make smarter decisions.</span>
-        </DisplaySmall>
+    <motion.div variants={fade} initial="hidden" animate="visible">
+      <Dragbox.Container ref={constraintsRef}>
+        <Dragbox>
+          <div className="h-100 flex flex-column justify-between">
+            <Dragbox.Header header="@usefui" meta="v.1" />
+            <Terminal />
+          </div>
+        </Dragbox>
 
-        <span className="flex flex-wrap align-center g-medium-60">
-          <Button
-            variant="primary"
-            sizing="large"
-            onClick={() => router.push("/docs/introduction")}
-          >
-            Get started
-          </Button>
-          <Button variant="ghost" onClick={() => router.push("/app")}>
-            Generate libraries
-            <Icon>
-              <PixelIcon.ChevronRight />
-            </Icon>
-          </Button>
-        </span>
-      </HeroDescWrapper>
-    </Header>
+        <ShaderContainer>
+          <GrainGradient
+            width={1280}
+            height={720}
+            colors={["#ebeae5", "#ffd233", "#FF7F11", "#EC4E20"]}
+            colorBack="rgba(0,0,0,0)"
+            softness={1}
+            intensity={1}
+            noise={0}
+            shape="corners"
+            speed={Math.PI / 2}
+            scale={Math.PI}
+            rotation={90}
+          />
+        </ShaderContainer>
+      </Dragbox.Container>
+    </motion.div>
   );
 }
 
