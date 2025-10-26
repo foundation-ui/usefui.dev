@@ -27,7 +27,7 @@ function Navigation() {
   const router = useRouter();
 
   return (
-    <NavWrapper className="flex justify-center align-center">
+    <NavWrapper className="flex justify-center align-center p-x-medium-60">
       <NavItemsWrapper className="flex justify-between align-center g-medium-30">
         <div className="flex align-center g-medium-40">
           <Button variant="ghost" rawicon onMouseDown={() => router.push("/")}>
