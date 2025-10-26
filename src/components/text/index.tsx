@@ -3,16 +3,16 @@
 import styled from "styled-components";
 
 export const DisplayXxl = styled.h1`
-  font-size: clamp(var(--fontsize-large-60), 8vw, var(--fontsize-large-90));
+  font-size: clamp(var(--fontsize-large-30), 8vw, var(--fontsize-large-90));
   letter-spacing: -0.06em;
   line-height: 1;
-  font-weight: 500;
+  font-weight: 400;
 `;
 export const DisplayXl = styled.h1`
   font-size: clamp(var(--fontsize-large-30), 5vw, var(--fontsize-large-50));
   letter-spacing: -0.05em;
   line-height: 0.95;
-  font-weight: 500;
+  font-weight: 400;
 `;
 export const DisplayMd = styled.h3`
   font-size: clamp(var(--fontsize-large-10), 5vw, var(--fontsize-large-20));
