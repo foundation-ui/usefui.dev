@@ -22,18 +22,38 @@ const Box = styled(motion.div)`
   z-index: 10;
   box-sizing: border-box;
 
-  min-width: var(--breakpoint-mobile);
-  max-width: var(--breakpoint-tablet);
-  width: 100%;
-
-  min-height: var(--breakpoint-mobile);
-  max-height: var(--breakpoint-tablet-small);
-  height: 100%;
-
   background-color: var(--body-color);
   border-radius: var(--measurement-medium-30);
   box-shadow: 0 var(--measurement-medium-30) var(--measurement-medium-30)
     calc(var(--measurement-medium-10) * -1) var(--alpha-mono-darkest-10);
+
+  &[data-sizing="large"] {
+    min-width: var(--breakpoint-mobile);
+    max-width: var(--breakpoint-tablet);
+    width: 100%;
+
+    min-height: var(--breakpoint-mobile);
+    max-height: var(--breakpoint-tablet-small);
+    height: 100%;
+  }
+  &[data-sizing="medium"] {
+    min-width: var(--breakpoint-mobile);
+    max-width: var(--breakpoint-tablet-small);
+    width: 100%;
+
+    min-height: var(--breakpoint-mobile);
+    max-height: calc(var(--breakpoint-mobile-large) * 1.2);
+    height: 100%;
+  }
+  &[data-sizing="small"] {
+    min-width: var(--breakpoint-mobile);
+    max-width: var(--breakpoint-mobile);
+    width: 100%;
+
+    min-height: var(--breakpoint-mobile);
+    max-height: var(--breakpoint-mobile);
+    height: 100%;
+  }
 `;
 const BoxHeader = styled(Page.Navigation)`
   background: none !important;
@@ -91,13 +111,19 @@ const DragboxHeader = (props: DragboxHeaderProps) => {
 };
 DragboxHeader.displayName = "Dragbox.Header";
 
-const Dragbox = ({ children }: { children: React.ReactNode }) => {
+const Dragbox = (props: {
+  sizing?: "small" | "medium" | "large";
+  children: React.ReactNode;
+}) => {
+  const { sizing, children, ...restProps } = props;
   return (
     <Box
       drag
       dragMomentum={false}
       dragElastic={0.2}
       whileTap={{ cursor: "grabbing" }}
+      data-sizing={sizing ?? "large"}
+      {...restProps}
     >
       {children}
     </Box>
