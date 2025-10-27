@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 import { useRouter } from "next/navigation";
 
-import { BrandIcon } from "@/components";
-import { Button, Page } from "@usefui/components";
+import { BrandIcon, DisplaySmall } from "@/components";
+import { Breadcrumb, Button, Page } from "@usefui/components";
 import { Icon, PixelIcon, SocialIcon } from "@usefui/icons";
 
 const NavWrapper = styled(Page.Navigation)`
@@ -15,6 +15,7 @@ const NavWrapper = styled(Page.Navigation)`
 
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   margin: 0 auto;
   z-index: var(--depth-default-100);
@@ -27,21 +28,33 @@ function Navigation() {
   const router = useRouter();
 
   return (
-    <NavWrapper className="flex justify-center align-center p-x-medium-60">
+    <NavWrapper className="flex justify-center align-center">
       <NavItemsWrapper className="flex justify-between align-center g-medium-30">
-        <div className="flex align-center g-medium-40">
-          <Button variant="ghost" rawicon onMouseDown={() => router.push("/")}>
-            <Icon fill="none" width={29.36} height={29.36} viewBox="0 0 32 48">
-              <BrandIcon />
-            </Icon>
-          </Button>
+        <div className="flex align-center g-medium-60">
+          <div className="flex align-center g-medium-10">
+            <Button
+              variant="ghost"
+              rawicon
+              onMouseDown={() => router.push("/")}
+            >
+              <Icon fill="none" width={24} height={24} viewBox="0 0 32 48">
+                <BrandIcon />
+              </Icon>
+            </Button>
+            <DisplaySmall className="fs-medium-10">Foundation UI</DisplaySmall>
+          </div>
 
-          <Button variant="ghost" sizing="small">
-            Products
-          </Button>
-          <Button variant="ghost" sizing="small">
-            Docs
-          </Button>
+          <div className="flex align-center g-medium-60">
+            <Button variant="ghost" sizing="small">
+              Features
+            </Button>
+            <Button variant="ghost" sizing="small">
+              CLI
+            </Button>
+            <Button variant="ghost" sizing="small">
+              Docs
+            </Button>
+          </div>
         </div>
 
         <div className="flex align-center g-medium-10">

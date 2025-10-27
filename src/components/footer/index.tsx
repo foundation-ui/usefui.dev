@@ -18,7 +18,7 @@ const FooterWrapper = styled.footer`
 
 function Footer() {
   return (
-    <FooterWrapper className="p-x-medium-60 p-y-large-10 flex justify-between align-center g-medium-60">
+    <FooterWrapper className="flex justify-between align-center g-medium-60">
       <p className="fs-medium-10">
         <span className="opacity-default-60">Built by</span>&nbsp;
         <a target="_blank" href="https://github.com/nnsncl">

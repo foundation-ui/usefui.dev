@@ -16,8 +16,7 @@ const Header = styled(motion.hgroup)`
   margin: 0 auto;
   max-width: var(--breakpoint-desktop-small);
 
-  padding: var(--measurement-large-70) var(--measurement-medium-60) 0
-    var(--measurement-medium-60);
+  padding-top: var(--measurement-large-70);
 `;
 const HeroDescWrapper = styled(motion.div)`
   max-width: var(--breakpoint-tablet-small);
