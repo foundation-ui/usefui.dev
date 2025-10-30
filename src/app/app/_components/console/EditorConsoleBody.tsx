@@ -3,11 +3,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Icon, PixelIcon } from "@usefui/icons";
 import type { EditorConsoleProps } from "./EditorConsole";
+import { Divider } from "@usefui/components";
 
 const ConsoleBodyWrapper = styled.div`
-  padding: var(--measurement-medium-30) 0;
   height: 100%;
   width: 100%;
 
@@ -24,14 +23,15 @@ const ConsoleBodyWrapper = styled.div`
 
 function EditorConsoleBody({ mode, value }: EditorConsoleProps) {
   return (
-    <ConsoleBodyWrapper data-mode={mode} className="p-medium-30">
-      {value ? (
-        <code>{value}</code>
-      ) : (
-        <Icon fillOpacity={0.3}>
-          <PixelIcon.ChevronRight />
-        </Icon>
-      )}
+    <ConsoleBodyWrapper data-mode={mode}>
+      <Divider />
+      <div className="p-medium-30 fs-small-50">
+        {value ? (
+          <kbd className=" color-red">{value}</kbd>
+        ) : (
+          <kbd className="opacity-default-30">$</kbd>
+        )}
+      </div>
     </ConsoleBodyWrapper>
   );
 }
