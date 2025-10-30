@@ -22,7 +22,7 @@ function Navigation() {
     <NavWrapper className="flex justify-between align-center g-medium-30">
       <div className="flex align-center g-medium-40">
         <Button variant="ghost" rawicon onMouseDown={() => router.push("/")}>
-          <Icon fill="none" width={29.36} height={29.36} viewBox="0 0 32 48">
+          <Icon fill="none" width={24} height={24} viewBox="0 0 32 48">
             <BrandIcon />
           </Icon>
         </Button>
