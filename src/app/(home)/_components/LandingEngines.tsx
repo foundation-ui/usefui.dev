@@ -54,34 +54,35 @@ const staggerItem = {
   show: { opacity: 1, y: 0 },
 };
 
-const JSX_TEMPLATE = `import { useColorMode } from "@usefui/tokens";
-import { Button, Tooltip } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+const JSX_TEMPLATE = `import {
+  generateAlpha,
+  generateColorClasses,
+  generateCSSVariables,
+  generateDimensionClasses,
+  generateFontSizesClasses,
+  generateLayoutClasses,
+  generateOpacityClasses,
+  generateSizeClasses,
+} from "@usefui/core";
+import { custom_design_tokens } from "@/styles";
 
-function ColorMode() {
-  const { setColorMode } = useColorMode();
-  return (
-    <Tooltip content="System">
-      <Button
-        id="system-mode-trigger"
-        variant="secondary"
-        sizing="medium"
-        shape="smooth"
-        animation="reflective"
-        onClick={() => setColorMode('system')}
-      >
-        <Icon>
-          <PixelIcon.Contrast />
-        </Icon>
-      </Button>
-    </Tooltip>
-  );
-}
+const { design_tokens } = custom_design_tokens;
+const {  measurement, fontsize, opacity, color } = design_tokens;
 
-export default ColorModes;
+const cssLayoutClasses = generateLayoutClasses();
+const cssWidthHeightClasses = generateDimensionClasses();
+const cssSizeClasses = generateSizeClasses(measurement);
+const cssFSClasses = generateFontSizesClasses(fontsize);
+const cssOpacityClasses = generateOpacityClasses(opacity);
+const cssColorClasses = generateColorClasses(color);
+
+const cssVariables = generateCSSVariables({
+  name: 'custom-library,
+  design_tokens,
+});
 `;
 
-function LandingIntegration() {
+function LandingEngines() {
   return (
     <SectionContainer
       className="p-medium-60 g-large-10 w-100 h-100"
@@ -90,30 +91,13 @@ function LandingIntegration() {
       viewport={{ once: true, amount: 0.1 }}
       variants={container}
     >
-      <Hgroup>
-        <motion.span variants={staggerItem}>
-          <DisplaySmall as="p" className="m-b-medium-60">
-            Built with Typescript, Foundation UI can be integrated with your
-            favorite React-based frameworks.
-          </DisplaySmall>
-        </motion.span>
-        <motion.span variants={staggerItem}>
-          <Button variant="ghost" sizing="medium">
-            Installation guide
-            <Icon>
-              <PixelIcon.ChevronRight />
-            </Icon>
-          </Button>
-        </motion.span>
-      </Hgroup>
-
       <CodeContainer className="flex align-center justify-center">
         <CodeBox sizing="medium">
           <motion.div
             className="h-100 flex flex-column justify-between"
             variants={staggerItem}
           >
-            <Dragbox.Header header="color-mode.tsx" meta="" />
+            <Dragbox.Header header="@usefui/core" meta="" />
             <ScrollArea
               scrollbar
               className="w-100 h-100 p-l-medium-60 p-y-medium-60 flex flex-column g-medium-30"
@@ -148,8 +132,25 @@ function LandingIntegration() {
           </motion.div>
         </CodeBox>
       </CodeContainer>
+
+      <Hgroup>
+        <motion.span variants={staggerItem}>
+          <DisplaySmall as="p" className="m-b-medium-60">
+            Generate design tokens, CSS variables, and classes at runtime for
+            effortless white-labeling
+          </DisplaySmall>
+        </motion.span>
+        <motion.span variants={staggerItem}>
+          <Button variant="ghost" sizing="medium">
+            Read about engines
+            <Icon>
+              <PixelIcon.ChevronRight />
+            </Icon>
+          </Button>
+        </motion.span>
+      </Hgroup>
     </SectionContainer>
   );
 }
 
-export default LandingIntegration;
+export default LandingEngines;

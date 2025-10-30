@@ -106,7 +106,11 @@ const CSSRoot = createGlobalStyle`
 		--breakpoint-desktop: 1440px;
 		--breakpoint-desktop-large: 1589px;
 
+    --font-mono: "berkeleyMono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
 
+    kbd, pre, code {
+      font-family: var(--font-mono);
+    }
 	}
 `;
 

@@ -2,34 +2,36 @@
 
 import React from "react";
 
-import LandingWrapper from "./_components/LandingWrapper";
-import LandingHero from "./_components/LandingHero";
+import LandingHeader from "./_components/LandingHeader";
+import LandingIntegration from "./_components/LandingIntegration";
 import LandingProducts from "./_components/LandingProducts";
-import LandingSocials from "./_components/LandingSocials";
-import BlueprintSvg from "./_components/BlueprintSvg";
+import LandingEngines from "./_components/LandingEngines";
+import LandingCallToAction from "./_components/LandingCallToAction";
 
-import { Page } from "@usefui/components";
-import { LayoutWrapper } from "./_components/LayoutWrapper";
+import { Page, ScrollArea } from "@usefui/components";
 import { LandingNavigation, Footer, MaxWidthContainer } from "@/components";
 
 function LandingPage() {
   return (
     <Page className="h-100 w-100">
-      <LayoutWrapper>
-        <LandingWrapper>
+      <Page.Content>
+        <ScrollArea className="w-100 h-100" scrollbar>
           <LandingNavigation />
+          <LandingHeader />
 
-          <LandingHero />
-          <BlueprintSvg />
-
-          <MaxWidthContainer className="w-100 grid g-large-10 p-b-large-30 g-large-30">
+          <MaxWidthContainer className="p-x-medium-60 w-100 grid p-y-large-30 g-large-30">
+            <LandingIntegration />
             <LandingProducts />
-            <LandingSocials />
+            <LandingEngines />
           </MaxWidthContainer>
 
-          <Footer />
-        </LandingWrapper>
-      </LayoutWrapper>
+          <LandingCallToAction />
+
+          <MaxWidthContainer className="p-x-medium-60 p-y-large-10 ">
+            <Footer />
+          </MaxWidthContainer>
+        </ScrollArea>
+      </Page.Content>
     </Page>
   );
 }

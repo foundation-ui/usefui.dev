@@ -32,12 +32,6 @@ const stagger: Variants = {
     },
   },
 };
-const fade: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-  },
-};
 const slideEmphasis: Variants = {
   hidden: {
     opacity: 0,
@@ -53,7 +47,12 @@ function LandingHeader() {
   const router = useRouter();
 
   return (
-    <Header variants={stagger} initial="hidden" animate="visible">
+    <Header
+      variants={stagger}
+      initial="hidden"
+      animate="visible"
+      className="p-x-medium-60 "
+    >
       <HeroDescWrapper variants={slideEmphasis} className="m-b-large-30">
         <DisplayMd className="m-b-large-10">
           Headless Design System platform built for modern product teams to
