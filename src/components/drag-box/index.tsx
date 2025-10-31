@@ -7,14 +7,25 @@ import { Page } from "@usefui/components";
 import { SplitText } from "@/components";
 
 const BoxContainer = styled.div`
+  position: relative;
   width: 100%;
   height: var(--breakpoint-tablet-small);
   border-radius: var(--measurement-medium-30);
   background-color: var(--contrast-color);
-
   position: relative;
   overflow: hidden;
 `;
+const BackgroundOverlay = styled.div`
+  position: absolute;
+  z-index: 100;
+  user-select: none;
+  pointer-events: none;
+  background: transparent;
+  background: radial-gradient(circle, transparent 75%, var(--body-color) 100%);
+  height: 100%;
+  width: 100%;
+`;
+
 const Box = styled(motion.div)`
   resize: both;
   outline: none;
@@ -74,7 +85,13 @@ interface DragboxHeaderProps
 export interface IDragboxComposition {
   Container: typeof DragboxContainer;
   Header: typeof DragboxHeader;
+  Overlay: typeof DragboxOverlay;
 }
+
+const DragboxOverlay = (props: React.ComponentProps<"div">) => {
+  return <BackgroundOverlay {...props} />;
+};
+DragboxOverlay.displayName = "Dragbox.Overlay";
 
 const DragboxContainer = React.forwardRef<
   HTMLDivElement,
@@ -133,5 +150,6 @@ Dragbox.displayName = "Dragbox";
 
 Dragbox.Container = DragboxContainer;
 Dragbox.Header = DragboxHeader;
+Dragbox.Overlay = DragboxOverlay;
 
-export { Dragbox, DragboxContainer, DragboxHeader };
+export { Dragbox, DragboxContainer, DragboxHeader, DragboxOverlay };
