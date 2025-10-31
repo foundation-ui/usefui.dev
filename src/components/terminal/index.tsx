@@ -11,9 +11,7 @@ import { Button, Divider, Field, ScrollArea } from "@usefui/components";
 import { Icon, PixelIcon } from "@usefui/icons";
 
 const TerminalPrompt = styled.form`
-  background-color: var(--contrast-color);
   padding: 0 var(--measurement-medium-30);
-  border-radius: var(--measurement-medium-30);
 `;
 
 const stagger: Variants = {
@@ -99,6 +97,10 @@ const DEFAULT_HISTORY = [
     input: "install",
     output: `npm install ${PACKAGES.join(" ")}\npnpm add ${PACKAGES.join(" ")}\nyarn add ${PACKAGES.join(" ")}\nbun add ${PACKAGES.join(" ")}`,
   },
+  {
+    input: "cli",
+    output: `${SCRIPTS.join("\n")}`,
+  },
 ];
 
 function parseCommand(input: string) {
@@ -173,7 +175,7 @@ function Terminal() {
   return (
     <React.Fragment>
       <motion.header
-        className="grid g-medium-10 fs-medium-10 p-medium-60"
+        className="grid g-medium-10 fs-small-50 p-medium-60"
         variants={stagger}
         initial="hidden"
         animate="visible"
@@ -217,8 +219,8 @@ function Terminal() {
       >
         {history.map((entry, idx) => (
           <React.Fragment key={idx}>
-            <div className="flex align-end g-medium-10">
-              <kbd className="fs-medium-10 opacity-default-30">
+            <div className="flex align-end g-medium-10 fs-small-50 ">
+              <kbd className="opacity-default-30">
                 <SplitText
                   stagger={0.02}
                   duration={0.1}
@@ -228,7 +230,7 @@ function Terminal() {
               </kbd>
 
               <span className="flex align-center g-medium-10">
-                <kbd className="fs-medium-10 opacity-default-60">
+                <kbd className="opacity-default-60">
                   <SplitText
                     stagger={0.02}
                     duration={0.1}
@@ -240,7 +242,7 @@ function Terminal() {
             </div>
 
             <motion.kbd
-              className="fs-medium-10 opacity-default-30 m-b-medium-30"
+              className="fs-small-50 opacity-default-30 m-b-medium-30"
               variants={slideEmphasis}
               initial="hidden"
               animate="visible"
@@ -252,7 +254,9 @@ function Terminal() {
         ))}
       </ScrollArea>
 
-      <footer className="p-medium-30">
+      <Divider />
+
+      <footer className="p-b-medium-30 p-x-medium-30">
         <TerminalPrompt
           onSubmit={handleSubmit}
           className="flex align-center justify-between g-medium-30 w-100"
@@ -266,7 +270,8 @@ function Terminal() {
               aria-label="Terminal input"
               autoComplete="off"
               variant="ghost"
-              sizing="large"
+              sizing="small"
+              placeholder="Type a command"
               style={{
                 fontFamily: "var(--font-mono) !important",
                 width: "100%",
