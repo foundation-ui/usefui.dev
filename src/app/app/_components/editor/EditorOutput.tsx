@@ -8,6 +8,9 @@ import { useEngineStore } from "@/stores";
 import CSSEditor from "./CSSEditor";
 import AnalyticsMeta from "../data/AnalyticsMeta";
 
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+
 import {
   CopyButton,
   Page,
@@ -16,10 +19,10 @@ import {
   Tooltip,
 } from "@usefui/components";
 import { Icon, PixelIcon } from "@usefui/icons";
-import { CodeEditor } from "@/components";
 
 const WELCOME_PAYLOAD = {
   ahoy: ["Hello! 👋", "Thank you for trying out Foundation UI ✨"],
+  test: true,
   get_started: [
     "1 - Give a name to the library 📦",
     "2 - Customize the values in the left panel 🎨",
@@ -59,6 +62,10 @@ function EditorOutput() {
   const clearOutput = useEngineStore((state) => state.clearOutput);
 
   const disableTrigger = typeof library === typeof null;
+  const output = React.useMemo(() => {
+    if (disableTrigger) return JSON.stringify(WELCOME_PAYLOAD, null, 2);
+    return JSON.stringify(JSON.parse(String(library)), null, 2);
+  }, [disableTrigger, library]);
 
   return (
     <Tabs.Root>
@@ -121,16 +128,33 @@ function EditorOutput() {
 
         <OutputWrapper className="h-100" scrollbar>
           <Tabs.Content value="json" className="w-100 h-auto">
-            <CodeEditor
-              key={library}
-              value={
-                disableTrigger
-                  ? JSON.stringify(WELCOME_PAYLOAD, null, 2)
-                  : JSON.stringify(JSON.parse(String(library)), null, 2)
-              }
-              readOnly
+            <SyntaxHighlighter
               language="json"
-            />
+              customStyle={{
+                padding: "0",
+                background: "transparent",
+                fontSize: "var(--fontsize-small-50)",
+              }}
+              style={oneDark}
+              lineNumberStyle={{
+                paddingRight: "var(--measurement-medium-10)",
+                textAlign: "right",
+                userSelect: "none",
+                opacity: 0.6,
+              }}
+              wrapLines={true}
+              lineProps={{
+                style: {
+                  backgroundColor: "transparent",
+                  display: "block",
+                  width: "100%",
+                  fontFamily: "var(--font-mono)",
+                },
+              }}
+              PreTag="div"
+            >
+              {output}
+            </SyntaxHighlighter>
           </Tabs.Content>
           <Tabs.Content value="css-vars" className="w-100 h-auto">
             <CSSEditor

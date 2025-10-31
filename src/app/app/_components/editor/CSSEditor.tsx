@@ -6,7 +6,8 @@
 import React from "react";
 
 import { generateCSSVariables } from "@usefui/core";
-import { CodeEditor } from "@/components";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function CSSEditor({ data }: { data: string }) {
   const [library] = React.useState<any>(JSON.parse(String(data)));
@@ -29,7 +30,6 @@ function CSSEditor({ data }: { data: string }) {
     ${shadesVars}
     ${fontsizeVars}
     ${measurementVars}
-
     ${depthVars}
     ${opacityVars}
   }
@@ -41,13 +41,38 @@ function CSSEditor({ data }: { data: string }) {
     // Remove consecutive commas
     .replace(/,{2,}/g, "")
     // Remove empty lines
-    .replace(/^\s*[\r\n]/gm, "")
-    // Clean up any remaining empty declarations
-    .replace(/--[^:]+:\s*;/g, "")
-    // Ensure proper spacing after semicolons
-    .replace(/;(?!\s*[\r\n])/g, ";\n");
+    .replace(/^\s*[\r\n]/gm, "");
 
-  return <CodeEditor value={sanitizedVariables} language="css" readOnly />;
+  return (
+    <SyntaxHighlighter
+      language="scss"
+      customStyle={{
+        padding: "0",
+        background: "transparent",
+        fontSize: "var(--fontsize-small-50)",
+        fontFamily: "var(--font-mono)",
+      }}
+      style={oneDark}
+      lineNumberStyle={{
+        paddingRight: "var(--measurement-medium-10)",
+        textAlign: "right",
+        userSelect: "none",
+        opacity: 0.6,
+      }}
+      wrapLines={true}
+      lineProps={{
+        style: {
+          fontFamily: "var(--font-mono)",
+          backgroundColor: "transparent",
+          display: "block",
+          width: "100%",
+        },
+      }}
+      PreTag="div"
+    >
+      {sanitizedVariables}
+    </SyntaxHighlighter>
+  );
 }
 
 export default CSSEditor;

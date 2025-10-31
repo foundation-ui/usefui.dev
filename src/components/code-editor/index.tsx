@@ -49,6 +49,18 @@ const EditorWrapper = styled(ScrollArea)`
       display: none;
     }
   }
+
+  /* Enhanced bracket matching */
+  .cm-matchingBracket {
+    background-color: var(--font-color-alpha-10);
+    border-radius: 2px;
+    font-weight: 600;
+  }
+
+  .cm-nonmatchingBracket {
+    background-color: rgba(255, 0, 0, 0.1);
+    border-radius: 2px;
+  }
 `;
 
 const EditorTheme = createTheme({
@@ -60,22 +72,35 @@ const EditorTheme = createTheme({
     caret: "var(--font-color-alpha-60)",
     selection: "var(--font-color-alpha-10)",
     selectionMatch: "var(--font-color-alpha-10)",
-    fontSize: "var(--fontsize-small-60)",
+    fontSize: "var(--fontsize-small-50)",
     fontFamily: "var(--font-mono)",
     gutterActiveForeground: "var(--font-color-alpha-30)",
     gutterBackground: "var(--contrast-color)",
     gutterBorder: "var(--font-color-alpha-10)",
-    lineHighlight: "transparent",
+    lineHighlight: "var(--contrast-color)",
   },
   styles: [
-    { tag: t.number, color: "var(--tint-blue-30)" },
-    { tag: t.string, color: "var(--shade-green-10)" },
-    { tag: t.bracket, color: "var(--font-color)" },
-    { tag: t.punctuation, color: "var(--font-color)" },
-    { tag: t.comment, color: "var(--font-color-alpha-40)" },
-    { tag: t.keyword, color: "var(--tint-purple-30)" },
-    { tag: t.function(t.variableName), color: "var(--tint-blue-20)" },
-    { tag: t.typeName, color: "var(--tint-orange-30)" },
+    // JSON-specific: Property names (keys)
+    { tag: t.propertyName, color: "rgb(224, 108, 117)", fontWeight: "500" },
+
+    // JSON values
+    { tag: t.string, color: "rgb(152, 195, 121)" },
+    { tag: t.number, color: "rgb(224, 108, 117)", fontWeight: "500" },
+    { tag: t.bool, color: "rgb(209, 154, 102)", fontWeight: "600" },
+    { tag: t.null, color: "var(--font-color-alpha-30)", fontWeight: "600" },
+
+    // Brackets and braces
+    {
+      tag: t.squareBracket,
+      color: "var(--font-color-alpha-60)",
+      fontWeight: "600",
+    },
+    { tag: t.brace, color: "var(--font-color-alpha-60)", fontWeight: "600" },
+    { tag: t.bracket, color: "var(--font-color-alpha-60)", fontWeight: "600" },
+
+    // Punctuation (colons, commas)
+    { tag: t.separator, color: "var(--font-color-alpha-60)" },
+    { tag: t.punctuation, color: "var(--font-color-alpha-60)" },
   ],
 });
 
@@ -90,6 +115,8 @@ function CodeEditor({
   const languageExtension = React.useMemo(() => {
     if (language === "css") return css();
     if (language === "json") return json();
+    // Return undefined for unsupported languages, CodeMirror handles it gracefully
+    return undefined;
   }, [language]) as Extension;
 
   const handleChange = React.useCallback(
@@ -101,29 +128,44 @@ function CodeEditor({
         return;
       }
 
-      setError?.(null);
+      // Validate JSON when language is json
+      if (language === "json") {
+        try {
+          JSON.parse(newValue);
+          setError?.(null);
+        } catch (e) {
+          setError?.(e instanceof Error ? e.message : "Invalid JSON syntax");
+        }
+      } else {
+        setError?.(null);
+      }
+
       onChange?.(newValue);
     },
-    [setValue, onChange, setError],
+    [setValue, onChange, setError, language],
   );
 
   return (
     <EditorWrapper className="h-100 w-100" scrollbar>
       <CodeMirror
         value={value}
+        autoFocus
         height="100%"
         onChange={handleChange}
-        extensions={[languageExtension]}
+        extensions={languageExtension ? [languageExtension] : []}
         readOnly={readOnly}
-        editable={readOnly ? false : true}
+        editable={!readOnly}
         theme={EditorTheme}
         basicSetup={{
-          lineNumbers: false,
+          lineNumbers: true,
           highlightActiveLine: true,
           highlightSelectionMatches: true,
-          foldGutter: false,
+          foldGutter: true,
           searchKeymap: false,
           indentOnInput: true,
+          bracketMatching: true,
+          closeBrackets: !readOnly, // Auto-close brackets when editing
+          autocompletion: !readOnly,
         }}
         className="fs-medium-10"
         aria-label="Code editor"
