@@ -4,6 +4,8 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+import { useRouter } from "next/navigation";
+
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -82,6 +84,8 @@ export default ColorModes;
 `;
 
 function LandingIntegration() {
+  const router = useRouter();
+
   return (
     <SectionContainer
       className="p-medium-60 g-large-10 w-100 h-100"
@@ -98,7 +102,11 @@ function LandingIntegration() {
           </DisplaySmall>
         </motion.span>
         <motion.span variants={staggerItem}>
-          <Button variant="ghost" sizing="medium">
+          <Button
+            variant="ghost"
+            sizing="medium"
+            onMouseDown={() => router.push("/docs/components/installation")}
+          >
             Installation guide
             <Icon>
               <PixelIcon.ChevronRight />
@@ -135,6 +143,7 @@ function LandingIntegration() {
                 wrapLines={true}
                 lineProps={{
                   style: {
+                    fontFamily: "var(--font-mono)",
                     backgroundColor: "transparent",
                     display: "block",
                     width: "100%",
@@ -147,6 +156,7 @@ function LandingIntegration() {
             </ScrollArea>
           </motion.div>
         </CodeBox>
+        <Dragbox.Overlay />
       </CodeContainer>
     </SectionContainer>
   );

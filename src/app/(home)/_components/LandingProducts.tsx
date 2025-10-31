@@ -4,6 +4,8 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+import { useRouter } from "next/navigation";
+
 import { DisplayMd, DisplaySmall } from "@/components";
 import { Button, ScrollArea } from "@usefui/components";
 import { Icon, PixelIcon } from "@usefui/icons";
@@ -225,6 +227,8 @@ const staggerItem = {
 };
 
 function LandingProducts() {
+  const router = useRouter();
+
   return (
     <motion.section
       className="flex flex-column g-medium-60"
@@ -238,7 +242,11 @@ function LandingProducts() {
           <DisplayMd>Production-ready libraries</DisplayMd>
         </motion.span>
         <motion.span variants={staggerItem}>
-          <Button variant="ghost" sizing="medium">
+          <Button
+            variant="ghost"
+            sizing="medium"
+            onMouseDown={() => router.push("/docs/introduction")}
+          >
             Explore all libraries
             <Icon>
               <PixelIcon.ArrowRight />
@@ -264,7 +272,11 @@ function LandingProducts() {
               >
                 {item?.description}
               </DisplaySmall>
-              <Button variant="ghost" sizing="medium">
+              <Button
+                variant="ghost"
+                sizing="medium"
+                onMouseDown={() => router.push(item.link)}
+              >
                 {item?.label}
                 <Icon>
                   <PixelIcon.ArrowRight />
@@ -293,6 +305,7 @@ function LandingProducts() {
                   wrapLines={true}
                   lineProps={{
                     style: {
+                      fontFamily: "var(--font-mono)",
                       backgroundColor: "transparent",
                       display: "block",
                       wordBreak: "break-word",

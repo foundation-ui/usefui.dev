@@ -4,6 +4,8 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+import { useRouter } from "next/navigation";
+
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -83,6 +85,8 @@ const cssVariables = generateCSSVariables({
 `;
 
 function LandingEngines() {
+  const router = useRouter();
+
   return (
     <SectionContainer
       className="p-medium-60 g-large-10 w-100 h-100"
@@ -119,6 +123,7 @@ function LandingEngines() {
                 wrapLines={true}
                 lineProps={{
                   style: {
+                    fontFamily: "var(--font-mono)",
                     backgroundColor: "transparent",
                     display: "block",
                     width: "100%",
@@ -131,6 +136,7 @@ function LandingEngines() {
             </ScrollArea>
           </motion.div>
         </CodeBox>
+        <Dragbox.Overlay />
       </CodeContainer>
 
       <Hgroup>
@@ -141,7 +147,11 @@ function LandingEngines() {
           </DisplaySmall>
         </motion.span>
         <motion.span variants={staggerItem}>
-          <Button variant="ghost" sizing="medium">
+          <Button
+            variant="ghost"
+            sizing="medium"
+            onMouseDown={() => router.push("/docs/core/installation")}
+          >
             Read about engines
             <Icon>
               <PixelIcon.ChevronRight />

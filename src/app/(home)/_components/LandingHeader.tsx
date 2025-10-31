@@ -59,16 +59,13 @@ function LandingHeader() {
           craft apps people love to use.
         </DisplayMd>
 
-        <motion.div
-          variants={stagger}
-          className="flex flex-wrap align-center g-medium-10"
-        >
+        <motion.div variants={stagger}>
           <motion.span variants={slideEmphasis}>
             <Button
               variant="mono"
               sizing="large"
               animation="reflective"
-              onClick={() => router.push("/docs/getting-started")}
+              onMouseDown={() => router.push("/docs/getting-started")}
             >
               <SplitText
                 stagger={0.02}
@@ -76,22 +73,6 @@ function LandingHeader() {
                 delay={0.5}
                 variant="fade"
                 text="Getting started"
-              />
-            </Button>
-          </motion.span>
-          <motion.span variants={slideEmphasis}>
-            <Button
-              variant="secondary"
-              sizing="large"
-              animation="reflective"
-              onClick={() => router.push("/docs/introduction")}
-            >
-              <SplitText
-                stagger={0.02}
-                duration={0.1}
-                delay={0.5}
-                variant="fade"
-                text="Documentation"
               />
             </Button>
           </motion.span>

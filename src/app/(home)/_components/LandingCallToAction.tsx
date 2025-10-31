@@ -4,6 +4,8 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+import { useRouter } from "next/navigation";
+
 import { DisplayXxl } from "@/components";
 import { Button } from "@usefui/components";
 import { Icon, PixelIcon } from "@usefui/icons";
@@ -26,6 +28,8 @@ const staggerItem = {
   show: { opacity: 1, y: 0 },
 };
 function LandingCallToAction() {
+  const router = useRouter();
+
   return (
     <CTAContainer className="p-y-large-10 p-x-large-10 ">
       <motion.div
@@ -39,7 +43,11 @@ function LandingCallToAction() {
           <DisplayXxl>Try Foundation Ui</DisplayXxl>
         </motion.span>
         <motion.span variants={staggerItem}>
-          <Button variant="primary" sizing="large">
+          <Button
+            variant="primary"
+            sizing="large"
+            onMouseDown={() => router.push("/docs/getting-started")}
+          >
             Get started now
             <Icon>
               <PixelIcon.ArrowRight />

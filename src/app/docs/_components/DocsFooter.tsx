@@ -27,7 +27,7 @@ function DocsFooter({
         <Button
           variant="border"
           sizing="large"
-          onClick={() => router.push(prev)}
+          onMouseDown={() => router.push(prev)}
         >
           <Icon>
             <PixelIcon.ChevronLeft />
@@ -39,7 +39,7 @@ function DocsFooter({
         <Button
           variant="border"
           sizing="large"
-          onClick={() => router.push(next)}
+          onMouseDown={() => router.push(next)}
         >
           Next
           <Icon>
