@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import { useRouter } from "next/navigation";
 
-import { BrandIcon, DisplaySmall } from "@/components";
+import { BrandIcon, DisplaySmall, SplitText } from "@/components";
 import { Button, Page } from "@usefui/components";
 import { Icon, PixelIcon, SocialIcon } from "@usefui/icons";
 
@@ -33,19 +33,9 @@ function Navigation() {
               <BrandIcon />
             </Icon>
           </Button>
-          <DisplaySmall className="fs-medium-10">Foundation UI</DisplaySmall>
-        </div>
-
-        <div className="flex align-center g-medium-60">
-          <Button variant="ghost" sizing="small">
-            Features
-          </Button>
-          <Button variant="ghost" sizing="small">
-            CLI
-          </Button>
-          <Button variant="ghost" sizing="small">
-            Docs
-          </Button>
+          <DisplaySmall className="fs-medium-10">
+            <SplitText duration={0.1} variant="fade" text="Foundation UI" />
+          </DisplaySmall>
         </div>
       </div>
 

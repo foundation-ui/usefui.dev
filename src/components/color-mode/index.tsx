@@ -9,7 +9,7 @@ function ColorModes() {
   const { setColorMode } = useColorMode();
 
   return (
-    <div className="flex align-center g-medium-30">
+    <div className="flex align-center g-medium-30 p-y-small-30">
       <Tooltip content="Light">
         <Button variant="ghost" onClick={() => setColorMode("light")}>
           <Icon>
