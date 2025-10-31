@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import styled from "styled-components";
 
 import EditorMenu from "./EditorMenu";
 import EditorConsole from "../console/EditorConsole";
@@ -19,6 +20,11 @@ interface EditorInputProps {
   readOnly?: boolean;
 }
 
+const InputWrapper = styled(Page.Content)`
+  background: var(--contrast-color);
+  border-right: var(--measurement-small-10) solid var(--font-color-alpha-10);
+`;
+
 function EditorInput({
   value,
   defaultValue,
@@ -29,7 +35,7 @@ function EditorInput({
   readOnly,
 }: EditorInputProps) {
   return (
-    <Page.Content className="flex flex-column h-100">
+    <InputWrapper className="flex flex-column h-100">
       <EditorMenu
         value={value}
         defaultValue={defaultValue}
@@ -46,7 +52,7 @@ function EditorInput({
         language="json"
       />
       <EditorConsole mode={error ? "error" : "meta"} value={error} />
-    </Page.Content>
+    </InputWrapper>
   );
 }
 
