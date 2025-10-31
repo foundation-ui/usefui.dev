@@ -5,9 +5,9 @@ import styled from "styled-components";
 
 import { usePathname, useRouter } from "next/navigation";
 
-import { BrandIcon, OptionsDropdown } from "@/components";
-import { Breadcrumb, Button, DropdownMenu, Page } from "@usefui/components";
-import { Icon, SocialIcon, WebIcon } from "@usefui/icons";
+import { BrandIcon, ColorModes } from "@/components";
+import { Badge, Breadcrumb, Button, Page } from "@usefui/components";
+import { Icon, SocialIcon } from "@usefui/icons";
 
 const NavWrapper = styled(Page.Navigation)`
   border: none;
@@ -26,38 +26,13 @@ function Navigation() {
             <BrandIcon />
           </Icon>
         </Button>
+
         <Breadcrumb path={pathname}>
-          <DropdownMenu.Root>
-            <DropdownMenu>
-              <DropdownMenu.Trigger>
-                <Icon>
-                  <WebIcon.More />
-                </Icon>
-              </DropdownMenu.Trigger>
-              <DropdownMenu.Content>
-                <DropdownMenu.Item onMouseDown={() => router.push("/")}>
-                  Homepage
-                </DropdownMenu.Item>
-                <DropdownMenu.Item
-                  onMouseDown={() => router.push("/docs/introduction")}
-                >
-                  Documentation
-                </DropdownMenu.Item>
-              </DropdownMenu.Content>
-            </DropdownMenu>
-          </DropdownMenu.Root>
+          <div id="nav-portal" />
         </Breadcrumb>
       </div>
 
       <div className="flex align-center g-medium-10">
-        <Button
-          variant="secondary"
-          sizing="medium"
-          animation="reflective"
-          className="fs-medium-10"
-        >
-          Feedback
-        </Button>
         <Button
           variant="secondary"
           sizing="small"
@@ -76,7 +51,9 @@ function Navigation() {
             </Icon>
           </span>
         </Button>
-        <OptionsDropdown />
+        <Badge variant="border">
+          <ColorModes />
+        </Badge>
       </div>
     </NavWrapper>
   );
