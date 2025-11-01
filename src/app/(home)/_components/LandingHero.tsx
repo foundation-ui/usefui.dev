@@ -130,7 +130,7 @@ function LandingHero() {
           key={key}
           data-position={terminal.position}
           data-foreground={key === foregroundIndex}
-          sizing={terminal.sizing}
+          sizing={terminal.sizing as "small" | "medium" | "large"}
         >
           <div
             className="h-100 flex flex-column justify-between"
