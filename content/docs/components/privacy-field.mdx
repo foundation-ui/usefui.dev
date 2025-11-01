@@ -1,0 +1,99 @@
+---
+title: Privacy Field
+description: PrivacyField are used to hide sensitive values typed by users.
+---
+
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<PrivacyFieldTemplate />}
+  code={`import { PrivacyField } from "@usefui/components";
+
+export function PrivacyFieldComponent() {
+    return (
+        <div className="grid align-center justify-center g-medium-60 p-t-large-30 p-x-medium-60">
+            <PrivacyField
+                textIcon="txt"
+                passwordIcon="pwd"
+             />
+        </div>
+    );
+}
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  The PrivacyField component **_is not_** built using the [Compound
+  pattern](https://www.patterns.dev/react/compound-pattern/), it carries all the
+  properties required to make to component work as intended.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { PrivacyField } from "@usefui/components";
+
+export function PrivacyFieldComponent() {
+    return (
+      <PrivacyField />
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "textIcon",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "passwordIcon",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "variant",
+      type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost"',
+      defaultValue: "primary",
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "error",
+      type: "string",
+      required: false,
+    },
+    {
+      name: "hint",
+      type: "string",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsFooter prev="/docs/components/portal" next="/docs/components/resizable" />

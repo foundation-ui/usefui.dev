@@ -33,6 +33,8 @@ import ToolbarTemplate from "../_components/_templates/ToolbarTemplate";
 import TooltipTemplate from "../_components/_templates/TooltipTemplate";
 import CardTemplate from "../_components/_templates/CardTemplate";
 import CopyButtonTemplate from "../_components/_templates/CopyButtonTemplate";
+import PrivacyFieldTemplate from "../_components/_templates/PrivacyFieldTemplate";
+import ResizableTemplate from "../_components/_templates/ResizableTemplate";
 
 export const COMPONENTS = {
   DocsHeading,
@@ -64,6 +66,8 @@ export const TEMPLATES = {
   OverlayTemplate,
   PageTemplate,
   PortalTemplate,
+  PrivacyFieldTemplate,
+  ResizableTemplate,
   SheetTemplate,
   ScrollAreaTemplate,
   SwitchTemplate,
