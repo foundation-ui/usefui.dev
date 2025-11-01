@@ -11,6 +11,7 @@ import DocsBanner from "../_components/DocsBanner";
 import AccordionTemplate from "../_components/_templates/AccordionTemplate";
 import AvatarTemplate from "../_components/_templates/AvatarTemplate";
 import BadgeTemplate from "../_components/_templates/BadgeTemplate";
+import BreadcrumbTemplate from "../_components/_templates/BreadcrumbTemplate";
 import ButtonTemplate from "../_components/_templates/ButtonTemplate";
 import CheckboxTemplate from "../_components/_templates/CheckboxTemplate";
 import CollapsibleTemplate from "../_components/_templates/CollapsibleTemplate";
@@ -47,6 +48,7 @@ export const TEMPLATES = {
   AccordionTemplate,
   AvatarTemplate,
   BadgeTemplate,
+  BreadcrumbTemplate,
   ButtonTemplate,
   CheckboxTemplate,
   CollapsibleTemplate,

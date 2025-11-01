@@ -1,0 +1,129 @@
+---
+title: Breadcrumb
+description: Breadcrumbs are used to display the path to the current resource using a hierarchy of links.
+---
+
+<DocsSection>
+
+<DocsPreview language="tsx" component={<BreadcrumbTemplate />} code={`import React from "react";
+import { Breadcrumb } from "@usefui/components";
+
+function BreadcrumbTemplate() {
+
+    return (
+        <div className="grid g-medium-30 p-t-large-30 p-x-medium-60">
+          <Breadcrumb path={"/demo/path/current-path"} >
+            <Breadcrumb.Item>Home</Breadcrumb.Item>
+          </Breadcrumb>
+        </div>
+    );
+
+}
+
+export default BreadcrumbTemplate;
+`} />
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Breadcrumb } from "@usefui/components";
+
+export function BreadcrumbComponent() {
+    return (
+        <Breadcrumb>
+           <Breadcrumb.Item />
+           <Breadcrumb.Separator />
+        </Breadcrumb>
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Breadcrumb
+
+<DocsTextBlock className="m-b-medium-60">
+  The Breadcrumb component that contains links ans separators.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "path",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "capitalizeItems",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "navigate",
+      type: "ReactNode",
+      required: false,
+      deprecated: true
+    },
+    {
+      name: "children",
+      type: "ReactNode",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Item
+
+<DocsTextBlock className="m-b-medium-60">
+  Breadcrumb.Item are used to display the path to the current resource.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "isLastItem",
+      type: "boolean",
+      required: false,
+    },
+    {
+      name: "children",
+      type: "ReactNode",
+      required: false,
+    },    
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Separator
+
+<DocsTextBlock className="m-b-medium-60">
+  Breadcrumb.Separator are used to display hierarchy of links.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: false,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsFooter prev="/docs/components/badge" next="/docs/components/button" />
