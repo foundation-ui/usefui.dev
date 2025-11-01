@@ -32,6 +32,7 @@ import ToggleTemplate from "../_components/_templates/ToggleTemplate";
 import ToolbarTemplate from "../_components/_templates/ToolbarTemplate";
 import TooltipTemplate from "../_components/_templates/TooltipTemplate";
 import CardTemplate from "../_components/_templates/CardTemplate";
+import CopyButtonTemplate from "../_components/_templates/CopyButtonTemplate";
 
 export const COMPONENTS = {
   DocsHeading,
@@ -54,6 +55,7 @@ export const TEMPLATES = {
   CardTemplate,
   CheckboxTemplate,
   CollapsibleTemplate,
+  CopyButtonTemplate,
   DialogTemplate,
   DividerTemplate,
   DropdownMenuTemplate,
