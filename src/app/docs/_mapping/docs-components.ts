@@ -31,6 +31,7 @@ import TabsTemplate from "../_components/_templates/TabsTemplate";
 import ToggleTemplate from "../_components/_templates/ToggleTemplate";
 import ToolbarTemplate from "../_components/_templates/ToolbarTemplate";
 import TooltipTemplate from "../_components/_templates/TooltipTemplate";
+import CardTemplate from "../_components/_templates/CardTemplate";
 
 export const COMPONENTS = {
   DocsHeading,
@@ -50,6 +51,7 @@ export const TEMPLATES = {
   BadgeTemplate,
   BreadcrumbTemplate,
   ButtonTemplate,
+  CardTemplate,
   CheckboxTemplate,
   CollapsibleTemplate,
   DialogTemplate,

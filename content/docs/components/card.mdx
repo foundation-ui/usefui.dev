@@ -1,0 +1,163 @@
+---
+title: Card
+description: Cards are used to contain important text and or interactions.
+---
+
+<DocsSection>
+
+<DocsPreview
+  language="tsx"
+  component={<CardTemplate />}
+  code={`import { Card } from "@usefui/components";
+
+export function CardTemplate() {
+    return (
+      <Card.Grid>
+        <Card>
+          <Card.Body className="h-100 p-b-large-10">
+            <hgroup className="grid g-medium-30">
+              <h6 className="fs-medium-40">Foundation UI</h6>
+              <span className="fs-medium-20 flex align-center">
+                Free&nbsp;
+                <span className="opacity-default-30 fs-medium-10">/month</span>
+              </span>
+            </hgroup>
+            <Button
+              sizing="large"
+              variant="secondary"
+              animation="reflective"
+              className="w-100"
+            >
+              Start building for free
+            </Button>
+          </Card.Body>
+          <Card.Meta>@usefui</Card.Meta>
+        </Card>
+      </Card.Grid>
+    );
+}
+`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  Import all parts and piece them together.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Card } from "@usefui/components";
+
+export function CardComponent() {
+    return (
+      <Card.Grid>
+        <Card>
+          <Card.Body />
+          <Card.Meta />
+        </Card>
+      </Card.Grid>
+    );
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+#### Grid
+
+<DocsTextBlock className="m-b-medium-60">
+  Contains the Cards component into a grid.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Card
+
+<DocsTextBlock className="m-b-medium-60">
+  The Card component that holds text content and interactions.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "shape",
+      type: '"round" | "smooth" | "square"',
+      defaultValue: "smooth",
+      required: false,
+    },
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Body
+
+<DocsTextBlock className="m-b-medium-60">
+  Card.Body is used to contains text content and interaction into a contrasted
+  background.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "shape",
+      type: '"round" | "smooth" | "square"',
+      defaultValue: "smooth",
+      required: false,
+    },
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    },
+  ]}
+/>
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Meta
+
+<DocsTextBlock className="m-b-medium-60">
+  Card.Meta is used associated to a Card component to conain additional text.
+</DocsTextBlock>
+
+<DocsPropsTable
+ properties={[
+    {
+      name: "children",
+      type: "ReactNode",
+      required: true,
+    }
+  ]}
+/>
+</DocsSection>
+
+<DocsFooter prev="/docs/components/button" next="/docs/components/checkbox" />

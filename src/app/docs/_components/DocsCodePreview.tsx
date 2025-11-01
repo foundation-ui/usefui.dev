@@ -46,7 +46,7 @@ function DocsCodePreview({ code, language, scrollbar }: CodePreviewProps) {
 
   const customStyle = {
     padding: "var(--measurement-medium-60)",
-    background: "transparent",
+    background: "var(--body-color)",
     borderRadius: "var(--measurement-medium-30)",
     minWidth: "fit-content !important",
   };

@@ -10,7 +10,7 @@ import { TextMuted } from "@/components";
 
 const PreviewBox = styled.div`
   border-radius: var(--measurement-medium-30);
-  background-color: var(--font-color-alpha-10);
+  background-color: var(--body-color);
 
   min-height: var(--breakpoint-mobile);
 `;
