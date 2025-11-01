@@ -1,0 +1,81 @@
+---
+title: Skeleton
+description: Skeleton are used to convey a pending state.
+---
+
+<DocsSection>
+
+<DocsPreview language="tsx" component={<SkeletonTemplate />} code={`import React from "react";
+import { Skeleton } from "@usefui/components";
+
+function SkeletonTemplate() {
+
+    return (
+      <div className="grid align-center g-medium-60 justify-center p-t-large-30 p-x-medium-60">
+        <div className="flex align-center justify-center g-medium-30 ">
+          <Skeleton sizing="small" />
+          <Skeleton sizing="medium" />
+          <Skeleton sizing="large" />
+        </div>
+        <div className="flex align-center justify-center g-medium-30">
+          <Skeleton shape="square" />
+          <Skeleton shape="smooth" />
+          <Skeleton shape="round" />
+        </div>
+      </div>
+    );
+
+}
+
+export default SkeletonTemplate;
+`} />
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  The Skeleton component **_is not_** built using the [Compound
+  pattern](https://www.patterns.dev/react/compound-pattern/), it carries all the
+  properties required to make to component work as intended.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Skeleton } from "@usefui/components";
+
+export function SkeletonComponent() {
+    return <Skeleton />;
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "shape",
+      type: '"round" | "smooth" | "square"',
+      defaultValue: "smooth",
+      required: false,
+    }
+  ]}
+/>
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/components/scrollarea"
+  next="/docs/components/spinner"
+/>

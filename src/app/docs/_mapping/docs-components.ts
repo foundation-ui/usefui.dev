@@ -35,6 +35,8 @@ import CardTemplate from "../_components/_templates/CardTemplate";
 import CopyButtonTemplate from "../_components/_templates/CopyButtonTemplate";
 import PrivacyFieldTemplate from "../_components/_templates/PrivacyFieldTemplate";
 import ResizableTemplate from "../_components/_templates/ResizableTemplate";
+import SpinnerTemplate from "../_components/_templates/SpinnerTemplate";
+import SkeletonTemplate from "../_components/_templates/SkeletonTemplate";
 
 export const COMPONENTS = {
   DocsHeading,
@@ -70,6 +72,8 @@ export const TEMPLATES = {
   ResizableTemplate,
   SheetTemplate,
   ScrollAreaTemplate,
+  SkeletonTemplate,
+  SpinnerTemplate,
   SwitchTemplate,
   TableTemplate,
   TabsTemplate,
