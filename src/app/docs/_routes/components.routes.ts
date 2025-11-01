@@ -20,8 +20,16 @@ export const COMPONENTS_LINKS = [
     label: "Badge",
   },
   {
+    link: "/docs/components/breadcrumb",
+    label: "Breadcrumb",
+  },
+  {
     link: "/docs/components/button",
     label: "Button",
+  },
+  {
+    link: "/docs/components/card",
+    label: "Card",
   },
   {
     link: "/docs/components/checkbox",
@@ -30,6 +38,10 @@ export const COMPONENTS_LINKS = [
   {
     link: "/docs/components/collapsible",
     label: "Collapsible",
+  },
+  {
+    link: "/docs/components/copy-button",
+    label: "Copy Button",
   },
   {
     link: "/docs/components/dialog",
@@ -64,12 +76,28 @@ export const COMPONENTS_LINKS = [
     label: "Portal",
   },
   {
+    link: "/docs/components/privacy-field",
+    label: "Privacy Field",
+  },
+  {
+    link: "/docs/components/resizable",
+    label: "Resizable",
+  },
+  {
     link: "/docs/components/sheet",
     label: "Sheet",
   },
   {
     link: "/docs/components/scrollarea",
     label: "Scroll Area",
+  },
+  {
+    link: "/docs/components/skeleton",
+    label: "Skeleton",
+  },
+  {
+    link: "/docs/components/spinner",
+    label: "Spinner",
   },
   {
     link: "/docs/components/switch",
@@ -82,6 +110,10 @@ export const COMPONENTS_LINKS = [
   {
     link: "/docs/components/tabs",
     label: "Tabs",
+  },
+  {
+    link: "/docs/components/textarea",
+    label: "Textarea",
   },
   {
     link: "/docs/components/toggle",
