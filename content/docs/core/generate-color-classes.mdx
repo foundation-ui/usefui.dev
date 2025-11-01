@@ -1,0 +1,119 @@
+---
+title: Generate Color Classes
+description: Generate a color and background-color classes using your design tokens library.
+---
+
+<DocsCodePreview
+  language="tsx"
+  code={`
+    import { generateColorClasses } from "@usefui/core";
+
+    const payload = [{
+      "name": "dark",
+      "base": {
+      "hex": "#353531",
+      "rgb": "rgb(53, 53, 49)",
+      "hsl": "hsl(60deg 4% 20%)",
+      "contrast_score": {
+          "light": "AAA",
+          "dark": "F"
+      }
+      },
+      "alpha": [],
+      "tint": [],
+      "shade": []
+    }];
+
+    const cssColorClasses = generateColorClasses(payload);
+
+`} />
+
+<DocsSection className="m-y-large-10">
+### API Reference
+
+<DocsTextBlock>
+  The arguments used and values returned by the generateColorClasses function.
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Args
+
+<DocsTextBlock className="m-b-medium-60">
+  The values passed to generateColorClasses.
+</DocsTextBlock>
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "colors",
+      type: "{ type: string; values: Color[]; }",
+      defaultValue: "",
+      required: true,
+    },
+  ]}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Returned values
+
+<DocsTextBlock className="m-b-medium-60">
+  The values returned by the generateColorClasses function.
+</DocsTextBlock>
+
+<DocsCodePreview
+  scrollbar
+  language="css"
+  code={`
+    .color-dark {
+       color: var(--color-dark) !important;
+    }
+    
+    .bg-dark {
+       background-color: var(--color-dark) !important;
+    }
+`}
+/>
+
+</DocsSection>
+
+<DocsSection className="m-y-large-10">
+#### Types
+
+<DocsTextBlock className="m-b-medium-60">
+  The types used by the generateColorClasses function.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`
+    interface IContrastScore {
+      light: string;
+      dark: string;
+    }
+    interface IColorVariation {
+      hex?: string;
+      rgb?: string;
+      hsl?: string;
+      contrast_score?: IContrastScore;
+    }
+    interface IColorProperties {
+      alpha?: IColorVariation[] | [];
+      tint?: IColorVariation[] | [];
+      shade?: IColorVariation[] | [];
+    }
+    interface Color extends IColorProperties {
+        name: string;
+    }
+`}
+/>
+
+</DocsSection>
+
+<DocsFooter
+  prev="/docs/core/generate-fs-classes"
+  next="/docs/core/generate-layout-classes"
+/>

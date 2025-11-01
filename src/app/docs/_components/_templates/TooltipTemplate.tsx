@@ -3,7 +3,6 @@
 import React from "react";
 import { Avatar, Tooltip } from "@usefui/components";
 import { Icon, PixelIcon } from "@usefui/icons";
-import { AnimatedHumanSvg } from "@/components";
 
 function TooltipTemplate() {
   return (
@@ -12,9 +11,7 @@ function TooltipTemplate() {
         <Avatar
           status="online"
           style={{ background: "var(--font-color-alpha-10)" }}
-        >
-          <AnimatedHumanSvg />
-        </Avatar>
+        />
       </Tooltip>
       <Tooltip content="Busy">
         <Avatar

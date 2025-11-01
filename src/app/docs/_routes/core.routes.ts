@@ -40,6 +40,10 @@ export const CORE_LINKS = [
     label: "generateFontSizesClasses",
   },
   {
+    link: "/docs/core/generate-color-classes",
+    label: "generateColorClasses",
+  },
+  {
     link: "/docs/core/generate-layout-classes",
     label: "generateLayoutClasses",
   },

@@ -1,0 +1,89 @@
+---
+title: Textarea
+description: Textarea are used to allow users to write large chunks of text.
+---
+
+<DocsSection>
+
+<DocsPreview language="tsx" component={<TextareaTemplate />} code={`import React from "react";
+import { Textarea } from "@usefui/components";
+
+function TextareaTemplate() {
+
+    return (
+      <div className="grid align-center g-medium-60 justify-center p-t-large-30 p-x-medium-60">
+        {["small", "medium", "large"].map((size, key) => (
+          <Textarea key={key} sizing={size as "small" | "medium" | "large"} />
+        ))}
+      </div>
+    );
+
+}
+
+export default TextareaTemplate;
+`} />
+
+</DocsSection>
+
+<DocsSection>
+
+### Anatomy
+
+<DocsTextBlock className="m-b-medium-60">
+  The Textarea component **_is not_** built using the [Compound
+  pattern](https://www.patterns.dev/react/compound-pattern/), it carries all the
+  properties required to make to component work as intended.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="tsx"
+  code={`import { Textarea } from "@usefui/components";
+
+export function TextareaComponent() {
+    return <Textarea />;
+}
+`} />
+
+</DocsSection>
+
+### API Reference
+
+<DocsSection className="m-y-large-10">
+
+<DocsPropsTable
+  properties={[
+    {
+      name: "variant",
+      type: '"primary" | "secondary" | "ghost"',
+      defaultValue: "primary",
+      required: false,
+    },
+    {
+      name: "resizable",
+      type: "boolean",
+      defaultValue: "true",
+      required: false,
+    },
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+      defaultValue: "medium",
+      required: false,
+    },
+    {
+      name: "shape",
+      type: '"round" | "smooth" | "square"',
+      defaultValue: "smooth",
+      required: false,
+    },
+    {
+      name: "raw",
+      type: "boolean",
+      defaultValue: "false",
+      required: false,
+    }
+  ]}
+/>
+</DocsSection>
+
+<DocsFooter prev="/docs/components/tabs" next="/docs/components/toggle" />

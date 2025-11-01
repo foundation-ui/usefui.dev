@@ -3,7 +3,7 @@
 import React from "react";
 import { usePathname, useRouter } from "next/navigation";
 
-import { Accordion, Divider, Toolbar } from "@usefui/components";
+import { Accordion, Divider, Toolbar, useSheet } from "@usefui/components";
 import { Icon, PixelIcon } from "@usefui/icons";
 import { AppLink } from "@/components";
 import {
@@ -16,20 +16,62 @@ import {
   COMMON_LINKS,
 } from "../_routes";
 
+const SIDEBAR_LINKS = [
+  {
+    title: "Components",
+    value: "components",
+    links: COMPONENTS_LINKS,
+  },
+  {
+    title: "Components Hooks",
+    value: "components_hooks",
+    links: COMPONENTS_HOOKS_LINKS,
+  },
+  {
+    title: "Design Tokens",
+    value: "design_tokens",
+    links: DESIGN_TOKENS_LINKS,
+  },
+  {
+    title: "Color Mode",
+    value: "color_mode",
+    links: COLOR_MODE_LINKS,
+  },
+  {
+    title: "Core",
+    value: "core",
+    links: CORE_LINKS,
+  },
+  {
+    title: "Behavior Analytics",
+    value: "uba",
+    links: ANALYTICS_LINKS,
+  },
+];
+
 function DocsSidebarLinks() {
   const router = useRouter();
   const pathname = usePathname();
 
+  const { methods } = useSheet();
+  const { setOpen } = methods;
+
+  const handleRedirect = (link: string) => {
+    router.push(link);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    if (setOpen) setOpen(false);
+  };
+
   return (
     <React.Fragment>
-      <div className="grid g-small-30">
+      <div className="grid g-small-30 m-b-medium-60">
         {COMMON_LINKS.map((commonLink, key) => (
           <AppLink
             key={key}
             as={Toolbar.Item}
-            onClick={() => router.push(commonLink.link)}
+            onClick={() => handleRedirect(commonLink.link)}
             data-current={commonLink.link === pathname}
-            className="fs-medium-20"
+            className="fs-medium-10"
           >
             {commonLink.label}
           </AppLink>
@@ -38,201 +80,39 @@ function DocsSidebarLinks() {
 
       <Divider className="m-y-medium-60" />
 
-      <Accordion.Root>
-        <Accordion>
-          <Accordion.Trigger
-            value="components"
-            className="m-b-medium-60 w-100 justify-between align-center"
-          >
-            Components
-            <Icon>
-              <PixelIcon.ChevronsVertical />
-            </Icon>
-          </Accordion.Trigger>
-          <Accordion.Content
-            value="components"
-            defaultOpen
-            className="grid g-small-30"
-          >
-            {COMPONENTS_LINKS.map((clink, key) => (
-              <AppLink
-                key={key}
-                as={Toolbar.Item}
-                onClick={() => router.push(clink.link)}
-                className="fs-medium-20"
-                data-current={clink.link === pathname}
-              >
-                {clink.label}
-              </AppLink>
-            ))}
-          </Accordion.Content>
-        </Accordion>
-      </Accordion.Root>
-
-      <Divider className="m-y-medium-70" />
-
-      <Accordion.Root>
-        <Accordion>
-          <Accordion.Trigger
-            value="components_hooks"
-            className="m-b-medium-60 w-100 justify-between align-center"
-          >
-            Components Hooks
-            <Icon>
-              <PixelIcon.ChevronsVertical />
-            </Icon>
-          </Accordion.Trigger>
-          <Accordion.Content
-            value="components_hooks"
-            defaultOpen
-            className="grid g-small-30"
-          >
-            {COMPONENTS_HOOKS_LINKS.map((chlink, key) => (
-              <AppLink
-                key={key}
-                as={Toolbar.Item}
-                onClick={() => router.push(chlink.link)}
-                data-current={chlink.link === pathname}
-                className="fs-medium-20"
-              >
-                {chlink.label}
-              </AppLink>
-            ))}
-          </Accordion.Content>
-        </Accordion>
-      </Accordion.Root>
-
-      <Divider className="m-y-medium-70" />
-
-      <Accordion.Root>
-        <Accordion>
-          <Accordion.Trigger
-            value="design-tokens"
-            className="m-b-medium-60 w-100 justify-between align-center"
-          >
-            Design Tokens
-            <Icon>
-              <PixelIcon.ChevronsVertical />
-            </Icon>
-          </Accordion.Trigger>
-          <Accordion.Content
-            value="design-tokens"
-            defaultOpen
-            className="grid g-small-30"
-          >
-            {DESIGN_TOKENS_LINKS.map((tlink, key) => (
-              <AppLink
-                key={key}
-                as={Toolbar.Item}
-                onClick={() => router.push(tlink.link)}
-                data-current={tlink.link === pathname}
-                className="fs-medium-20"
-              >
-                {tlink.label}
-              </AppLink>
-            ))}
-          </Accordion.Content>
-        </Accordion>
-      </Accordion.Root>
-
-      <Divider className="m-y-medium-70" />
-
-      <Accordion.Root>
-        <Accordion>
-          <Accordion.Trigger
-            value="color-mode"
-            className="m-b-medium-60 w-100 justify-between align-center"
-          >
-            Color Mode
-            <Icon>
-              <PixelIcon.ChevronsVertical />
-            </Icon>
-          </Accordion.Trigger>
-          <Accordion.Content
-            value="color-mode"
-            defaultOpen
-            className="grid g-small-30"
-          >
-            {COLOR_MODE_LINKS.map((cmlink, key) => (
-              <AppLink
-                key={key}
-                as={Toolbar.Item}
-                onClick={() => router.push(cmlink.link)}
-                data-current={cmlink.link === pathname}
-                className="fs-medium-20"
-              >
-                {cmlink.label}
-              </AppLink>
-            ))}
-          </Accordion.Content>
-        </Accordion>
-      </Accordion.Root>
-
-      <Divider className="m-y-medium-70" />
-
-      <Accordion.Root>
-        <Accordion>
-          <Accordion.Trigger
-            value="core"
-            className="m-b-medium-60 w-100 justify-between align-center"
-          >
-            Core
-            <Icon>
-              <PixelIcon.ChevronsVertical />
-            </Icon>
-          </Accordion.Trigger>
-          <Accordion.Content
-            value="core"
-            defaultOpen
-            className="grid g-small-30"
-          >
-            {CORE_LINKS.map((coreLink, key) => (
-              <AppLink
-                key={key}
-                as={Toolbar.Item}
-                onClick={() => router.push(coreLink.link)}
-                data-current={coreLink.link === pathname}
-                className="fs-medium-20"
-              >
-                {coreLink.label}
-              </AppLink>
-            ))}
-          </Accordion.Content>
-        </Accordion>
-      </Accordion.Root>
-
-      <Divider className="m-y-medium-70" />
-
-      <Accordion.Root>
-        <Accordion>
-          <Accordion.Trigger
-            value="uba"
-            className="m-b-medium-60 w-100 justify-between align-center"
-          >
-            Behavior Analytics
-            <Icon>
-              <PixelIcon.ChevronsVertical />
-            </Icon>
-          </Accordion.Trigger>
-          <Accordion.Content
-            value="uba"
-            defaultOpen
-            className="grid g-small-30"
-          >
-            {ANALYTICS_LINKS.map((alink, key) => (
-              <AppLink
-                key={key}
-                as={Toolbar.Item}
-                onClick={() => router.push(alink.link)}
-                data-current={alink.link === pathname}
-                className="fs-medium-20"
-              >
-                {alink.label}
-              </AppLink>
-            ))}
-          </Accordion.Content>
-        </Accordion>
-      </Accordion.Root>
+      {SIDEBAR_LINKS.map((item, key) => (
+        <Accordion.Root key={item.value}>
+          <Accordion>
+            <Accordion.Trigger
+              value={item.value}
+              sizing="medium"
+              className="m-b-medium-60 w-100 justify-between align-center "
+            >
+              <span className="fs-medium-10">{item.title}</span>
+              <Icon>
+                <PixelIcon.ChevronsVertical />
+              </Icon>
+            </Accordion.Trigger>
+            <Accordion.Content
+              defaultOpen
+              value={item.value}
+              className={`grid g-small-30 ${key !== SIDEBAR_LINKS.length - 1 && "m-b-medium-60"}`}
+            >
+              {item.links.map((link, key) => (
+                <AppLink
+                  key={key}
+                  as={Toolbar.Item}
+                  onClick={() => handleRedirect(link.link)}
+                  data-current={link.link === pathname}
+                  className="fs-medium-10"
+                >
+                  {link.label}
+                </AppLink>
+              ))}
+            </Accordion.Content>
+          </Accordion>
+        </Accordion.Root>
+      ))}
     </React.Fragment>
   );
 }

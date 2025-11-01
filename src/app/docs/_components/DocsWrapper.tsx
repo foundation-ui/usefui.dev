@@ -21,6 +21,9 @@ const Wrapper = styled.div`
   h6 {
     margin-bottom: var(--measurement-medium-10);
   }
+
+  background-color: var(--contrast-color);
+  border-radius: var(--measurement-medium-30);
 `;
 
 function DocsWrapper({

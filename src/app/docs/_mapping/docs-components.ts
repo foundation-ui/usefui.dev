@@ -11,6 +11,7 @@ import DocsBanner from "../_components/DocsBanner";
 import AccordionTemplate from "../_components/_templates/AccordionTemplate";
 import AvatarTemplate from "../_components/_templates/AvatarTemplate";
 import BadgeTemplate from "../_components/_templates/BadgeTemplate";
+import BreadcrumbTemplate from "../_components/_templates/BreadcrumbTemplate";
 import ButtonTemplate from "../_components/_templates/ButtonTemplate";
 import CheckboxTemplate from "../_components/_templates/CheckboxTemplate";
 import CollapsibleTemplate from "../_components/_templates/CollapsibleTemplate";
@@ -30,6 +31,13 @@ import TabsTemplate from "../_components/_templates/TabsTemplate";
 import ToggleTemplate from "../_components/_templates/ToggleTemplate";
 import ToolbarTemplate from "../_components/_templates/ToolbarTemplate";
 import TooltipTemplate from "../_components/_templates/TooltipTemplate";
+import CardTemplate from "../_components/_templates/CardTemplate";
+import CopyButtonTemplate from "../_components/_templates/CopyButtonTemplate";
+import PrivacyFieldTemplate from "../_components/_templates/PrivacyFieldTemplate";
+import ResizableTemplate from "../_components/_templates/ResizableTemplate";
+import SpinnerTemplate from "../_components/_templates/SpinnerTemplate";
+import SkeletonTemplate from "../_components/_templates/SkeletonTemplate";
+import TextareaTemplate from "../_components/_templates/TextareaTemplate";
 
 export const COMPONENTS = {
   DocsHeading,
@@ -47,9 +55,12 @@ export const TEMPLATES = {
   AccordionTemplate,
   AvatarTemplate,
   BadgeTemplate,
+  BreadcrumbTemplate,
   ButtonTemplate,
+  CardTemplate,
   CheckboxTemplate,
   CollapsibleTemplate,
+  CopyButtonTemplate,
   DialogTemplate,
   DividerTemplate,
   DropdownMenuTemplate,
@@ -58,11 +69,16 @@ export const TEMPLATES = {
   OverlayTemplate,
   PageTemplate,
   PortalTemplate,
+  PrivacyFieldTemplate,
+  ResizableTemplate,
   SheetTemplate,
   ScrollAreaTemplate,
+  SkeletonTemplate,
+  SpinnerTemplate,
   SwitchTemplate,
   TableTemplate,
   TabsTemplate,
+  TextareaTemplate,
   ToggleTemplate,
   ToolbarTemplate,
   TooltipTemplate,

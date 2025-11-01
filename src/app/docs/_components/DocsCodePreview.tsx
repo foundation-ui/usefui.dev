@@ -46,7 +46,7 @@ function DocsCodePreview({ code, language, scrollbar }: CodePreviewProps) {
 
   const customStyle = {
     padding: "var(--measurement-medium-60)",
-    background: "var(--contrast-color)",
+    background: "var(--body-color)",
     borderRadius: "var(--measurement-medium-30)",
     minWidth: "fit-content !important",
   };
@@ -75,6 +75,7 @@ function DocsCodePreview({ code, language, scrollbar }: CodePreviewProps) {
           wrapLines={true}
           lineProps={{
             style: {
+              fontFamily: "var(--font-mono)",
               backgroundColor: "transparent",
               display: "block",
               width: "100%",
