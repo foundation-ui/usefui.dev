@@ -37,6 +37,7 @@ import PrivacyFieldTemplate from "../_components/_templates/PrivacyFieldTemplate
 import ResizableTemplate from "../_components/_templates/ResizableTemplate";
 import SpinnerTemplate from "../_components/_templates/SpinnerTemplate";
 import SkeletonTemplate from "../_components/_templates/SkeletonTemplate";
+import TextareaTemplate from "../_components/_templates/TextareaTemplate";
 
 export const COMPONENTS = {
   DocsHeading,
@@ -77,6 +78,7 @@ export const TEMPLATES = {
   SwitchTemplate,
   TableTemplate,
   TabsTemplate,
+  TextareaTemplate,
   ToggleTemplate,
   ToolbarTemplate,
   TooltipTemplate,
