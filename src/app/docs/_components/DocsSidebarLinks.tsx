@@ -4,7 +4,7 @@ import React from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 import { Accordion, Divider, Toolbar, useSheet } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 import { AppLink } from "@/components";
 import {
   COMPONENTS_LINKS,
@@ -85,12 +85,12 @@ function DocsSidebarLinks() {
           <Accordion>
             <Accordion.Trigger
               value={item.value}
-              sizing="medium"
+              variant="ghost"
               className="m-b-medium-60 w-100 justify-between align-center "
             >
               <span className="fs-medium-10">{item.title}</span>
               <Icon>
-                <PixelIcon.ChevronsVertical />
+                <Icon.ChevronSelectorVertical />
               </Icon>
             </Accordion.Trigger>
             <Accordion.Content

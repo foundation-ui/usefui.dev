@@ -22,7 +22,7 @@ function ToggleTemplate() {
           >
             <Icon>
               {variant === checkedItem ? (
-                <PixelIcon.Check />
+                <Icon.Check />
               ) : (
                 <PixelIcon.Downasaur />
               )}

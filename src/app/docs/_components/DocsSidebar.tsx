@@ -14,7 +14,7 @@ import {
   Tooltip,
   useToolbar,
 } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 const Hide = css`
   display: none;
@@ -52,7 +52,7 @@ function TriggerIcon() {
   return (
     <span className="flex align-center p-y-small-60">
       <Icon>
-        <PixelIcon.LayoutSidebarLeft />
+        <Icon.LayoutLeft />
       </Icon>
     </span>
   );
@@ -113,7 +113,7 @@ function MobileSidebar() {
         <div className="flex justify-end m-b-medium-30">
           <Sheet.Trigger>
             <Icon>
-              <PixelIcon.Close />
+              <Icon.Remove />
             </Icon>
           </Sheet.Trigger>
         </div>

@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 
 import { DisplayXxl } from "@/components";
 import { Button } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 export const CTAContainer = styled(motion.section)`
   background: var(--contrast-color);
@@ -49,9 +49,6 @@ function LandingCallToAction() {
             onMouseDown={() => router.push("/docs/getting-started")}
           >
             Get started now
-            <Icon>
-              <PixelIcon.ArrowRight />
-            </Icon>
           </Button>
         </motion.span>
       </motion.div>

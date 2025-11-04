@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 import { BrandIcon, DisplaySmall, SplitText } from "@/components";
 import { Button, Page } from "@usefui/components";
-import { Icon, PixelIcon, SocialIcon } from "@usefui/icons";
+import { Icon, SocialIcon } from "@usefui/icons";
 
 const NavWrapper = styled(Page.Navigation)`
   border: none;
@@ -67,7 +67,7 @@ function Navigation() {
         >
           Open app
           <Icon>
-            <PixelIcon.Open />
+            <Icon.LinkExternal />
           </Icon>
         </Button>
       </div>

@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { Button, ScrollArea } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -58,7 +58,7 @@ function DocsCodePreview({ code, language, scrollbar }: CodePreviewProps) {
     >
       {showCopy && (
         <PreviewButton variant="mono" sizing="small" onClick={copyToClipboard}>
-          <Icon>{copied ? <PixelIcon.Check /> : <PixelIcon.Duplicate />}</Icon>
+          <Icon>{copied ? <Icon.Check /> : <Icon.CopyDashed />}</Icon>
         </PreviewButton>
       )}
       <CodePreviewBox scrollbar={scrollbar}>

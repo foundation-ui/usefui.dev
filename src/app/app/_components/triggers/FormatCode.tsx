@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 import { Tooltip, Button } from "@usefui/components";
 
 type FormatCodeProps = {
@@ -39,7 +39,7 @@ function FormatCode({ value, setValue, setError, onChange }: FormatCodeProps) {
       >
         <span className="p-y-small-60 flex align-center justify-center">
           <Icon>
-            <PixelIcon.Zap />
+            <Icon.Magic />
           </Icon>
         </span>
       </Button>

@@ -10,7 +10,7 @@ import styled from "styled-components";
 import { TextMuted } from "@/components";
 import { CalculateJsonSize, countColorTokens, countScaleTokens } from "@/utils";
 import { Toolbar, Tooltip } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 const AnalyticsWrapper = styled(Toolbar)`
   padding: var(--measurement-medium-30) 0 !important;
@@ -55,7 +55,7 @@ function AnalyticsMeta({ data }: { data: string }) {
             >
               <span className="p-y-small-60 flex align-center justify-center">
                 <Icon>
-                  <PixelIcon.File />
+                  <Icon.Package />
                 </Icon>
               </span>
             </Toolbar.Trigger>

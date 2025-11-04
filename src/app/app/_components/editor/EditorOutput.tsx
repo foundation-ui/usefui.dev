@@ -18,7 +18,7 @@ import {
   Tabs,
   Tooltip,
 } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 const WELCOME_PAYLOAD = {
   ahoy: ["Hello! 👋", "Thank you for trying out Foundation UI ✨"],
@@ -103,7 +103,7 @@ function EditorOutput() {
             >
               <span className="p-y-small-60 flex align-center justify-center">
                 <Icon>
-                  <PixelIcon.Clipboard />
+                  <Icon.CopyDashed />
                 </Icon>
               </span>
             </CopyButton>
@@ -118,7 +118,7 @@ function EditorOutput() {
               >
                 <span className="p-y-small-60 flex align-center justify-center">
                   <Icon>
-                    <PixelIcon.Redo />
+                    <Icon.Reload />
                   </Icon>
                 </span>
               </Tabs.Trigger>

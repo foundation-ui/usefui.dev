@@ -11,7 +11,7 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import { DisplaySmall, Dragbox } from "@/components";
 import { Button, ScrollArea } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 const SectionContainer = styled(motion.section)`
   width: 100%;
@@ -58,7 +58,7 @@ const staggerItem = {
 
 const JSX_TEMPLATE = `import { useColorMode } from "@usefui/tokens";
 import { Button, Tooltip } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 function ColorMode() {
   const { setColorMode } = useColorMode();
@@ -73,7 +73,7 @@ function ColorMode() {
         onClick={() => setColorMode('system')}
       >
         <Icon>
-          <PixelIcon.Contrast />
+          <Icon.Colors />
         </Icon>
       </Button>
     </Tooltip>
@@ -109,7 +109,7 @@ function LandingIntegration() {
           >
             Installation guide
             <Icon>
-              <PixelIcon.ChevronRight />
+              <Icon.ChevronRight />
             </Icon>
           </Button>
         </motion.span>

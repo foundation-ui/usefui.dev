@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 
 import { DisplayMd, DisplaySmall } from "@/components";
 import { Button, ScrollArea } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -131,7 +131,7 @@ const WIKI_CATALOG = [
           animation="reflective"
         >
           <Icon>
-            <WebIcon.Settings />
+            <Icon.Tools />
           </Icon>
         </DropdownMenu.Trigger>
 
@@ -249,7 +249,7 @@ function LandingProducts() {
           >
             Explore all libraries
             <Icon>
-              <PixelIcon.ArrowRight />
+              <Icon.ArrowRight />
             </Icon>
           </Button>
         </motion.span>
@@ -279,7 +279,7 @@ function LandingProducts() {
               >
                 {item?.label}
                 <Icon>
-                  <PixelIcon.ArrowRight />
+                  <Icon.ChevronRight />
                 </Icon>
               </Button>
             </Hgroup>

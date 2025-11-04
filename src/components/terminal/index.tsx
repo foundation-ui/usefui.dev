@@ -8,7 +8,7 @@ import { motion, type Variants } from "framer-motion";
 import SplitText from "../split-text";
 
 import { Button, Divider, Field, ScrollArea } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 type Command = {
   command: string;
@@ -220,7 +220,7 @@ function Terminal(props: TerminalProperties) {
           >
             <span className="flex align-center justify-center p-y-small-90">
               <Icon>
-                <PixelIcon.CornerDownRight />
+                <Icon.ArrowCornerDownRight />
               </Icon>
             </span>
           </Button>
