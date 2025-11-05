@@ -2,6 +2,7 @@
 
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import { useRouter } from "next/navigation";
 
@@ -30,12 +31,25 @@ const ResponsiveLabel = styled(DisplaySmall)`
   }
 `;
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+const staggerItem = {
+  hidden: { opacity: 0, y: "var(--measurement-medium-10)" },
+  show: { opacity: 1, y: 0 },
+};
+
 function Navigation() {
   const router = useRouter();
 
   return (
     <NavWrapper className="flex justify-between align-center g-medium-30">
-      <div className="flex align-center g-medium-30">
+      <div className="flex align-center g-medium-60">
         <div className="flex align-center g-medium-10">
           <Button variant="ghost" rawicon onMouseDown={() => router.push("/")}>
             <Icon fill="none" width={24} height={24} viewBox="0 0 32 48">
@@ -46,84 +60,99 @@ function Navigation() {
             <SplitText duration={0.1} variant="fade" text="Foundation UI" />
           </ResponsiveLabel>
         </div>
-        <Breadcrumb.Separator />
-        <div className="flex align-center g-medium-50">
-          <DropdownMenu.Root>
-            <DropdownMenu>
-              <DropdownMenu.Trigger
-                variant="ghost"
-                sizing="small"
-                className="fs-medium-10"
-              >
-                CLI
-              </DropdownMenu.Trigger>
-              <DropdownMenu.Content sizing="medium">
-                <DropdownMenu.Item
-                  onMouseDown={() => router.push("/docs/cli")}
-                  className="flex flex-column g-small-10"
+
+        <motion.div
+          className="flex align-center g-medium-50"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.6 }}
+          variants={container}
+        >
+          <motion.span variants={staggerItem}>
+            <Breadcrumb.Separator />
+          </motion.span>
+          <motion.span variants={staggerItem}>
+            <DropdownMenu.Root>
+              <DropdownMenu>
+                <DropdownMenu.Trigger
+                  variant="ghost"
+                  sizing="small"
+                  className="fs-medium-10"
                 >
-                  <span className="fs-medium-20">usefui/create-fui-app</span>
-                  <span className="fs-medium-10 opacity-default-60">
-                    Start a typesafe Next.js app
-                  </span>
-                </DropdownMenu.Item>
-                <DropdownMenu.Item
-                  onMouseDown={() =>
-                    router.push("/docs/icons-cli/introduction")
-                  }
-                  className="flex flex-column g-small-10"
-                >
-                  <span className="fs-medium-20">usefui/svgjsx</span>
-                  <span className="fs-medium-10 opacity-default-60">
-                    SVG files to React components
-                  </span>
-                </DropdownMenu.Item>
-              </DropdownMenu.Content>
-            </DropdownMenu>
-          </DropdownMenu.Root>
-          <DropdownMenu.Root>
-            <DropdownMenu>
-              <DropdownMenu.Trigger
-                variant="ghost"
-                sizing="small"
-                className="fs-medium-10"
-              >
-                Products
-              </DropdownMenu.Trigger>
-              <DropdownMenu.Content sizing="medium">
-                <DropdownMenu.Item
-                  onMouseDown={() => router.push("/app")}
-                  className="flex flex-column g-small-10"
-                >
-                  <span className="fs-medium-20">Design Tokens Engine</span>
-                  <span className="fs-medium-10 opacity-default-60">
-                    Generate JSON Design Tokens.
-                  </span>
-                </DropdownMenu.Item>
-                <Link
-                  href="https://runp.dev"
-                  target="_blank"
-                  rel="noopener"
-                  style={{ textDecoration: "none" }}
-                >
-                  <DropdownMenu.Item className="flex flex-column g-small-10">
-                    <span className="fs-medium-20">Runp AI</span>
+                  CLI
+                </DropdownMenu.Trigger>
+                <DropdownMenu.Content sizing="medium">
+                  <DropdownMenu.Item
+                    onMouseDown={() => router.push("/docs/cli")}
+                    className="flex flex-column g-small-10"
+                  >
+                    <span className="fs-medium-20">usefui/create-fui-app</span>
                     <span className="fs-medium-10 opacity-default-60">
-                      Create UI with AI workflows.
+                      Start a typesafe Next.js app
                     </span>
                   </DropdownMenu.Item>
-                </Link>
-              </DropdownMenu.Content>
-            </DropdownMenu>
-          </DropdownMenu.Root>
-          <Button
-            variant="ghost"
-            sizing="small"
-            onMouseDown={() => router.push("/docs/introduction")}
-          >
-            Docs
-          </Button>
-        </div>
+                  <DropdownMenu.Item
+                    onMouseDown={() =>
+                      router.push("/docs/icons-cli/introduction")
+                    }
+                    className="flex flex-column g-small-10"
+                  >
+                    <span className="fs-medium-20">usefui/svgjsx</span>
+                    <span className="fs-medium-10 opacity-default-60">
+                      SVG files to React components
+                    </span>
+                  </DropdownMenu.Item>
+                </DropdownMenu.Content>
+              </DropdownMenu>
+            </DropdownMenu.Root>
+          </motion.span>
+          <motion.span variants={staggerItem}>
+            <DropdownMenu.Root>
+              <DropdownMenu>
+                <DropdownMenu.Trigger
+                  variant="ghost"
+                  sizing="small"
+                  className="fs-medium-10"
+                >
+                  Products
+                </DropdownMenu.Trigger>
+                <DropdownMenu.Content sizing="medium">
+                  <DropdownMenu.Item
+                    onMouseDown={() => router.push("/app")}
+                    className="flex flex-column g-small-10"
+                  >
+                    <span className="fs-medium-20">Design Tokens Engine</span>
+                    <span className="fs-medium-10 opacity-default-60">
+                      Generate JSON Design Tokens.
+                    </span>
+                  </DropdownMenu.Item>
+                  <Link
+                    href="https://runp.dev"
+                    target="_blank"
+                    rel="noopener"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <DropdownMenu.Item className="flex flex-column g-small-10">
+                      <span className="fs-medium-20">Runp AI</span>
+                      <span className="fs-medium-10 opacity-default-60">
+                        Create UI with AI workflows.
+                      </span>
+                    </DropdownMenu.Item>
+                  </Link>
+                </DropdownMenu.Content>
+              </DropdownMenu>
+            </DropdownMenu.Root>
+          </motion.span>
+          <motion.span variants={staggerItem}>
+            <Button
+              variant="ghost"
+              sizing="small"
+              onMouseDown={() => router.push("/docs/introduction")}
+            >
+              Docs
+            </Button>
+          </motion.span>
+        </motion.div>
       </div>
 
       <Button
