@@ -1,0 +1,151 @@
+---
+title: Performances
+description:
+---
+
+<DocsTextBlock className="m-b-medium-60">
+  Fast, consistent, reliable. From source SVGs to production-ready icons in
+  under a second, with a tiny footprint and predictable resources.
+</DocsTextBlock>
+
+<DocsSection>
+## Bundle Size
+
+<DocsTextBlock className="m-b-medium-60">
+  Outputs a compact, tree-shakeable component set designed to minimize bundle
+  impact and accelerate builds.
+</DocsTextBlock>
+
+<DocsCodePreview language="json" code={`{
+    "value": 80,
+    "unit": "KB",
+    "label": "Total Bundle",
+    "metrics": [
+    { "value": 819, "unit": "bytes", "label": "Per Icon" },
+    { "value": 100, "unit": "components", "label": "Generated" }
+
+]}`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+## Execution Time
+
+<DocsTextBlock className="m-b-medium-60">
+  Rapid, incremental conversions with intelligent file detection to avoid
+  redundant work and shorten feedback loops.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="json"
+  code={`{
+  "value": 0.489,
+  "unit": "s",
+  "label": "Average Duration",
+  "metrics": [
+    { "value": 0.477, "unit": "s", "label": "Best Time" },
+    { "value": 204, "unit": "icons/sec", "label": "Throughput" },
+    { "value": "±2.3%", "unit": null, "label": "Consistency" }
+  ]}`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+## Memory Usage
+
+<DocsTextBlock className="m-b-medium-60">
+  Predictable memory footprint under sustained workloads, tuned to handle large
+  icon sets without pressure.
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="json"
+  code={`{
+  "value": 98.3,
+  "unit": "MB",
+  "label": "Average Usage",
+  "metrics": [
+    { "value": 98.6, "unit": "MB", "label": "Peak Memory" },
+    { "value": 97.9, "unit": "MB", "label": "Minimum Usage" },
+    { "value": "±0.3%", "unit": null, "label": "Stability" }
+  ]}`}
+/>
+
+</DocsSection>
+
+<DocsSection>
+## Benchmark
+
+<DocsTextBlock className="m-b-medium-60">
+  Benchmarked on 2025-11-02 across repeated runs of 100 icons. Results are
+  averaged and rounded for readability.
+</DocsTextBlock>
+
+<DocsTextBlock className="m-b-medium-60">
+  If you want to reproduce the analysis, run the following scripts:
+</DocsTextBlock>
+
+<DocsBanner
+  title="Output directory"
+  description="Make sure you have the /svg folder with your svg icon files in it at the root of your project before you run script."
+  mode="warning"
+/>
+
+<DocsCodePreview
+  language="bash"
+  code={`echo "date,time,duration_s,components,memory_kb,bundle_kb" > benchmark-history.csv`}
+/>
+
+<DocsCodePreview
+  language="bash"
+  code={`for i in {1..100}; do
+  echo "Run $i:"
+    rm -rf ./icons
+
+    START=$(date +%s%N)
+    pnpx @usefui/svgjsx generate > /tmp/benchmark.log
+    END=$(date +%s%N)
+
+    DURATION=$(echo "scale=3; ($END - $START) / 1000000000" | bc)
+    COMPONENTS=$(grep "Generated" /tmp/benchmark.log | tail -1 | grep -o '[0-9]* components' | grep -o '[0-9]*')
+    MEMORY=$(grep "Memory used" /tmp/benchmark.log | grep -o '[0-9]* KB')
+    BUNDLE_SIZE=$(du -sk icons/ | awk '{print $1}')
+
+    echo "Execution Time: {DURATION}s"
+    echo "Components: $COMPONENTS"
+    echo "Memory: $MEMORY"
+    echo "Bundle Size: {BUNDLE_SIZE}K"
+
+    echo "$(date +%Y-%m-%d,%H:%M:%S),$DURATION,$COMPONENTS,$MEMORY,$BUNDLE_SIZE" >> benchmark-history.csv
+    echo "Saved to benchmark-history.csv"
+
+    echo "---"
+
+done
+`}
+/>
+
+<DocsCodePreview
+  language="bash"
+  code={`
+  tail -n 100 benchmark-history.csv | awk -F',' '
+  NR>1 {
+    duration += $3
+    memory += substr($4, 1, length($4)-3)
+    count++
+  }
+  END {
+    avg_duration = duration / count
+    avg_memory = memory / count
+    print "Average Duration:", avg_duration "s"
+    print "Average Memory:", avg_memory " KB"
+    print "Throughput:", 100 / avg_duration " icons/sec"
+  }
+`}
+/>
+
+</DocsSection>
+
+<DocsFooter prev="/docs/cli/examples" next="/docs/tokens/installation" />

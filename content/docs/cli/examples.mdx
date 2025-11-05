@@ -1,0 +1,90 @@
+---
+title: Examples
+description:
+---
+
+<DocsTextBlock className="m-b-medium-60">
+  Try out the different combinations that `@usefui/svgjsx` offers.
+</DocsTextBlock>
+
+<DocsSection>
+
+## Custom source directory
+
+<DocsTextBlock className="m-b-medium-60">
+Run the `generate` command with the `-s` option:
+
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="shell"
+  code={`pnpx @usefui/svgjsx generate -s ./src/assets/svg`}
+/>
+
+<DocsBanner
+  title="Output directory"
+  description="The output directory will be set at the root of your project. Make sure your svg icon files are defined in ./src/assets/svg before you run the generate command."
+  mode="warning"
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+## Custom output directory
+
+<DocsTextBlock>
+Run the `generate` command with the `-o` option:
+
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="shell"
+  code={`pnpx @usefui/svgjsx generate -o ./src/components/icons`}
+/>
+
+<DocsBanner
+  title="Output directory"
+  description="Make sure you have the /svg folder with your svg icon files in it at the root of your project before you run the generate command."
+  mode="warning"
+/>
+
+</DocsSection>
+
+<DocsSection>
+
+## Custom source/output
+
+<DocsTextBlock className="m-b-medium-60">
+Run the `generate` command with the `-s` and `-o` options:
+
+</DocsTextBlock>
+
+<DocsCodePreview
+  language="shell"
+  code={`pnpx @usefui/svgjsx generate -s ./src/assets/svg -o ./src/components/icons`}
+/>
+
+</DocsSection>
+
+## Usage
+
+<DocsCodePreview language="jsx" code={`
+    import { Icon } from "./src/icons";
+
+    function App() {
+        return (
+            <Icon
+                fill="green"
+                width={24}
+                height={24}
+                viewBox="0 0 16 16"
+            >
+                <Icon.MyIcon />
+            </Icon>
+        );
+    }
+
+`} />
+
+<DocsFooter prev="/docs/cli/usage" next="/docs/cli/performances" />

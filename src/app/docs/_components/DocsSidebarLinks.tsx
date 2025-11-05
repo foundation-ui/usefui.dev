@@ -16,6 +16,7 @@ import {
   ANALYTICS_LINKS,
   COMMON_LINKS,
   ICONS_LINKS,
+  CLI_LINKS,
 } from "../_routes";
 
 const SIDEBAR_LINKS = [
@@ -33,6 +34,11 @@ const SIDEBAR_LINKS = [
     title: "Icons",
     value: "icons",
     links: ICONS_LINKS,
+  },
+  {
+    title: "Icons CLI",
+    value: "cli",
+    links: CLI_LINKS,
   },
   {
     title: "Design Tokens",

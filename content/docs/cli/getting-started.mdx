@@ -1,0 +1,74 @@
+---
+title: Getting started
+description:
+---
+
+<DocsSection>
+### Quick Start
+
+<DocsTextBlock className="m-b-medium-60">
+  To get started with `@usefui/svgjsx`, run the following command:
+</DocsTextBlock>
+
+#### Npm
+
+<DocsCodePreview language="shell" code={`npx @usefui/svgjsx generate`} />
+
+#### Pnpm
+
+<DocsCodePreview language="shell" code={`pnpx @usefui/svgjsx generate`} />
+
+#### Yarn
+
+<DocsCodePreview language="shell" code={`yarn dlx @usefui/svgjsx generate`} />
+
+#### Bun
+
+<DocsCodePreview language="shell" code={`bunx @usefui/svgjsx generate`} />
+
+</DocsSection>
+
+<DocsBanner
+  title="CLI default options"
+  description="If you don't use the CLI options, the default input/output directories will be set to svg and icons at the root of your project, make sure you have the svg folder with your svg icon files in it before you run the generate command."
+  mode="warning"
+/>
+
+<DocsSection>
+    ### Advanced usage
+
+    <DocsTextBlock className="m-b-medium-60">
+    You can pass options/flags to the `generate` command to customize you inputs
+    and outputs directories.
+    </DocsTextBlock>
+
+    <DocsPropsTable
+    extended
+    properties={[
+        {
+        name: "-s",
+        description: "Define the source directory.",
+        type: "string",
+        },
+        {
+        name: "-o",
+        description: "Define the output directory.",
+        type: "string",
+        },
+    ]}
+    />
+
+
+    <DocsTextBlock className="m-t-medium-60 m-b-medium-30">
+    #### Example
+    </DocsTextBlock>
+
+
+    <DocsCodePreview
+    language="shell"
+    code={`pnpx @usefui/svgjsx generate generate -s ./svg -o ./components/icons`}
+    />
+
+</DocsSection>
+
+<DocsFooter prev="/docs/cli/introduction" next="/docs/cli/usage" />
