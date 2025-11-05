@@ -39,7 +39,7 @@ function FormatCode({ value, setValue, setError, onChange }: FormatCodeProps) {
       >
         <span className="p-y-small-60 flex align-center justify-center">
           <Icon>
-            <Icon.Magic />
+            <Icon.MagicFat />
           </Icon>
         </span>
       </Button>

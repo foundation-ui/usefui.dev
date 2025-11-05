@@ -72,7 +72,7 @@ const Grid = styled.li`
 
 const WIKI_CATALOG = [
   {
-    name: "foundation-ui/core",
+    name: "usefui/core",
     title: "Token Engine",
     description:
       "Dynamically generate design tokens using application properties.",
@@ -115,7 +115,7 @@ const WIKI_CATALOG = [
 `,
   },
   {
-    name: "foundation-ui/components",
+    name: "usefui/components",
     title: "React Components",
     description:
       "Use fast and accessible components to enhance your UI development.",
@@ -146,7 +146,7 @@ const WIKI_CATALOG = [
 }`,
   },
   {
-    name: "foundation-ui/analytics",
+    name: "usefui/analytics",
     title: "User Behavior Analytics",
     description: "Capture real-time user interactions and system insights.",
     link: "/docs/uba/installation",

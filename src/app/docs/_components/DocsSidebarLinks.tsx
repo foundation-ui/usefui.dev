@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { Accordion, Divider, Toolbar, useSheet } from "@usefui/components";
 import { Icon } from "@usefui/icons";
 import { AppLink } from "@/components";
+
 import {
   COMPONENTS_LINKS,
   COMPONENTS_HOOKS_LINKS,
@@ -14,6 +15,7 @@ import {
   CORE_LINKS,
   ANALYTICS_LINKS,
   COMMON_LINKS,
+  ICONS_LINKS,
 } from "../_routes";
 
 const SIDEBAR_LINKS = [
@@ -26,6 +28,11 @@ const SIDEBAR_LINKS = [
     title: "Components Hooks",
     value: "components_hooks",
     links: COMPONENTS_HOOKS_LINKS,
+  },
+  {
+    title: "Icons",
+    value: "icons",
+    links: ICONS_LINKS,
   },
   {
     title: "Design Tokens",

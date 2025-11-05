@@ -27,7 +27,7 @@ function TokenEnginePage() {
             <DropdownMenu.Trigger>
               <span className="flex align-center p-y-small-60">
                 <Icon>
-                  <Icon.Menu />
+                  <Icon.ChevronSelectorVertical />
                 </Icon>
               </span>
             </DropdownMenu.Trigger>

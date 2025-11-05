@@ -38,6 +38,7 @@ import ResizableTemplate from "../_components/_templates/ResizableTemplate";
 import SpinnerTemplate from "../_components/_templates/SpinnerTemplate";
 import SkeletonTemplate from "../_components/_templates/SkeletonTemplate";
 import TextareaTemplate from "../_components/_templates/TextareaTemplate";
+import IconsLibraryTemplate from "../_components/_templates/IconsLibraryTemplate";
 
 export const COMPONENTS = {
   DocsHeading,
@@ -82,4 +83,5 @@ export const TEMPLATES = {
   ToggleTemplate,
   ToolbarTemplate,
   TooltipTemplate,
+  IconsLibraryTemplate,
 };
