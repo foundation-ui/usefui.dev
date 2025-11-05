@@ -37,7 +37,7 @@ const SIDEBAR_LINKS = [
   },
   {
     title: "Icons CLI",
-    value: "cli",
+    value: "icons-cli",
     links: CLI_LINKS,
   },
   {

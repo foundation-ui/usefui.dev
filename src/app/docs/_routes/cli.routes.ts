@@ -1,22 +1,22 @@
 export const CLI_LINKS = [
   {
-    link: "/docs/cli/introduction",
+    link: "/docs/icons-cli/introduction",
     label: "Introduction",
   },
   {
-    link: "/docs/cli/getting-started",
+    link: "/docs/icons-cli/getting-started",
     label: "Getting started",
   },
   {
-    link: "/docs/cli/usage",
+    link: "/docs/icons-cli/usage",
     label: "Usage",
   },
   {
-    link: "/docs/cli/examples",
+    link: "/docs/icons-cli/examples",
     label: "Examples",
   },
   {
-    link: "/docs/cli/performances",
+    link: "/docs/icons-cli/performances",
     label: "Performances",
   },
 ];
