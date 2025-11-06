@@ -25,7 +25,7 @@ function ToolbarTemplate() {
               className="flex align-center w-100 g-medium-30"
             >
               <Icon>
-                <PixelIcon.Link />
+                <Icon.LinkExternal />
               </Icon>
               <p className="fs-medium-10 opacity-default-30">Link</p>
             </Toolbar.Item>

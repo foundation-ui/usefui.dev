@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 import { Tooltip, Button } from "@usefui/components";
 
 type ResetCodeProps = {
@@ -21,7 +21,7 @@ function ResetCode({ resetCallback }: ResetCodeProps) {
       >
         <span className="p-y-small-60 flex align-center justify-center">
           <Icon>
-            <PixelIcon.Reload />
+            <Icon.Reload />
           </Icon>
         </span>
       </Button>

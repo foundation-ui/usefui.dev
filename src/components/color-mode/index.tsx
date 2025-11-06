@@ -3,34 +3,44 @@
 import { useColorMode } from "@usefui/tokens";
 
 import { Button, Tooltip } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
+
+const MODES = [
+  {
+    key: "light",
+    label: "Light",
+    icon: <Icon.Sun />,
+  },
+  {
+    key: "dark",
+    label: "Dark",
+    icon: <Icon.Moon />,
+  },
+  {
+    key: "system",
+    label: "System",
+    icon: <Icon.ColorsBlen />,
+  },
+];
 
 function ColorModes() {
-  const { setColorMode } = useColorMode();
+  const { colorMode, setColorMode } = useColorMode();
 
   return (
     <div className="flex align-center g-medium-30 p-y-small-30">
-      <Tooltip content="Light">
-        <Button variant="ghost" onClick={() => setColorMode("light")}>
-          <Icon>
-            <PixelIcon.SunAlt />
-          </Icon>
-        </Button>
-      </Tooltip>
-      <Tooltip content="Dark">
-        <Button variant="ghost" onClick={() => setColorMode("dark")}>
-          <Icon>
-            <PixelIcon.Moon />
-          </Icon>
-        </Button>
-      </Tooltip>
-      <Tooltip content="System">
-        <Button variant="ghost" onClick={() => setColorMode("system")}>
-          <Icon>
-            <PixelIcon.Contrast />
-          </Icon>
-        </Button>
-      </Tooltip>
+      {MODES.map((mode) => (
+        <Tooltip content={mode.label} key={mode.key}>
+          <Button
+            variant="ghost"
+            rawicon={colorMode === mode.key}
+            onClick={() =>
+              setColorMode(mode.key as "dark" | "light" | "system")
+            }
+          >
+            <Icon>{mode.icon}</Icon>
+          </Button>
+        </Tooltip>
+      ))}
     </div>
   );
 }

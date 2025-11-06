@@ -1,29 +1,59 @@
 "use client";
 
 import React from "react";
+import styled from "styled-components";
 
 import EditorConsoleBody from "./EditorConsoleBody";
-import ConsoleBody from "./ConsoleBody";
 
 import { CopyButton, Toolbar, Tooltip } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 export type EditorConsoleProps = {
   mode: "meta" | "error";
   value: string | null;
 };
 
-function EditorConsole({ mode, value }: EditorConsoleProps) {
-  const hasErrors = mode === "error";
+const ConsoleWrapper = styled(Toolbar)`
+  padding: var(--measurement-medium-30) 0 !important;
+  align-self: end !important;
+
+  background: var(--contrast-color) !important;
+  box-shadow: 0 0 var(--measurement-medium-50) var(--measurement-medium-10)
+    var(--contrast-color);
+
+  border: none !important;
+  z-index: 1;
+`;
+function ConsoleRoot({ children }: { children: React.ReactNode }) {
+  const hotkey = "$";
+  const bindkey = "ctrlKey";
 
   return (
-    <ConsoleBody>
+    <Toolbar.Root>
+      <ConsoleWrapper
+        side="bottom"
+        sizing="medium"
+        height="auto"
+        shortcut
+        hotkey={hotkey}
+        bindkey={bindkey}
+        defaultOpen
+      >
+        {children}
+      </ConsoleWrapper>
+    </Toolbar.Root>
+  );
+}
+
+function EditorConsole({ mode, value }: EditorConsoleProps) {
+  return (
+    <ConsoleRoot>
       <Toolbar.Section
         showoncollapse
         className="flex align-center justify-between p-x-medium-30 w-100"
       >
-        <Icon fill={hasErrors ? "var(--color-red)" : "var(--color-green)"}>
-          {hasErrors ? <PixelIcon.Debug /> : <PixelIcon.DebugCheck />}
+        <Icon>
+          <Icon.TerminalSquare />
         </Icon>
 
         <div className="flex g-medium-10 align-center">
@@ -35,11 +65,11 @@ function EditorConsole({ mode, value }: EditorConsoleProps) {
           >
             <span className="p-y-small-60 flex align-center justify-center">
               <Icon>
-                <PixelIcon.Clipboard />
+                <Icon.CopyDashed />
               </Icon>
             </span>
           </CopyButton>
-          <Tooltip content="Ctrl + <">
+          <Tooltip content="Ctrl + $">
             <Toolbar.Trigger
               variant="secondary"
               animation="reflective"
@@ -47,8 +77,8 @@ function EditorConsole({ mode, value }: EditorConsoleProps) {
               id="toggle-console-trigger"
             >
               <span className="p-y-small-60 flex align-center justify-center">
-                <Icon>
-                  <PixelIcon.ChevronsVertical />
+                <Icon fill="currentColor">
+                  <Icon.LayoutBottom />
                 </Icon>
               </span>
             </Toolbar.Trigger>
@@ -59,7 +89,7 @@ function EditorConsole({ mode, value }: EditorConsoleProps) {
       <Toolbar.Section>
         <EditorConsoleBody mode={mode} value={value} />
       </Toolbar.Section>
-    </ConsoleBody>
+    </ConsoleRoot>
   );
 }
 

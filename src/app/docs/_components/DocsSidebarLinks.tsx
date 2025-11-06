@@ -4,8 +4,9 @@ import React from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 import { Accordion, Divider, Toolbar, useSheet } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 import { AppLink } from "@/components";
+
 import {
   COMPONENTS_LINKS,
   COMPONENTS_HOOKS_LINKS,
@@ -14,6 +15,8 @@ import {
   CORE_LINKS,
   ANALYTICS_LINKS,
   COMMON_LINKS,
+  ICONS_LINKS,
+  CLI_LINKS,
 } from "../_routes";
 
 const SIDEBAR_LINKS = [
@@ -26,6 +29,16 @@ const SIDEBAR_LINKS = [
     title: "Components Hooks",
     value: "components_hooks",
     links: COMPONENTS_HOOKS_LINKS,
+  },
+  {
+    title: "Icons",
+    value: "icons",
+    links: ICONS_LINKS,
+  },
+  {
+    title: "Icons CLI",
+    value: "icons-cli",
+    links: CLI_LINKS,
   },
   {
     title: "Design Tokens",
@@ -85,12 +98,12 @@ function DocsSidebarLinks() {
           <Accordion>
             <Accordion.Trigger
               value={item.value}
-              sizing="medium"
+              variant="ghost"
               className="m-b-medium-60 w-100 justify-between align-center "
             >
               <span className="fs-medium-10">{item.title}</span>
               <Icon>
-                <PixelIcon.ChevronsVertical />
+                <Icon.ChevronSelectorVertical />
               </Icon>
             </Accordion.Trigger>
             <Accordion.Content

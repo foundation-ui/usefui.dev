@@ -10,6 +10,7 @@ import LandingHero from "./LandingHero";
 
 import { Button } from "@usefui/components";
 import { DisplayMd, SplitText } from "@/components";
+import { Icon } from "@usefui/icons";
 
 const Header = styled(motion.hgroup)`
   width: 100%;
@@ -51,15 +52,21 @@ function LandingHeader() {
       variants={stagger}
       initial="hidden"
       animate="visible"
-      className="p-x-medium-60 "
+      className="p-x-medium-30"
     >
-      <HeroDescWrapper variants={slideEmphasis} className="m-b-large-30">
+      <HeroDescWrapper
+        variants={slideEmphasis}
+        className="p-x-medium-30 m-b-large-30"
+      >
         <DisplayMd className="m-b-large-10">
           Headless Design System platform built for modern product teams to
           craft apps people love to use.
         </DisplayMd>
 
-        <motion.div variants={stagger}>
+        <motion.div
+          variants={stagger}
+          className="flex flex-wrap align-center g-medium-10"
+        >
           <motion.span variants={slideEmphasis}>
             <Button
               variant="mono"
@@ -74,6 +81,25 @@ function LandingHeader() {
                 variant="fade"
                 text="Getting started"
               />
+            </Button>
+          </motion.span>
+          <motion.span variants={slideEmphasis}>
+            <Button
+              variant="secondary"
+              sizing="large"
+              animation="reflective"
+              onMouseDown={() => router.push("/app")}
+            >
+              <SplitText
+                stagger={0.02}
+                duration={0.1}
+                delay={0.5}
+                variant="fade"
+                text="Open app"
+              />
+              <Icon>
+                <Icon.LinkExternal />
+              </Icon>
             </Button>
           </motion.span>
         </motion.div>

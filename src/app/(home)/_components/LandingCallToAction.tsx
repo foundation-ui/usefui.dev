@@ -8,7 +8,6 @@ import { useRouter } from "next/navigation";
 
 import { DisplayXxl } from "@/components";
 import { Button } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
 
 export const CTAContainer = styled(motion.section)`
   background: var(--contrast-color);
@@ -27,6 +26,7 @@ const staggerItem = {
   hidden: { opacity: 0, y: "var(--measurement-medium-10)" },
   show: { opacity: 1, y: 0 },
 };
+
 function LandingCallToAction() {
   const router = useRouter();
 
@@ -49,9 +49,6 @@ function LandingCallToAction() {
             onMouseDown={() => router.push("/docs/getting-started")}
           >
             Get started now
-            <Icon>
-              <PixelIcon.ArrowRight />
-            </Icon>
           </Button>
         </motion.span>
       </motion.div>

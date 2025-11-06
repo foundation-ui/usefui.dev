@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 
 import { DisplayMd, DisplaySmall } from "@/components";
 import { Button, ScrollArea } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -62,7 +62,7 @@ const BackgroundOverlay = styled.div`
 const Grid = styled.li`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(31%, 1fr));
-  grid-gap: var(--measurement-large-10) var(--measurement-large-10);
+  grid-gap: var(--measurement-medium-60) var(--measurement-medium-60);
   box-sizing: border-box;
 
   @media (max-width: 768px) {
@@ -72,7 +72,7 @@ const Grid = styled.li`
 
 const WIKI_CATALOG = [
   {
-    name: "foundation-ui/core",
+    name: "usefui/core",
     title: "Token Engine",
     description:
       "Dynamically generate design tokens using application properties.",
@@ -115,7 +115,7 @@ const WIKI_CATALOG = [
 `,
   },
   {
-    name: "foundation-ui/components",
+    name: "usefui/components",
     title: "React Components",
     description:
       "Use fast and accessible components to enhance your UI development.",
@@ -131,7 +131,7 @@ const WIKI_CATALOG = [
           animation="reflective"
         >
           <Icon>
-            <WebIcon.Settings />
+            <Icon.Tools />
           </Icon>
         </DropdownMenu.Trigger>
 
@@ -146,7 +146,7 @@ const WIKI_CATALOG = [
 }`,
   },
   {
-    name: "foundation-ui/analytics",
+    name: "usefui/analytics",
     title: "User Behavior Analytics",
     description: "Capture real-time user interactions and system insights.",
     link: "/docs/uba/installation",
@@ -237,7 +237,7 @@ function LandingProducts() {
       whileInView="show"
       viewport={{ once: true, amount: 0.1 }}
     >
-      <hgroup className="flex align-end flex-wrap justify-between g-medium-60">
+      <hgroup className="flex align-end flex-wrap justify-between g-medium-60 p-x-medium-30">
         <motion.span variants={staggerItem}>
           <DisplayMd>Production-ready libraries</DisplayMd>
         </motion.span>
@@ -249,7 +249,7 @@ function LandingProducts() {
           >
             Explore all libraries
             <Icon>
-              <PixelIcon.ArrowRight />
+              <Icon.ArrowRight />
             </Icon>
           </Button>
         </motion.span>
@@ -279,7 +279,7 @@ function LandingProducts() {
               >
                 {item?.label}
                 <Icon>
-                  <PixelIcon.ArrowRight />
+                  <Icon.ChevronRight />
                 </Icon>
               </Button>
             </Hgroup>

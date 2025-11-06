@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Divider, DropdownMenu } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 function DropdownMenuTemplate() {
   return (
@@ -20,7 +20,7 @@ function DropdownMenuTemplate() {
             >
               Radio Item
               <Icon>
-                <PixelIcon.ArrowRight />
+                <Icon.ArrowRight />
               </Icon>
             </DropdownMenu.Item>
             <Divider />

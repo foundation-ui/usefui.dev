@@ -1,0 +1,52 @@
+---
+title: Usage
+description:
+---
+
+<DocsTextBlock className="m-b-medium-60">
+  This example shows basic usage of the `@usefui/svgjsx` CLI.
+</DocsTextBlock>
+
+<DocsSection>
+
+## Setup
+
+<DocsTextBlock>
+1 - Add SVG files to the `svg/` directory
+
+</DocsTextBlock>
+<DocsTextBlock>
+2 - Run generation script: `pnpx @usefui/svgjsx generate`
+
+</DocsTextBlock>
+<DocsTextBlock>
+3 - Import and use components from `src/icons/`
+
+</DocsTextBlock>
+
+</DocsSection>
+
+## Import and use
+
+<DocsCodePreview language="jsx" code={`
+    import { Icon } from "./src/icons";
+
+    function App() {
+        return (
+            <Icon
+                fill="green"
+                width={24}
+                height={24}
+                viewBox="0 0 16 16"
+            >
+                <Icon.MyIcon />
+            </Icon>
+        );
+    }
+
+`} />
+
+<DocsFooter
+  prev="/docs/icons-cli/getting-started"
+  next="/docs/icons-cli/examples"
+/>

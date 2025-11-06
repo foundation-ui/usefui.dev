@@ -3,7 +3,7 @@
 import React from "react";
 
 import { PrivacyField } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 function PrivacyFieldTemplate() {
   return (
@@ -12,12 +12,12 @@ function PrivacyFieldTemplate() {
         value="HelloWord"
         textIcon={
           <Icon>
-            <PixelIcon.Eye />
+            <Icon.Eye />
           </Icon>
         }
         passwordIcon={
           <Icon>
-            <PixelIcon.EyeClosed />
+            <Icon.EyeOff />
           </Icon>
         }
       />

@@ -8,7 +8,7 @@ import EditorOutput from "./_components/editor/EditorOutput";
 
 import { DropdownMenu, Portal, Resizable } from "@usefui/components";
 import { LibraryTemplate } from "@/templates";
-import { Icon, PixelIcon, WebIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 const DEFAULT_VALUE = JSON.stringify(LibraryTemplate.template, null, 2);
 
@@ -27,7 +27,7 @@ function TokenEnginePage() {
             <DropdownMenu.Trigger>
               <span className="flex align-center p-y-small-60">
                 <Icon>
-                  <WebIcon.More />
+                  <Icon.ChevronSelectorVertical />
                 </Icon>
               </span>
             </DropdownMenu.Trigger>
@@ -37,7 +37,7 @@ function TokenEnginePage() {
                 onMouseDown={() => router.push("/")}
               >
                 <Icon fillOpacity={0.6}>
-                  <PixelIcon.ArrowLeft />
+                  <Icon.ArrowLeft />
                 </Icon>
                 Homepage
               </DropdownMenu.Item>
@@ -46,7 +46,7 @@ function TokenEnginePage() {
                 onMouseDown={() => router.push("/docs/introduction")}
               >
                 <Icon fillOpacity={0.6}>
-                  <PixelIcon.BookOpen />
+                  <Icon.LinkExternal />
                 </Icon>
                 Documentation
               </DropdownMenu.Item>

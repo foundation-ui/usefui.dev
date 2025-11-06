@@ -9,7 +9,7 @@ description: Accordions are used to expand and collapse sections of content.
   language="tsx"
   component={<AccordionTemplate />}
   code={`import { Accordion, Divider } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 export function AccordionComponent() {
     return (
@@ -25,7 +25,7 @@ export function AccordionComponent() {
               >
                 Informations
                 <Icon>
-                  <PixelIcon.ChevronsVertical />
+                  <Icon.ChevronSelectorVertical />
                 </Icon>
               </Accordion.Trigger>
               <Accordion.Content value="info">
@@ -48,7 +48,7 @@ export function AccordionComponent() {
               >
                 Features
                 <Icon>
-                  <PixelIcon.ChevronsVertical />
+                  <Icon.ChevronSelectorVertical />
                 </Icon>
               </Accordion.Trigger>
               <Accordion.Content value="feat">
@@ -66,7 +66,7 @@ export function AccordionComponent() {
               >
                 Requests
                 <Icon>
-                  <PixelIcon.ChevronsVertical />
+                  <Icon.ChevronSelectorVertical />
                 </Icon>
               </Accordion.Trigger>
               <Accordion.Content value="requests">

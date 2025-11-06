@@ -19,7 +19,7 @@ function LandingPage() {
           <LandingNavigation />
           <LandingHeader />
 
-          <MaxWidthContainer className="p-x-medium-60 w-100 grid p-y-large-30 g-large-30">
+          <MaxWidthContainer className="p-x-medium-30 w-100 grid p-y-large-30 g-large-30">
             <LandingIntegration />
             <LandingProducts />
             <LandingEngines />

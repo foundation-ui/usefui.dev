@@ -3,7 +3,7 @@
 import React from "react";
 
 import { Accordion, Divider } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 function AccordionTemplate() {
   return (
@@ -19,7 +19,7 @@ function AccordionTemplate() {
           >
             Informations
             <Icon>
-              <PixelIcon.ChevronsVertical />
+              <Icon.ChevronSelectorVertical />
             </Icon>
           </Accordion.Trigger>
           <Accordion.Content value="info">
@@ -42,7 +42,7 @@ function AccordionTemplate() {
           >
             Features
             <Icon>
-              <PixelIcon.ChevronsVertical />
+              <Icon.ChevronSelectorVertical />
             </Icon>
           </Accordion.Trigger>
           <Accordion.Content value="feat">
@@ -60,7 +60,7 @@ function AccordionTemplate() {
           >
             Requests
             <Icon>
-              <PixelIcon.ChevronsVertical />
+              <Icon.ChevronSelectorVertical />
             </Icon>
           </Accordion.Trigger>
           <Accordion.Content value="requests">

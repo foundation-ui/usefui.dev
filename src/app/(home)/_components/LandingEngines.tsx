@@ -11,7 +11,7 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import { DisplaySmall, Dragbox } from "@/components";
 import { Button, ScrollArea } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 const SectionContainer = styled(motion.section)`
   width: 100%;
@@ -154,7 +154,7 @@ function LandingEngines() {
           >
             Read about engines
             <Icon>
-              <PixelIcon.ChevronRight />
+              <Icon.ChevronRight />
             </Icon>
           </Button>
         </motion.span>

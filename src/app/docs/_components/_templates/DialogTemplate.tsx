@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Dialog, Divider, Portal } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 function DialogTemplate() {
   return (
@@ -18,7 +18,7 @@ function DialogTemplate() {
           <Dialog.Menu className="flex justify-between w-100">
             <Dialog.Control variant="ghost">
               <Icon>
-                <PixelIcon.Close />
+                <Icon.Remove />
               </Icon>
             </Dialog.Control>
           </Dialog.Menu>

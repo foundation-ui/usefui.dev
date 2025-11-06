@@ -4,7 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 
 import { Button } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 function DocsFooter({
   prev,
@@ -30,7 +30,7 @@ function DocsFooter({
           onMouseDown={() => router.push(prev)}
         >
           <Icon>
-            <PixelIcon.ChevronLeft />
+            <Icon.ChevronLeft />
           </Icon>
           Previous
         </Button>
@@ -43,7 +43,7 @@ function DocsFooter({
         >
           Next
           <Icon>
-            <PixelIcon.ChevronRight />
+            <Icon.ChevronRight />
           </Icon>
         </Button>
       )}

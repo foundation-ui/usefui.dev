@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Sheet, Divider } from "@usefui/components";
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 
 function SheetTemplate() {
   return (
@@ -22,7 +22,7 @@ function SheetTemplate() {
 
           <Sheet.Trigger variant="ghost">
             <Icon>
-              <PixelIcon.Close />
+              <Icon.Remove />
             </Icon>
           </Sheet.Trigger>
         </div>

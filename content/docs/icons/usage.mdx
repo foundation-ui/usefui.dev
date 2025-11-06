@@ -1,0 +1,35 @@
+---
+title: Icons
+description: Setup and use @usefui/icons' in your project.
+---
+
+<DocsSection>
+### Setup
+
+<DocsTextBlock className="m-b-medium-60">
+  The Icon component is built using the [Compound
+  pattern](https://www.patterns.dev/react/compound-pattern/). By importing
+  `Icon`, you can invoke every compound components without the need to import
+  them all.
+</DocsTextBlock>
+
+</DocsSection>
+
+<DocsSection>
+
+  <DocsCodePreview
+    code={`import { Icon } from "@usefui/icons";
+
+    function IconContainer() {
+      return (
+        <Icon>
+          <Icon.Add />
+        </Icon>
+      );
+    }`}
+
+/>
+
+</DocsSection>
+
+<DocsFooter prev="/docs/icons/installation" next="/docs/icons/libraries" />

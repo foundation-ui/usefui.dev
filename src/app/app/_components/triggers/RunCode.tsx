@@ -5,7 +5,7 @@ import React from "react";
 import { useMutation } from "@tanstack/react-query";
 import { useEngineStore } from "@/stores";
 
-import { Icon, PixelIcon } from "@usefui/icons";
+import { Icon } from "@usefui/icons";
 import { Button, Spinner } from "@usefui/components";
 
 import { LibraryTemplate } from "@/templates";
@@ -64,7 +64,7 @@ function RunCode({
           <Spinner />
         ) : (
           <Icon>
-            <PixelIcon.CornerDownRight />
+            <Icon.ArrowCornerUpRight />
           </Icon>
         )}
       </span>
