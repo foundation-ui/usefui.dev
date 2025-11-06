@@ -91,7 +91,7 @@ function Navigation() {
                     onMouseDown={() => router.push("/docs/cli")}
                     className="flex flex-column g-small-10"
                   >
-                    <span className="fs-medium-10">usefui/create-fui-app</span>
+                    <span className="fs-medium-10">Bootstrap</span>
                     <span className="fs-medium-10 opacity-default-60">
                       Start a typesafe Next.js app
                     </span>
@@ -102,7 +102,7 @@ function Navigation() {
                     }
                     className="flex flex-column g-small-10"
                   >
-                    <span className="fs-medium-10">usefui/svgjsx</span>
+                    <span className="fs-medium-10">SvgJsx</span>
                     <span className="fs-medium-10 opacity-default-60">
                       SVG files to React components
                     </span>
