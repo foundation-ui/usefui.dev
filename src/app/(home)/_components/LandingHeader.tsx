@@ -52,9 +52,12 @@ function LandingHeader() {
       variants={stagger}
       initial="hidden"
       animate="visible"
-      className="p-x-medium-60 "
+      className="p-x-medium-30"
     >
-      <HeroDescWrapper variants={slideEmphasis} className="m-b-large-30">
+      <HeroDescWrapper
+        variants={slideEmphasis}
+        className="p-x-medium-30 m-b-large-30"
+      >
         <DisplayMd className="m-b-large-10">
           Headless Design System platform built for modern product teams to
           craft apps people love to use.

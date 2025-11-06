@@ -62,7 +62,7 @@ const BackgroundOverlay = styled.div`
 const Grid = styled.li`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(31%, 1fr));
-  grid-gap: var(--measurement-large-10) var(--measurement-large-10);
+  grid-gap: var(--measurement-medium-60) var(--measurement-medium-60);
   box-sizing: border-box;
 
   @media (max-width: 768px) {
@@ -237,7 +237,7 @@ function LandingProducts() {
       whileInView="show"
       viewport={{ once: true, amount: 0.1 }}
     >
-      <hgroup className="flex align-end flex-wrap justify-between g-medium-60">
+      <hgroup className="flex align-end flex-wrap justify-between g-medium-60 p-x-medium-30">
         <motion.span variants={staggerItem}>
           <DisplayMd>Production-ready libraries</DisplayMd>
         </motion.span>
