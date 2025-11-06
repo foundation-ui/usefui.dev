@@ -79,14 +79,19 @@ function Navigation() {
                   sizing="small"
                   className="fs-medium-10"
                 >
-                  CLI
+                  <span className="flex align-center">
+                    CLI
+                    <Icon>
+                      <Icon.ChevronDown />
+                    </Icon>
+                  </span>
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content sizing="medium">
                   <DropdownMenu.Item
                     onMouseDown={() => router.push("/docs/cli")}
                     className="flex flex-column g-small-10"
                   >
-                    <span className="fs-medium-20">usefui/create-fui-app</span>
+                    <span className="fs-medium-10">usefui/create-fui-app</span>
                     <span className="fs-medium-10 opacity-default-60">
                       Start a typesafe Next.js app
                     </span>
@@ -97,7 +102,7 @@ function Navigation() {
                     }
                     className="flex flex-column g-small-10"
                   >
-                    <span className="fs-medium-20">usefui/svgjsx</span>
+                    <span className="fs-medium-10">usefui/svgjsx</span>
                     <span className="fs-medium-10 opacity-default-60">
                       SVG files to React components
                     </span>
@@ -114,18 +119,14 @@ function Navigation() {
                   sizing="small"
                   className="fs-medium-10"
                 >
-                  Products
+                  <span className="flex align-center">
+                    Products
+                    <Icon>
+                      <Icon.ChevronDown />
+                    </Icon>
+                  </span>
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content sizing="medium">
-                  <DropdownMenu.Item
-                    onMouseDown={() => router.push("/app")}
-                    className="flex flex-column g-small-10"
-                  >
-                    <span className="fs-medium-20">Design Tokens Engine</span>
-                    <span className="fs-medium-10 opacity-default-60">
-                      Generate JSON Design Tokens.
-                    </span>
-                  </DropdownMenu.Item>
                   <Link
                     href="https://runp.dev"
                     target="_blank"
@@ -133,12 +134,21 @@ function Navigation() {
                     style={{ textDecoration: "none" }}
                   >
                     <DropdownMenu.Item className="flex flex-column g-small-10">
-                      <span className="fs-medium-20">Runp AI</span>
+                      <span className="fs-medium-10">Runp AI</span>
                       <span className="fs-medium-10 opacity-default-60">
                         Create UI with AI workflows.
                       </span>
                     </DropdownMenu.Item>
                   </Link>
+                  <DropdownMenu.Item
+                    onMouseDown={() => router.push("/app")}
+                    className="flex flex-column g-small-10"
+                  >
+                    <span className="fs-medium-10">Design Tokens Engine</span>
+                    <span className="fs-medium-10 opacity-default-60">
+                      Generate JSON Design Tokens.
+                    </span>
+                  </DropdownMenu.Item>
                 </DropdownMenu.Content>
               </DropdownMenu>
             </DropdownMenu.Root>
